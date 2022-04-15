@@ -1,0 +1,43 @@
+baseURL = "http://cengelsen.no/"
+languageCode = "no"
+title = "Velkommen!"
+theme = "mero"
+disableKinds = ["taxonomyTerm"]
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.80.0'
+
+[params]
+  dateFormat = "2006-01-02" 
+  author = "Christian Kårbø Engelsen"
+  description = "Hjemmesiden min"
+  mainImage = "images/profil.png"
+
+[params.introduction]
+   text = en fyr som prøver seg frem med nettsider og teknologi :)
+
+[params.social]
+  [[params.social.list]]
+  class = "fab"
+  icon = "fa-linkedin-in"
+  url = "#"
+
+  [[params.social.list]]
+  class = "fab"
+  icon = "fa-github"
+  url = "#"
+
+  [[params.social.list]]
+  class = "fab"
+  icon = "fa-twitter"
+  url = "#"
+
+  [[params.social.list]]
+  class = "fab"
+  icon = "fa-stack-overflow"
+  url = "#"
+
+[params.footer]
+  message = "&copy; 2018 Name"
