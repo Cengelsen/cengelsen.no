@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Velkommen!"
+title = "CKE - en profil"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
 
@@ -16,28 +16,28 @@ disableKinds = ["taxonomyTerm"]
   mainImage = "images/profil.png"
 
 [params.introduction]
-   text = "en fyr som proever seg frem med nettsider og teknologi :)"
+   text = "en fyr som prøver seg frem med nettsider og teknologi :)"
 
 [params.social]
   [[params.social.list]]
   class = "fab"
   icon = "fa-linkedin-in"
-  url = "#"
+  url = "https://www.linkedin.com/in/christian-engelsen-7a07941aa/"
 
   [[params.social.list]]
   class = "fab"
   icon = "fa-github"
-  url = "#"
+  url = "https://github.com/Cengelsen"
+
+#  [[params.social.list]]
+#  class = "fab"
+#  icon = "fa-twitter"
+#  url = "#"
 
   [[params.social.list]]
   class = "fab"
-  icon = "fa-twitter"
-  url = "#"
-
-  [[params.social.list]]
-  class = "fab"
-  icon = "fa-stack-overflow"
-  url = "#"
+  icon = "fa-envelope"
+  url = "mailto:ckengelsen97@gmail.com"
 
 [params.footer]
-  message = "&copy; 2018 Name"
+  message = "&copy; 2022 Christian Engelsen"
