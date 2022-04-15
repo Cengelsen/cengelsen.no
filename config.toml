@@ -1,5 +1,5 @@
-baseURL = "http://cengelsen.no/"
-languageCode = "no"
+baseURL = "/"
+languageCode = "en-us"
 title = "Velkommen!"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
@@ -16,7 +16,7 @@ disableKinds = ["taxonomyTerm"]
   mainImage = "images/profil.png"
 
 [params.introduction]
-   text = en fyr som prøver seg frem med nettsider og teknologi :)
+   text = en fyr som proever seg frem med nettsider og teknologi :)
 
 [params.social]
   [[params.social.list]]
