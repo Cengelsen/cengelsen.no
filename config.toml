@@ -39,5 +39,10 @@ disableKinds = ["taxonomyTerm"]
   icon = "fa-envelope"
   url = "mailto:ckengelsen97@gmail.com"
 
+  [[params.social.list]]
+  class = "fab"
+  icon = "fa-rss"
+  url = "https://cengelsen.no/index.xml"
+
 [params.footer]
   message = "&copy; 2022 Christian Engelsen"
