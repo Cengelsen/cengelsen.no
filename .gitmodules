@@ -1,0 +1,3 @@
+[submodule "themes/mero"]
+	path = themes/mero
+	url = git@github.com:Cengelsen/mero.git
