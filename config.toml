@@ -29,18 +29,13 @@ disableKinds = ["taxonomyTerm"]
   icon = "fa-github"
   url = "https://github.com/Cengelsen"
 
-#  [[params.social.list]]
-#  class = "fab"
-#  icon = "fa-twitter"
-#  url = "#"
-
   [[params.social.list]]
-  class = "fab"
+  class = "far"
   icon = "fa-envelope"
   url = "mailto:ckengelsen97@gmail.com"
 
   [[params.social.list]]
-  class = "fab"
+  class = "fas"
   icon = "fa-rss"
   url = "https://cengelsen.no/index.xml"
 
