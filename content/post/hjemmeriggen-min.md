@@ -1,6 +1,6 @@
 +++
 title = "Hjemmeriggen min"
-date = "2019-05-10"
+date = "2022-06-15"
 tags = ["Instruksjon"]
 categories = ["Koding"]
 description = "En beskrivelse av opprigget på min hjemmeserver."
