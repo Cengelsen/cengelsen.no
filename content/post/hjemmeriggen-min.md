@@ -25,7 +25,9 @@ Maskinvaren kjører Ubuntu 20.04 og har ingen spesielle konfigurasjoner.
 ### LXD-virtualisering
 
 For å separere alle tjenestene som kjører på maskintjeneren, bruker jeg [LXD](https://linuxcontainers.org/lxd/) 
-for å virtualisere ulike miljøer. Foreløpig bruker jeg bare Ubuntu 20.04 på alle VM'ene. 
+for å virtualisere ulike miljøer. Foreløpig bruker jeg bare Ubuntu 20.04 på alle VM'ene.
+
+Jeg har skrevet en instruksjon på hvordan du kan installere LXD på din egen maskin. [Den kan du finne her](/post/lxd-instruks)
 
 ### Nginx reverse proxy
 
