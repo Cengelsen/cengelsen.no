@@ -8,7 +8,13 @@ description = "En instruks på hvordan rigge opp LXD lokalt for virtualisering."
 
 ## Hva er LXD?
 
-LXD er en CLI-tjeneste for å forvalte og drifte virtuelle maskiner og beholdere.
+LXD er en CLI-tjeneste for å forvalte og drifte virtuelle maskiner og beholdere. LXD er skrevet i Go og er
+lisensiert under Apache2-lisensen. LXD kan deles opp i LXD (Linux Daemon) og LXC (Linux Containers). 
+LXC er programvaren som muliggjør skapelsen av virtuelle maskiner og beholdere. LXD er bygget på toppen av LXC,
+og visstnok forbedrer LXC med bedre sikkerhet, skalerbarhet, brukervennlighet og prosesseringskostnad.
+En annen liten forskjell er at LXC bruker C API'et, mens LXD bruker REST API'et. 
+
+LXD kan også [integreres inn i andre plattformer og verktøy](https://linuxcontainers.org/lxd/third-party-integrations/), som feks. Ansible, Terraform og Juju. 
 
 Før du installerer det lokalt, kan du også [prøve en demo av det her](https://linuxcontainers.org/lxd/try-it/)!
 
@@ -34,14 +40,14 @@ Man er også avhengig av at moderkortet og prosessoren støtter virtualisering.
 LXD er tilgjengelig for nedlasting og installering gjennom Snap. Om du har Snap, kan du kjøre ```snap install lxd```.
 Siden Ubuntu 20.04, er LXD allerede installert, som en Snap-pakke, etter en fersk installasjon av Ubuntu.
 
-Installasjon av selve Snap kan variere mellom ulike systemer. En guide for ulike systemer kan du finne [her](https://www.ubuntupit.com/how-to-install-snap-package-manager-in-linux-distributions/).
+Installasjon av selve Snap kan variere mellom ulike systemer. En guide for ulike systemer [kan du finne her](https://www.ubuntupit.com/how-to-install-snap-package-manager-in-linux-distributions/).
 
 ### Manuelt
 
 Siden LXD kommer ferdig installert med Ubuntu, trengte jeg bare å tenke på konfigurering. 
 
 På mange operativsystemer kommer ikke Snap med en fersk installasjon, men man må heller ikke bruke Snap for å
-installere det. Her er en [oversikt](https://linuxcontainers.org/lxd/getting-started-cli/) for installasjon på et par ulike systemer uten Snap.
+installere det. [Her er en oversikt](https://linuxcontainers.org/lxd/getting-started-cli/) for installasjon på et par ulike systemer uten Snap.
 
 ## Konfigurasjon
 
@@ -172,8 +178,13 @@ apt-get update && apt-get install nginx
 
 ### Åpne for nettverkstrafikk
 
+Dette steget er ganske avhengig av din lokale nettverks-konfigurasjon, men om du ikke har noen spesielle
+nettverkskonfigurasjoner, burde dette fungere:
+
 ```sh
-PORT=80 PUBLIC_IP=<offentlig IP-adresse> CONTAINER_IP=<beholder IP-adresse> IFACE=<navn på NIC>  sudo -E bash -c 'iptables -t nat -I PREROUTING -i $IFACE -p TCP -d $PUBLIC_IP --dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "<valgfri kommentar>"'
+PORT=80 PUBLIC_IP=<offentlig IP-adresse> CONTAINER_IP=<beholder IP-adresse> IFACE=<navn på NIC> \
+sudo -E bash -c 'iptables -t nat -I PREROUTING -i $IFACE -p TCP -d $PUBLIC_IP \
+--dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "<valgfri kommentar>"' \
 ```
 
 Forklaring:
@@ -187,11 +198,7 @@ Forklaring:
 - ```-j DNAT``` spesifiserer at du skal utføre et "hopp" til destinasjons-NAT (DNAT)
 - ```-to-destination $CONTAINER_IP:$PORT```spesifiserer at henvendelsen skal bli sendt til beholderen sin IP-adresse på den spesifikke porten. 
 
-Dette steget er ganske avhengig av din lokale nettverks-konfigurasjon. Denne kommandoen kan du resirkulere, ved å
-bare endre ```PORT```, ```PUBLIC_IP```, ```CONTAINER_IP``` og ```IFACE```. 
-
 For å se en nummerert liste over reglene, kan du skrive ```sudo iptables -t nat -L PREROUTING --line-numbers```.
-
 
 Disse reglene må man anvende på nytt hver gang man omstarter maskinen. Ganske kjedelig. Så da kan du installere
 ```iptables-persistent```-pakken. Da anvendes reglene automatisk hver gang du omstarter maskinen. 
@@ -220,7 +227,7 @@ Installere og konfigurere LXD på en Ubuntu 20.04
   - lxdbr0
   - auto
   - auto
-  - mo
+  - no
   - yes
   - no
 5. ```lxc launch <os-navn>:<os-versjon> <beholder-navn>```
@@ -230,7 +237,7 @@ Installere og konfigurere LXD på en Ubuntu 20.04
 9. ```lxc exec <beholder-navn> -- sh -c "apt-get update && apt-get upgrade && apt-get install nginx"
 10. ```PORT=80 PUBLIC_IP=<offentlig IP-adresse> CONTAINER_IP=<beholder IP-adresse> IFACE=<navn på NIC>  sudo -E bash -c 'iptables -t nat -I PREROUTING -i $IFACE -p TCP -d $PUBLIC_IP --dport $PORT -j DNAT --to-destination $CONTAINER_IP:$PORT -m comment --comment "<valgfri kommentar>"'```
 11. ```sudo apt-get install iptables-persistent```
-12. profit
+12. profitt
 
 ### Shell-script
 
@@ -273,12 +280,17 @@ fi
 
 ## (Valgfritt) Installere LXDUI
 
-Jeg har ikke prøvd det selv enda, og kommer til å oppdatere denne instruksjonen når jeg har implementert det.
-Du kan også installere et brukergrensesnitt i nettleseren, med [dette github-prosjektet](https://github.com/AdaptiveScale/lxdui/wiki). 
+Jeg har ikke prøvd det selv enda, men kommer til å oppdatere denne instruksjonen når jeg har implementert det.
+Du kan også installere et visuelt brukergrensesnitt i nettleseren, med 
+[dette github-prosjektet](https://github.com/AdaptiveScale/lxdui/wiki). 
 
 ## Kilder
+
+Ser du noe galt med denne instruksjonen? [Opprett en pull request!](https://github.com/Cengelsen/cengelsen.no)
 
 - [How to install and Configure LXD on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-lxd-on-ubuntu-20-04), sist lest 24.07.2022.
 
 - [LXD > Getting started > Installation](https://linuxcontainers.org/lxd/getting-started-cli/), sist lest 24.07.2022
 
+- [Difference between LXC and LXD](https://www.geeksforgeeks.org/difference-between-lxc-and-lxd/), sist lest 25.07.2022
+- [Comparing LXD vs. LXC](https://discuss.linuxcontainers.org/t/comparing-lxd-vs-lxc/24), sist lest 25.07.2022
