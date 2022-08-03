@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "CKE - en profil"
+title = "Christian Engelsen"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
 
@@ -12,7 +12,7 @@ disableKinds = ["taxonomyTerm"]
 [params]
   dateFormat = "2006-01-02" 
   author = "Christian Kårbø Engelsen"
-  description = "Hjemmesiden min"
+  description = "Hjemmeside"
   mainImage = "images/profil.png"
 
 [params.introduction]
