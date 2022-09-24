@@ -37,10 +37,11 @@ den til å sørge for automatisk SSL-sikring for hvert domene. Reverse proxy kj�
 VM som kjører foran nginx i de andre VM'ene, og videresender trafikken til hver VM basert på
 domene-navnet.
 
+[Jeg har skrevet en instruks på det også](/post/proxy-instruks).
+
 ### Hjemmesiden
 
-Nettsiden som denne posten kommer fra, cengelsen.no, er åpen kildekode og er å finne 
-[her](https://github.com/Cengelsen/cengelsen.no). Nettsiden kjører i Hugo og bruker for 
+Nettsiden som denne posten kommer fra, cengelsen.no, er åpen kildekode og [er å finne her](https://github.com/Cengelsen/cengelsen.no). Nettsiden kjører i Hugo og bruker for 
 øyeblikket et ferdiglaget tema som heter "mero". Mero er splittet fra det opprinnelige repoet,
 så det man ser på nettsiden er mero med mine endringer.  
 
@@ -54,3 +55,10 @@ Koden kjører i bakgrunnen på samme VM som holder og serverer nettside-filene. 
 etter POST-payloads, addressert til en spesfikk slug på nettsiden. Den verifiserer deretter
 om den kommer fra github-repoet mitt. Om verifiseringen er vellykket, kjører den et lokalt script
 som bygger nettsiden. 
+
+### Nextcloud
+
+For å kunne unngå å lene meg på andre utenlandske selskaper, som Google eller Microsoft, for skylagring, bruker jeg [Nextcloud](https://nextcloud.com/athome/). Den er installert lokalt i en egen
+VM, installert gjennom Snap.
+
+Nextcloud-instansen kjører bak Nginx-proxy'en min, [hvilket jeg forklarer her](/post/nextcloud-instruks). 
