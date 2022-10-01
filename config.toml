@@ -16,7 +16,7 @@ disableKinds = ["taxonomyTerm"]
   mainImage = "images/profil.png"
 
 [params.introduction]
-   text = "en fyr som prøver seg frem med nettsider og teknologi :)"
+   text = "Lidenskapelig bergenser med en interesse for teknologi, bevissthet og innovasjon."
 
 [params.social]
   [[params.social.list]]
