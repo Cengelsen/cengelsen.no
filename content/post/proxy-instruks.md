@@ -38,14 +38,12 @@ Dette er hva de ulike parameterne betyr:
 
 | Parameter                              | Forklaring                                                                                                             |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | *navn_på_container*                    | Navnet på proxy-containeren                                                                                            |
 | *navn_på_enhet*                        | Navnet for "enheten" du oppretter                                                                                      |
 | proxy                                  | Hvilken type enhet du oppretter                                                                                        |
-| listen=tcp:0.0.0.0:80                  | Proxy-enheten skal lytte på verten på port 80, protokoll TCP, på alle grensesnitt                                      |
-| connect=tcp:127.0.0.1:80 &nbsp; &nbsp; | Proxy-enheten skal koble seg til containeren på port 80, protokoll TCP, på tilbakefôringsgrensesnittet. Det er ikke mulig å skrive "localhost", bare IP-adressen, i LXD-versjoner >= 3.13. |
+| listen= tcp:0.0.0.0:80                  | Proxy-enheten skal lytte på verten på port 80, protokoll TCP, på alle grensesnitt                                      |
+| connect= tcp:127.0.0.1:80 &nbsp; &nbsp; | Proxy-enheten skal koble seg til containeren på port 80, protokoll TCP, på tilbakefôringsgrensesnittet. Det er ikke mulig å skrive "localhost", bare IP-adressen, i LXD-versjoner >= 3.13. |
 | proxy_protocol                         | Ber om å aktivere proxy-protokollen, slik at den reverserte proxyen får den opprinnelige IP-adressen fra proxy-enheten |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 Om du vil fjerne proxy-enheten, kan du skrive: 
 
@@ -62,14 +60,14 @@ Det trengs litt konfigurering av Nginx-en som kjører i tjeneste-containeren.
 
 Opprett `/etc/nginx/conf.d/real-ip.conf` i tjeneste-containeren:
 
-```bash
+```sh
 real_ip_header    X-Real-IP;
 set_real_ip_from  *navn_på_proxy_container*.lxd;
 ```	
 
 Opprett en Nginx-konfig, `/etc/nginx/sites-available/*konfig-navn*`, i tjeneste-containeren:
 
-```bash
+```sh
 server {
         listen 80;
         listen [::]:80;
@@ -91,7 +89,7 @@ Eksemplet over er for å servere en statisk nettside. Her trengs ikke SSL-termin
 
 Opprett en Nginx-konfig, `/etc/nginx/sites-available/*konfig-navn*`, i proxy-containeren:
 
-```bash
+```sh
 server {
         listen 80 proxy_protocol;
         listen [::]:80 proxy_protocol;
@@ -122,8 +120,8 @@ Skaff SSL-sikring gjennom Certbot. Dette er en fremgangsmåte i Ubuntu 20.04:
 5. Endre de nye linjene i nginx-konfigen til å se slik ut:
 
 ```
-	listen 443 ssl proxy_protocol; # managed by Certbot
-	listen [::]:443 ssl proxy_protocol; # managed by Certbot
+listen 443 ssl proxy_protocol; # managed by Certbot
+listen [::]:443 ssl proxy_protocol; # managed by Certbot
 ```
 
 6. `sudo systemctl restart nginx`
