@@ -27,7 +27,7 @@ Maskinvaren kjører Ubuntu 20.04 og har ingen spesielle konfigurasjoner.
 For å separere alle tjenestene som kjører på maskintjeneren, bruker jeg [LXD](https://linuxcontainers.org/lxd/) 
 for å virtualisere ulike miljøer. Foreløpig bruker jeg bare Ubuntu 20.04 på alle VM'ene.
 
-Jeg har skrevet en instruksjon på hvordan du kan installere LXD på din egen maskin. [Den kan du finne her](/post/lxd-instruks)
+Jeg har skrevet en instruksjon på hvordan du kan installere LXD på din egen maskin. [Den kan du finne her](/blog/lxd-instruks)
 
 ### Nginx reverse proxy
 
@@ -37,7 +37,7 @@ den til å sørge for automatisk SSL-sikring for hvert domene. Reverse proxy kj�
 VM som kjører foran nginx i de andre VM'ene, og videresender trafikken til hver VM basert på
 domene-navnet.
 
-[Jeg har skrevet en instruks på det også](/post/proxy-instruks).
+[Jeg har skrevet en instruks på det også](/blog/proxy-instruks).
 
 ### Hjemmesiden
 
@@ -61,4 +61,4 @@ som bygger nettsiden.
 For å kunne unngå å lene meg på andre utenlandske selskaper, som Google eller Microsoft, for skylagring, bruker jeg [Nextcloud](https://nextcloud.com/athome/). Den er installert lokalt i en egen
 VM, installert gjennom Snap.
 
-Nextcloud-instansen kjører bak Nginx-proxy'en min, [hvilket jeg forklarer her](/post/nextcloud-instruks). 
+Nextcloud-instansen kjører bak Nginx-proxy'en min, [hvilket jeg forklarer her](/blog/nextcloud-instruks). 

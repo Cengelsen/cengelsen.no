@@ -24,7 +24,7 @@ som "kommuniserer" med hverandre for å dirigere nett-trafikken korrekt.
 ## Installere og konfigurere LXD
 
 Denne instruksen har som forutsetning at du har installert og konfigurert LXD på serveren din. Du 
-kan [følge instruksen min]({{< relref "post/lxd-instruks" >}}) for å gjøre det.
+kan [følge instruksen min]({{< relref "blog/lxd-instruks" >}}) for å gjøre det.
 
 Når dette er gjort, så må du oppprette "enheter" for proxy-containeren. Utenfor proxy-containeren, må du kjøre:
 
