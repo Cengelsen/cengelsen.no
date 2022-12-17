@@ -1,0 +1,190 @@
+{
+    "computers": [
+        {
+            "id": 1,
+            "name": "Stasjonær PC",
+            "os": "Fedora Linux 37",
+            "components": {
+                "mobo":"MSI B350 Tomahawk, Socket-AM4",
+                "cpu":"AMD Ryzen 5 1600X",
+                "gpu":"ASUS Radeon RX 580 8GB ROG Strix Top Gaming",
+                "ram":"Ballistix Sport LT DDR4 2x8GB",
+                "psu":"Corsair TX550M, 550W",
+                "case":"Svive Luna X750 W Midi Tower",
+                "bootdisk":"Crucial MX500 250GB 2.5' SSD",
+                "storage":"Seagate Barracuda 1TB 3.5' HDD",
+                "nic":"TP-Link Archer TX3000E",
+                "cpucooler":"Cooler Master Hyper TX3 Evo",
+                "fans":"Corsair HD140 RGB 140m x3"
+            },
+            "peripherals": {
+                "keyboard":"Keychron K6",
+                "mouse":"iiglo MX multi BT",
+                "gamepad":"SteelSeries Stratus XL",
+                "soundcard":"Focusrite Scarlett 2i2",
+                "microphone":"RØDE PodMic",
+                "headphones":"BeyerDynamic DT770"
+            },
+            "screens": {
+                "primary":"Samsung SyncMaster BX2240",
+                "seconday":"Samsung SyncMaster 226BW",
+                "tertiary":"Samsung LCD LE46B535P7W"
+            }
+        },
+        {
+            "id": 2,
+            "name":"HP Notebook 17-ca0008no",
+            "os":"Fedora Linux 37",
+            "components":{
+                "mobo":"Generic system board",
+                "cpu":"AMD A6-9225 Dual-Core",
+                "gpu":"AMD Radeon R4 Graphics - Integrated",
+                "ram":"DDR4-1866 SDRAM 1x8GB",
+                "psu":"45W AC power adapter",
+                "battery":"3-cell, 41 Wh Lithium-ion",
+                "bootdisk":"256GB M.2 SSD"
+            },
+            "screens": {
+                "primary":"43.9cm (17.3') diagonal HD+ SVA anti-glare WLED-backlit (1600x900)"
+            }
+        },
+        {
+            "id":3,
+            "name":"ASUS PN50 Barebone",
+            "os":"Ubuntu 20.04",
+            "components":{
+                "cpu":"AMD Ryzen 5 4500U",
+                "ram":"HyperX Impact DDR4 2933MHz 2x8GB",
+                "bootdisk":"Kingston A2000 1TB NVMe M.2 SSD"
+            },
+            "peripherals":{
+                "notice":"Ingen periferaler"
+            },
+            "screens":{
+                "notice":"Ingen skjermer"
+            }
+        }
+    ],
+    
+    "sounddevices": [
+        {
+            "id": 4,
+            "name":"Jabra Elite 85h",
+            "specifications": {
+                "output":"Stereo output",
+                "style":"Closed over-ear",
+                "fold":"Can be folded",
+                "connection":"Wireless (BT) & wired connection (3.5mm plug)",
+                "mictype":"Built-in microphone",
+                "micfreq":"100 - 8000 microphone frequency",
+                "noisecancel":"Active Noise Canceling",
+                "freqrange":"10 - 20000 Hz frequency range",
+                "driversize":"40.0mm driver size",
+                "btversion":"5.0 BT-version",
+                "btprofiles":"AVRCP, PBAP, HSP, SPP, A2DP, HFP",
+                "wlrange":"30.0m wireless range",
+                "usb":"USB Type-C",
+                "powertype":"Battery operated",
+                "batterycap":"500.0 mAh battery capacity",
+                "battrectime":"2.5h recharge time",
+                "battlife":"35.0h max battery life",
+                "standbytime":"87600.0h max standby time",
+                "talktime":"41.0h max talking time"
+            }
+        },
+        {
+            "id": 5,
+            "name":"Plattan 2",
+            "specifications": {
+                "freqrange":"10 - 20000 Hz frequency range",
+                "driversize":"40.0mm driver size",
+                "driverimp":"34 Ohm driver impedance",
+                "sensitivity":"106 dB in sensitivity",
+                "battlife":"30.0h max battery life",
+                "battrectime":"2.5h recharge time",
+                "usb":"Micro USB",
+                "mictype":"Built-in microphone",
+                "btversion":"5.0 BT-version",
+                "style":"Closed on ear",
+                "fold":"Can be folded",
+                "connection":"Wireless (BT) & wired connection (3.5mm plug)",
+                "output":"Stereo output"
+            }
+        },
+        {
+            "id": 6,
+            "name": "BeyerDynamic DT770 Pro 80 Ohm",
+            "specifications":{
+                "transdtype":"Dynamic transducer type",
+                "type":"Closed over-ear",
+                "nomfreqres":"5 - 35.000Hz nominal frequency response",
+                "nomimp":"80 Ohm nominal impedance",
+                "nomspl":"96 dB nominal SPL",
+                "nomthd":"< 0.2% nominal T.H.D",
+                "powhancap":"100 mW power handling capacity",
+                "soundcoupl":"Circumaural Ambient noise isolation",
+                "connection":"Wired: Gold plated 3.5mm jack plug with 6.35mm adapter",
+                "output":"Stereo",
+                "nomheadpres":"Approx. 3.5 N in headband pressure",
+                "dba":"Approx. 18 dBA",
+                "cablelength":"3m in cable length"
+            }
+        },
+        {
+            "id": 7,
+            "name":"Yamaha HTR-2064",
+            "specifications":{
+                "notice":"Kommer snart"
+            }
+        }
+    ],
+
+    "phones": [
+        {
+            "id": 8,
+            "name":"Samsung Galaxy 9+",
+            "specifications": {
+                "display":"6.2' Quad HD+ Super AMOLED (2960x1440) display, with 529 ppi",
+                "height":"Height: 157.988mm",
+                "width":"Width: 73.914mm",
+                "depth":"Depth: 8.382mm",
+                "weight":"Weight: 189.0913 gram",
+                "cpu": "10nm 64-bit Octa-Core Processor *2.8GHz + 1.7GHz (Maximum Clock Speed, Performance Core + Efficiency Core)",
+                "ram":"6GB RAM",
+                "nic":"Enhanced 4x4 MIMO/CA, LAA, LTE Cat.18",
+                "connection":"Wireless connections: Wi-Fi 802.11 a/b/g/n/ac (2.4/5GHz), VHT80 MU-MIMO, 1024QAM Bluetooth® v5.0 (LE up to 2Mbps), ANT+, USB type-C, NFC, location (GPS, Galileo, Glonass, BeiDou)",
+                "sim":"Single SIM model: one Nano SIM and one MicroSD slot (up to 400GB)",
+                "os":"OS: Android",
+                "formsaud":"Supports: MP3, M4A, 3GA, AAC, OGG, OGA, WAV, WMA, AMR, AWB, FLAC, MID, MIDI, XMF, MXMF, IMY, RTTTL, RTX, OTA, APE, DSF, DFF",
+                "formsvid":"Supports: MP4, M4V, 3GP, 3G2, WMV, ASF, AVI, FLV, MKV, WEBM",
+                "batterycap":"3500.0 mAh battery capacity",
+                "battrectime":"About 2h recharge time; wired and wireless",
+                "battlife":"Between 13h - 102h max battery life depending on use"
+            }
+        },
+        {
+            "id": 9,
+            "name": "Nokia 105",
+            "specifications":{
+                "display":"44.9587mm QQVGA display",
+                "battlife":"Between 14.4h - 25.8d max battery life depending on use",
+                "connection":"Wired connection: 3.5mm plug",
+                "usb":"Micro USB (USB 1.1)",
+                "battcap":"800 mAh, removable",
+                "os":"OS: S30+",
+                "audio":"FM Radio (headset required)",
+                "netspeed":"Supports max 2G network speed",
+                "netbands":"GSM: 900/1800 (EU)",
+                "simsize":"Standard SIM size",
+                "sim":"Dual SIM model",
+                "height":"Height: 111.9mm",
+                "width":"Width: 59.85mm",
+                "depth":"Depth: 14.3mm",
+                "weight":"Weight: 73.2 gram (Battery included)",
+                "volume":"Volume: 68.9cm³",
+                "battrectime":"About 30m recharge time; only wired"
+
+            }
+        }
+    ]
+}
