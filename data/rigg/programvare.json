@@ -3,22 +3,26 @@
         {
             "id": 1,
             "name": "LXD-virtualisering",
-            "description":"lorem ipsum"
+            "description":"For å separere alle tjenestene som kjører på maskintjeneren, bruker jeg LXD for å virtualisere ulike miljøer. Foreløpig bruker jeg bare Ubuntu 20.04 på alle VM’ene.",
+            "link": "/blog/lxd-instruks"
         },
         {
             "id": 2,
             "name": "Nginx reverse proxy",
-            "description":"lorem ipsum"
+            "description":"For å eksponere tjenestene til internett, bruker jeg en sentral Nginx reverse proxy som håndterer all trafikken for hver VM som verter en tjeneste. I tillegg har jeg konfigurert den til å sørge for automatisk SSL-sikring for hvert domene.\nReverse proxy kjører Nginx i en VM som kjører foran nginx i de andre VM’ene, og videresender trafikken til hver VM basert på domene-navnet.",
+            "link":"/blog/proxy-instruks"
         },
         {
             "id": 3,
             "name": "Postreceiver",
-            "description":"lorem ipsum"
+            "description":"For å slippe å ssh’e inn på serveren min og manuelt dra ned forandringer og bygge siden på nytt, har jeg skrevet dette scriptet slik at siden bygges automatisk etter at jeg dytter lokale forandringer til github-repoet.\nKoden kjører i bakgrunnen på samme VM som holder og serverer nettside-filene. Den lytter konstant etter POST-payloads, addressert til en spesfikk slug på nettsiden. Den verifiserer deretter om den kommer fra github-repoet mitt. Om verifiseringen er vellykket, kjører den et lokalt script som bygger nettsiden.",
+            "link":"https://github.com/Cengelsen/postreceiver"
         },
         {
             "id": 4,
             "name": "Nextcloud",
-            "description":"lorem ipsum"
+            "description":"For å kunne unngå å lene meg på andre utenlandske selskaper, som Google eller Microsoft, for skylagring, bruker jeg Nextcloud. Den er installert lokalt i en egen VM, gjennom Snap. Nextcloud-instansen kjører bak Nginx-proxy’en min.",
+            "link":"/blog/nextcloud-instruks"
         }
     ]
 }
