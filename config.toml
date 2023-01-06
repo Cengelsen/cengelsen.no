@@ -1,8 +1,27 @@
 baseURL = "/"
-languageCode = "en-us"
+languageCode = "no-nb"
 title = "Christian Engelsen"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
+
+defaultContentLanguage = 'no'
+
+[languages]
+  [languages.no]
+    contentDir = 'content/no'
+    languageName = 'Norsk'
+    weight = 1
+    
+    [languages.no.params.introduction]
+      text = "Lidenskapelig bergenser med en interesse for teknologi, bevissthet og innovasjon."
+  
+  [language.en]
+    contentDir = 'content/en'
+    languageName = 'English'
+    weight = 2
+    
+    [languages.en.params.introduction]
+      text = "Passionate bergenser with an interest in technology, consciousness and innovation."
 
 [module]
   [module.hugoVersion]
@@ -14,9 +33,6 @@ disableKinds = ["taxonomyTerm"]
   author = "Christian Kårbø Engelsen"
   description = "Hjemmeside"
   mainImage = "images/profil.png"
-
-[params.introduction]
-   text = "Lidenskapelig bergenser med en interesse for teknologi, bevissthet og innovasjon."
 
 [params.social]
   [[params.social.list]]
