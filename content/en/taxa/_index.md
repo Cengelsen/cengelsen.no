@@ -1,4 +1,4 @@
 +++
 title = "Taxa"
-description = "Oversiktsside for alle kategorier og emneknagger til alle innlegg."
+description = "Overview page for all categories and hashtags for all posts."
 +++

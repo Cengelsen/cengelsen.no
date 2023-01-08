@@ -21,7 +21,7 @@ Derfor skal jeg prøve å være så tydelig som mulig, for å forhindre forvirri
 Det jeg ønsker å forklare i denne instruksen, er hvordan man kan kjøre en Nextcloud instans, installert og konfigurert gjennom Snap,
 bak en Nginx proxy server. Slik at proxy-serveren tar seg av SSL-sikringen, mens tjeneste-serveren tar seg av alt annet Nginx-relatert.
 
-Om du har konfigurert en Nginx-proxy-server slik som beskrevet i [proxy-instruksen min]( {{< relref "blog/proxy-instruks" >}} ), så har du nå to virtuelle maskiner; 
+Om du har konfigurert en Nginx-proxy-server slik som beskrevet i [proxy-instruksen min]( {{< relref path="proxy-instruks.md" lang="no" >}} ), så har du nå to virtuelle maskiner; 
 én virtuell maskin som kjører Nginx som proxy og én virtuell maskin som kjører nginx som en "ordinær" webserver. På den maskinen som kjører en 
 "ordinær" webserver, så skal Nextcloud også kjøre. Problemstillingen er da at Nextcloud må kommunisere riktig med sin lokale "ordinære" webserver,
 samt at den "ordinære" webserveren må kommunisere riktig med proxy-serveren, slik at jeg kan nå nextcloud-tjenesten ved å gå til 

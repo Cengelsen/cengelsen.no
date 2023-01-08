@@ -1,4 +1,4 @@
 +++
-title = "Rigg"
-description = "Oversiktsside for alle maskiner og tjenester som driftes av meg selv"
+title = "Devices"
+description = "Overview page for all machines and services operated by myself"
 +++

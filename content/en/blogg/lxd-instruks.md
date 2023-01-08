@@ -1,8 +1,8 @@
 +++
 title = "How to configure LXD to run locally"
 date = "2022-07-24"
-tags = ["Instruksjon", "Virtualisering"]
-categories = ["Koding"]
+tags = ["Instruction", "Virtualization"]
+categories = ["Coding"]
 description = "An instruction on how to set up LXD locally for virtualization."
 +++
 

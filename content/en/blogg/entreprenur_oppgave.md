@@ -4,6 +4,7 @@ date = "2022-04-27"
 tags = ["VR", "Innovation"]
 categories = ["Seminaroppgave"]
 description = "This is a text i wrote in 2020 about VR-technology, it's history and how the Oculus Rift was an innovative success."
+lang = "en"
 +++
 
 What is real? Not only it this an existential question, but a source of creation, innovation, and 
