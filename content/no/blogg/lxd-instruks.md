@@ -1,8 +1,8 @@
 +++
 title = "Hvordan rigge opp LXD lokalt"
 date = "2022-07-24"
-tags = ["Instruksjon", "Virtualisering"]
-categories = ["Koding"]
+tags = ["Server-administrering", "Virtualisering", "Kontainerisering"]
+categories = ["Instruksjon"]
 description = "En instruks på hvordan rigge opp LXD lokalt for virtualisering."
 +++
 

@@ -1,8 +1,8 @@
 +++
 title = "Et innblikk i bevissthetsfilosofi"
 date = "2022-04-27"
-tags = ["Exphil", "Bevissthet"]
-categories = ["Seminaroppgave"]
+tags = ["Philosophy", "Consciousness"]
+categories = ["Seminar assignment"]
 description = "Dette er en tekst jeg skrev i 2018 om ulike posisjoner i bevissthetsfilosofi."
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Can a Machine Understand Language?"
 date = "2022-04-27"
-tags = ["NLP", "Neuroscience", "AI"]
+tags = ["Neuroscience", "Artificial Intelligence", "Natural Language Processing"]
 categories = ["Seminar assignment"]
 description = "This is a text i wrote in 2021, discussing whether or not a NLP AI can understand language."
 +++

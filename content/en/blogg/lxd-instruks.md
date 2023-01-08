@@ -1,8 +1,8 @@
 +++
 title = "How to configure LXD to run locally"
 date = "2022-07-24"
-tags = ["Instruction", "Virtualization"]
-categories = ["Coding"]
+tags = ["Virtualization", "Server Administration", "Containerization"]
+categories = ["Instruction"]
 description = "An instruction on how to set up LXD locally for virtualization."
 +++
 

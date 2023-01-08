@@ -1,8 +1,8 @@
 +++
 title = "Nginx as reversed proxy in LXD"
 date = "2022-09-11"
-tags = ["Instruction"]
-categories = ["Coding"]
+tags = ["Server Administration", "Nginx", "Virtualization"]
+categories = ["Instruction"]
 description = "An instruction on how to rig Nginx as a proxy server in LXD."
 +++
 

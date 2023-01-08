@@ -1,8 +1,8 @@
 +++
 title = "Nextcloud, Snap og Nginx Reverse proxy"
 date = "2022-09-11"
-tags = ["Instruksjon"]
-categories = ["Koding"]
+tags = ["Sky-verting", "Server-administrering", "Nginx"]
+categories = ["Instruksjon"]
 description = "En instruks på hvordan du kan kjøre en Nextcloud snap bak en Nginx reverse proxy."
 +++
 
