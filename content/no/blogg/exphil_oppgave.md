@@ -1,5 +1,5 @@
 +++
-title = "Et innblikk i bevissthetsfilosofi"
+title = "Et Innblikk I Bevissthetsfilosofi"
 date = "2022-04-27"
 tags = ["Bevissthet", "Filosofi"]
 categories = ["Seminaroppgave"]
@@ -12,6 +12,7 @@ interaksjonsproblemet som oppstår ved hans filosofi.
 Jeg skal også introdusere flere forskjellige synspunkter som har oppstått som et svar på
 materialistisk sinnsfilosofi. I tillegg skal jeg diskutere forholdet mellom det å være bevisst
 innen monistiske synspunkter, og det å være bevisst innen dualistiske synspunkter.
+
 Aller først skal jeg kort ta for meg begrepene reduksjonisme og fysikalisme.
 Reduksjonisme er idéen om at alle teorier eller fenomener kan reduseres til en annen teori eller
 et annet fenomen. I dag handler det bevissthets-reduksjonistisk mest om å kunne redusere
@@ -21,6 +22,7 @@ Fysikalisme er en filosofisk posisjon som sier at bokstavelig talt alt er reduse
 fysisk. Mer sofistikert sier den også at alt kan være metafysisk implisert av det fysiske. Det
 sistnevnte innebærer at det er umulig at det kan finnes en verden det de fysiske forholdene og
 faktaene er som våre egne, men som ikke er tilfellet angående det mentale. (Hansen, 2018.)
+
 Nå som jeg har sagt litt reduksjonisme skal vi se litt på definisjonen av dualisme og
 materialisme. Først skal jeg gå igjennom definisjonen av dualisme som vi kjenner den i dag.
 Dualisme betyr essensielt «todelt» eller «tanken om det todelte», og tar hovedsakelig for seg
@@ -30,6 +32,7 @@ substansdualisme, som jeg skal komme mer inn på senere. (Calef, u.å)
 Mer presist vil dualisme bety en forståelse av bevissthet som en separat eksistens uavhengig
 av den materielle verden, der ingen av disse to enhetene er reduserbar til den andre. Dette tar
 utgangspunkt i både Descartes’ to-substansdualisme, og før han, Platons to-verdensdualisme.
+
 Platon mente at det var to verdener som eksisterte; idéenes verden og tingenes verden. I
 idéenes verden eksisterer bare idéer og tanker, utenfor tid og rom. Her finnes bl.a.
 matematikk, menneskets sjel og alle idéer om substansene i tingenes verden.
@@ -83,7 +86,9 @@ det er tre mennesker som krysser broen. Men når man kommer nærmere kan man inn
 bare var rester av noe treverk fra stormen dagen før. I slike tilfeller gir ikke sansenes evidens
 oss et godt nok grunnlag for sikker viten.
 Nå har vi snakket om res extensa, så nå går vi videre til res cogitans. Men hvordan kan man
-være sikker på at denne res cogitans faktisk eksisterer? Descartes hadde to måter å bevise
+være sikker på at denne res cogitans faktisk eksisterer? 
+
+Descartes hadde to måter å bevise
 dette på; Cogito-argumentet og gudsprinsippet.
 Cogito-argumentet tar utgangspunkt i den metodiske, radikale tvilen til Descartes. Han mente
 at man kan tvile på absolutt alt, selv sin egen eksistens. Men han merket at hvis han tvilte på
@@ -96,6 +101,7 @@ inkludert min egen eksistens. Siden Gud er fullkommen på alle vis, kan han ikke
 foruten eksistens. Dermed eksisterer han. I tillegg, siden han er fullkommen på alle vis, har
 han ikke noe ønske om å bedra oss. Dermed eksisterer jeg og opplever ikke bare illusjoner.
 (Strømholm, Bangu & Cahill, 2018, s.199)
+
 Nå som vi har sett på Descartes’ dualisme og hans substans-definisjoner, skal jeg nå forklare
 det største problemet som dukker opp ved filosofien hans; Descartes’ interaksjonsproblem.
 Descartes’ interaksjonsproblem tar for seg selve interaksjonen mellom det menneskelige
@@ -110,10 +116,7 @@ legger min bare hånd over en åpen flamme for lenge, trekkes hånden til meg. D
 strømmer smerten til området som ble berørt av flammen (Skirry, u.å).
 
 Descartes forklarte denne sammenhengen med en spesifikk del av hjernen, som ifølge
-Descartes var udelelig. Ifølge Descartes var denne hjernedelen eksklusiv for mennesker, siden
-
-
-dyr mangler en bevissthet som tilsvarer menneskets. Det som ble kalt konglekjertelen fungerte
+Descartes var udelelig. Ifølge Descartes var denne hjernedelen eksklusiv for mennesker, siden dyr mangler en bevissthet som tilsvarer menneskets. Det som ble kalt konglekjertelen fungerte
 som bindeleddet mellom sjelen og legemet, og kunne sende og motta signaler mellom dem.
 I senere tid har Descartes’ forklaring vist seg å være feil, og det som kjennes som epifysen i
 dag, er egentlig en kjertel som er hovedsakelig ansvarlig for å skille ut hormonet melanin i
@@ -134,6 +137,7 @@ med-individer. Hjernestrukturen er dermed et direkte resultat av naturlig utvalg
 hjernen som en enhet og samspillet mellom de forskjellige delene av den, er årsaken til vår
 bevissthet. Det finnes dermed ingen bevissthet å bekymre seg om, mener Daniel J. Dennett.
 (Weisberg, u.å)
+
 Dennett har bidratt til denne filosofien ved å utvikle det som kalles Multiple Drafts Model
 (MDM). Denne teorien går ut på at all mental aktivitet som oppstår i hjernen kjører i parallelle
 prosesser av fortolkning, som alle er under regelmessig revisjon. MDM tilsier at det ikke
@@ -156,6 +160,7 @@ biologiske individer. Det samme gjelder alle mentale tilstander hos mennesket, d
 eller andre imaginære legemer med tilsvarende bevissthet.
 Et eksempel på en funksjonalistisk tilnærming til bevissthet ble utviklet av Bernard Baars, og
 kalles Global Workspace Theory.
+
 Global Workspace Theory (GWT) er en teori som ser på hjernen som en slags tavle, hvilket
 fungerer som en global arbeidsplass for alle prosessene i hjernen. Ifølge GWT, konkurrerer
 ubevisste og bevisste mentale tilstander for å beholde «oppmerksomhetens lys». Det er i dette
@@ -163,6 +168,7 @@ ubevisste og bevisste mentale tilstander for å beholde «oppmerksomhetens lys»
 Det er her bevissthet opprettholdes, i slik kringkasting. Så ifølge denne teorien kan man si at
 bevissthet er den selve globale tilgangen til enkelte biter av informasjon i hjernen og
 nervesystemet. (Gennaro, u.å).
+
 Men en av kritikkene mot denne teorien er at den egentlig ikke adresserer bevissthetens
 «vanskelige problem», men heller de «lettere» fenomenene rundt den. Men her kan man gå
 enda dypere, hvilket Johan Fredrik Storm har gjort. Som nevroforsker, har han brukt de siste
@@ -177,26 +183,27 @@ dataprogram, siden alle mentale tilstander i teorien er funksjoner for menneskel
 vurderinger og tanker. (Levin, 2018 )
 Her regnes Alan Turing som oppfinner av den moderne tolkning av kunstig intelligens. Han
 utviklet et tanke-eksperiment for nettopp det sistnevnte; Turing-testen.
+
 Turing-testen er et tanke-eksperiment hvor en maskins evne til å tenke og kommunisere settes
 på prøve. Eksperimentet tar for seg to mennesker og én datamaskin, adskilt fra hverandre i tre
 rom, og det eneste de har til å kommunisere med hverandre er en datamaskin. Hvis
 menneskene ikke klarer å skille mellom maskin og menneske gjennom samtale med hver av
 dem, tilsier det at maskinen har menneskelig kognisjon. (Dictionary.com, 2012)
+
 Inspirert av dette tankeeksperimentet er «the chinese room»-tankeeksperimentet, skapt av
-John Searle. Dette tankeeksperimentet tar for seg en enslig person som ikke snakker kinesisk,
-
-
-innelåst i et rom. Mens han er i rommet tildeles han kort med kinesiske symboler inn gjennom
+John Searle. Dette tankeeksperimentet tar for seg en enslig person som ikke snakker kinesisk, innelåst i et rom. Mens han er i rommet tildeles han kort med kinesiske symboler inn gjennom
 et hull i veggen, hvilket han skal svare på med et tilsvarende kort. Det eneste han har for å
 bestemme hva som er riktig kort, er en instruks som viser hva han skal svare til hvert symbol.
 Denne personen forstår ikke kinesisk, og likevel klarer han å svare kinesisk inndata med riktig
 kinesisk utdata (Hauser, u.å).
+
 Dette argumentet har to hovedpunkter; hjernen er opphavet til sinnet og struktur erstatter ikke
 innhold. Målet ved dette argumentet er det Searle kaller «Strong AI», som står i kontrast med
 «Weak AI».
 «Strong AI» er ifølge Searle, et dataprogram som klarer å emulere menneskelig forståelse og
 mentale tilstander med en tilhørende intensjon. «Weak AI» vil si et dataprogram som bare
 simulerer menneskelig kognisjon, og egentlig ikke tenker og forstår. (Hauser, u.å)
+
 Men det finnes et motargument til funksjonalisme, hvilket er identitetsteori.
 Ifølge funksjonalisme, er det en direkte sammenheng mellom den neurale aktiviteten og selve
 bevissthetstilstanden. Identitetsteori bruker denne logikken, og motargumenterer for at hvis
@@ -216,14 +223,13 @@ egenskaper ved bevissthet. Dette argumentet om kvalia, skaper vanskeligheter for
 materialistisk-reduksjonistiske teorier, siden kvalia ikke anses for å være reduserbare. Dermed
 kan det ikke altså reduseres til et annet enten psykologisk eller nevrologisk fenomen (Kind,
 u.å).
-I tillegg fungerer også fraværende kvalia som et argument mot fysikalisme. Dette argumentet
+I tillegg fungerer også fraværende kvalia som et argument mot fysikalisme. 
+
+Dette argumentet
 ble først introdusert av Ned Block, og forklares best med hans tankeeksperiment om den
 menneskelignende roboten.
 La oss si at vi samler en mengde mennesker sammen i et stort nettverk. Disse menneskene
-kan bare kommunisere sammen med radiosignaler. Hver enkelt av dem spiller da en kausal
-
-
-rolle som et nevron i et neuralt nettverk, og fungerer som en gjenspeiling av det neurale
+kan bare kommunisere sammen med radiosignaler. Hver enkelt av dem spiller da en kausal rolle som et nevron i et neuralt nettverk, og fungerer som en gjenspeiling av det neurale
 nettverket i en menneskelig hjerne. Deretter ordner man dette nettverket slik at det er
 funksjonalistisk identisk med mennesket.
 Intuitivt, vil det være rart å tildele denne roboten kvalia. Det blir også rart å anta at denne
@@ -231,6 +237,7 @@ roboten har noen mental opplevelse i det hele tatt, for eksempel følelsen av sm
 Men hvis denne roboten klarer å operere identisk som et menneske, er dette beviset på at
 kvalia ikke inngår i en funksjonalistisk forklaring av bevissthet. Det betyr at vi kan ha
 funksjonell ekvivalens uten kvalitativ ekvivalens (Kind, u.å).
+
 Man vender tilbake til den velkjente frasen til Thomas Nagel; «What is it like to be a bat?». I
 hans bok med samme navn (side 435-450), tar han for seg problemet mennesket har med å
 forstå hvordan en flaggermus’ opplevelser er. Nagel mener at et menneske aldri noensinne
@@ -238,6 +245,7 @@ kommer til å forstå en flaggermus sine subjektive opplevelser og erfaringer. S
 opererte armene våre om til vinger, blindet oss selv, endret stemmebåndene, tilbrakte resten
 av livet vårt i en hule om dagen og i skogen om natten. Og hypotetisk sett, om det hadde vært
 mulig, ville vi fortsatt lært noe nytt den dagen vi ble en flaggermus. (Nagel, 1974)
+
 Dette er på rent grunnlag av at bevisstheten til noe eksisterende, hovedsakelig dyr og
 mennesker, men også muligens utenomjordiske, har et element av ren subjektivitet. Et
 element som er forskjellig for hvert individ, og aldri kan forstås av en annens bevissthet.
@@ -252,21 +260,21 @@ konstruert instans av et noe mer universalt konsept. Deres argument er at alle t
 fysiske, reduserbare verden, har en bevissthet, men at det er økende grader av bevissthet. For
 eksempel har insekter en høyere bevissthetsgrad enn steiner, og katter har høyere
 bevissthetsgrad enn insekter (Skrbina, u.å).
+
 En teori som støtter dette panpsykistiske synet kalles integrert informasjonsteori og ble
 utviklet av Gioliu Tononi. Han definerer hjernen som et system for distribusjon, lagring og
 behandling av informasjon. I prinsippet kan man anvende den samme definisjonen på
 hjernens minste reduserbare deler, nemlig atomet. Et atom kan defineres på samme måte, men
-har mye mindre sofistikert struktur enn hjernen.
-
-
-Tononi har da også opprettet en målbar enhet, phi, hvor alt som har en verdi av phi over null,
+har mye mindre sofistikert struktur enn hjernen. Tononi har da også opprettet en målbar enhet, phi, hvor alt som har en verdi av phi over null,
 har en viss form for bevissthet. (Tononi, 2012)
+
 Fra panpsykisme, går jeg nå over til å snakke om «zombie-argumentet».
 Innen bevissthetsfilosofi argumenteres det for at «zombier» eksisterer, på det enkle grunnlaget
 at det er tenkelig. En «zombie» betyr her en oppfunnet skapning, som fysisk og adferdsmessig
 er helt lik oss mennesker, men mangler bevissthet.
 David Chalmers har argumentert i favør av dette argumentet ved å referere til Ned Blocks’
 tankeeksperiment om den menneskelige-lignende roboten.
+
 La oss si at denne roboten ikke var en umulighet, og at man byttet ut nevronene i hjernen med
 små mennesker som snakket over radio, og den er fysikalsk identisk med et menneske. Ville
 denne roboten være bevisst? Intuitivt føles det riktig å svare nei, og ifølge Chalmers er dette i
