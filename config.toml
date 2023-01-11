@@ -1,8 +1,65 @@
 baseURL = "/"
-languageCode = "en-us"
+defaultContentLanguage = 'no'
 title = "Christian Engelsen"
 theme = "mero"
 disableKinds = ["taxonomyTerm"]
+
+enableEmoji = true
+enableGitInfo = true
+relativeURLs = true
+
+[languages]
+  [languages.no]
+    contentDir = 'content/no'
+    languageName = 'Norsk'
+    languageCode = "no-NB"
+    weight = 1
+
+[[languages.no.menu.main]]
+    name = "Hjem"
+    url = "/"
+    weight = 1
+[[languages.no.menu.main]]
+    name = "Blogg"
+    url = "/blogg"
+    weight = 2
+[[languages.no.menu.main]]
+    name = "Enheter"
+    url = "/hjemmerigg"
+    weight = 3
+[[languages.no.menu.main]]
+    name = "Taxa"
+    url = "/taxa"
+    weight = 4
+
+    [languages.no.params.introduction]
+      text = "Lidenskapelig bergenser med en interesse for teknologi, bevissthet og innovasjon."
+
+  [languages.en]
+    contentDir = 'content/en'
+    languageName = 'English'
+    languageCode = "en-GB"
+    weight = 2
+
+  [[languages.en.menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "Blog"
+    url = "/blogg"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "Devices"
+    url = "/hjemmerigg"
+    weight = 3  
+  [[languages.en.menu.main]]
+    name = "Taxa"
+    url = "/taxa"
+    weight = 4  
+    
+    [languages.en.params.introduction]
+      text = "Passionate bergenser with an interest in technology, consciousness and innovation."
 
 [module]
   [module.hugoVersion]
@@ -14,9 +71,6 @@ disableKinds = ["taxonomyTerm"]
   author = "Christian Kårbø Engelsen"
   description = "Hjemmeside"
   mainImage = "images/profil.png"
-
-[params.introduction]
-   text = "Lidenskapelig bergenser med en interesse for teknologi, bevissthet og innovasjon."
 
 [params.social]
   [[params.social.list]]

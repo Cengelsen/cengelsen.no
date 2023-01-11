@@ -1,8 +1,8 @@
 +++
 title = "Nginx som reversert proxy i LXD"
 date = "2022-09-11"
-tags = ["Instruksjon"]
-categories = ["Koding"]
+tags = ["Nginx", "Virtualisering", "Server-administrering"]
+categories = ["Instruksjon"]
 description = "En instruks på hvordan man kan rigge opp Nginx som en proxy-server i LXD."
 +++
 
@@ -24,7 +24,7 @@ som "kommuniserer" med hverandre for å dirigere nett-trafikken korrekt.
 ## Installere og konfigurere LXD
 
 Denne instruksen har som forutsetning at du har installert og konfigurert LXD på serveren din. Du 
-kan [følge instruksen min]({{< relref "blog/lxd-instruks" >}}) for å gjøre det.
+kan [følge instruksen min]({{< relref path="lxd-instruks.md" lang="no">}}) for å gjøre det.
 
 Når dette er gjort, så må du oppprette "enheter" for proxy-containeren. Utenfor proxy-containeren, må du kjøre:
 
