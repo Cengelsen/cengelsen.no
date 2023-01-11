@@ -1,350 +1,334 @@
 +++
-title = "Et innblikk i bevissthetsfilosofi"
+title = "A Short Insight Into the Philosophy of Mind"
 date = "2022-04-27"
 tags = ["Philosophy", "Consciousness"]
-categories = ["Seminar assignment"]
-description = "Dette er en tekst jeg skrev i 2018 om ulike posisjoner i bevissthetsfilosofi."
+categories = ["Seminar Assignment"]
+description = "This is a text I wrote in 2018 about different positions in philosophy of consciousness."
 +++
 
-I denne teksten skal jeg gjøre rede for definisjonene av dualisme og materialisme og hva
-begrepene innebærer. Deretter skal jeg gå videre inn på Descartes, hans dualisme og
-interaksjonsproblemet som oppstår ved hans filosofi.
-Jeg skal også introdusere flere forskjellige synspunkter som har oppstått som et svar på
-materialistisk sinnsfilosofi. I tillegg skal jeg diskutere forholdet mellom det å være bevisst
-innen monistiske synspunkter, og det å være bevisst innen dualistiske synspunkter.
-Aller først skal jeg kort ta for meg begrepene reduksjonisme og fysikalisme.
-Reduksjonisme er idéen om at alle teorier eller fenomener kan reduseres til en annen teori eller
-et annet fenomen. I dag handler det bevissthets-reduksjonistisk mest om å kunne redusere
-psykologiske og kognitive fenomener til fysiske fenomener, hvilket jeg skal gå mer i dybden
-på senere i teksten. (Ney, u.å)
-Fysikalisme er en filosofisk posisjon som sier at bokstavelig talt alt er reduserbart til noe
-fysisk. Mer sofistikert sier den også at alt kan være metafysisk implisert av det fysiske. Det
-sistnevnte innebærer at det er umulig at det kan finnes en verden det de fysiske forholdene og
-faktaene er som våre egne, men som ikke er tilfellet angående det mentale. (Hansen, 2018.)
-Nå som jeg har sagt litt reduksjonisme skal vi se litt på definisjonen av dualisme og
-materialisme. Først skal jeg gå igjennom definisjonen av dualisme som vi kjenner den i dag.
-Dualisme betyr essensielt «todelt» eller «tanken om det todelte», og tar hovedsakelig for seg
-idéen om at legeme og sinn er to forskjellige substanser. Innenfor filosofien har man flere
-versjoner av dualisme, som for eksempel Platons to-verdensdualisme og Descartes’ to-
-substansdualisme, som jeg skal komme mer inn på senere. (Calef, u.å)
-Mer presist vil dualisme bety en forståelse av bevissthet som en separat eksistens uavhengig
-av den materielle verden, der ingen av disse to enhetene er reduserbar til den andre. Dette tar
-utgangspunkt i både Descartes’ to-substansdualisme, og før han, Platons to-verdensdualisme.
-Platon mente at det var to verdener som eksisterte; idéenes verden og tingenes verden. I
-idéenes verden eksisterer bare idéer og tanker, utenfor tid og rom. Her finnes bl.a.
-matematikk, menneskets sjel og alle idéer om substansene i tingenes verden.
-I tingenes verden finnes alle fysiske substanser, med sine kvantitative og kvalitative
-egenskaper. Her finnes bl.a. menneskekroppen, sand og stein, planter og dyr, osv.
-Platons dualisme tilsier at sjelen, altså bevisstheten, eksisterer i idéenes verden, utenom
-legemet, altså kroppen. At før vi ble født visste sjelen alt, og alle idéer var åpne og forståelige
-for sjelen. Det er først når sjelen ble bundet til legemet at all innsikt og forståelse av idéene
-forsvant fra sjelen.
+In this text I will explain the definitions of dualism and materialism and what the terms imply. 
+I will then move on to Descartes, his dualism and the interaction problem arising from his philosophy.
+I will also introduce several different points of view that have arisen in response to materialist philosophy of mind. 
+In addition, I will discuss the relationship between being conscious within monistic viewpoints, and being conscious within dualistic viewpoints.
+
+First of all, I shall briefly consider the terms reductionism and physicalism.
+Reductionism is the idea that all theories or phenomena can be reduced to another theory or another phenomenon. 
+Today, consciousness-reductionism is mostly about being able to reduce psychological and cognitive phenomena to physical phenomena, which I will go into in more depth later on in the text. (Ney, n.y)
+Physicalism is a philosophical position that says that literally everything is reducible to something physical. 
+More sophisticatedly, it also says that everything can be metaphysically implied by the physical. 
+The latter implies that it is impossible that there can be a world where the physical conditions and the facts are like our own, but which is not the case regarding the mental. (Hansen, 2018.)
+
+Now that I have said a bit about reductionism, let's look a bit at the definition of dualism and materialism. 
+First, I will go through the definition of dualism as we know it today.
+Dualism essentially means "two-part" or "the idea of the two-part", and mainly deals with the idea that body and mind are two different substances. 
+Within philosophy there are several versions of dualism, such as Plato's two-world dualism and Descartes' two-substance dualism, which I will get into more later. (Calef, n.y)
+More precisely, dualism would mean an understanding of consciousness as a separate existence independently of the material world, where neither of these two entities is reducible to the other. 
+This explanation draws from Descartes' two-substance dualism, and before him, Plato's two-world dualism.
+
+Plato believed that there were two worlds that existed; the world of ideas and the world of things. 
+In the world of ideas only ideas and thoughts exist, outside of time and space. 
+Here there are e.g mathematics, the human soul and all ideas about the substances in the world of things.
+In the world of things, all physical substances exist, with their quantitative and qualitative properties. 
+Here there are e.g. the human body, sand and stone, plants and animals, etc.
+Plato's dualism implies that the soul, as in consciousness, exists in the world of ideas, outside of the substance, as in the human body. 
+That before we were born the soul knew everything, and all ideas were open and understandable for the soul. 
+It is only when the soul was bound to the body that all insight and understanding of the ideas disappeared from the soul.
+
+This is what Descartes took inspiration from when he developed his own approach dualism and the distinction between body and soul. 
+Descartes' concept of substance says that the mind, as in the soul, and matter, as in the body, are two different substances. Metaphysically, this creates an interaction problem, which I will get into later in the text.
+Like Plato, Descartes has his own two-world model, where the mind is separate from the body.
+The two-world model of Descartes distinguishes between the thinking, res cogitans and the extended, res extensa. 
+He also exercises his methodical doubt on the very existence of both substances, which I will explain in more detail later. (Strømholm, Bangu & Cahill, 2018, p.196)
+
+Now that we've looked at dualism, let's look a bit at its counterpart in philosophy of mind; materialism.
+Materialism is a monistic school of philosophy, where monism means "one" or "the thought of the one". 
+All substances are then considered to be reducible to each other. 
+It is the idea that there is one world, namely the physical, and that all processes, phenomena and manifestations can is explained as a product of interactions between matter. 
+Within a purely materialistic framework of understanding one thinks that all science can be explained as the result of changes, for example attraction and repulsion within the mechanism between the smallest constituents.
+Based on materialism, it is then believed that all brain activity is objectively measurable and quantifiable, and that a mapping of all brain activity is sufficient to explain what consciousness is. (Alnes, 2017)
+
+Now that we have looked at both dualism and materialism, I will now go one step further and consider Descartes' dualism and his problem of interaction.
+Descartes had a two-substance dualism where he divided the world into two, the extended, which he called *Res Extensa*, and the thinking, which he called *Res Cogitans*.
+Res extensa had a physical form with quantitative properties that were causally determined. 
+While res cogitans had a thinking quality that was not causally determined and lacked material properties. 
+Yet another distinction between them is that the extended exists in time and space, while the
+thinking does not.
+Regarding res extensa, Descartes believed that the qualitative characteristics such as colour, smell,
+taste, etc. were not sufficient enough to prove that a material substance existed. This is
+because he meant the sense impressions, or the interpretations of them, can deceive us into believing something that
+is not the case. According to Descartes, these dimensions of properties are purely subjective
+and non-measurable. Therefore, they are also considered secondary qualities. (Strømholm, Bangu &
 
 
-Det er dette Descartes har tatt inspirasjon fra når han har utarbeidet sin egen tilnærming til
-dualisme og skillet mellom legeme og sjel. Descartes’ substansbegrep sier at sinnet, altså
-sjelen, og materiet, altså legemet, er to forskjellige substanser. Metafysisk skaper dette et
-interaksjonsproblem, som jeg skal komme inn på senere i teksten.
-Lik som Platon, har Descartes sin egen toverdensmodell, hvor sinnet er adskilt fra legemet.
-To-verdensmodellen til Descartes skiller mellom det tenkende, res cogitans og det utstrakte,
-res extensa. Han utøver også sin metodiske tvil på selve eksistensen av begge substanser,
-hvilket jeg skal forklare nærmere senere. (Strømholm, Bangu & Cahill, 2018 , s.196)
+Cahill, 2018, p.196)
+For example, if one sees three humanoid figures on a bridge off in the horizon, one assumes that
+there are three people crossing the bridge. But when you get closer you can realize that it
+were only remnants of some wood from the storm the day before. In such cases, the senses do not provide evidence
+us a good enough basis for certain knowledge.
+Now we have talked about res extensa, so now we move on to res cogitans. But how can one
+be sure that this res cogitans actually exists? 
 
-Nå som vi har sett på dualisme, skal vi se litt på dens motpart innen sinnsfilosofi;
-materialisme.
-Materialisme er en monistisk filosofi-retning, hvor monisme betyr «én» eller «tanken om det
-ene». Man anser da alle substanser som reduserbare til hverandre. Det er tanken om at det
-finnes én verden, nemlig den fysiske, og at alle prosesser, fenomener og manifestasjoner kan
-forklares som et produkt av interaksjoner mellom materie. Innen en rent materialistisk
-forståelsesramme tenker man at all vitenskap kan forklares som resultat av forandringer, for
-eksempel tiltrekning og frastøting innen mekanismen mellom de minste bestanddelene.
-Med utgangspunkt i materialisme, menes det da at all hjerneaktivitet er objektivt målbar og
-kvantifiserbar, og at en kartlegging av all hjerneaktivitet er tilstrekkelig til å forklare hva
-bevissthet er. (Alnes, 2017)
+Descartes had two ways of proving
+this on; The Cogito Argument and the God Principle.
+The cogito argument is based on the methodical, radical doubt of Descartes. He meant
+that one can doubt absolutely everything, even one's own existence. But he noticed that if he doubted
+the idea of something, the very doubt of something was an idea that could be doubted. But if one tries to
+disprove one's own doubt, by doubting it, one already proves what one was trying to disprove.
+Thus he arrived at the famous expression; Cogito, ergo Sum. I think, therefore I am.
+Starting from the Cogito argument, Descartes first addressed the fact that God
+exists and that God, by definition, is perfect in every way. God is also the source of everything,
+including my own existence. Since God is perfect in every way, he himself cannot be
+besides existence. Thus he exists. In addition, since he is perfect in every way, has
+He has no desire to deceive us. Thus I exist and do not experience mere illusions. (Strømholm, Bangu & Cahill, 2018, p.199)
 
-Nå som vi har sett på både dualisme og materialisme, skal jeg nå gå ett skritt videre og ta for
-meg Descartes’ dualisme og interaksjonsproblemet hans.
-Descartes hadde en to-substansdualisme hvor han delte verden inn i to, det utstrakte som han
-kalte Res Extensa, og det tenkende som han kalte Res Cogitans.
-Res extensa hadde en fysisk form med kvantitative egenskaper som var kausalt bestemt. Mens
-res cogitans hadde en tenkende egenskap som ikke var kausalt bestemt og manglet materielle
-egenskaper. Enda et skille mellom dem er at det utstrakte eksisterer i tid og rom, mens det
-tenkende ikke gjør det.
-Når det gjelder res extensa, mente Descartes at de kvalitative egenskapene som farge, lukt,
-smak, osv. ikke var tilstrekkelig nok for å bevise at en materiell substans eksisterte. Dette er
-fordi han mente sanseinntrykkene, eller tolkningene av dem, kan bedra oss til å tro noe som
-ikke er tilfellet. Ifølge Descartes, er disse dimensjonene av egenskaper utelukkende subjektive
-og ikke-målbare. Derfor anses de også som sekundære kvaliteter. (Strømholm, Bangu &
+Now that we have looked at Descartes' dualism and his definitions of substance, I will now explain
+the biggest problem that arises with his philosophy; Descartes' interaction problem.
+Descartes' interaction problem deals with the actual interaction between the human
+the body, res extensa, and the soul, res cogitans. According to Descartes, the body is a materialist
+substance that has physical extension with quantitative properties in time and space, while the soul
+exists apart from time, space and extension, but has a thinking quality. Since there are two of them
+different substances, they are not reducible to each other, and thus cannot interact
+or influence each other in any way. Nevertheless, one can witness for oneself that there is a kind of cause-
+effect between them. That when I have a thought to write something, and the will wants it, the hand picks up the pencil, presses it down against the sheet and writes the words on the paper. Or if I
+place my bare hand over an open flame for too long, the hand is drawn to me. Then
+flows the pain to the area that was touched by the flame (Skirry, n.y).
 
+Descartes explained this connection with a specific part of the brain, which according to
+Descartes was indivisible. According to Descartes, this part of the brain was exclusive to humans, since animals lack a consciousness equivalent to that of humans. What was called the pineal gland was working
+as the link between the soul and the body, and could send and receive signals between them.
+In recent times, Descartes' explanation has been shown to be wrong, and what is known as the epiphysis i
+day, is actually a gland that is mainly responsible for secreting the hormone melanin i
+the body. (Jansen, 2018)
 
-Cahill, 2018, s.196)
-For eksempel hvis man ser tre humanoide figurer på en bro borte i horisonten, antar man at
-det er tre mennesker som krysser broen. Men når man kommer nærmere kan man innse at det
-bare var rester av noe treverk fra stormen dagen før. I slike tilfeller gir ikke sansenes evidens
-oss et godt nok grunnlag for sikker viten.
-Nå har vi snakket om res extensa, så nå går vi videre til res cogitans. Men hvordan kan man
-være sikker på at denne res cogitans faktisk eksisterer? Descartes hadde to måter å bevise
-dette på; Cogito-argumentet og gudsprinsippet.
-Cogito-argumentet tar utgangspunkt i den metodiske, radikale tvilen til Descartes. Han mente
-at man kan tvile på absolutt alt, selv sin egen eksistens. Men han merket at hvis han tvilte på
-idéen om noe, var selve tvilen om noe en idé som kunne tviles på. Men hvis man prøver å
-motbevise sin egen tvil, ved å tvile på den, beviser man allerede hva man prøvde å motbevise.
-Dermed kom han fram til det berømte uttrykket; Cogito, ergo Sum. Jeg tenker, derfor er jeg.
-Med utgangspunkt i Cogito-argumentet tok Descartes først for seg det faktum at Gud
-eksisterer og at Gud, per definisjon, er fullkommen på alle vis. Gud er også opphavet til alt,
-inkludert min egen eksistens. Siden Gud er fullkommen på alle vis, kan han ikke selv være
-foruten eksistens. Dermed eksisterer han. I tillegg, siden han er fullkommen på alle vis, har
-han ikke noe ønske om å bedra oss. Dermed eksisterer jeg og opplever ikke bare illusjoner.
-(Strømholm, Bangu & Cahill, 2018, s.199)
-Nå som vi har sett på Descartes’ dualisme og hans substans-definisjoner, skal jeg nå forklare
-det største problemet som dukker opp ved filosofien hans; Descartes’ interaksjonsproblem.
-Descartes’ interaksjonsproblem tar for seg selve interaksjonen mellom det menneskelige
-legemet, res extensa, og sjelen, res cogitans. Ifølge Descartes er legemet en materialistisk
-substans som har fysisk ekstensjon med kvantitative egenskaper i tid og rom, mens sjelen
-eksisterer foruten tid, rom og ekstensjon, men har en tenkende egenskap. Siden de er to
-forskjellige substanser, er de ikke reduserbare til hverandre, og kan dermed ikke interagere
-eller påvirke hverandre på noe vis. Likevel er man jo selv vitne til at det er en slags årsak-
-virkning mellom dem. At når jeg har en tanke om å skrive noe, og viljen ønsker det, løfter
-hånden opp blyanten, presser den ned mot arket og skriver ordene på papiret. Eller hvis jeg
-legger min bare hånd over en åpen flamme for lenge, trekkes hånden til meg. Deretter
-strømmer smerten til området som ble berørt av flammen (Skirry, u.å).
+So far I have gone through dualism, materialism and Descartes' interaction problem. As
+we see there are two very different views of what consciousness is. Finally, I will deal with several
+different philosophical approaches to the problem of consciousness. I will also discuss
+the relationship between what it is to be conscious for each side of them. And to begin with shall
+I deal with eliminative materialism.
 
-Descartes forklarte denne sammenhengen med en spesifikk del av hjernen, som ifølge
-Descartes var udelelig. Ifølge Descartes var denne hjernedelen eksklusiv for mennesker, siden
+Eliminative materialism is the idea that there is no consciousness that needs to be resolved.
+Eliminativists believe that experience and experience do not correspond to consciousness, and that consciousness only
+is a philosophical construct. They believe that consciousness is a stream of perception, experiences,
+assessments and choices. In his view, consciousness is a by-product of Darwinism. That those who
+adapted best to their own environment were those who developed a higher sense of consciousness than their own
+co-individuals. The brain structure is thus a direct result of natural selection, and that the whole
+the brain as a unit and the interaction between its various parts is the cause of our
+awareness. There is therefore no awareness to worry about, says Daniel J. Dennett.
+(Weisberg, n.y)
 
+Dennett has contributed to this philosophy by developing what is called the Multiple Drafts Model
+(MDM). This theory assumes that all mental activity that occurs in the brain runs in parallel
+processes of interpretation, all of which are under regular audit. MDM indicates that it does not
+there are some internal spectators who are ourselves, but that consciousness is a kind of narrative construction
+which develops over time (Gennaro, n.y).
+Dennett is also a clear opponent of the clear distinction that is often drawn between conscious and
+unconscious states. Something that Dennett is also opposed to is the idea of qualia, as I shall
+go into a little more detail later.
 
-dyr mangler en bevissthet som tilsvarer menneskets. Det som ble kalt konglekjertelen fungerte
-som bindeleddet mellom sjelen og legemet, og kunne sende og motta signaler mellom dem.
-I senere tid har Descartes’ forklaring vist seg å være feil, og det som kjennes som epifysen i
-dag, er egentlig en kjertel som er hovedsakelig ansvarlig for å skille ut hormonet melanin i
-kroppen. (Jansen, 2018)
-
-Til nå har jeg gått igjennom dualisme, materialisme og Descartes’ interaksjonsproblem. Som
-vi ser er det to veldig forskjellige syn på hva bevissthet er. Til slutt skal jeg ta for meg flere
-forskjellige filosofiske tilnærminger til problemet om bevissthet. Jeg skal også diskutere
-forholdet mellom hva det er å være bevisst for hver side av dem. Og til å begynne med skal
-jeg ta for meg eliminativ materialisme.
-
-Eliminativ materialisme er idéen om at det ikke finnes noen bevissthet som trenger å løses.
-Eliminativister mener at erfaring og opplevelse ikke tilsvarer bevissthet, og at bevissthet bare
-er en filosofisk konstruksjon. De mener at bevisstheten er en strøm av oppfattelse, erfaringer,
-vurderinger og valg. I hans oppfatning, er bevissthet et bi-produkt av darwinisme. At de som
-tilpasset seg best til sitt eget miljø, var de som utviklet en høyere sans for bevissthet enn sine
-med-individer. Hjernestrukturen er dermed et direkte resultat av naturlig utvalg, og at hele
-hjernen som en enhet og samspillet mellom de forskjellige delene av den, er årsaken til vår
-bevissthet. Det finnes dermed ingen bevissthet å bekymre seg om, mener Daniel J. Dennett.
-(Weisberg, u.å)
-Dennett har bidratt til denne filosofien ved å utvikle det som kalles Multiple Drafts Model
-(MDM). Denne teorien går ut på at all mental aktivitet som oppstår i hjernen kjører i parallelle
-prosesser av fortolkning, som alle er under regelmessig revisjon. MDM tilsier at det ikke
-finnes noen indre tilskuer som er oss selv, men at bevissthet er en slags forteller-konstruksjon
-som utvikles over tid (Gennaro, u.å).
-Dennett er også en tydelig motstander det tydelige skille som ofte trekkes mellom bevisste og
-ubevisste tilstander. Noe som Dennett også er motstander av, er idéen om kvalia, som jeg skal
-gå litt nærmere innpå senere.
-
-En lignende retning som tar utgangspunkt i menneskets mentale tilstander, fokuserer mer på
-hva disse tilstandene gjør, enn hva de er, og kalles funksjonalisme. Det som gjør en av disse
-mentale tilstandene, for eksempel glede, smerte, tristhet og lykke, til en tanke, er hvilken rolle
-de spiller i det kognitive systemet. (Levin, 2018)
-Funksjonalisme står i kontrast til identitetsteori, hvilket jeg kommer inn på senere.
+A similar direction that emphasises more the human mental states, focuses more on
+what these states do, rather than what they are, and is called functionalism. What makes one of these
+the mental states, such as joy, pain, sadness and happiness, of a thought, is what role
+they play in the cognitive system. (Levin, 2018)
+Functionalism contrasts with identity theory, which I will get into later.
 
 
-Funksjonalisme mener at, selv om det er det som kalles C-fibrene i hjernen som utløser en
-mental tilstand av smerte, er det andre ting som utløser den samme tilstanden hos andre
-biologiske individer. Det samme gjelder alle mentale tilstander hos mennesket, datamaskiner,
-eller andre imaginære legemer med tilsvarende bevissthet.
-Et eksempel på en funksjonalistisk tilnærming til bevissthet ble utviklet av Bernard Baars, og
-kalles Global Workspace Theory.
-Global Workspace Theory (GWT) er en teori som ser på hjernen som en slags tavle, hvilket
-fungerer som en global arbeidsplass for alle prosessene i hjernen. Ifølge GWT, konkurrerer
-ubevisste og bevisste mentale tilstander for å beholde «oppmerksomhetens lys». Det er i dette
-«oppmerksomhetens lys» at informasjon blir kringkastet globalt til alle prosesser i hjernen.
-Det er her bevissthet opprettholdes, i slik kringkasting. Så ifølge denne teorien kan man si at
-bevissthet er den selve globale tilgangen til enkelte biter av informasjon i hjernen og
-nervesystemet. (Gennaro, u.å).
-Men en av kritikkene mot denne teorien er at den egentlig ikke adresserer bevissthetens
-«vanskelige problem», men heller de «lettere» fenomenene rundt den. Men her kan man gå
-enda dypere, hvilket Johan Fredrik Storm har gjort. Som nevroforsker, har han brukt de siste
-40 årene på å kartlegge hvilken effekt hvert enkelt molekyl har på resten av det kognitive
-nettverket.
-Storm sier selv i et intervju med Morgenbladet, at man kan endre én enkelt aminosyre i én
-enkelt celle, og allerede se en forandring i adferd hos individet. (Time, 2017 )
+Functionalism believes that, although it is what are called the C fibers in the brain that trigger a
+mental state of pain, there are other things that trigger the same state in others
+biological individuals. The same applies to all mental states in humans, computers,
+or other imaginary bodies with corresponding consciousness.
+An example of a functionalist approach to consciousness was developed by Bernard Baars, and
+is called Global Workspace Theory.
 
-Her kommer vi inn på maskinfunksjonalisme, som tar utgangspunkt i vanlig funksjonalisme.
-Her menes det også man kan gjenskape eller etterligne menneskelig bevissthet i et
-dataprogram, siden alle mentale tilstander i teorien er funksjoner for menneskelig adferd,
-vurderinger og tanker. (Levin, 2018 )
-Her regnes Alan Turing som oppfinner av den moderne tolkning av kunstig intelligens. Han
-utviklet et tanke-eksperiment for nettopp det sistnevnte; Turing-testen.
-Turing-testen er et tanke-eksperiment hvor en maskins evne til å tenke og kommunisere settes
-på prøve. Eksperimentet tar for seg to mennesker og én datamaskin, adskilt fra hverandre i tre
-rom, og det eneste de har til å kommunisere med hverandre er en datamaskin. Hvis
-menneskene ikke klarer å skille mellom maskin og menneske gjennom samtale med hver av
-dem, tilsier det at maskinen har menneskelig kognisjon. (Dictionary.com, 2012)
-Inspirert av dette tankeeksperimentet er «the chinese room»-tankeeksperimentet, skapt av
-John Searle. Dette tankeeksperimentet tar for seg en enslig person som ikke snakker kinesisk,
+Global Workspace Theory (GWT) is a theory that sees the brain as a kind of blackboard, which
+acts as a global workplace for all processes in the brain. According to GWT, competing
+unconscious and conscious mental states to keep the "light of attention". It is in this
+"the light of attention" that information is broadcast globally to all processes in the brain.
+This is where awareness is maintained, in such broadcasting. So according to this theory it can be said that
+consciousness is the actual global access to certain bits of information in the brain and
+the nervous system. (Gennaro, n.y).
+
+But one of the criticisms against this theory is that it does not really address that of consciousness
+"difficult problem", but rather the "easier" phenomena surrounding it. But here you can go
+even deeper, which Johan Fredrik Storm has done. As a neuroscientist, he has used the latest
+40 years of mapping the effect each individual molecule has on the rest of the cognitive
+the network.
+Storm himself says in an interview with Morgenbladet, that you can change a single amino acid in one
+single cell, and already see a change in the behavior of the individual. (Time, 2017)
+
+Which takes us to machine functionalism, which is based on ordinary functionalism.
+Here it is also meant that one can recreate or imitate human consciousness in a
+computer program, since all mental states are, in theory, functions of human behavior,
+assessments and thoughts. (Levin, 2018)
+Here, Alan Turing is considered the inventor of the modern interpretation of artificial intelligence. He
+developed a thought experiment for precisely the latter; The Turing Test.
+
+The Turing test is a thought experiment where a machine's ability to think and communicate is tested
+on trial. The experiment deals with two people and one computer, separated from each other by three
+room, and the only thing they have to communicate with each other is a computer. If
+humans are unable to distinguish between machine and human through conversation with each
+them, it implies that the machine has human cognition. (Dictionary.com, 2012)
+
+Inspired by this thought experiment is "the chinese room" thought experiment, created by
+John Searle. This thought experiment involves a single person who does not speak Chinese, locked in a room. While in the room, he is dealt cards with Chinese symbols on them
+a hole in the wall, to which he must answer with a corresponding card. The only thing he has to
+determine which is the correct card, is an instruction that shows what he should answer to each symbol.
+This person does not understand Chinese, and yet he manages to answer Chinese input correctly
+Chinese output (Hauser, n.y).
+
+This argument has two main points; the brain is the origin of the mind and structure does not replace
+contents. The target of this argument is what Searle calls "Strong AI", which it contrasts with
+"Weak AI".
+According to Searle, "Strong AI" is a computer program that is able to emulate human understanding and
+mental states with an associated intention. "Weak AI" means a computer program that only
+simulates human cognition, and does not really think and understand. (Hauser, n.y)
+But there is a counterargument to functionalism, which is identity theory.
+
+According to functionalism, there is a direct relationship between the neural activity and the very state of consciousness. Identity theory uses this logic, counter-arguing that if
+you removed the part of the brain that perceives pain in the body, and you influence it
+the brain after it is removed, it will still cause the body to feel pain, even though it does not
+is in contact with the brain. In the same vein, the theory also suggests that the body would not know either
+pain if it did not have the pain center in the brain (Khan, 2017).
+
+Now that we have looked at the monistic-materialist views of consciousness, we will now look at
+what it is to be conscious on the opposite side. Here I will talk about quality and finally;
+panpsychism.
+
+Qualia, or Qualia, are seen as the qualitative characteristics of our own experiences
+experiences. That is to say, feeling the taste of food, hearing music and feeling the wind
+hair has its own dimension of experience that exists as much as other reducibles
+properties of consciousness. This argument about qualia creates difficulties for
+materialist-reductionist theories, since qualia are not considered to be reducible. Thus it
+cannot therefore be reduced to another either psychological or neurological phenomenon (Kind,
+n.y).
+In addition, absent qualia also serves as an argument against physicalism. 
+
+This argument
+was first introduced by Ned Block, and is best explained by his thought experiment on it
+the humanoid robot.
+Let's say we bring a bunch of people together in a big network. These people
+can only communicate together with radio signals. Each one of them then plays a causal role as a neuron in a neural network, and functions as a reflection of the neural
+the network in a human brain. This network is then arranged so that it is
+functionally identical to man.
+Intuitively, it would be strange to assign this robot qualia. It will also be strange to assume that this one
+the robot has any mental experience at all, such as the feeling of pain or pleasure.
+But if this robot manages to operate identically to a human, this is proof that
+Qualia does not form part of a functionalist explanation of consciousness. That means we can have
+functional equivalence without qualitative equivalence (Kind, n.y).
+
+One returns to the well-known phrase of Thomas Nagel; "What is it like to be a bat?". IN
+his book of the same name (pages 435-450), he deals with the problem man has with
+understand what a bat's experiences are like. Nagel believes that a human never ever
+comes to understand a bat's subjective experiences and experiences. Not even if we
+operated our arms into wings, blinded ourselves, changed our vocal cords, spent the rest
+of our life in a cave by day and in the forest by night. And hypothetically, if it had been
+possible, we would still learn something new the day we became a bat. (Nagel, 1974)
+
+This is purely on the basis that the consciousness of something existing, mainly animals and
+humans, but also possibly extraterrestrials, has an element of pure subjectivity. One
+element that is different for each individual, and can never be understood by another's consciousness.
+The same principle also applies to other people. Although we took over another person
+their life and lived like them, we would never understand what it is like to be that person.
+
+Now that I have talked about qualia, I will now talk about panpsychism.
+Panpsychism is the philosophy that everything has some form of consciousness or something resembling consciousness. In
+in this case, most panpsychists would refer to "everything" as literally every part
+of each and every substance. Panpsychists see the human consciousness as a unique, well
+constructed instance of a somewhat more universal concept. Their argument is that all things in it
+physical, reducible world, has a consciousness, but that there are increasing degrees of consciousness. For example, insects have a higher degree of consciousness than rocks, and cats have a higher one
+degree of consciousness than insects (Skrbina, u.to).
+
+A theory that supports this panpsychic view is called integrated information theory and became
+developed by Gioliu Tononi. He defines the brain as a system for distribution, storage and
+processing of information. In principle, the same definition can be applied to
+the brain's smallest reducible parts, namely the atom. An atom can be defined in the same way, but
+has a much less sophisticated structure than the brain.
 
 
-innelåst i et rom. Mens han er i rommet tildeles han kort med kinesiske symboler inn gjennom
-et hull i veggen, hvilket han skal svare på med et tilsvarende kort. Det eneste han har for å
-bestemme hva som er riktig kort, er en instruks som viser hva han skal svare til hvert symbol.
-Denne personen forstår ikke kinesisk, og likevel klarer han å svare kinesisk inndata med riktig
-kinesisk utdata (Hauser, u.å).
-Dette argumentet har to hovedpunkter; hjernen er opphavet til sinnet og struktur erstatter ikke
-innhold. Målet ved dette argumentet er det Searle kaller «Strong AI», som står i kontrast med
-«Weak AI».
-«Strong AI» er ifølge Searle, et dataprogram som klarer å emulere menneskelig forståelse og
-mentale tilstander med en tilhørende intensjon. «Weak AI» vil si et dataprogram som bare
-simulerer menneskelig kognisjon, og egentlig ikke tenker og forstår. (Hauser, u.å)
-Men det finnes et motargument til funksjonalisme, hvilket er identitetsteori.
-Ifølge funksjonalisme, er det en direkte sammenheng mellom den neurale aktiviteten og selve
-bevissthetstilstanden. Identitetsteori bruker denne logikken, og motargumenterer for at hvis
-man fjernet den delen av hjernen som oppfatter smerte i kroppen, og man påvirker den
-hjernen etter at den er fjernet, vil den likevel få kroppen til å kjenne smerte, selv om den ikke
-er i kontakt med hjernen. I samme bane, tilsier teorien også at kroppen heller ikke ville kjent
-smerte hvis den ikke hadde smertesenteret i hjernen (Khan, 2017).
+Tononi has then also created a measurable unit, phi, where everything that has a value of phi above zero,
+have some form of consciousness. (Tononi, 2012)
+From panpsychism, I now turn to talk about the "zombie argument".
+Within philosophy of consciousness, it is argued that "zombies" exist, on the simple basis
+that it is conceivable. A "zombie" here means an invented creature, both physically and behaviorally
+is exactly like us humans, but lacks consciousness.
+David Chalmers has argued in favor of this argument by referring to Ned Blocks'
+thought experiment about the human-like robot.
 
-Nå som vi har sett på monistisk-materialistiske synsvinklene for bevissthet, skal vi nå se på
-hva det er å være bevisst på motsatt side. Her skal jeg snakke om kvalia og til slutt;
-panpsykisme.
+Let's say that this robot was not an impossibility, and that the neurons in the brain were replaced by small people who spoke over the radio, and it is physically identical to a human. Would
+this robot be conscious? Intuitively, it feels right to answer no, and according to Chalmers, this is in
+itself an indication that it is not inconceivable that zombies exist.
+According to Tononi, one can measure the consciousness of any human being with the phi value. The higher
+the phi value you have, the more conscious you are. If a significant difference is found
+between supposed automatons and conscious humans, it also proves that dualism is a reality.
+If the existence of zombies is a reality, it would imply that consciousness is not a product of pure
+physicalism. It also implies that some form of dualism is explanatory correct
+regarding the existence of consciousness. (Kirk, 2015).
 
-Kvalia, eller Qualia, sees på som de kvalitative egenskapene ved våre egne opplevde
-erfaringer. Det vil si at det å kjenne smaken på mat, det å høre musikk og å kjenne vinden i
-håret har en helt egen opplevelsesdimensjon som eksisterer like mye som andre reduserbare
-egenskaper ved bevissthet. Dette argumentet om kvalia, skaper vanskeligheter for
-materialistisk-reduksjonistiske teorier, siden kvalia ikke anses for å være reduserbare. Dermed
-kan det ikke altså reduseres til et annet enten psykologisk eller nevrologisk fenomen (Kind,
-u.å).
-I tillegg fungerer også fraværende kvalia som et argument mot fysikalisme. Dette argumentet
-ble først introdusert av Ned Block, og forklares best med hans tankeeksperiment om den
-menneskelignende roboten.
-La oss si at vi samler en mengde mennesker sammen i et stort nettverk. Disse menneskene
-kan bare kommunisere sammen med radiosignaler. Hver enkelt av dem spiller da en kausal
-
-
-rolle som et nevron i et neuralt nettverk, og fungerer som en gjenspeiling av det neurale
-nettverket i en menneskelig hjerne. Deretter ordner man dette nettverket slik at det er
-funksjonalistisk identisk med mennesket.
-Intuitivt, vil det være rart å tildele denne roboten kvalia. Det blir også rart å anta at denne
-roboten har noen mental opplevelse i det hele tatt, for eksempel følelsen av smerte eller glede.
-Men hvis denne roboten klarer å operere identisk som et menneske, er dette beviset på at
-kvalia ikke inngår i en funksjonalistisk forklaring av bevissthet. Det betyr at vi kan ha
-funksjonell ekvivalens uten kvalitativ ekvivalens (Kind, u.å).
-Man vender tilbake til den velkjente frasen til Thomas Nagel; «What is it like to be a bat?». I
-hans bok med samme navn (side 435-450), tar han for seg problemet mennesket har med å
-forstå hvordan en flaggermus’ opplevelser er. Nagel mener at et menneske aldri noensinne
-kommer til å forstå en flaggermus sine subjektive opplevelser og erfaringer. Selv ikke om vi
-opererte armene våre om til vinger, blindet oss selv, endret stemmebåndene, tilbrakte resten
-av livet vårt i en hule om dagen og i skogen om natten. Og hypotetisk sett, om det hadde vært
-mulig, ville vi fortsatt lært noe nytt den dagen vi ble en flaggermus. (Nagel, 1974)
-Dette er på rent grunnlag av at bevisstheten til noe eksisterende, hovedsakelig dyr og
-mennesker, men også muligens utenomjordiske, har et element av ren subjektivitet. Et
-element som er forskjellig for hvert individ, og aldri kan forstås av en annens bevissthet.
-Det samme prinsippet gjelder også for andre mennesker. Selv om vi tok over en annen person
-sitt liv og levde som dem, ville vi aldri forstått hvordan det er å være den personen.
-
-Nå som jeg har snakket om kvalia, skal jeg nå snakke om panpsykisme.
-Panpsykisme er filosofien om at alt har en form for bevissthet eller noe bevissthetslignende. I
-dette tilfellet, vil de fleste panpsykister referere til «alt» som bokstavelig talt hver eneste del
-av hver eneste substans. Panpsykister ser på den menneskelige bevissthet som en unik, godt
-konstruert instans av et noe mer universalt konsept. Deres argument er at alle ting i den
-fysiske, reduserbare verden, har en bevissthet, men at det er økende grader av bevissthet. For
-eksempel har insekter en høyere bevissthetsgrad enn steiner, og katter har høyere
-bevissthetsgrad enn insekter (Skrbina, u.å).
-En teori som støtter dette panpsykistiske synet kalles integrert informasjonsteori og ble
-utviklet av Gioliu Tononi. Han definerer hjernen som et system for distribusjon, lagring og
-behandling av informasjon. I prinsippet kan man anvende den samme definisjonen på
-hjernens minste reduserbare deler, nemlig atomet. Et atom kan defineres på samme måte, men
-har mye mindre sofistikert struktur enn hjernen.
-
-
-Tononi har da også opprettet en målbar enhet, phi, hvor alt som har en verdi av phi over null,
-har en viss form for bevissthet. (Tononi, 2012)
-Fra panpsykisme, går jeg nå over til å snakke om «zombie-argumentet».
-Innen bevissthetsfilosofi argumenteres det for at «zombier» eksisterer, på det enkle grunnlaget
-at det er tenkelig. En «zombie» betyr her en oppfunnet skapning, som fysisk og adferdsmessig
-er helt lik oss mennesker, men mangler bevissthet.
-David Chalmers har argumentert i favør av dette argumentet ved å referere til Ned Blocks’
-tankeeksperiment om den menneskelige-lignende roboten.
-La oss si at denne roboten ikke var en umulighet, og at man byttet ut nevronene i hjernen med
-små mennesker som snakket over radio, og den er fysikalsk identisk med et menneske. Ville
-denne roboten være bevisst? Intuitivt føles det riktig å svare nei, og ifølge Chalmers er dette i
-seg selv en indikasjon på at det ikke er utenkelig at zombier eksisterer.
-Ifølge Tononi kan man måle bevisstheten til ethvert menneske med phi-verdien. Jo høyere
-phi-verdi man har, jo mer bevisst er man. Hvis man da finner en betydningsfull forskjell
-mellom antatte automater og bevisste mennesker, beviser det også at dualisme er en realitet.
-Hvis eksistensen av zombier er en realitet, vil det tilsi at bevissthet ikke er et produkt av ren
-fysikalisme. Det tilsier også at en slags form for dualisme er forklaringsmessig riktig
-angående bevissthetens eksistens. (Kirk, 2015).
-
-Tar man utgangspunkt i denne teksten, kan man trygt si at bevissthet er et omdiskutert tema.
-På den ene siden kan man trekke konklusjonen om at bevissthet eller opplevelsen av å være
-bevisst er en ren subjektiv opplevelse, som ikke kan gjenskapes eller reduseres til andre
-fysiske fenomener.
-På den andre siden menes det at man bare trenger å kartlegge og utforske hjernens
-egenskaper, funksjoner og struktur for å forstå bevissthet.
-Man kan også si at det ikke finnes noen bevissthet som en egen substans, men at
-konkurrerende mentale prosesser og naturlig seleksjon er opphavet til denne indre
-fortellerstemmen.
-Det vi trygt kan si er at det ikke er mangel på meninger og teorier når det gjelder det mest
-universale for alle mennesker, nemlig bevissthet.
-
+Taking this text as a reference, it is safe to say that consciousness is a heavily debated topic.
+On the one hand, one can draw the conclusion that consciousness or the experience of being
+conscious is a purely subjective experience, which cannot be reproduced or reduced to other
+physical phenomena.
+On the other hand, it is believed that one only needs to map and explore the brains
+properties, functions and structures to understand consciousness.
+One can also say that there is no consciousness as a separate substance, but that
+competing mental processes and natural selection are the origin of this inner
+the narrator's voice.
+What we can safely say is that there is no shortage of opinions and theories when it comes to the most
+universal for all people, namely consciousness.
 
 ## Kildeliste:
 
-Alnes, J.H. (2017). Materialisme. Store Norske Leksikon. URL: [https://snl.no/materialisme](https://snl.no/materialisme). Sist besøkt: 08.12.2018.
+Alnes, J.H. (2017). Materialisme. Store Norske Leksikon. URL: [https://snl.no/materialisme](https://snl.no/materialisme). Last visited: 08.12.2018.
 
-Bøhn, E. D. (2009/2018). Panpsykisme, i: Store Norske Leksikon [Internett]. Tilgjengelig fra: [https://snl.no/panpsykisme](https://snl.no/panpsykisme). [08.12.2018].
+Bøhn, E. D. (2009/2018). Panpsykisme, i: Store Norske Leksikon [Internet]. Available from: [https://snl.no/panpsykisme](https://snl.no/panpsykisme). [08.12.2018].
 
-Calef, S. (u.å). Dualism. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “1. Dualism”. URL: [https://www.iep.utm.edu/dualism/#H1](https://www.iep.utm.edu/dualism/#H1). Sist besøkt: 08.12.2018.
+Calef, S. (n.y). Dualism. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “1. Dualism”. URL: [https://www.iep.utm.edu/dualism/#H1](https://www.iep.utm.edu/dualism/#H1). Last visited: 08.12.2018.
 
-Dictionary.com. (2012) Turing test, i: Collins English Dictionary – complete and unabridged 2012 digital edition [Internett]. HarperCollins Publishers. Tilgjengelig fra: [https://www.dictionary.com/browse/turing-test](https://www.dictionary.com/browse/turing-test). Sist besøkt: 08.12.2018.
+Dictionary.com. (2012) Turing test, i: Collins English Dictionary – complete and unabridged 2012 digital edition [Internet]. HarperCollins Publishers. Available from: [https://www.dictionary.com/browse/turing-test](https://www.dictionary.com/browse/turing-test). Last visited: 08.12.2018.
 
-Fotion, N. (2018). John Searle [Internett]. Encyclopædia Britannica. Encyclopædia Britannica, inc. [https://www.britannica.com/biography/John-Searle](https://www.britannica.com/biography/John-Searle) [08.12.2018].
+Fotion, N. (2018). John Searle [Internet]. Encyclopædia Britannica. Encyclopædia Britannica, inc. [https://www.britannica.com/biography/John-Searle](https://www.britannica.com/biography/John-Searle) [08.12.2018].
 
-Gennaro, R. J. (u.å). Counsciousness. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “4c. Other Cognitive Theories”. Tilgjengelig fra: [https://www.iep.utm.edu/consciou/#SH4c](https://www.iep.utm.edu/consciou/#SH4c). [08.12.2018]
+Gennaro, R. J. (n.y). Counsciousness. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “4c. Other Cognitive Theories”. Available from: [https://www.iep.utm.edu/consciou/#SH4c](https://www.iep.utm.edu/consciou/#SH4c). [08.12.2018]
 
-Hansen, M. K. (2015/2018). Kvalia, I: Store norske leksikon [Internett]. Tilgjengelig fra: [https://snl.no/kvalia](https://snl.no/kvalia). [08.12.2018]
+Hansen, M. K. (2015/2018). Kvalia, I: Store norske leksikon [Internet]. Available from: [https://snl.no/kvalia](https://snl.no/kvalia). [08.12.2018]
 
-Hauser, L. (u.å). Chinese Room Argument [Internett]. The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “1. The Chinese Room Thought Experiment”. Tilgjengelig fra: [https://www.iep.utm.edu/chineser/](https://www.iep.utm.edu/chineser/). [08.12.2018]
+Hauser, L. (n.y). Chinese Room Argument [Internet]. The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “1. The Chinese Room Thought Experiment”. Available from: [https://www.iep.utm.edu/chineser/](https://www.iep.utm.edu/chineser/). [08.12.2018]
 
-Jansen, J. (2009/2018). Epifysen, i: Store Medisinske Leksikon [Internett]. Tilgjengelig fra: [https://sml.snl.no/epifysen](https://sml.snl.no/epifysen) [08.12.2018].
+Jansen, J. (2009/2018). Epifysen, i: Store Medisinske Leksikon [Internet]. Available from: [https://sml.snl.no/epifysen](https://sml.snl.no/epifysen) [08.12.2018].
 
-Kind, A. (u.å). ”3. Qualia and Physicalism”. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. Tilgjengelig fra: [https://www.iep.utm.edu/qualia/#H3](https://www.iep.utm.edu/qualia/#H3). [08.12.2018]
+Kind, A. (n.y). ”3. Qualia and Physicalism”. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. Available from: [https://www.iep.utm.edu/qualia/#H3](https://www.iep.utm.edu/qualia/#H3). [08.12.2018]
 
-Kirk, R. (2003/2015). Zombies. [Internett] The Stanford Encyclopedia of Philosophy, Summer 2015 Edition. “3. The conceivability argument for the possibility of zombies”. Tilgjengelig fra: [https://plato.stanford.edu/archives/sum2015/entries/zombies/](https://plato.stanford.edu/archives/sum2015/entries/zombies/). [08.12.2018].
+Kirk, R. (2003/2015). Zombies. [Internet] The Stanford Encyclopedia of Philosophy, Summer 2015 Edition. “3. The conceivability argument for the possibility of zombies”. Available from: [https://plato.stanford.edu/archives/sum2015/entries/zombies/](https://plato.stanford.edu/archives/sum2015/entries/zombies/). [08.12.2018].
 
-Khan, F. (2017). Can Materialism Explain The Mind?. [Internett] URL: [https://renovatio.zaytuna.edu/article/can-materialism-explain-the-mind](https://renovatio.zaytuna.edu/article/can-materialism-explain-the-mind). [08.12.2018]
+Khan, F. (2017). Can Materialism Explain The Mind?. [Internet] URL: [https://renovatio.zaytuna.edu/article/can-materialism-explain-the-mind](https://renovatio.zaytuna.edu/article/can-materialism-explain-the-mind). [08.12.2018]
 
-Levin, J. (2004/2018). Functionalism, i: The Stanford Encyclopedia of Philosophy, (Fall 2018 Edition) [Internett]. Edward N. Zalta (ed.). Tilgjengelig fra: [https://plato.stanford.edu/archives/fall2018/entries/functionalism/](https://plato.stanford.edu/archives/fall2018/entries/functionalism/) [08.12.2018].
+Levin, J. (2004/2018). Functionalism, i: The Stanford Encyclopedia of Philosophy, (Fall 2018 Edition) [Internet]. Edward N. Zalta (ed.). Available from: [https://plato.stanford.edu/archives/fall2018/entries/functionalism/](https://plato.stanford.edu/archives/fall2018/entries/functionalism/) [08.12.2018].
 
-Merriam-webster, (2018). Materialism, i: Merriam-Webster Dictionary [Internett]. Tilgjengelig fra: [https://www.merriam-webster.com/dictionary/materialism](https://www.merriam-webster.com/dictionary/materialism). [08.12.2018]
+Merriam-webster, (2018). Materialism, i: Merriam-Webster Dictionary [Internet]. Available from: [https://www.merriam-webster.com/dictionary/materialism](https://www.merriam-webster.com/dictionary/materialism). [08.12.2018]
 
-Nagel, T. (1974) What is it like to be a bat?. The Philosophical Review, 83, Nr. 4, (Oktober, 1974). [Online]. Duke University Press på vegne av Philosophical Review. s. 435- 450. Tilgjengelig fra: [https://bit.ly/2Joogqf](https://bit.ly/2Joogqf) [08.12.2018].
+Nagel, T. (1974) What is it like to be a bat?. The Philosophical Review, 83, Nr. 4, (Oktober, 1974). [Online]. Duke University Press på vegne av Philosophical Review. s. 435- 450. Available from: [https://bit.ly/2Joogqf](https://bit.ly/2Joogqf) [08.12.2018].
 
-Ney, A. (u.å). Reductionism. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “2. Reductionism: For and Against”. Tilgjengelig fra: [https://www.iep.utm.edu/red-ism/#H2](https://www.iep.utm.edu/red-ism/#H2). [08.12.2018]
+Ney, A. (n.y). Reductionism. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “2. Reductionism: For and Against”. Available from: [https://www.iep.utm.edu/red-ism/#H2](https://www.iep.utm.edu/red-ism/#H2). [08.12.2018]
 
-Ore, Ø. & Tranøy, K. E. (2018) René Descartes, i: Store Norske Leksikon [Internett]. Tilgjengelig fra: [https://snl.no/Ren%C3%A9_Descartes](https://snl.no/Ren%C3%A9_Descartes) [08.12.2018].
+Ore, Ø. & Tranøy, K. E. (2018) René Descartes, i: Store Norske Leksikon [Internet]. Available from: [https://snl.no/Ren%C3%A9_Descartes](https://snl.no/Ren%C3%A9_Descartes) [08.12.2018].
 
-Polger, T.W. (u.å). Functionalism. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161 - 0002. Tilgjengelig fra: [https://www.iep.utm.edu/functism/](https://www.iep.utm.edu/functism/). [08.12.2018]
+Polger, T.W. (n.y). Functionalism. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161 - 0002. Available from: [https://www.iep.utm.edu/functism/](https://www.iep.utm.edu/functism/). [08.12.2018]
 
-Skirry, J. (u.å). René Descartes – The Mind-Body Distinction [Internett]. The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “4. The Mind-Body Problem”. Tilgjengelig fra: [https://www.iep.utm.edu/descmind/#H4](https://www.iep.utm.edu/descmind/#H4). [08.12.2018]
+Skirry, J. (n.y). René Descartes – The Mind-Body Distinction [Internet]. The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “4. The Mind-Body Problem”. Available from: [https://www.iep.utm.edu/descmind/#H4](https://www.iep.utm.edu/descmind/#H4). [08.12.2018]
 
-Skrbina, D. (u.å). Panpsychism. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161 - 0002. Tilgjengelig fra: [https://www.iep.utm.edu/panpsych/](https://www.iep.utm.edu/panpsych/). [08.12.2018]
+Skrbina, D. (n.y). Panpsychism. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161 - 0002. Available from: [https://www.iep.utm.edu/panpsych/](https://www.iep.utm.edu/panpsych/). [08.12.2018]
 
-Store Norske Leksikon, (2009/2018). Monisme, i: Store Norske Leksikon [Internett]. Tilgjengelig fra: [https://snl.no/monisme](https://snl.no/monisme) [08.12.2018].
+Store Norske Leksikon, (2009/2018). Monisme, i: Store Norske Leksikon [Internet]. Available from: [https://snl.no/monisme](https://snl.no/monisme) [08.12.2018].
 
 Strømholm, P. (2018). Descartes. I: S. Bangu & K. Cahill, red., Filosofi for realister, 3. utgave. Oslo: Universitetsforlaget, s. 182-226.
 
-Time, J. K. (2017): Rapport fra vitenskapens yttergrense: Ditt indre liv. Morgenbladet. [Internett] URL: [https://morgenbladet.no/aktuelt/2017/01/rapport-fra-vitenskapens-](https://morgenbladet.no/aktuelt/2017/01/rapport-fra-vitenskapens-
+Time, J. K. (2017): Rapport fra vitenskapens yttergrense: Ditt indre liv. Morgenbladet. [Internet] URL: [https://morgenbladet.no/aktuelt/2017/01/rapport-fra-vitenskapens-](https://morgenbladet.no/aktuelt/2017/01/rapport-fra-vitenskapens-
 yttergrense-ditt-indre-liv). [08.12.2018]
 
-Tononi, G. (2012). Integrated information theory of consciousness: an updated account [Internett]. Archives italliennes de Biologie, 150., s. 290-326. Tilgjengelig fra: [https://bit.ly/1ki27f5](https://bit.ly/1ki27f5) [08.12.2018].
+Tononi, G. (2012). Integrated information theory of consciousness: an updated account [Internet]. Archives italliennes de Biologie, 150., s. 290-326. Available from: [https://bit.ly/1ki27f5](https://bit.ly/1ki27f5) [08.12.2018].
 
-Weisberg, J. (u.å). The Hard Problem of Consciousness. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161- 0002 URL: [http://www.iep.utm.edu/hard-con/.](http://www.iep.utm.edu/hard-con/.) [08.12.2018]
+Weisberg, J. (n.y). The Hard Problem of Consciousness. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161- 0002 URL: [http://www.iep.utm.edu/hard-con/.](http://www.iep.utm.edu/hard-con/.) [08.12.2018]
 
-Weisberg, J. (u.å). The Hard Problem of Consciousness. [Internett] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “3a. Eliminativism”. Tilgjengelig fra: [https://www.iep.utm.edu/hard-con/#SH3a](https://www.iep.utm.edu/hard-con/#SH3a). [08.12.2018]
+Weisberg, J. (n.y). The Hard Problem of Consciousness. [Internet] The Internet Encyclopedia of Philosophy, ISSN 2161-0002. “3a. Eliminativism”. Available from: [https://www.iep.utm.edu/hard-con/#SH3a](https://www.iep.utm.edu/hard-con/#SH3a). [08.12.2018]
 
 
 
