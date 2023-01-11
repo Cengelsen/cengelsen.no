@@ -6,6 +6,7 @@ disableKinds = ["taxonomyTerm"]
 
 enableEmoji = true
 enableGitInfo = true
+relativeURLs = true
 
 [languages]
   [languages.no]
