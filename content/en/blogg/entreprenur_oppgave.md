@@ -7,11 +7,11 @@ description = "This is a text i wrote in 2020 about VR-technology, it's history 
 lang = "en"
 +++
 
-What is real? Not only it this an existential question, but a source of creation, innovation, and 
+What is real? Not only is this an existential question, but a source of creation, innovation, and 
 curiosity. We explore the answers to this question by delving into the virtual realm, and our tool has,
 since the 60’s, been VR-technology. Although, recently it has taken up an increasingly larger part of
 the videogame community. Starting with several failed attempts in the mid-90’s and continued by
-Palmer Luckey’s highly successful _Oculus Rift_. This new headset sparked new life into the VR-
+Palmer Luckey’s highly successful _Oculus Rift_, This new headset sparked new life into the VR-
 community, including VR-research and development.
 
 In this text, I will use the theories of McQuivey, Rogers, Simon and Winston in the fields of design and
@@ -22,12 +22,14 @@ consumer is the Head-Mounted Display (HMD). In the beginning, an HMD was heavy, 
 had little application other than scientific research. However, over time, the HMD became more
 electronic with features like motion tracking, 3D stereoscopic imaging, built-in stereo headphones
 and peripheral controllers.
+
 Virtual Reality (VR) is an artificially created simulation of any reality, altered or otherwise. The
 hardware can vary from a simple mask with optics that manipulates your vision; to an HMD giving
 the experience of a fully computer-generated world which can simulate any 3D-environment.
 Currently, VR is mainly used for entertainment, art design or scientific research. Although, the
 application can also be extended to remote control of robots, training simulations and psychological
 treatment.
+
 Augmented Reality (AR), however, differs from VR in that while it does not simulate a reality, it alters
 our perception of the actual reality. AR-technology can either alter our perception of physical reality;
 or give us new mechanisms in physical reality to manipulate artificial objects projected from the
@@ -42,6 +44,7 @@ More than a hundred years later, the _Sensorama_ was invented by Morton Heilig i
 introduced to the public. This was a stationary booth, reminiscent of an arcade machine from the
 80’s and could fit up to 4 people at once. One could experience up to six different films in all 5
 senses. It featured scent producers, a vibrating chair, stereo speakers and a stereoscopic 3D screen.
+
 Heilig also patented the first HMD called the _Telesphere mask_. This provided the user with
 stereoscopic 3D images and stereo sound. This inspired Comeau and Bryan to create the _Until
 Headsight_ for the US military, the first HMD with motion tracking.
@@ -49,6 +52,7 @@ in 1966, the _Sayre Gloves_ were created by Sandin and Defanti, and were the fir
 peripherals. These gloves used light emitters and photocells in the hands’ fingers to monitor
 movement. In other words, the movement of the fingers disrupted the light emitting into the
 photocell, which was converted into electrical signals.
+
 In 1984 , VPL Research, Inc. was founded. They were contracted by NASA in 1986 to make a range of
 VR-hardware. During their contract, they went on to develop the _DataGlove_ (glove peripheral), the
 _EyePhone_ (HMD), the _AudioSphere_ (3D sound software) and the _DataSuit_ (bodysuit). (Virtual Reality
@@ -76,7 +80,7 @@ VR-headset, combining parts of old VR-headsets and screens from mobile phones. H
 updated a 3D-gaming forum online of his progress. Eventually after he had produced several
 prototypes, John Carmack, co-founder of id Software, stumbled upon his posts on the forum.
 Carmack contacted Luckey and was promptly given the offer of receiving one of the prototypes for
-free. The prototype blew Carmack away and immediately saw the potential of this technology.
+free. The prototype blew Carmack away and he immediately saw the potential of this technology.
 Carmack repurposed a copy of “Doom 3” to work with the prototype, adjusting his own 3D software
 to accommodate for the prototypes shortcomings. Later that same year, he showed the prototype to
 a plethora of journalists on the E3 gaming convention.
@@ -127,7 +131,7 @@ The computer, with its hardware, runs the software necessary for the 3D-environm
 the HMD serves as the interface between the operator and the simulated environment.
 
 The _Oculus Rift_ is a collection of subsystems that each has its different function, using its own
-mechanism, which adds to the performance of of the entire inner system’s function. Reducing each
+mechanism, which adds to the performance of the entire inner system’s function. Reducing each
 subsystems function to perform, reduces the quality of the whole inner systems function.
 
 There have been several iterations of the _Rift_ , with _DK1_ , the _Crystal Cove_ , _DK2_ , _Crescent Bay_ , the _CV_
@@ -198,7 +202,7 @@ dynamic was in its "brake"-period up until now, thus creating a supervening soci
 prototype. I consider the response to the _Oculus Rift_'s Kickstarter project as evidence of this (Oculus
 VR, 2016).
 
-However, the first version of the _Rift_ , called _PR1_, was not carried on tripartite phase of Winston’s
+However, the first version of the _Rift_, called _PR1_, was not carried on tripartite phase of Winston’s
 technological performance (Winston, 1998). There were several versions after, such as the _DK1_,
 _Crystal Cove_, _DK2_, _Crescent Bay_, _CV1_ and _Rift S_. In accordance with Winston’s classifications, I can
 further distinguish each iteration of the _Rift_ as follows:
@@ -231,7 +235,7 @@ The subject of the _Oculus Rift_ creating a new supervening social necessity, ca
 disruptive innovation, and a digital one at that. Palmer Luckey has truly acted as a digital disruptor up
 until his company’s acquisition by Facebook.
 Using only himself as labour for development of the first prototype, using spare parts from older VR-
-technology and mobile phones, while consulting internet forums for advice. Thereby, he kept
+technology and new mobile phones, while consulting internet forums for advice. Thereby, he kept
 manufacturing and research costs low, and eventually introducing it to viable investors through the
 internet. 
 
@@ -282,8 +286,7 @@ In conclusion, the _Oculus Rift_ has been an enormous innovative success and a b
 the videogame industry. It is an amazing technological venture, which has succeeded as an
 innovation mainly because of its ability to sustain the task environment. As an innovation it has yet to
 diffuse into the "late majority adopters", however someday it will become a household PC-peripheral.
-Maybe even a standalone device. Removing some of the physical boundaries set upon us by the
-currently normalized, soon to be redundant, human computer interface.
+Maybe even a standalone device. Which removes some of the physical boundaries set upon us by the currently normalized, soon to be redundant, human computer interface.
 
 ## Sources:
 
