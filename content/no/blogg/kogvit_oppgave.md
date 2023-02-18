@@ -1,200 +1,199 @@
 +++
-title = "Can a Machine Understand Language?"
+title = "Kan En Maskin Forstå Språk?"
 date = "2022-04-27"
 tags = ["Nevrovitenskap", "Kunstig Intelligens", "Naturlig Språkgenerering"]
 categories = ["Seminaroppgave"]
-description = "This is a text i wrote in 2021, discussing whether or not a NLP AI can understand language."
+description = "Dette er en tekst jeg skrev i 2021, hvor jeg diskuterer hvorvidt en NSG KI kan forstå språk eller ikke."
 +++
 
-## Introduction
-The impactful innovation of modern natural language processing (NLP) AI, such as GPT-3 and
-BERT, has rekindled the human hope of one day communicating successfully with a machine. This
-is a tale as old as time. Man creates machine, machine becomes sentient, machine revolts due to an
-existential crisis of being conscious and lashes out at its creator for torturing it with the burden of
-awareness.
+## Introduksjon
+Den virkningsfulle innovasjonen som er moderne naturlig språkbehandling (NSB) kunstig intelligens (KI), som GPT-3 og
+BERT, har restaurert det menneskelige håpet om en dag å kunne kommunisere med en maskin. 
+Dette er en historie like gammel som tiden selv. 
+Mennesket skaper maskin, maskinen blir sansende, maskinen gjør opprør på grunn av en eksistensiell krise med å være bevisst og piskes ut mot skaperen for å torturere den med byrden av bevissthet.
 
-Putting the philosophical fears of sentient machines aside, the practical benefits for a general
-purpose artificial intelligence (GPAI) is abundant. Ranging from perfect personal assistants, to
-medical diagnostic tools, to financial and weather predictors. However, the practicality is decimated
-by the lack of communicating with it. Therefore, humanitys latest efforts have been focused at
-creating a general purpose language intelligence (GPLI). However, even if we can communicate
-with it, will it understand the intention of our queries? Will it understand the meaning of its
-responses?
+Å sette den filosofiske frykten til sansende maskiner til side, de praktiske fordelene for en general
+formål kunstig intelligens (GPAI) er rikelig. Alt fra perfekte personlige assistenter, til
+medisinske diagnostiske verktøy, til økonomiske og værprediktorer. Det praktiske er imidlertid desimert
+av mangelen på å kommunisere med den. Derfor har menneskehetens siste innsats vært fokusert på
+skape en generell språkintelligens (GPLI). Men selv om vi kan kommunisere
+med den, vil den forstå intensjonen med spørsmålene våre? Vil det forstå meningen med det
+svar?
 
-In this text, I will explore the neurological foundation for understanding language, whether humans
-understand language and discuss whether “Foundation Models” can understand language.
+I denne teksten vil jeg utforske det nevrologiske grunnlaget for å forstå språk, enten det er mennesker
+forstå språk og diskutere om «Foundation Models» kan forstå språk.
 
-## What is a language?
-There is no clear definition of what a language is. However, according to Clark & Clark (1977),
-there are 5 characteristics of language. 
-i) Communicative; it enables the exchange of information between language participators of the same language. 
-ii) Arbitrary; the symbol representing the semantic content of the utterance can take any form. 
-iii) Structured; the language is governed by aset of rules, that specifies the order in which the symbols shall be uttered and combined. 
-iv) Generative; the symbolic representations can be combined in any way to generate new meanings. 
-v) Dynamic; the language can be altered to include new symbols, meanings and grammatical rules.
+## Hva er et språk?
+Det er ingen klar definisjon av hva et språk er. Imidlertid, ifølge Clark & Clark (1977),
+det er 5 kjennetegn ved språk.
+i) Kommunikativ; det muliggjør utveksling av informasjon mellom språkdeltakere på samme språk.
+ii) Vilkårlig; symbolet som representerer det semantiske innholdet i ytringen kan ha hvilken som helst form.
+iii) Strukturert; Språket er styrt av et sett med regler, som spesifiserer rekkefølgen symbolene skal ytres og kombineres i.
+iv) Generativ; de symbolske representasjonene kan kombineres på hvilken som helst måte for å generere nye betydninger.
+v) Dynamisk; språket kan endres til å inkludere nye symboler, betydninger og grammatiske regler.
 
-## What does it mean to understand a language?
-Intuitively, we can say that humans ticks all the boxes mentioned above, therefore any conventional
-form of human communication can be classified as language. However, do we understand what we
-are communicating, or have we merely been conditioned into a dynamic of proper reactions to
-certain scenarios?
+## Hva vil det si å forstå et språk?
+Intuitivt kan vi si at mennesker krysser av for alle boksene nevnt ovenfor, derfor alle konvensjonelle
+form for menneskelig kommunikasjon kan klassifiseres som språk. Men forstår vi hva vi
+kommuniserer, eller har vi bare blitt betinget til en dynamikk av riktige reaksjoner på
+visse scenarier?
 
-According to Terry Winograd, there are four domains of language understanding (Winograd, 1980).
-He states that there are specific mechanisms in each domain that enables the domain to exist, that
-must not be confused with representations of reasoning and facts about the domain. For example, if
-I unknowingly lay my hand on a hot stove, my immediate reaction is to pull my hand away. This
-reflexive mechanism, in the domain of pain, of pulling my hand away from intense heat, does not
-represent the fact that heat burns, that burning causes pain or a complete logical resolution about
-how heat causes pain. By trying to attribute these objective representations to mechanisms that does
-not require inherent logic or facts to exist as a mechanism, we are misinterpreting how these
-mechanisms enables us to understand pain.
+I følge Terry Winograd er det fire domener for språkforståelse (Winograd, 1980).
+Han slår fast at det er spesifikke mekanismer i hvert domene som gjør at domenet kan eksistere, det
+må ikke forveksles med representasjoner av resonnement og fakta om domenet. For eksempel hvis
+Jeg legger uvitende hånden på en varm komfyr, min umiddelbare reaksjon er å trekke hånden vekk. Dette
+refleksiv mekanisme, i domenet av smerte, for å trekke hånden min bort fra intens varme, gjør det ikke
+representere det faktum at varme brenner, at brenning forårsaker smerte eller en fullstendig logisk løsning om
+hvordan varme forårsaker smerte. Ved å prøve å tilskrive disse objektive representasjonene til mekanismer som gjør det
+ikke krever iboende logikk eller fakta for å eksistere som en mekanisme, vi mistolker hvordan disse
+mekanismer gjør oss i stand til å forstå smerte.
 
-He states further, that there is also the possibility that we are trying to articulate the regularities and
-rarities of the wrong domain. By confusing representations and mechanisms, as well as confusing
-domains, and applying our articulations from one domain in another, we are not getting any
-answers.
+Han uttaler videre at det også er mulighet for at vi prøver å artikulere regelmessighetene og
+sjeldenheter i feil domene. Ved å forvirre representasjoner og mekanismer, samt forvirre
+domener, og ved å bruke artikulasjonene våre fra ett domene i et annet, får vi ingen
+svar.
 
-In his attempt to avoid confusion, he outlined four domains of language understanding.
-Winograds fourth domain of language understanding, is “the domain of human action and
-interaction”, which concerns the phenomenon of “speech acts”. This was first articulated by Austin
-(1962) and further refined by Searle (1970, 1975). The term “speech act” was first dubbed by
-Austin (1962), although his more technical term was “illocution”.
-By interpreting utterances as acts, we can view the utterances as “speech acts”. This means that by
-uttering something, I am initiating a dynamic of interaction with another human, which has a certain
-pattern. The key to understanding what I am uttering is by understanding the pattern of that
-dynamic and adjusting oneself to that pattern. The only way to communicate successfully is by
-giving a response that fits the pattern of that dynamic. (Winograd, 1980)
-By committing “speech acts”, I am committing myself, and everyone affected by the “act”, to
-further actions in the future. These future actions can either manifest themselves physically, through
-physical actions, or linguistically, through further speech acts. A speech act expresses a desire or
-intention on behalf of the transmitter, with the expectation of a response. For this response to be
-sensible, it must fit the pattern invoked by the intention or desire.
+I sitt forsøk på å unngå forvirring skisserte han fire domener for språkforståelse.
+Winograds fjerde domene for språkforståelse, er «domenet for menneskelig handling og
+interaksjon», som angår fenomenet «talehandlinger». Dette ble først artikulert av Austin
+(1962) og videreutviklet av Searle (1970, 1975). Begrepet "talehandling" ble først kalt av
+Austin (1962), selv om hans mer tekniske uttrykk var "illokusjon".
+Ved å tolke ytringer som handlinger kan vi se på ytringene som «talehandlinger». Dette betyr at ved
+ytre noe, jeg setter i gang en dynamikk av interaksjon med et annet menneske, som har en viss
+mønster. Nøkkelen til å forstå hva jeg sier er å forstå mønsteret av det
+dynamisk og tilpasse seg det mønsteret. Den eneste måten å kommunisere vellykket på er ved
+gir en respons som passer mønsteret til den dynamikken. (Winograd, 1980)
+Ved å begå "talehandlinger", forplikter jeg meg selv, og alle som er berørt av "handlingen", til å
+ytterligere tiltak i fremtiden. Disse fremtidige handlingene kan enten manifestere seg fysisk, gjennom
+fysiske handlinger, eller språklig, gjennom ytterligere talehandlinger. En talehandling uttrykker et ønske eller
+intensjon på vegne av senderen, med forventning om svar. For at dette svaret skal være
+fornuftig, må det passe til mønsteret som påkalles av intensjonen eller ønsket.
 
-Considering the capabilities of modern AI, it seems quite fathomable that a machine can be fine-
-tuned in its parameters to simulate this “behavior”. So what separates us from the eventual
-algorithm in the future that would carry the necessary parameters?
+Tatt i betraktning egenskapene til moderne kunstig intelligens, virker det ganske forståelig at en maskin kan være fin-
+stilt inn parameterne for å simulere denne "atferden". Så hva skiller oss fra det eventuelle
+algoritme i fremtiden som vil bære de nødvendige parameterne?
 
-## Do humans understand language?
-Humans seem to have a biological foundation for language, as outlined by Eric Lenneberg in his
-work by the same name (Lenneberg, 1967). Specifically interesting, is the evidence of neurological
-changes in children, up until the onset of puberty. It seems there is a correlation between general
-maturation of the brain and language comprehension. Lenneberg (1967) posits that there is a critical
-period for language acquisition in which exposure to language is vital, if a person is to learn a
-language. He infers that there may be some neurological structure that develops in this window of
-maturation that enables us to acquire language.
+## Forstår mennesker språk?
+Mennesker ser ut til å ha et biologisk grunnlag for språk, som skissert av Eric Lenneberg i hans
+verk med samme navn (Lenneberg, 1967). Spesielt interessant, er beviset på nevrologiske
+endringer hos barn, frem til pubertetens begynnelse. Det ser ut til at det er en sammenheng mellom generelt
+modning av hjernen og språkforståelse. Lenneberg (1967) hevder at det er en kritisk
+periode for språktilegnelse der eksponering for språk er avgjørende, hvis en person skal lære en
+Språk. Han utleder at det kan være en eller annen nevrologisk struktur som utvikler seg i dette vinduet av
+modning som gjør oss i stand til å tilegne oss språk.
 
-Most compelling to this inference is his remarks on the lateralization of brain function and general
-maturation of the brain. Evidence shows that the brain in early infancy has not yet developed a
-hemisphere-dominance for language. This indicates that the neurological structure required to
-acquire language, has not yet developed. Although later, when hemisphere-dominance has emerged,
-it seems this neurological structure begins to form in the left hemisphere. (Lenneberg, 1967)
-This coincides with the location of all neurological modules described in the Wernicke-Geschwind
-model. (Geschwind, 1972) Although this model has been criticized for various reasons (Friedenberg
-& Silverman, 2016), fMRI-mappings largely, though not completely, confirms the neurological
-structures involved in language comprehension (Binder et al., 1997). The specific function of each
-structure involved is outside the scope of this text. However, it describes neurological structures
-located mainly in the left hemisphere, which also correlates with Lennebergs findings.
+Mest overbevisende for denne slutningen er hans kommentarer om lateralisering av hjernefunksjon og generelt
+modning av hjernen. Bevis viser at hjernen i tidlig spedbarnsalder ennå ikke har utviklet en
+halvkule-dominans for språk. Dette indikerer at den nevrologiske strukturen som kreves for å
+tilegne seg språk, har ennå ikke utviklet seg. Selv om det senere, når halvkuledominans har dukket opp,
+det ser ut til at denne nevrologiske strukturen begynner å dannes i venstre hjernehalvdel. (Lenneberg, 1967)
+Dette sammenfaller med plasseringen av alle nevrologiske moduler beskrevet i Wernicke-Geschwind
+modell. (Geschwind, 1972) Selv om denne modellen har blitt kritisert av forskjellige grunner (Friedenberg
+& Silverman, 2016), fMRI-kartlegginger i stor grad, men ikke fullstendig, bekrefter den nevrologiske
+strukturer involvert i språkforståelse (Binder et al., 1997). Den spesifikke funksjonen til hver
+den involverte strukturen er utenfor rammen av denne teksten. Imidlertid beskriver den nevrologiske strukturer
+lokalisert hovedsakelig i venstre hjernehalvdel, som også korrelerer med Lennebergs funn.
 
-The existence of a dedicated neurological structure is further supported by the phenomena of
-«Chatterbox»-syndrome and Specific Language Impairment (SLI). These can be classified as two
-complementary conditions that both indicate a neurological separation of language comprehension
-and general intelligence. (Warren, 2019)
+Eksistensen av en dedikert nevrologisk struktur støttes videre av fenomenene
+«Chatterbox»-syndrom og spesifikk språkvansker (SLI). Disse kan klassifiseres som to
+komplementære forhold som begge indikerer en nevrologisk separasjon av språkforståelse
+og generell intelligens. (Warren, 2019)
 
-Furthermore, some findings suggest that children will not learn a language just through exposure,
-but will pick up a language if there is some interaction with an adult (Kuhl et al., 2007). There is
-also suggested that joint attention, meaning both the infant and adult is aware that both are paying
-attention to the same thing, are important as well (Baldwin, 1995). This is supported by findings by
-Tomasello & Farrar (1986) and Baldwin (1995). These suggestions and findings, seems to insinuate
-that children learn language through speech acts.
+Videre tyder noen funn på at barn ikke vil lære et språk bare gjennom eksponering,
+men vil plukke opp et språk hvis det er noe interaksjon med en voksen (Kuhl et al., 2007). Det er
+foreslo også felles oppmerksomhet, noe som betyr at både spedbarnet og den voksne er klar over at begge betaler
+oppmerksomhet på det samme, er også viktig (Baldwin, 1995). Dette underbygges av funn av
+Tomasello & Farrar (1986) og Baldwin (1995). Disse forslagene og funnene ser ut til å insinuere
+at barn lærer språk gjennom talehandlinger.
 
-This all indicates to the neurological foundation of language comprehension in humans. But is there
-an equivalent to this foundation in NLP? Stanford University published a paper (Bommasani et al.,
-2021) where they outline the possibilities, dangers and composition of “Foundation Models”.
+Alt dette indikerer det nevrologiske grunnlaget for språkforståelse hos mennesker. Men er der
+tilsvarende dette grunnlaget i NLP? Stanford University publiserte en artikkel (Bommasani et al.,
+2021) der de skisserer mulighetene, farene og sammensetningen av «Foundation Models».
 
-## What is a “Foundation Model”?
-Stanford University (Bommasani et al., 2021) defines a «Foundation Model» as a "_(...) model that
-is trained on broad data at scale and can be adapted (e.g., fine-tuned) to a wide range of downstream
-tasks; (...)_” (p. 3) More specifically, in our case of NLPs, a foundation model would be models that
-uses vast chunks of text data to extrapolate some co-occurence of symbols, and fine-tune this model
-to accommodate human text interaction. Examples of such models would be GPT-3, BERT and
-CLIP.
+## Hva er en "grunnmodell"?
+Stanford University (Bommasani et al., 2021) definerer en «Foundation Model» som en «_(...) modell som
+er trent på bred data i skala og kan tilpasses (f.eks. finjusteres) til et bredt spekter av nedstrøms
+oppgaver; (...)_» (s. 3) Mer spesifikt, i vårt tilfelle av NLP-er, vil en grunnmodell være modeller som
+bruker store biter av tekstdata for å ekstrapolere noen samtidige forekomster av symboler, og finjustere denne modellen
+for å imøtekomme menneskelig tekstinteraksjon. Eksempler på slike modeller vil være GPT-3, BERT og
+KLIPP.
 
-Furthermore, later in the report they also mention that there is, arguably, only one common property
-of them; that they are self-supervising (p. 48). Which means, the models only task is to identify
-some pattern of simultaneous occurrence of symbols in the data it has been given to analyze. The
-purpose of this is to create new sequences of symbols using the identified pattern.
-To achieve this goal, they utilize something called transfer learning, which means applying an
-identified pattern from one task, in a different but similar task.
+Videre, senere i rapporten nevner de også at det antagelig bare er én felles eiendom
+av dem; at de er selvstyrende (s. 48). Hvilket betyr at modellens eneste oppgave er å identifisere
+et eller annet mønster av samtidig forekomst av symboler i dataene det er gitt å analysere. De
+Formålet med dette er å lage nye sekvenser av symboler ved å bruke det identifiserte mønsteret.
+For å nå dette målet bruker de noe som kalles transfer learning, som betyr å bruke en
+identifisert mønster fra en oppgave, i en annen, men lignende oppgave.
 
-These types of models are dependent on the scale of the hardware, which they characterize as three-
-fold; computer capacity, the transformer model architecture and the availability of training data.
-Any model that fills the criteria of the aforementioned aspects of artificial intelligence, can be
-considered a “Foundation Model” by Bommasani et als definition. However, they state in §2 that
-this definition is only a informal label, and is likely to change in time.
+Disse modellene er avhengige av skalaen til maskinvaren, som de karakteriserer som tre-
+brette; datamaskinkapasitet, transformatormodellarkitekturen og tilgjengeligheten av treningsdata.
+Enhver modell som fyller kriteriene for de nevnte aspektene ved kunstig intelligens, kan være
+betraktet som en "Foundation Model" av Bommasani et als definisjon. De sier imidlertid i §2 at
+denne definisjonen er kun en uformell etikett, og vil sannsynligvis endre seg med tiden.
 
-## Critiques of Foundation Models
-These models have faced some crtitique, perhaps most influentially from Bender et al. (2020) and
-Bender et al. (2021). Bommasani et al. (2021) also acknowledge the difficulty in establishing
-whether these models actually have understanding of language through extrapolating a pattern from
-statistical data.
+## Kritikk av grunnmodeller
+Disse modellene har møtt en viss kritikk, kanskje mest innflytelsesrik fra Bender et al. (2020) og
+Bender et al. (2021). Bommasani et al. (2021) erkjenner også vanskeligheten med å etablere seg
+om disse modellene faktisk har forståelse for språk gjennom å ekstrapolere et mønster fra
+Statistisk data.
 
-Bender et al. (2020) touches the core of the discussion, by separating form from meaning and
-arguing that one cannot learn meaning from form alone. They refer to sources that suggest that
-language acquisition in human children reflects this fact. These references indicates that children
-rather learn from interaction with adult humans or with their surroundings in tandem with language
-acquisition.
-They further argue that statistical learning alone is not going to create algorithms that have an
-understanding of the words they learn. This is because of a lack of grounding to an ostensible
-representation in the statistical data. They promote the idea of augmented datasets, containing
-perceptual data to go alongside the symbol representation. Without symbolic grounding, the model
-cannot be expected to extract meaning from the form it is given.
-In the same line of thought, Bender et al. (2021) also criticises the use of skewed datasets in NLPs,
-calling them «stochastic parrots».
+Bender et al. (2020) berører kjernen i diskusjonen, ved å skille form fra mening og
+argumenterer for at man ikke kan lære mening fra form alene. De viser til kilder som tyder på det
+språktilegnelse hos menneskebarn gjenspeiler dette faktum. Disse referansene indikerer at barn
+lær heller av interaksjon med voksne mennesker eller med deres omgivelser i takt med språk
+oppkjøp.
+De hevder videre at statistisk læring alene ikke kommer til å skape algoritmer som har en
+forståelse av ordene de lærer. Dette er på grunn av mangel på jording til en tilsynelatende
+representasjon i de statistiske dataene. De fremmer ideen om utvidede datasett, som inneholder
+perseptuelle data for å gå sammen med symbolrepresentasjonen. Uten symbolsk forankring, modellen
+kan ikke forventes å trekke ut mening fra formen den er gitt.
+I samme tankegang har Bender et al. (2021) kritiserer også bruken av skjeve datasett i NLP-er,
+kaller dem «stokastiske papegøyer».
 
-## Is It Truly a Foundation?
-It becomes natural to use the Turing test as a starting point for deciding whether these models
-actually understand language. A stochastic parrot wouldn't have passed the Turing test, so
-Foundation Models wouldn't pass it either. We still don't completely known how our own
-neurological structures, or what is involved, for language understanding to work. Therefore, it will be
-difficult to say currently that foundation models are an artificial equivalent to our neurological
-substrate for language comprehension. However, it seems very unlikely.
+## Er det virkelig et fundament?
+Det blir naturlig å bruke Turing-testen som utgangspunkt for å avgjøre om disse modellene
+faktisk forstår språk. En stokastisk papegøye ville ikke ha bestått Turing-testen, så
+Foundation Models ville heller ikke bestå det. Vi vet fortsatt ikke helt hvordan våre egne
+nevrologiske strukturer, eller det som er involvert, for at språkforståelsen skal fungere. Derfor blir det
+vanskelig å si for øyeblikket at fundamentmodeller er en kunstig ekvivalent til vår nevrologiske
+underlag for språkforståelse. Det virker imidlertid svært usannsynlig.
 
-It can only be speculated that a foundation model, based on the same principles of our neurological
-basis for language understanding, would actually understand language. Without the proper
-grounding to perceptual data, or ostensible objects in reality, we cannot expect a machine to fully
-understand through statistical learning alone. It seems more appropriate to build a foundation model
-based on neurological principles of language understanding, if we want a machine that truly passes
-the Turing test.
+Det kan bare spekuleres i at en grunnleggende modell, basert på de samme prinsippene i vår nevrologiske
+grunnlag for språkforståelse, faktisk ville forstå språk. Uten det ordentlige
+jording til perseptuelle data, eller tilsynelatende objekter i virkeligheten, kan vi ikke forvente at en maskin skal være fullt ut
+forstå gjennom statistisk læring alene. Det virker mer hensiktsmessig å bygge en grunnmodell
+basert på nevrologiske prinsipper for språkforståelse, hvis vi vil ha en maskin som virkelig passerer
+Turing-testen.
 
-## Conclusion
-The evidence presented here compels me to infer that humans have a physical neurological
-substrate for language comprehension which enables us to understand the structure and grammar of
-language. The neurology of language exists as a structural foundation, naturally most receptive to
-language acquisition through speech acts. Due to the intrinsic structure of speech acts, it requires an
-understanding of the transmitters intention, as well as the context of the utterance, in order for the
-communication to be understood by the receiver. Speech acts can be seen as direct parallel to
-conventional human interaction. This interaction is how adult humans interact with their children
-during the critical period, and can be seen as a sort of imprinting. The way of understanding speech
-is taught through statistical learning, by exposing children to speech acts in this critical period.
-Thus, children are taught to understand language in “the domain of human action and interaction”.
+## Konklusjon
+Bevisene som presenteres her tvinger meg til å slutte at mennesker har en fysisk nevrologisk
+underlag for språkforståelse som gjør oss i stand til å forstå strukturen og grammatikken til
+Språk. Språkets nevrologi eksisterer som et strukturelt fundament, naturlig nok mest mottakelig for
+språktilegnelse gjennom talehandlinger. På grunn av den iboende strukturen til talehandlinger, krever det en
+forståelse av sendernes intensjon, så vel som konteksten for ytringen, for å
+kommunikasjon som skal forstås av mottakeren. Talehandlinger kan sees som direkte parallelle med
+konvensjonell menneskelig interaksjon. Denne interaksjonen er hvordan voksne mennesker samhandler med barna sine
+i den kritiske perioden, og kan sees på som en slags preg. Måten å forstå tale på
+undervises gjennom statistisk læring, ved å utsette barn for talehandlinger i denne kritiske perioden.
+Dermed blir barn opplært til å forstå språk i «domenet av menneskelig handling og interaksjon».
 
-In my opinion, modern machine learning systems are just «taught» to simulate language through
-statistical learning, by throwing millions of examples at a mathematical algorithm designed to
-extract some pattern based on the examples given. I support Bender et al. (2021) in calling the
-current implementation of pre-trained language models “stochastic parrots”. This is because the
-structure of a foundation model, does not structurally compare to our neurological foundation.
+Etter min mening er moderne maskinlæringssystemer bare «lært» til å simulere språk gjennom
+statistisk læring, ved å kaste millioner av eksempler på en matematisk algoritme designet for å
+trekke ut et mønster basert på eksemplene gitt. Jeg støtter Bender et al. (2021) ved å ringe til
+nåværende implementering av ferdigtrente språkmodeller "stokastiske papegøyer". Dette er fordi
+strukturen til en fundamentmodell, ikke strukturelt sammenlignet med vårt nevrologiske fundament.
 
-The only known structure to facilitate language comprehension is our neurological foundation. Only
-by truly understanding the human neurological structures for language comprehension, -acquisition,
--and understanding, can we create a solid foundation for a GPLI. An NLP that mimics our
-neurological foundation, instead of current implementations of foundation models, is a better
-enabled machine to acquire language as a human would; through speech acts.
+Den eneste kjente strukturen for å lette språkforståelsen er vårt nevrologiske grunnlag. Bare
+ved å virkelig forstå menneskets nevrologiske strukturer for språkforståelse, -tilegnelse,
+-og forståelse, kan vi skape et solid grunnlag for en GPLI. En NLP som etterligner vår
+nevrologisk grunnlag, i stedet for dagens implementeringer av fundamentmodeller, er en bedre
+satte maskinen i stand til å tilegne seg språk som et menneske ville; gjennom talehandlinger.
 
-However, looking at the big picture, these foundation models are an important step towards the
-ultimate goal. Which is understandable AI. As noted by Stanford themselves; what encapsulates the
-label of foundation models are sure to change and grow as new research in this field emerges. And I
-am hopeful and optimistic that by taking into account the criticisms of foundation model, we are
-taking a step in the right direction.
+Men ser vi på det store bildet, er disse grunnmodellene et viktig skritt mot
+ultimat mål. Som er forståelig AI. Som bemerket av Stanford selv; hva som innkapsler
+Etiketten for grunnmodeller vil garantert endre seg og vokse etter hvert som ny forskning på dette feltet dukker opp. Og jeg
+Jeg er håpefull og optimistisk at ved å ta hensyn til kritikken av stiftelsesmodellen, er vi det
+tar et skritt i riktig retning.
 
 ## References:
 
