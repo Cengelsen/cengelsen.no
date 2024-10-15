@@ -1,20 +1,12 @@
-<script>
-	let isMenuOpen = false;
-
-	function toggleMenu() {
-		isMenuOpen = !isMenuOpen;
-	}
-</script>
-
 <nav class="navbar">
 	<div class="navbar-container">
 
-		<ul class="navbar-menu" class:active={isMenuOpen}>
-			<li><a href="/">Home</a></li>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/cv">CV</a></li>
-			<li><a href="/projects">Projects</a></li>
-		    <li><a href="/machines">Machines</a></li>
+		<ul class="navbar-menu">
+			<li class="navbar-link"><a href="/">Home</a></li>
+			<li class="navbar-link"><a href="/blog">Blog</a></li>
+			<li class="navbar-link"><a href="/cv">CV</a></li>
+			<li class="navbar-link"><a href="/projects">Projects</a></li>
+		    <li class="navbar-link"><a href="/machines">Machines</a></li>
 		</ul>
 	</div>
 </nav>
@@ -29,11 +21,12 @@
 	.navbar {
 		background-color: #333;
 		color: white;
-		height: 5vh;
+		height: 10vh;
 	}
 
 	.navbar-container {
 		display: flex;
+		height: inherit;
 	}
 
 	.navbar-menu {
@@ -43,10 +36,7 @@
 		justify-content: space-between;
 		margin: auto;
 		width: 80%;
-	}
-
-	.navbar-menu li {
-		margin-left: 1rem;
+		height: inherit;
 	}
 
 	.navbar-menu a {
@@ -54,25 +44,37 @@
 		text-decoration: none;
 	}
 
+	.navbar-link:nth-child(1) {
+			border-right:none;
+	}
+
+	.navbar-link{
+		padding-left: 0.3%;
+		border-left: 2px solid saddlebrown;
+		border-bottom: 3px solid saddlebrown;
+	}
+
 	@media (max-width: 768px) {
 
+		.navbar{
+			height: 10vh;
+		}
+
 		.navbar-menu {
-			display: none;
-			flex-direction: column;
-			position: absolute;
-			top: 100%;
-			left: 0;
 			width: 100%;
 			background-color: #333;
-			padding: 1rem;
+			height: 10vh;
+			width: 90%;
 		}
 
-		.navbar-menu.active {
-			display: flex;
+		.navbar-link:nth-child(1) {
+			border-right:none;
 		}
 
-		.navbar-menu li {
-			margin: 0.5rem 0;
+		.navbar-link{
+			padding-left: 0.3%;
+			border-left: 2px solid saddlebrown;
+			border-bottom: 3px solid saddlebrown;
 		}
 	}
 </style>
