@@ -8,10 +8,11 @@
 
 <nav class="navbar">
 	<div class="navbar-container">
-		<a href="/" class="navbar-logo">Logo</a>
+		
 		<button class="navbar-toggle" on:click={toggleMenu}>
 			<span class="navbar-toggle-icon"></span>
 		</button>
+
 		<ul class="navbar-menu" class:active={isMenuOpen}>
 			<li><a href="/">Home</a></li>
 			<li><a href="/about">About</a></li>
@@ -22,25 +23,20 @@
 </nav>
 
 <style>
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
 	.navbar {
 		background-color: #333;
 		color: white;
-		padding: 1rem;
+		height: 5vh;
 	}
 
 	.navbar-container {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-
-	.navbar-logo {
-		font-size: 1.5rem;
-		font-weight: bold;
-		text-decoration: none;
-		color: white;
 	}
 
 	.navbar-toggle {
@@ -79,8 +75,10 @@
 	.navbar-menu {
 		display: flex;
 		list-style-type: none;
-		margin: 0;
-		padding: 0;
+		align-items: center;
+		justify-content: space-between;
+		margin: auto;
+		width: 80%;
 	}
 
 	.navbar-menu li {
