@@ -1,16 +1,13 @@
 <script>
+    import Post from "../recent-activity/Post.svelte";
     export let recentPosts = [];
 </script>
 
 <section class="recent-posts">
-    <h2>Recent Blog Posts</h2>
+    <h2>Recent Activity</h2>
     <ul>
         {#each recentPosts.slice(0, 5) as post}
-            <li class="post">
-                <h3 class="post-title">{post.title}</h3>
-                <p class="post-date">{post.date}</p>
-                <p class="post-description">{post.description}</p>
-            </li>
+            <Post/>
         {/each}
     </ul>
 </section>
