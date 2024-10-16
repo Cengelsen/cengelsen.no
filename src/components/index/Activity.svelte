@@ -1,13 +1,13 @@
 <script>
     import Post from "../recent-activity/Post.svelte";
-    export let recentPosts = [];
+    export let recentPosts;
 </script>
 
 <section class="recent-posts">
     <h2>Recent Activity</h2>
     <ul>
         {#each recentPosts.slice(0, 5) as post}
-            <Post/>
+            <Post post={post}/>
         {/each}
     </ul>
 </section>

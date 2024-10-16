@@ -1,15 +1,22 @@
-<script>
+<script lang="ts">
     import Navbar from '../components/global/Navbar.svelte';
     import Footer from '../components/global/Footer.svelte';
     import Profile from '../components/index/Profile.svelte';
     import Activity from '../components/index/Activity.svelte';
+	import type { PageData } from './$types';
+
+    export let data: PageData;
+
+    let posts = data.posts.no
+
+    console.debug(data)
 </script>
 
 <Navbar />
 
 <section class="profile-section">
     <Profile name="John Doe" imageUrl="/path/to/portrait.jpg" description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
-    <Activity recentPosts={[{ title: "First Post", date: "2024-01-01", description: "This is the first post on my blog." }, { title: "Second Post", date: "2024-01-02", description: "This is the second post on my blog." }]} />
+    <Activity recentPosts={posts} />
 </section>
 
 <Footer />

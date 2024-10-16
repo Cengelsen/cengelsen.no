@@ -4,18 +4,16 @@
 
 	export let data: PageData;
 
-    import { page } from '$app/stores';
+    let posts = data.posts.no;
 
-    console.debug($page.url.pathname)
-
-    let posts = data.posts.en;
-
-    console.debug(posts)
 </script>
 
 <h1>Blog Posts</h1>
 
-{#each posts as post}
-    <Post {post} />
-{/each}
-<p>No posts available.</p>
+{#if posts.length > 0 }
+    {#each posts as post}
+        <Post {post} />
+    {/each}
+{:else}
+    <p>No posts available.</p>
+{/if}

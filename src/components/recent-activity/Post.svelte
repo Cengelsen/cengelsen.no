@@ -1,5 +1,4 @@
-<script>
-    import SvelteMarkdown from 'svelte-markdown';
+<script lang="ts">
 
     export let post;
 
@@ -7,11 +6,11 @@
 
 </script>
 
-<article class="post">
+<button class="post">    
     <h2 class="post-title">{post.title}</h2>
     <p class="post-date">{post.date}</p>
     <p class="post-description">{post.description}</p>
-</article>
+</button>
 
 <style>
     .post {
