@@ -1,6 +1,5 @@
 <script lang="ts">
-    import Navbar from '../components/global/Navbar.svelte';
-    import Footer from '../components/global/Footer.svelte';
+    import Base from '../components/global/Base.svelte';
     import Profile from '../components/index/Profile.svelte';
     import Activity from '../components/index/Activity.svelte';
 	import type { PageData } from './$types';
@@ -12,14 +11,17 @@
     console.debug(data)
 </script>
 
-<Navbar />
+<Base>
 
-<section class="profile-section">
-    <Profile name="John Doe" imageUrl="/path/to/portrait.jpg" description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
-    <Activity recentPosts={posts} />
-</section>
+    <section class="profile-section">
+        <Profile 
+            name="John Doe" 
+            imageUrl="/path/to/portrait.jpg" 
+            description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
+        <Activity recentPosts={posts} />
+    </section>
 
-<Footer />
+</Base>
 
 <style>
 
