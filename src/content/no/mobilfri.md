@@ -1,0 +1,113 @@
+---
+title: Mitt forsøk på å leve uten smarttelefon || Dum telefon, smartere liv?
+date: 2023-09-09
+description: lorem ipsum
+---
+
+I dagens tidsalder er det ganske stor konvensjon om at en skal bruke en smart-telefon til absolutt alt i hverdagen. Med tanke på at smart-telefonen er en kontinuerlig kilde for distraksjoner, høres ikke dette ut som en god idé for meg i hvert fall. 
+
+Derfor valgte jeg å bytte over til en dum-telefon for rundt ett år siden. Dette har vært et enormt lærerik og utfordrende livsvalg. 
+
+I denne teksten skal jeg fortelle litt om mine egne erfaringer og tanker om hvordan det er å leve uten en smart-telefon i dagens samfunn.
+
+## Hvorfor valgte jeg dette?
+
+### Bakgrunn
+
+Jeg er utrolig interessert i hvordan teknologien vi bruker daglig påvirker oss; hvordan det endrer oss; hvilke valg det får oss til å ta; hvordan det endrer hvordan vi tenker.
+
+Jeg var, som mange, ganske hektet på smart-telefonen min; bruke den for spill, musikk, sosiale medier, osv. Jeg merket selv at veldig mange timer av dagen min forsvant. Enkelte dager, kunne jeg bruke bortimot 2 timer bare på å rulle nedover "utforsk"-siden på Instagram. Jeg så på dette som et problem, men kunne ikke dy meg. Det holdt ikke med å bare stoppe meg selv ved å ha litt mental disiplin. Så lenge jeg hadde muligheten tilgjengelig, snek jeg meg til å rulle litt nedover informasjonsstrømmen forsynt til meg av den aktuelle appen.  
+
+### Er dette et problem?
+
+Du ser kanskje ikke selv på dette som et problem, men la meg nå ta rollen til en moderne journalist og problematisere dette her for deg.
+
+#### Tidsbruk
+
+**Du har 24 timer på ett døgn. Av disse 24, sover du (forhåpentligvis) rundt 8 timer. Da gjenstår 16 timer. Av de 16 timene, jobber du rundt 8 timer, pendler til og fra kanskje 1-2 timer, bruker rundt 1 time på å lage og spise mat. Disse timene er låst; disse timene må du bruke på hva de er ment for. Om en regner konservativt, gjenstår 6 timer med fritid hver dag som du kan bruke på hva som helst.** 
+
+**Hvor mange av de timene bruker du på å forbedre deg selv? Hvor mange av de timene er du *ikke* sliten i hodet/kroppen som følge av jobb, pendling eller middagsknekken? Hvor mange av disse 6 timene hver dag ender du opp med å bruke på telefonen?**
+
+**Og nå forstår jeg at disse 6 timene er timene en har lyst til å bli distrahert. Da spør jeg deg: Hvilket utbytte får du fra denne distraksjon?**
+
+#### Utbytte
+
+Siden en har begrenset med tid i hverdagen, er det viktig at en får utbytte av tiden en har til sin disposisjon. 
+
+En bør prøve å minimalisere tiden en bruker på det som ikke hjelper deg, og maksimalisere tiden på den som hjelper deg. Om du korter ned pendle-tiden til og fra jobb med 20 minutter, låser du opp de 20 minuttene til f.eks. matlaging. Om du, på jobb, korter ned tiden du bruker på å skrive rapporter med 1 time, låser du opp den timen til f.eks. trening. 
+
+Poenget mitt her er om du låser opp denne tiden, får du mer utbytte av tiden i hverdagen din. Om du anvender denne tilnærmingsmetoden til resten av dagen din, og klarer å låse opp 2-3 ekstra timer, har du plutselig 8-9 timer med fritid hver dag i stedet for 6 timer.
+
+La oss si at du har en tidsfrist på jobb som du må forholde deg til. 
+
+Uansett hva du bruker tiden din på, får du et utbytte av noe slag. Om du bruker tiden din på distraksjoner 
+
+Det finnes to typer distraksjoner: produktive og slukende. 
+
+En produktiv distraksjon er en distraksjon hjelper deg oppnå noe. Du får et utbytte av å bruke tid på distraksjonen.
+
+En slukende distraksjon er en distraksjon som ikke hjelper deg oppnå noe. Du får ikke et utbytte av å bruke tid på det. 
+
+Det er bedre å bruke tid på produktive distraksjoner enn slukende distraksjoner.
+
+
+
+#### Distraksjon & fokus
+
+I mine øyne, er en smart-telefon noe som gir oss tilgang til gøye, men upersonlige, distraksjoner. Altså et verktøy som en bruker for å tilegne seg distraksjoner og blokkere ut omverdenen litt, slik at en kan få seg en liten pause. Det er et verktøy som fasiliterer for aktiviteter, kommunikasjon og konsum. I seg selv, er ikke dette et problem. En kan bruke en smart-telefon til alt dette og ikke bli påvirket i hverdagen, gitt at hverdagen ikke krever noe av deg. 
+
+Problemet oppstår når det samme verktøyet som brukes for domener som krever fokus (som jobb, studier, osv.), også brukes for domener som slåss om fokuset ditt (som konsum av media, sosial interaksjon, informasjonsstrømmer).  
+
+Jeg deler det inn i 2 kategorier: *fokus-krevende* og *fokus-stjelende*.
+
+Det som er *fokus-krevende* er det som hjelper deg overleve, bidrar til din egen uavhengighet, setter deg på riktig sti mot å nå dine personlige mål. Det krever ditt fokus. Du må bruke tid på det, både for å holde deg selv flytende, videreutvikle deg selv og forbedre din egen situasjon. Dette vil være slike ting som:
+
+- Økonomi
+- Karriere
+- Personlig helse
+- Nære relasjoner
+
+Det som er fokus-stjelende er alt annet; alt det gøye, det som ikke er viktig å bruke tid på og det som tar tiden din for seg selv. Det stjeler fokuset ditt vekk fra det som er viktig for deg. Det hjelper deg ikke å bruke tid på det. Dette er ting som:
+
+- Sosiale medier
+- Videospill
+- Musikk
+- Filmer & serier
+
+Eksemplene jeg kommer med her, vil selvfølgelig ikke være relevant for alle. Om du er en journalist for et videospill-magasin, er det nok nødvendig for å bruke tid på videospill for å oppnå målene dine. 
+
+Poenget mitt her er at de aller fleste av oss har en smart-telefon for alle appene våre. Noen av disse appene er strengt nødvendige for oss å ha tilgjengelig til enhver tid. Mens de fleste av dem ikke er det, og bare stjeler oppmerksomheten din.
+
+Fokus-krevende:
+
+- Bank-app
+- SMS og Telefon
+- Epostkasse for jobb
+- Kaloriteller/treningshjelp
+
+Fokus-stjelende:
+
+- Spill (Subway Dash)
+- Dating-apper (Tinder, osv.)
+- Sosiale medier (Facebook, Instagram, Twitter, TikTok, Reddit, Discord)
+- Media-strømming (Netflix, Spotify, osv.)
+
+## Hvilken tilnærming valgte jeg?
+
+### Problemstilling
+
+Jeg valgte derfor til slutt å gjøre noe med det. Siden jeg ikke klarte å anvende litt mental disiplin, tenkte jeg det beste var å fjerne muligheten fra meg selv helt. Jeg valgte å kjøpe en dum-telefon.
+
+Problemstillingen min ble som følger:
+
+"Bruken av smart-telefonen min stjeler veldig mye oppmerksomhet, samt disponibel tid, som jeg gjerne skulle brukt til noe mer produktivt."
+
+### Løsning
+
+For å løse denne problemstillingen valgte jeg å kjøpe en dum-telefon, en Nokia 110. 
+
+## Hva er min erfaringer?
+
+### Trenger enkelte apper
+
+### 

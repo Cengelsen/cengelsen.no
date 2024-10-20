@@ -1,12 +1,16 @@
 <script lang="ts">
-
+    
     export let post;
+    import { goto } from '$app/navigation';
 
-    console.debug("Post", post)
+    function openPost(title: string) {
+        const slug = title.toLowerCase().replace(/\s+/g, '-');
+        goto(`/blog/${slug}`);
+    }
 
 </script>
 
-<button class="post">    
+<button class="post" on:click={()=>openPost(post.title)}>    
     <h2 class="post-title">{post.title}</h2>
     <p class="post-date">{post.date}</p>
     <p class="post-description">{post.description}</p>

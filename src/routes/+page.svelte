@@ -11,17 +11,13 @@
     console.debug(data)
 </script>
 
-<Base>
-
-    <section class="profile-section">
-        <Profile 
-            name="John Doe" 
-            imageUrl="/path/to/portrait.jpg" 
-            description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
-        <Activity recentPosts={posts} />
-    </section>
-
-</Base>
+<section class="profile-section">
+    <Profile 
+        name="John Doe" 
+        imageUrl="/path/to/portrait.jpg" 
+        description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
+    <Activity recentPosts={posts} />
+</section>
 
 <style>
 

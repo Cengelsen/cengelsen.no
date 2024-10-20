@@ -6,6 +6,8 @@
 
     let posts = data.posts.no;
 
+    
+
 </script>
 
 <h1>Blog Posts</h1>
