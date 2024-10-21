@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Base from '../components/global/Base.svelte';
     import Profile from '../components/index/Profile.svelte';
     import Activity from '../components/index/Activity.svelte';
 	import type { PageData } from './$types';
@@ -7,14 +6,12 @@
     export let data: PageData;
 
     let posts = data.posts.no
-
-    console.debug(data)
 </script>
 
 <section class="profile-section">
     <Profile 
-        name="John Doe" 
-        imageUrl="/path/to/portrait.jpg" 
+        name="Christian Kårbø Engelsen" 
+        imageUrl="" 
         description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
     <Activity recentPosts={posts} />
 </section>

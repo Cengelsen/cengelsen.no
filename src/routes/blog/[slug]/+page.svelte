@@ -4,13 +4,18 @@
 
     export let data: PageData;
 
-    let content = data.posts.no[0].content;
+    const title = data.frontmatter.title
+    const content = data.html
+
 </script>
 
 <article>
+    
+    <h1>{title}</h1>
+
     <SvelteMarkdown source={content} />
 </article>
-
+ 
 <style>
     article {
         max-width: 800px;

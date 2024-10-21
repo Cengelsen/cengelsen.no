@@ -30,8 +30,6 @@ export async function load() {
                 })
         );
     }
-
-    console.debug(posts)
-
+    
     return { posts };
 }
