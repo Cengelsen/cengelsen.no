@@ -8,26 +8,52 @@
     let posts = data.posts.no
 </script>
 
-<section class="profile-section">
-    <Profile 
-        name="Christian Kårbø Engelsen" 
-        imageUrl="" 
-        description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
-    <Activity recentPosts={posts} />
-</section>
+<div class="content-wrapper">
+
+    <section class="profile">
+        <Profile 
+            name="Christian Kårbø Engelsen" 
+            imageUrl="" 
+            description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
+    </section>
+
+    <section class="activity">
+        <Activity recentPosts={posts} />
+    </section>
+</div>
 
 <style>
 
-    @import "../../static/global.css";
-
-    .profile-section {
+    * {
         margin: 0;
         padding: 0;
+    }
+
+    body {
+        width: min(90vw, 800px);
+    }
+
+    @import "../../static/global.css";
+
+    .content-wrapper{
+        display: flex;
+        width: 100%;
+    }
+
+    .activity {
+        width: 70%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    }
+
+    .profile {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         height: 100vh;
+        width: 30%;
         border: 5px solid blue;
         background-color: grey
     }

@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 30%;
+        width: 100%;
         height: 100%;
         text-align: center;
         border: 5px solid red;

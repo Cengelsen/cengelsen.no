@@ -19,15 +19,14 @@
 <style>
     .post {
         background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
+        border-radius: 10px;
+        margin-bottom: 2%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 90%;
     }
 
     .post-title {
         font-size: 1.5em;
-        margin: 0 0 10px 0;
         color: #333;
     }
 
@@ -40,6 +39,10 @@
     .post-description {
         color: #444;
         line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 </style>
 

@@ -20,8 +20,6 @@
     }
 
     .recent-posts {
-        width: 70%;
-        height: 100%;
         border: 5px solid green;
         background-color: beige;
     }
@@ -34,44 +32,5 @@
     ul {
         list-style-type: none;
         padding: 0;
-    }
-
-    .post {
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid #eee;
-    }
-
-    .post:last-child {
-        border-bottom: none;
-    }
-
-    .post-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .post-date {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 0.5rem;
-    }
-
-    .post-description {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-
-    @media (max-width: 768px) {
-        .recent-posts {
-            padding: 0 0.5rem;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-        }
-
-        .post-title {
-            font-size: 1.2rem;
-        }
     }
 </style>

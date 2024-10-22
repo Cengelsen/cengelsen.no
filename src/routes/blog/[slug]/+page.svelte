@@ -18,8 +18,9 @@
  
 <style>
     article {
-        max-width: 800px;
-        margin: 0 auto;
+        max-width: 80%;
+        margin: auto;
         padding: 20px;
     }
+
 </style>

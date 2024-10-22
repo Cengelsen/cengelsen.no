@@ -35,12 +35,11 @@ declare module '$env/static/private' {
 	export const HISTCONTROL: string;
 	export const XDG_MENU_PREFIX: string;
 	export const TERM_PROGRAM_VERSION: string;
-	export const HOSTNAME: string;
 	export const HISTSIZE: string;
+	export const HOSTNAME: string;
 	export const NODE: string;
 	export const DOTNET_ROOT: string;
 	export const SSH_AUTH_SOCK: string;
-	export const ARGV0: string;
 	export const MEMORY_PRESSURE_WRITE: string;
 	export const COLOR: string;
 	export const npm_config_local_prefix: string;
@@ -50,9 +49,8 @@ declare module '$env/static/private' {
 	export const npm_config_globalconfig: string;
 	export const EDITOR: string;
 	export const PWD: string;
-	export const GSETTINGS_SCHEMA_DIR: string;
-	export const XDG_SESSION_DESKTOP: string;
 	export const LOGNAME: string;
+	export const XDG_SESSION_DESKTOP: string;
 	export const XDG_SESSION_TYPE: string;
 	export const npm_config_init_module: string;
 	export const SYSTEMD_EXEC_PID: string;
@@ -77,7 +75,6 @@ declare module '$env/static/private' {
 	export const DOTNET_BUNDLE_EXTRACT_BASE_DIR: string;
 	export const CHROME_DESKTOP: string;
 	export const STEAM_FRAME_FORCE_CLOSE: string;
-	export const APPDIR: string;
 	export const npm_lifecycle_script: string;
 	export const GJS_DEBUG_OUTPUT: string;
 	export const MOZ_GMP_PATH: string;
@@ -91,7 +88,6 @@ declare module '$env/static/private' {
 	export const LESSOPEN: string;
 	export const USER: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
-	export const OWD: string;
 	export const CONDA_SHLVL: string;
 	export const DISPLAY: string;
 	export const npm_lifecycle_event: string;
@@ -99,8 +95,6 @@ declare module '$env/static/private' {
 	export const QT_IM_MODULE: string;
 	export const npm_config_user_agent: string;
 	export const npm_execpath: string;
-	export const LD_LIBRARY_PATH: string;
-	export const APPIMAGE: string;
 	export const XDG_RUNTIME_DIR: string;
 	export const DEBUGINFOD_URLS: string;
 	export const npm_package_json: string;
@@ -162,12 +156,11 @@ declare module '$env/dynamic/private' {
 		HISTCONTROL: string;
 		XDG_MENU_PREFIX: string;
 		TERM_PROGRAM_VERSION: string;
-		HOSTNAME: string;
 		HISTSIZE: string;
+		HOSTNAME: string;
 		NODE: string;
 		DOTNET_ROOT: string;
 		SSH_AUTH_SOCK: string;
-		ARGV0: string;
 		MEMORY_PRESSURE_WRITE: string;
 		COLOR: string;
 		npm_config_local_prefix: string;
@@ -177,9 +170,8 @@ declare module '$env/dynamic/private' {
 		npm_config_globalconfig: string;
 		EDITOR: string;
 		PWD: string;
-		GSETTINGS_SCHEMA_DIR: string;
-		XDG_SESSION_DESKTOP: string;
 		LOGNAME: string;
+		XDG_SESSION_DESKTOP: string;
 		XDG_SESSION_TYPE: string;
 		npm_config_init_module: string;
 		SYSTEMD_EXEC_PID: string;
@@ -204,7 +196,6 @@ declare module '$env/dynamic/private' {
 		DOTNET_BUNDLE_EXTRACT_BASE_DIR: string;
 		CHROME_DESKTOP: string;
 		STEAM_FRAME_FORCE_CLOSE: string;
-		APPDIR: string;
 		npm_lifecycle_script: string;
 		GJS_DEBUG_OUTPUT: string;
 		MOZ_GMP_PATH: string;
@@ -218,7 +209,6 @@ declare module '$env/dynamic/private' {
 		LESSOPEN: string;
 		USER: string;
 		VSCODE_GIT_IPC_HANDLE: string;
-		OWD: string;
 		CONDA_SHLVL: string;
 		DISPLAY: string;
 		npm_lifecycle_event: string;
@@ -226,8 +216,6 @@ declare module '$env/dynamic/private' {
 		QT_IM_MODULE: string;
 		npm_config_user_agent: string;
 		npm_execpath: string;
-		LD_LIBRARY_PATH: string;
-		APPIMAGE: string;
 		XDG_RUNTIME_DIR: string;
 		DEBUGINFOD_URLS: string;
 		npm_package_json: string;
