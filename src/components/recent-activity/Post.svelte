@@ -2,10 +2,11 @@
     
     export let post;
     import { goto } from '$app/navigation';
+    import { page } from "$app/stores";
 
     function openPost(title: string) {
         const slug = title.toLowerCase().replace(/\s+/g, '-');
-        goto(`/blog/${slug}`);
+        goto(`${$page.params.lang}/blog/${slug}`);
     }
 
 </script>

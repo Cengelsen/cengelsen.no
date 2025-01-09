@@ -1,16 +1,25 @@
 <script>
+	import {en, no} from '../../i18n/translations';
+
 	export let lang;
+
+	const translations = {
+		en,
+		no
+	}
+
+	$: t = translations[lang];
 </script>
 
 <nav class="navbar">
 	<div class="navbar-container">
 
 		<ul class="navbar-menu">
-			<li class="navbar-link"><a href="/{lang}">Home</a></li>
-			<li class="navbar-link"><a href="{lang}/blog">Blog</a></li>
-			<li class="navbar-link"><a href="{lang}/cv">CV</a></li>
-			<li class="navbar-link"><a href="{lang}/projects">Projects</a></li>
-		    <li class="navbar-link"><a href="{lang}/machines">Machines</a></li>
+			<li class="navbar-link"><a href="/{lang}">{t.nav.home}</a></li>
+			<li class="navbar-link"><a href="{lang}/blog">{t.nav.blog}</a></li>
+			<li class="navbar-link"><a href="{lang}/cv">{t.nav.cv}</a></li>
+			<li class="navbar-link"><a href="{lang}/projects">{t.nav.projects}</a></li>
+		    <li class="navbar-link"><a href="{lang}/machines">{t.nav.machines}</a></li>
 		</ul>
 	</div>
 </nav>

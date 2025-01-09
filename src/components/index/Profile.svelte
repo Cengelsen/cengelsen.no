@@ -1,11 +1,11 @@
 <script>
-    export let name = "John Doe";
-    export let imageUrl = "/path/to/portrait.jpg";
-    export let description = "A passionate developer with a love for creating innovative solutions.";
+    export let name = "Christian Kårbø Engelsen";
+    export let imageUrl = "../../../profile/profile1.png";
+    export let description = "En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.";
     export let socialLinks = [
-        { platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" },
-        { platform: "GitHub", url: "https://github.com/johndoe" },
-        { platform: "Twitter", url: "https://twitter.com/johndoe" }
+        { platform: "LinkedIn", url: "https://www.linkedin.com/in/christian-kårbø-engelsen-7a07941aa" },
+        { platform: "GitHub", url: "https://github.com/Cengelsen" },
+        { platform: "Epost", url: "mailto:ckengelsen97@gmail.com"}
     ];
 </script>
 

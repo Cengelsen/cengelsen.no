@@ -1,11 +1,14 @@
 <script>
     import Post from "../recent-activity/Post.svelte";
+    import { page } from "$app/stores";
     export let recentPosts;
+
+    const activityTitle = $page.params.lang === 'en' ? "Recent Activity" : "Nylig aktivitet";
 
 </script>
 
 <section class="recent-posts">
-    <h2>Recent Activity</h2>
+    <h2>{activityTitle}</h2>
     <ul>
         {#each recentPosts as post}
             <Post post={post}/>

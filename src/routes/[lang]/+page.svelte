@@ -12,10 +12,7 @@
 <div class="content-wrapper">
 
     <section class="profile">
-        <Profile 
-            name="Christian Kårbø Engelsen" 
-            imageUrl="" 
-            description="A passionate developer with a love for creating innovative solutions." socialLinks={[{ platform: "LinkedIn", url: "https://linkedin.com/in/johndoe" }, { platform: "GitHub", url: "https://github.com/johndoe" }, { platform: "Twitter", url: "https://twitter.com/johndoe" }]} />
+        <Profile />
     </section>
 
     <section class="activity">

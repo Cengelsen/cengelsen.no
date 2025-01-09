@@ -1,10 +1,17 @@
 export interface Translations {
-    greeting: string;
-    welcome: string;
     nav: {
       home: string;
-      about: string;
-      contact: string;
+      blog: string;
+      cv: string;
+      projects: string;
+      machines: string;
     };
-    welcome_name: string;
+
+    profile: {
+      description: string;
+    }
+
+    recentPosts: {
+      title: string;
+    }
   }

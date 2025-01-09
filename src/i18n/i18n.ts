@@ -1,8 +1,7 @@
 import { addMessages, init, getLocaleFromNavigator, _ } from 'svelte-i18n';
 import type { Translations } from '.././types/i18n.types';
 import { derived } from 'svelte/store';
-import { en } from './translations/en';
-import { no } from './translations/no';
+import { no, en } from './translations';
 
 // Type-safe dictionary of supported locales
 export const SUPPORTED_LOCALES = {
