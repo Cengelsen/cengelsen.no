@@ -1,12 +1,16 @@
+<script>
+	export let lang;
+</script>
+
 <nav class="navbar">
 	<div class="navbar-container">
 
 		<ul class="navbar-menu">
-			<li class="navbar-link"><a href="/">Home</a></li>
-			<li class="navbar-link"><a href="/blog">Blog</a></li>
-			<li class="navbar-link"><a href="/cv">CV</a></li>
-			<li class="navbar-link"><a href="/projects">Projects</a></li>
-		    <li class="navbar-link"><a href="/machines">Machines</a></li>
+			<li class="navbar-link"><a href="/{lang}">Home</a></li>
+			<li class="navbar-link"><a href="{lang}/blog">Blog</a></li>
+			<li class="navbar-link"><a href="{lang}/cv">CV</a></li>
+			<li class="navbar-link"><a href="{lang}/projects">Projects</a></li>
+		    <li class="navbar-link"><a href="{lang}/machines">Machines</a></li>
 		</ul>
 	</div>
 </nav>
