@@ -1,11 +1,12 @@
 <script lang="ts">
-    import Profile from '../components/index/Profile.svelte';
-    import Activity from '../components/index/Activity.svelte';
+    import Profile from '../../components/index/Profile.svelte';
+    import Activity from '../../components/index/Activity.svelte';
 	import type { PageData } from './$types';
 
     export let data: PageData;
 
-    let posts = data.posts.no
+    let posts = data.posts;
+    
 </script>
 
 <div class="content-wrapper">

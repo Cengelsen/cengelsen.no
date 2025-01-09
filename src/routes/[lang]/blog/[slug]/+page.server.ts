@@ -4,10 +4,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 
-export const load = async ({ params }) => {
+export const load = async ({ params }) => { 
     try {
         // Assuming markdown files are stored in src/content
-        const filePath = path.join(process.cwd(), 'src', 'content', 'no', `${params.slug}.md`);
+        const filePath = path.join(process.cwd(), 'src', 'content', `${params.lang}`, `${params.slug}.md`).replace(/\/+/g, '/');
         
         // Read the markdown file
         const fileContent = await fs.readFile(filePath, 'utf-8');

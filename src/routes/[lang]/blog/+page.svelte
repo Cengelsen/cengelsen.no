@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Post from '../../components/recent-activity/Post.svelte';
+	import Post from '../../../components/recent-activity/Post.svelte';
 
 	export let data: PageData;
 
-    let posts = data.posts.no;
+    let posts = data.posts;
 
     
 

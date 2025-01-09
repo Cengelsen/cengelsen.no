@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Base from "../components/global/Base.svelte";
+    import Base from "../../components/global/Base.svelte";
 </script>
 
 <Base>
