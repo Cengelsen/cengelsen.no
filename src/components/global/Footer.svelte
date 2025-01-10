@@ -20,6 +20,7 @@
 	.footer {
 		background-color: #333;
 		color: white;
+		height: 5vh;
 	}
 
 	.footer-container {

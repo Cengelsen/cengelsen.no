@@ -8,12 +8,16 @@
 </script>
 
 <section class="recent-posts">
-    <h2>{activityTitle}</h2>
-    <ul>
-        {#each recentPosts as post }
-            <Post post={post}/>
-        {/each}
-    </ul>
+    <div class="recent-posts-container">
+        <h2>{activityTitle}</h2>
+        <ul>
+            {#each recentPosts as post }
+    
+            <li><Post post={post}/></li>
+                
+            {/each}
+        </ul>
+    </div>
 </section>
 
 <style>
@@ -26,15 +30,23 @@
     .recent-posts {
         border: 5px solid green;
         background-color: beige;
+        height: 100%;
+    }
+
+    .recent-posts-container {
+        width: 90%;
+        justify-self: center;
+        margin: auto;
     }
 
     h2 {
+        margin-top: 2%;
         font-size: 1.8rem;
         margin-bottom: 1rem;
     }
 
     ul {
         list-style-type: none;
-        padding: 0;
+        padding: auto;
     }
 </style>

@@ -30,12 +30,12 @@
 	.navbar {
 		background-color: #333;
 		color: white;
-		height: 10vh;
+		height: 5vh;
 	}
 
 	.navbar-container {
 		display: flex;
-		height: inherit;
+		height: 100%;
 	}
 
 	.navbar-menu {
@@ -45,7 +45,7 @@
 		justify-content: space-between;
 		margin: auto;
 		width: 80%;
-		height: inherit;
+		height: 100%;
 	}
 
 	.navbar-menu a {

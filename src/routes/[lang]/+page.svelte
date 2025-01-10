@@ -45,7 +45,7 @@
 
     .activity {
         width: 70%;
-        height: 100vh;
+        height: 90vh;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
     }
@@ -55,7 +55,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 90vh;
         width: 30%;
         border: 5px solid blue;
         background-color: grey

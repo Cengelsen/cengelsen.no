@@ -14,5 +14,6 @@
 
         width: min(100vw, 1000px);
         margin: auto;
+        height: 90vh;
     }
 </style>
