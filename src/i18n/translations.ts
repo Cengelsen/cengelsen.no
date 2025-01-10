@@ -1,6 +1,6 @@
 import type { Translations } from "../types/i18n.types";
 
-export const en: Translations = {
+const en: Translations = {
   nav: {
     home: "Home",
     blog: "Blog",
@@ -18,7 +18,7 @@ export const en: Translations = {
   }
 };
 
-export const no: Translations = {
+const no: Translations = {
   nav: {
     home: "Hjem",
     blog: "Blogg",
@@ -34,4 +34,9 @@ export const no: Translations = {
   recentPosts: {
     title: "Nylig aktivitet"
   }
+};
+
+export const translations = {
+  en,
+  no
 };

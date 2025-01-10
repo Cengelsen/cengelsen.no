@@ -3,16 +3,21 @@
     import Activity from '../../components/index/Activity.svelte';
 	import type { PageData } from './$types';
 
-    export let data: PageData;
+    import {translations} from '../../i18n/translations';
+    import { page } from '$app/stores';
 
-    let posts = data.posts;
+    export let data: PageData;
+    
+    $: t = translations[$page.params.lang];
+
+    let posts = data.posts.filter(post => data.posts.indexOf(post) < 6);
     
 </script>
 
 <div class="content-wrapper">
 
     <section class="profile">
-        <Profile />
+        <Profile description={t.profile.description} />
     </section>
 
     <section class="activity">

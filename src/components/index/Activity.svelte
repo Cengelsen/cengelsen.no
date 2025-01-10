@@ -10,7 +10,7 @@
 <section class="recent-posts">
     <h2>{activityTitle}</h2>
     <ul>
-        {#each recentPosts as post}
+        {#each recentPosts as post }
             <Post post={post}/>
         {/each}
     </ul>
