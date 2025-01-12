@@ -1,5 +1,6 @@
 <script>
 	import {translations} from '../../i18n/translations';
+	import LanguageSelect from './LanguageSelect.svelte';
 
 	export let lang;
 
@@ -15,6 +16,7 @@
 			<li class="navbar-link"><a href="/{lang}/cv">{t.nav.cv}</a></li>
 			<li class="navbar-link"><a href="/{lang}/contact">{t.nav.machines}</a></li>
 		    <li class="navbar-link"><a href="/{lang}/projects">{t.nav.projects}</a></li>
+			<li class="language-select"><LanguageSelect /></li>
 		</ul>
 	</div>
 </nav>
@@ -53,7 +55,7 @@
 	}
 
 	.navbar-link:nth-child(1) {
-			border-right:none;
+		border-right:none;
 	}
 
 	.navbar-link{
