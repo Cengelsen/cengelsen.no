@@ -1,6 +1,5 @@
 <script>
 	import {translations} from '../../i18n/translations';
-	import { page } from '$app/stores';
 
 	export let lang;
 
@@ -11,11 +10,11 @@
 	<div class="navbar-container">
 
 		<ul class="navbar-menu">
-			<li class="navbar-link"><a href="{$page.url.pathname}/">{t.nav.home}</a></li>
-			<li class="navbar-link"><a href="{$page.url.pathname}/blog">{t.nav.blog}</a></li>
-			<li class="navbar-link"><a href="{$page.url.pathname}/cv">{t.nav.cv}</a></li>
-			<li class="navbar-link"><a href="{$page.url.pathname}/projects">{t.nav.projects}</a></li>
-		    <li class="navbar-link"><a href="{$page.url.pathname}/machines">{t.nav.machines}</a></li>
+			<li class="navbar-link"><a href="/{lang}">{t.nav.home}</a></li>
+			<li class="navbar-link"><a href="/{lang}/blog">{t.nav.blog}</a></li>
+			<li class="navbar-link"><a href="/{lang}/cv">{t.nav.cv}</a></li>
+			<li class="navbar-link"><a href="/{lang}/contact">{t.nav.machines}</a></li>
+		    <li class="navbar-link"><a href="/{lang}/projects">{t.nav.projects}</a></li>
 		</ul>
 	</div>
 </nav>
