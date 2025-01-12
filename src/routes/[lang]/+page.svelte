@@ -10,7 +10,7 @@
     
     $: t = translations[$page.params.lang];
 
-    let posts = data.posts.filter(post => data.posts.indexOf(post) < 6);
+    let posts = data.posts;
     
 </script>
 

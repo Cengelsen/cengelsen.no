@@ -1,11 +1,27 @@
 <script>
+    import Fa from "svelte-fa";
+    import { faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+    import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
     export let name = "Christian Kårbø Engelsen";
     export let imageUrl = "../../../profile/profile1.png";
     export let description = "En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.";
     export let socialLinks = [
-        { platform: "LinkedIn", url: "https://www.linkedin.com/in/christian-kårbø-engelsen-7a07941aa" },
-        { platform: "GitHub", url: "https://github.com/Cengelsen" },
-        { platform: "Epost", url: "mailto:ckengelsen97@gmail.com"}
+        { 
+            platform: "LinkedIn", 
+            url: "https://www.linkedin.com/in/christian-kårbø-engelsen-7a07941aa",
+            iconClass: faLinkedin
+            },
+        { 
+            platform: "GitHub", 
+            url: "https://github.com/Cengelsen",
+            iconClass: faGithub
+        },
+        { 
+            platform: "Epost", 
+            url: "mailto:ckengelsen97@gmail.com",
+            iconClass: faEnvelope
+        }
     ];
 </script>
 
@@ -15,7 +31,9 @@
     <p class="profile-description">{description}</p>
     <div class="social-links">
         {#each socialLinks as link}
-            <a href={link.url} target="_blank" rel="noopener noreferrer">{link.platform}</a>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+                <Fa icon={link.iconClass} size="2x" />
+            </a>
         {/each}
     </div>
 </div>
@@ -33,9 +51,8 @@
     }
 
     .profile-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
+        width: 90%;
+        border-radius: 5%;
         object-fit: cover;
         margin-bottom: 1rem;
     }
@@ -47,6 +64,7 @@
 
     .profile-description {
         margin-bottom: 1rem;
+        width: 90%;
     }
 
     .social-links {

@@ -7,9 +7,11 @@
 
 </script>
 
+<h2>{activityTitle}</h2>
+
 <section class="recent-posts">
+    
     <div class="recent-posts-container">
-        <h2>{activityTitle}</h2>
         <ul>
             {#each recentPosts as post }
     
@@ -31,6 +33,8 @@
         border: 5px solid green;
         background-color: beige;
         height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
     }
 
     .recent-posts-container {
