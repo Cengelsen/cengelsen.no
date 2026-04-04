@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="no">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon.png" />
+		<link rel="stylesheet" href="../../global.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="../../_app/immutable/entry/start.Dr5kpMQr.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/IhLlg0h5.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/zCZPg2vv.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.Djchrxrl.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D2HHn5uB.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.BHQwTObJ.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/2.COnE2i5u.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/C9zq2bne.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DLyOBsyB.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.hRLEb41t.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D6YF6ztN.js" rel="modulepreload">
+		
+		<link href="../../_app/immutable/assets/2.Bj4Fx7xO.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/5.B4TOAheS.css" rel="stylesheet">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div id="app-shell" style="--content-max-width: 700px" class="svelte-1kqbily scrollable"><div class="navbar-wrapper svelte-1kqbily sticky-nav"><nav class="navbar svelte-j5jv3a"><div class="navbar-container svelte-j5jv3a"><ul class="navbar-menu svelte-j5jv3a"><li class="navbar-link"><a href="/no" class="svelte-j5jv3a">Hjem</a></li> <li class="navbar-link"><a href="/no/blog" class="svelte-j5jv3a">Blogg</a></li> <li class="language-select svelte-j5jv3a"><a href="/en/blog/nextcloud-instruks" class="language-select svelte-1pbo3vo" title="Switch to English"><span class="flag-box svelte-1pbo3vo"><img src="/flags/en.svg" alt="English" class="flag-icon svelte-1pbo3vo"></span> </a></li></ul></div> </nav></div> <main class="main-content svelte-1kqbily"><article class="prose svelte-utjaik"><h1>Nextcloud, Snap og Nginx Reverse proxy</h1> <h2 id="hva-er-nextcloud">Hva er Nextcloud?</h2><p>Nextcloud er et skylagringsalternativ til Dropbox og Google Drive, som er åpen kildekode. Du kan kjøre det lokalt på din egen maskin, 
+hvilket betyr at du har kontroll over dine filer til enhver tid. Med Nextcloud Hub, satser de på å ha én intregret løsning for fillagring,
+fildeling, preiketjenester, epost-tjenester og dokumentsamarbeid. I tillegg er det også mulig å installere diverse apper inn i 
+Nextcloud-installasjonen din. Selv om de startet i 2016, så estimerer de selv at det er nå over 400.000 Nextcloud-maskintjenere på nett. </p><h2 id="forklaring-av-problemstilling">Forklaring av problemstilling</h2><p>I min søken etter svar på internettet, så sitter jeg igjen med inntrykket at denne kombinasjonen av konfigurasjon ikke er vanlig.
+Derfor skal jeg prøve å være så tydelig som mulig, for å forhindre forvirring og at du kaster bort tiden din.</p><p>Det jeg ønsker å forklare i denne instruksen, er hvordan man kan kjøre en Nextcloud instans, installert og konfigurert gjennom Snap,
+bak en Nginx proxy server. Slik at proxy-serveren tar seg av SSL-sikringen, mens tjeneste-serveren tar seg av alt annet Nginx-relatert.</p><p>Om du har konfigurert en Nginx-proxy-server slik som beskrevet i [proxy-instruksen min]( {{&lt; relref path="proxy-instruks.md" lang="no" >}} ), så har du nå to virtuelle maskiner; 
+én virtuell maskin som kjører Nginx som proxy og én virtuell maskin som kjører nginx som en "ordinær" webserver. På den maskinen som kjører en 
+"ordinær" webserver, så skal Nextcloud også kjøre. Problemstillingen er da at Nextcloud må kommunisere riktig med sin lokale "ordinære" webserver,
+samt at den "ordinære" webserveren må kommunisere riktig med proxy-serveren, slik at jeg kan nå nextcloud-tjenesten ved å gå til 
+<em><a href="https://eksempel.domene.no">https://eksempel.domene.no</a></em>. </p><h2 id="forutsetninger">Forutsetninger</h2><ol start="1"><li>Muligheten til å installere Snap. </li><li>64bit CPU og 64bit OS er anbefalt. </li><li>Minst 128MB RAM per prosess, men 512MB RAM per prosess er anbefalt. </li><li>Nginx er konfigurert som reverse proxy, [slik som beskrevet her]({{ relref . "/proxy-instruks" }}). </li></ol><h2 id="installere-snap">Installere Snap</h2><p>Installasjon av selve Snap kan variere mellom ulike systemer. En guide for ulike systemer <a href="https://snapcraft.io/docs/installing-snapd">kan du finne her</a>.</p><h2 id="installere-nextcloud">Installere Nextcloud</h2><p>Det finnes andre måter å installere Nextcloud på som ikke innebærer Snap, men her er poenget at Nextcloud er installert gjennom Snap.</p><p>Når du har Snap, kan du følge disse stegene:</p><ol start="1"><li><code>sudo snap install nextcloud</code> </li><li><code>sudo sudo nextcloud.manual-install *sudobruker* *passord*</code> </li></ol><h2 id="konfigurere-nextcloud">Konfigurere Nextcloud</h2><p>For at Nextcloud skal kommunisere med Nginx på riktig måte, så trengs det litt konfigurasjon av Nextcloud. Du må gjøre følgende:</p><ol start="1"><li><code>sudo snap stop nextcloud</code> </li><li>Åpne konfigurasjonsfilen til nextcloud. For Ubuntu 20.04 blir det <code>/var/snap/nextcloud/31222/nextcloud/config/config.php</code>. </li><li>Legg til disse linjene på bunnen av filen: </li></ol><pre class=""><code>'overwritehost' => 'eksempel.domene.no',
+'overwriteprotocol' => 'https',
+'overwritewebroot' => '/',</code></pre><p>samt endre <code>'trusted_proxies'</code> til å se slik ut:</p><pre class=""><code>'trusted_proxies' =>
+  array (
+    0 => '*Proxy-server IP*',
+  ),</code></pre><p>Om du ikke har <code>'trusted_proxies'</code>-variabelen, må du legge den til også.</p><p>Det nevnes også mange steder på nettet at du må endre <code>'overwrite.cli.url'</code>-variabelen til å være <code>'https://eksempel.domene.no'</code>,
+men jeg har den stående som den er, nemlig <code>'https://localhost'</code>.</p><ol start="4"><li><code>sudo nextcloud.disable-https</code> </li><li><code>sudo snap set nextcloud ports.http=*ledig port*</code>. Det samme er mulig for https: <code>sudo snap set nextcloud ports.https=*ledig port*</code>' </li><li><code>sudo snap start nextcloud</code> </li></ol><p>Da har nextcloud all den nødvendige konfigurasjonen for å kunne kommunisere med nginx.</p><h2 id="konfigurere-nginx">Konfigurere Nginx</h2><p>I dette tilfellet så kreves det nødvendig konfigurasjon på både Proxy-serveren og tjeneste-serveren på forhånd for at konfigureringen under skal virke.
+Da sikter jeg til forbeholdet som denne instruksen tar, hvilket jeg nevnte tidligere.</p><p>Nginx-config på Proxy-serveren:</p><pre class="bash"><code>server {
+
+        server_name *domenenavn*;
+
+        location / {
+                include /etc/nginx/proxy_params;
+
+                proxy_pass http://*IP til nextcloud-server*/; # I LXD kan du også bare skrive *container-navn*.lxd
+
+        }
+
+
+        real_ip_header proxy_protocol;
+        set_real_ip_from 127.0.0.1;
+
+
+
+    listen [::]:443 ssl; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/*eksempel.domene.no*/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/*eksempel.domene.no*/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = *eksempel.domene.no*) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+        listen 80 proxy_protocol;
+        listen [::]:80 proxy_protocol;
+
+        server_name *eksempel.domene.no*;
+    return 404; # managed by Certbot
+
+
+}</code></pre><p>Nginx-config på Nextcloud-serveren:</p><pre class="bash"><code>server {
+
+        listen 80;
+        listen [::]:80;
+
+        server_name *eksempel.domene.no*;
+
+        location / {
+                proxy_pass_header   Server;
+                proxy_set_header    Host $host;
+                proxy_set_header    X-Real-IP $remote_addr;
+                proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header    X-Forwarded-Proto $scheme;
+                proxy_pass          http://127.0.0.1:*nextcloud.http-port*;
+        }
+}</code></pre><h2 id="kilder">Kilder</h2><ol start="1"><li><a href="https://github.com/nextcloud-snap/nextcloud-snap/wiki/Putting-the-snap-behind-a-reverse-proxy">Putting the snap behind a reverse proxy</a>, sist lest 11.09.2022. </li><li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-nextcloud-on-ubuntu-20-04">How To Install and Configure Nextcloud on Ubuntu 20.04</a>, sist lest 11.09.2022. </li><li><a href="https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html">Nextcloud configuration > Reverse proxy</a>, sist lest 11.09.2022. </li><li><a href="https://www.vanwerkhoven.org/blog/2021/setting-up-nextcloud-behind-https-nginx-proxy/">Setting up Nextcloud behind https nginx proxy</a>, sist lest 11.09.2022. </li></ol> </article></main> <footer class="footer svelte-1xoclsu"><p class="footer-copy svelte-1xoclsu">© 2026 Christian Kårbø Engelsen</p> </footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_i0g640 = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.Dr5kpMQr.js"),
+						import("../../_app/immutable/entry/app.Djchrxrl.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 5],
+							data: [null,null,{type:"data",data:{content:"\n## Hva er Nextcloud? \n\nNextcloud er et skylagringsalternativ til Dropbox og Google Drive, som er åpen kildekode. Du kan kjøre det lokalt på din egen maskin, \nhvilket betyr at du har kontroll over dine filer til enhver tid. Med Nextcloud Hub, satser de på å ha én intregret løsning for fillagring,\nfildeling, preiketjenester, epost-tjenester og dokumentsamarbeid. I tillegg er det også mulig å installere diverse apper inn i \nNextcloud-installasjonen din. Selv om de startet i 2016, så estimerer de selv at det er nå over 400.000 Nextcloud-maskintjenere på nett. \n\n## Forklaring av problemstilling\n\nI min søken etter svar på internettet, så sitter jeg igjen med inntrykket at denne kombinasjonen av konfigurasjon ikke er vanlig.\nDerfor skal jeg prøve å være så tydelig som mulig, for å forhindre forvirring og at du kaster bort tiden din.\n\nDet jeg ønsker å forklare i denne instruksen, er hvordan man kan kjøre en Nextcloud instans, installert og konfigurert gjennom Snap,\nbak en Nginx proxy server. Slik at proxy-serveren tar seg av SSL-sikringen, mens tjeneste-serveren tar seg av alt annet Nginx-relatert.\n\nOm du har konfigurert en Nginx-proxy-server slik som beskrevet i [proxy-instruksen min]( {{\u003C relref path=\"proxy-instruks.md\" lang=\"no\" >}} ), så har du nå to virtuelle maskiner; \nén virtuell maskin som kjører Nginx som proxy og én virtuell maskin som kjører nginx som en \"ordinær\" webserver. På den maskinen som kjører en \n\"ordinær\" webserver, så skal Nextcloud også kjøre. Problemstillingen er da at Nextcloud må kommunisere riktig med sin lokale \"ordinære\" webserver,\nsamt at den \"ordinære\" webserveren må kommunisere riktig med proxy-serveren, slik at jeg kan nå nextcloud-tjenesten ved å gå til \n*https://eksempel.domene.no*. \n\n## Forutsetninger\n\n1. Muligheten til å installere Snap.\n2. 64bit CPU og 64bit OS er anbefalt.\n3. Minst 128MB RAM per prosess, men 512MB RAM per prosess er anbefalt.\n4. Nginx er konfigurert som reverse proxy, [slik som beskrevet her]({{ relref . \"/proxy-instruks\" }}).\n\n## Installere Snap\n\nInstallasjon av selve Snap kan variere mellom ulike systemer. En guide for ulike systemer [kan du finne her](https://snapcraft.io/docs/installing-snapd).\n\n## Installere Nextcloud\n\nDet finnes andre måter å installere Nextcloud på som ikke innebærer Snap, men her er poenget at Nextcloud er installert gjennom Snap.\n\nNår du har Snap, kan du følge disse stegene:\n\n1. `sudo snap install nextcloud`\n2. `sudo sudo nextcloud.manual-install *sudobruker* *passord*`\n\n## Konfigurere Nextcloud\n\nFor at Nextcloud skal kommunisere med Nginx på riktig måte, så trengs det litt konfigurasjon av Nextcloud. Du må gjøre følgende:\n\n1. `sudo snap stop nextcloud`\n2. Åpne konfigurasjonsfilen til nextcloud. For Ubuntu 20.04 blir det `/var/snap/nextcloud/31222/nextcloud/config/config.php`.\n3. Legg til disse linjene på bunnen av filen:\n\n```\n'overwritehost' => 'eksempel.domene.no',\n'overwriteprotocol' => 'https',\n'overwritewebroot' => '/',\n```\n\nsamt endre `'trusted_proxies'` til å se slik ut:\n\n```\n'trusted_proxies' =>\n  array (\n    0 => '*Proxy-server IP*',\n  ),\n```\n\nOm du ikke har `'trusted_proxies'`-variabelen, må du legge den til også.\n\nDet nevnes også mange steder på nettet at du må endre `'overwrite.cli.url'`-variabelen til å være `'https://eksempel.domene.no'`,\nmen jeg har den stående som den er, nemlig `'https://localhost'`.\n\n4. `sudo nextcloud.disable-https`\n5. `sudo snap set nextcloud ports.http=*ledig port*`. Det samme er mulig for https: `sudo snap set nextcloud ports.https=*ledig port*`'\n6. `sudo snap start nextcloud`\n\nDa har nextcloud all den nødvendige konfigurasjonen for å kunne kommunisere med nginx.\n\n## Konfigurere Nginx\n\nI dette tilfellet så kreves det nødvendig konfigurasjon på både Proxy-serveren og tjeneste-serveren på forhånd for at konfigureringen under skal virke.\nDa sikter jeg til forbeholdet som denne instruksen tar, hvilket jeg nevnte tidligere.\n\nNginx-config på Proxy-serveren:\n\n```bash\nserver {\n\n        server_name *domenenavn*;\n\n        location / {\n                include /etc/nginx/proxy_params;\n\n                proxy_pass http://*IP til nextcloud-server*/; # I LXD kan du også bare skrive *container-navn*.lxd\n\n        }\n\n\n        real_ip_header proxy_protocol;\n        set_real_ip_from 127.0.0.1;\n\n\n\n    listen [::]:443 ssl; # managed by Certbot\n    listen 443 ssl; # managed by Certbot\n    ssl_certificate /etc/letsencrypt/live/*eksempel.domene.no*/fullchain.pem; # managed by Certbot\n    ssl_certificate_key /etc/letsencrypt/live/*eksempel.domene.no*/privkey.pem; # managed by Certbot\n    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot\n    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot\n\n}\nserver {\n    if ($host = *eksempel.domene.no*) {\n        return 301 https://$host$request_uri;\n    } # managed by Certbot\n\n        listen 80 proxy_protocol;\n        listen [::]:80 proxy_protocol;\n\n        server_name *eksempel.domene.no*;\n    return 404; # managed by Certbot\n\n\n}\n```\n\nNginx-config på Nextcloud-serveren:\n\n```bash\nserver {\n\n        listen 80;\n        listen [::]:80;\n\n        server_name *eksempel.domene.no*;\n\n        location / {\n                proxy_pass_header   Server;\n                proxy_set_header    Host $host;\n                proxy_set_header    X-Real-IP $remote_addr;\n                proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;\n                proxy_set_header    X-Forwarded-Proto $scheme;\n                proxy_pass          http://127.0.0.1:*nextcloud.http-port*;\n        }\n}\n```\n\n## Kilder\n\n1. [Putting the snap behind a reverse proxy](https://github.com/nextcloud-snap/nextcloud-snap/wiki/Putting-the-snap-behind-a-reverse-proxy), sist lest 11.09.2022.\n2. [How To Install and Configure Nextcloud on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-nextcloud-on-ubuntu-20-04), sist lest 11.09.2022.\n3. [Nextcloud configuration > Reverse proxy](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html), sist lest 11.09.2022.\n4. [Setting up Nextcloud behind https nginx proxy](https://www.vanwerkhoven.org/blog/2021/setting-up-nextcloud-behind-https-nginx-proxy/), sist lest 11.09.2022.\n",slug:"nextcloud-instruks",frontmatter:{title:"Nextcloud, Snap og Nginx Reverse proxy",date:new Date(1662854400000),description:"En instruks på hvordan du kan kjøre en Nextcloud snap bak en Nginx reverse proxy."}},uses:{params:["lang","slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
