@@ -1,43 +1,25 @@
-<script>
+<script lang="ts">
 	const currentYear = new Date().getFullYear();
 </script>
 
 <footer class="footer">
-	<div class="footer-container">
-	</div>
-	<div class="footer-bottom">
-		<p>&copy; {currentYear} - Christian Kårbø Engelsen</p>
-	</div>
+	<p class="footer-copy">&copy; {currentYear} Christian Kårbø Engelsen</p>
 </footer>
 
 <style>
-
-	*{
-		margin: 0;
-		padding: 0;
-	}
-
 	.footer {
-		background-color: #333;
+		background-color: var(--color-chrome);
 		color: white;
-		height: 5vh;
-	}
-
-	.footer-container {
+		height: var(--footer-height);
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		max-width: 100%;
+		align-items: center;
+		justify-content: center;
+		border-top: 1px solid var(--color-chrome-border);
 	}
 
-	.footer-bottom {
-		text-align: center;
-		border-top: 1px solid #555;
-	}
-
-	@media (max-width: 768px) {
-		.footer-container {
-			flex-direction: column;
-		}
+	.footer-copy {
+		margin: 0;
+		font-size: var(--font-size-sm);
+		color: rgba(255, 255, 255, 0.75);
 	}
 </style>

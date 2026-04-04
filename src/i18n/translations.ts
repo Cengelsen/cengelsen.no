@@ -1,42 +1,37 @@
-import type { Translations } from "../types/i18n.types";
+import type { TranslationMap } from '../types/i18n.types';
 
-const en: Translations = {
-  nav: {
-    home: "Home",
-    blog: "Blog",
-    cv: "CV",
-    projects: "Projects",
-    machines: "Machines",
-  },
-
-  profile: {
-    description: "A passionate developer with a love for creating innovative solutions.",
-  },
-
-  recentPosts: {
-    title: "Recent Activity"
-  }
-};
-
-const no: Translations = {
-  nav: {
-    home: "Hjem",
-    blog: "Blogg",
-    cv: "CV",
-    projects: "Prosjekter",
-    machines: "Maskiner",
-  },
-  
-  profile: {
-    description: "En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.",
-  },
-
-  recentPosts: {
-    title: "Nylig aktivitet"
-  }
-};
-
-export const translations = {
-  en,
-  no
+export const translations: TranslationMap = {
+	en: {
+		nav: {
+			home: 'Home',
+			blog: 'Blog'
+		},
+		profile: {
+			description: 'A passionate developer with a love for creating innovative solutions.'
+		},
+		recentPosts: {
+			title: 'Recent Activity'
+		},
+		blog: {
+			title: 'Blog Posts',
+			empty: 'No posts available.'
+		}
+	},
+	no: {
+		nav: {
+			home: 'Hjem',
+			blog: 'Blogg'
+		},
+		profile: {
+			description:
+				'En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.'
+		},
+		recentPosts: {
+			title: 'Nylig aktivitet'
+		},
+		blog: {
+			title: 'Blogginnlegg',
+			empty: 'Ingen innlegg tilgjengelig.'
+		}
+	}
 };

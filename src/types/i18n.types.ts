@@ -1,17 +1,23 @@
+import type { Lang } from '$lib/posts';
+
 export interface Translations {
-    nav: {
-      home: string;
-      blog: string;
-      cv: string;
-      projects: string;
-      machines: string;
-    };
+	nav: {
+		home: string;
+		blog: string;
+	};
 
-    profile: {
-      description: string;
-    }
+	profile: {
+		description: string;
+	};
 
-    recentPosts: {
-      title: string;
-    }
-  }
+	recentPosts: {
+		title: string;
+	};
+
+	blog: {
+		title: string;
+		empty: string;
+	};
+}
+
+export type TranslationMap = Record<Lang, Translations>;

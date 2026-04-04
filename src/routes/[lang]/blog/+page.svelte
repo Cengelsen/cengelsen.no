@@ -1,46 +1,58 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Post from '../../../components/recent-activity/Post.svelte';
+	import { translations } from '../../../i18n/translations';
+	import { page } from '$app/stores';
+	import type { Lang } from '$lib/posts';
 
 	export let data: PageData;
 
-    let posts = data.posts;
-
-    
-
+	$: t = translations[$page.params.lang as Lang];
+	let posts = data.posts;
 </script>
 
 <div class="content-wrapper">
+	<h1 class="page-title">{t.blog.title}</h1>
 
-    <h1>Blog Posts</h1>
-
-    <section class="postlist">
-        {#if posts.length > 0 }
-            {#each posts as post}
-                <Post {post} />
-            {/each}
-        {:else}
-            <p>No posts available.</p>
-        {/if}
-    </section>
+	<section class="post-list">
+		{#if posts.length > 0}
+			{#each posts as post}
+				<Post {post} />
+			{/each}
+		{:else}
+			<p class="empty">{t.blog.empty}</p>
+		{/if}
+	</section>
 </div>
 
 <style>
+	.content-wrapper {
+		max-width: 700px;
+		margin: 0 auto;
+		padding: var(--space-xl) var(--space-lg);
+	}
 
-    h1{
-        text-align: center;
-    }
+	.page-title {
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: var(--space-xl);
+		color: var(--color-dark);
+	}
 
-    .content-wrapper{
-        max-width: min(90vw, 800px);
-        margin: auto;
-        padding: 20px;
-    }
+	.post-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-md);
+	}
 
-    .postlist{
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
-    }
+	.empty {
+		text-align: center;
+		color: var(--color-mid);
+	}
 
+	@media (max-width: 700px) {
+		.content-wrapper {
+			padding: var(--space-md);
+		}
+	}
 </style>

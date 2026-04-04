@@ -1,63 +1,57 @@
 <script lang="ts">
     import Profile from '../../components/index/Profile.svelte';
     import Activity from '../../components/index/Activity.svelte';
-	import type { PageData } from './$types';
-
-    import {translations} from '../../i18n/translations';
+    import type { PageData } from './$types';
+    import { translations } from '../../i18n/translations';
     import { page } from '$app/stores';
+    import type { Lang } from '$lib/posts';
 
     export let data: PageData;
-    
-    $: t = translations[$page.params.lang];
+
+    $: t = translations[$page.params.lang as Lang];
 
     let posts = data.posts;
-    
 </script>
 
 <div class="content-wrapper">
-
-    <section class="profile">
+    <aside class="profile-column">
         <Profile description={t.profile.description} />
-    </section>
+    </aside>
 
-    <section class="activity">
-        <Activity recentPosts={posts} />
+    <section class="activity-column">
+        <Activity recentPosts={posts} title={t.recentPosts.title} />
     </section>
 </div>
 
 <style>
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        width: min(90vw, 800px);
-    }
-
-    @import "../../static/global.css";
-
-    .content-wrapper{
+    .content-wrapper {
         display: flex;
-        width: 100%;
+        gap: var(--space-lg);
+        padding: var(--space-lg);
+        align-items: flex-start;
     }
 
-    .activity {
-        width: 70%;
-        height: 90vh;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
+    .profile-column {
+        width: 28%;
+        flex-shrink: 0;
+        position: sticky;
+        top: var(--space-lg);
     }
 
-    .profile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        height: 90vh;
-        width: 30%;
-        border: 5px solid blue;
-        background-color: grey
+    .activity-column {
+        flex: 1;
+        min-width: 0;
+    }
+
+    @media (max-width: 700px) {
+        .content-wrapper {
+            flex-direction: column;
+            padding: var(--space-md);
+        }
+
+        .profile-column {
+            width: 100%;
+            position: static;
+        }
     }
 </style>

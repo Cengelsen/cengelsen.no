@@ -1,50 +1,57 @@
 <script lang="ts">
-    
-    export let post;
-    import { goto } from '$app/navigation';
-    import { page } from "$app/stores";
+    import type { Post } from '$lib/posts';
+    import { page } from '$app/stores';
 
-    function openPost(title: string) {
-        const slug = title.toLowerCase().replace(/\s+/g, '-');
-        goto(`${$page.params.lang}/blog/${slug}`);
-    }
-
+    export let post: Post;
 </script>
 
-<button class="post" on:click={()=>openPost(post.title)}>    
+<a class="post" href="/{$page.params.lang}/blog/{post.slug}">
     <h2 class="post-title">{post.title}</h2>
     <p class="post-date">{post.date}</p>
     <p class="post-description">{post.description}</p>
-</button>
+</a>
 
 <style>
     .post {
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        margin-bottom: 2%;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: block;
+        background-color: var(--color-surface);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid transparent;
         width: 100%;
-        justify-self: center;
+        text-decoration: none;
+        color: inherit;
+        padding: var(--space-md);
+        transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .post:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-1px);
+        border-color: var(--color-accent);
     }
 
     .post-title {
-        font-size: 1.5em;
-        color: #333;
+        font-size: 1.1rem;
+        color: var(--color-dark);
+        margin: 0 0 var(--space-xs) 0;
     }
 
     .post-date {
         font-style: italic;
-        color: #666;
-        margin: 0 0 10px 0;
+        font-size: var(--font-size-sm);
+        color: var(--color-mid);
+        margin: 0 0 var(--space-sm) 0;
     }
 
     .post-description {
-        color: #444;
-        line-height: 1.6;
+        color: var(--color-mid);
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-base);
+        margin: 0;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
 </style>
-

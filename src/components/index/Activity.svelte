@@ -1,56 +1,39 @@
-<script>
+<script lang="ts">
     import Post from "../recent-activity/Post.svelte";
-    import { page } from "$app/stores";
-    export let recentPosts;
+    import type { Post as PostType } from "$lib/posts";
 
-    const activityTitle = $page.params.lang === 'en' ? "Recent Activity" : "Nylig aktivitet";
-
+    export let recentPosts: PostType[];
+    export let title: string;
 </script>
 
-<h2>{activityTitle}</h2>
+<section class="activity">
+    <h2 class="activity-title">{title}</h2>
 
-<section class="recent-posts">
-    
-    <div class="recent-posts-container">
-        <ul>
-            {#each recentPosts as post }
-    
-            <li><Post post={post}/></li>
-                
-            {/each}
-        </ul>
-    </div>
+    <ul class="post-list">
+        {#each recentPosts as post}
+            <li><Post {post} /></li>
+        {/each}
+    </ul>
 </section>
 
 <style>
-
-    * {
-        margin: 0;
-        padding: 0;
+    .activity {
+        width: 100%;
     }
 
-    .recent-posts {
-        border: 5px solid green;
-        background-color: beige;
-        height: 100%;
-        overflow-y: scroll;
-        scrollbar-width: none;
+    .activity-title {
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: var(--space-md);
+        color: var(--color-dark);
     }
 
-    .recent-posts-container {
-        width: 90%;
-        justify-self: center;
-        margin: auto;
-    }
-
-    h2 {
-        margin-top: 2%;
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-
-    ul {
+    .post-list {
         list-style-type: none;
-        padding: auto;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
     }
 </style>

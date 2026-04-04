@@ -1,7 +1,7 @@
 ---
 title: Teknologiske Begrensninger
 date: 2023-02-18
-description = Dette er en tekst hvor jeg deler min mening om hvilke begrensninger teknologi kan pålegge mennesket, samt etikken rundt det.
+description: Dette er en tekst hvor jeg deler min mening om hvilke begrensninger teknologi kan pålegge mennesket, samt etikken rundt det.
 ---
 
 Teknologi er det som driver samfunnet fremover. Det gjør livene våre lettere, raskere og mer komfortabelt.
