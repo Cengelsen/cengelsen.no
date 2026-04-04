@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	$: currentLang = $page.params.lang;
+	$: currentLang = $page.params.lang ?? 'no';
 	$: targetLang = currentLang === 'en' ? 'no' : 'en';
-	$: targetUrl = $page.url.pathname.replace(`/${currentLang}`, `/${targetLang}`);
+	$: targetUrl = $page.url.pathname === '/'
+		? `/${targetLang}`
+		: $page.url.pathname.replace(`/${currentLang}`, `/${targetLang}`);
 </script>
 
 <a

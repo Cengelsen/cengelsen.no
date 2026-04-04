@@ -4,13 +4,14 @@
     import { page } from "$app/stores";
 
     $: isScrollable = $page.route.id?.includes('/blog') ?? false;
-    $: isHomePage = $page.route.id === '/[lang]';
+    $: isHomePage = $page.route.id === '/[lang]' || $page.route.id === '/';
     $: contentMaxWidth = isHomePage ? '100%' : '700px';
+    $: lang = $page.params.lang ?? 'no';
 </script>
 
 <div id="app-shell" class:scrollable={isScrollable} style="--content-max-width: {contentMaxWidth}">
     <div class="navbar-wrapper" class:sticky-nav={isScrollable}>
-        <Navbar lang={$page.params.lang} />
+        <Navbar lang={lang} />
     </div>
 
     <main class="main-content">
