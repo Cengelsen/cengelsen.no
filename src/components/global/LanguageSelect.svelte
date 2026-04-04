@@ -36,12 +36,15 @@
 		height: 1.25rem;
 		border-radius: 2px;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-		transition: box-shadow 0.15s ease;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
 		overflow: hidden;
 	}
 
-	.language-select:hover .flag-box {
-		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+	@media (hover: hover) {
+		.language-select:hover .flag-box {
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+			transform: translateY(-2px) scale(1.12);
+		}
 	}
 
 	.flag-icon {
