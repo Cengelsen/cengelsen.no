@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Base from '../components/global/Base.svelte';
 	import Profile from '../components/index/Profile.svelte';
 	import Activity from '../components/index/Activity.svelte';
 	import { translations } from '../i18n/translations';
@@ -11,17 +10,15 @@
 	$: posts = data.posts;
 </script>
 
-<Base>
-	<div class="content-wrapper">
-		<aside class="profile-column">
-			<Profile description={t.profile.description} />
-		</aside>
+<div class="content-wrapper">
+	<aside class="profile-column">
+		<Profile description={t.profile.description} />
+	</aside>
 
-		<section class="activity-column">
-			<Activity recentPosts={posts} title={t.recentPosts.title} />
-		</section>
-	</div>
-</Base>
+	<section class="activity-column">
+		<Activity recentPosts={posts} title={t.recentPosts.title} />
+	</section>
+</div>
 
 <style>
 	.content-wrapper {

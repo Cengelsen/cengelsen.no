@@ -2,6 +2,7 @@
 title: We Should All Subscribe to Calendars
 date: 2024-02-26
 description: We should normalize subscribing to calendar feeds so we never miss occurrences again. Plus, it's less cumbersome.
+id: 7
 ---
 
 Perhaps not the most controversial or groundbreaking opinion, but we should normalize subscribing to calendar feeds. Lately, I've become a bit fascinated with being able to import occurrences from others' calendars into my own. This stemmed from the desire to find various occurrences I could attend outside of my usual routine.

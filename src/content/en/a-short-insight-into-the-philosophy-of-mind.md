@@ -2,6 +2,7 @@
 title: A Short Insight Into the Philosophy of Mind
 date: 2024-04-27
 description: This is a text I wrote in 2018 about different positions in philosophy of consciousness.
+id: 1
 ---
 
 In this text I will explain the definitions of dualism and materialism and what the terms imply. 

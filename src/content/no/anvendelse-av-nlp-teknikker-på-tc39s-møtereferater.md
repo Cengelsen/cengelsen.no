@@ -2,6 +2,7 @@
 title: Anvendelse av NLP-teknikker på TC39s møtereferater
 date: 2023-12-15
 description: Denne rapporten detaljerer et kodingsprosjekt rettet mot å utnytte naturlig språkprossesseringsteknikker (NLP) for å ekstrahere og analysere informasjon fra TC39-møtereferater, en avgjørende del av ECMAScript-standardiseringsprosessen
+id: 8
 ---
 
 ## Sammendrag

@@ -2,6 +2,7 @@
 title: Examination Of The Ethical Use Of AI In Social Media
 date: 2023-10-16
 description: Exploratory analysis of social media's use of AI and its impact on psychological, cognitive and ethical challenges.
+id: 4
 ---
 
 ### Introduction 

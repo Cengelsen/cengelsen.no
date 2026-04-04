@@ -2,6 +2,7 @@
 title: Et Innblikk I Bevissthetsfilosofi
 date: 2022-04-27
 description: Dette er en tekst jeg skrev i 2018 om ulike posisjoner i bevissthetsfilosofi.
+id: 1
 ---
 
 I denne teksten skal jeg gjøre rede for definisjonene av dualisme og materialisme og hva

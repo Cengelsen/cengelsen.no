@@ -2,6 +2,7 @@
 title: Nginx as reversed proxy in LXD
 date: 2022-09-11
 description: An instruction on how to rig Nginx as a proxy server in LXD.
+id: 6
 ---
 
 ## Dilemma

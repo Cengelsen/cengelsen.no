@@ -4,6 +4,9 @@
 
     export let post: Post;
 
+    $: lang = $page.params.lang ?? 'no';
+    $: blogBase = lang === 'no' ? '/blog' : `/${lang}/blog`;
+
     function formatDate(dateStr: string): string {
         if (!dateStr) return '';
         const date = new Date(dateStr.includes('T') ? dateStr : dateStr + 'T00:00:00');
@@ -11,14 +14,12 @@
             weekday: 'long',
             day: 'numeric',
             month: 'long',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
+            year: 'numeric'
         }).format(date);
     }
 </script>
 
-<a class="post" href="/{$page.params.lang}/blog/{post.slug}">
+<a class="post" href="{blogBase}/{post.slug}">
     <h2 class="post-title">{post.title}</h2>
     <p class="post-date">{formatDate(post.date)}</p>
     <p class="post-description">{post.description}</p>

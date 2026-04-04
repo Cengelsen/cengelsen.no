@@ -2,6 +2,7 @@
 title: Hvordan rigge opp LXD lokalt
 date: 2022-07-24
 description: En instruks på hvordan rigge opp LXD lokalt for virtualisering.
+id: 5
 ---
 
 ## Hva er LXD?

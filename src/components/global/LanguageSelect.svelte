@@ -3,9 +3,20 @@
 
 	$: currentLang = $page.params.lang ?? 'no';
 	$: targetLang = currentLang === 'en' ? 'no' : 'en';
-	$: targetUrl = $page.url.pathname === '/'
-		? `/${targetLang}`
-		: $page.url.pathname.replace(`/${currentLang}`, `/${targetLang}`);
+	$: isBlogPost = $page.route.id === '/[lang=lang]/blog/[slug]'
+		|| $page.route.id === '/blog/[slug]';
+	$: translatedSlug = $page.data.translatedSlug as string | null | undefined;
+
+	$: targetUrl = (() => {
+		if (isBlogPost) {
+			if (!translatedSlug) return targetLang === 'no' ? '/blog' : `/${targetLang}/blog`;
+			return targetLang === 'no'
+				? `/blog/${translatedSlug}`
+				: `/${targetLang}/blog/${translatedSlug}`;
+		}
+		if (targetLang === 'no') return $page.url.pathname.replace(`/${currentLang}`, '') || '/';
+		return `/${targetLang}${$page.url.pathname.replace(`/${currentLang}`, '')}`;
+	})();
 </script>
 
 <a

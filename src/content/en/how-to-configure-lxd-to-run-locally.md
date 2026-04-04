@@ -2,6 +2,7 @@
 title: How to configure LXD to run locally
 date: 2022-07-24
 description: An instruction on how to set up LXD locally for virtualization.
+id: 5
 ---
 
 ## What is LXD? 

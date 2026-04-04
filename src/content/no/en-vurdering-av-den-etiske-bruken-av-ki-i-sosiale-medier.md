@@ -2,6 +2,7 @@
 title: En Vurdering Av Den Etiske Bruken Av KI I Sosiale Medier
 date: 2023-10-16
 description: Utforskende analyse av sosiale mediers bruk av KI og dens innvirkning på psykologiske, kognitive og etiske utfordringer.
+id: 4
 ---
 
 ### Innledning

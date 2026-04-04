@@ -2,6 +2,7 @@
 title: Vi Burde Alle Abonnere På Kalendere
 date: 2024-02-26
 description: Vi burde normalisere å abonnere på kalenderstrømmer, slik at vi aldri går glipp av hendelser igjen. Pluss, det er mindre tungvint.
+id: 7
 ---
 
 Kanskje ikke så kontroversiell eller nyskapende mening, men vi burde normalisere å abonnere på kalenderstrømmer. I det siste har jeg blitt litt fascinert av å kunne importere hendelser fra andres kalendere inn i min egen. Dette kom fra ønsket om å finne diverse arrangementer som jeg kunne delta på utenfor min vanlige rutine. 

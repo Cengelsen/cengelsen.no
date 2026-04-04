@@ -11,8 +11,8 @@
 <nav class="navbar">
 	<div class="navbar-container">
 		<ul class="navbar-menu">
-			<li class="navbar-link"><a href="/{lang}">{t.nav.home}</a></li>
-			<li class="navbar-link"><a href="/{lang}/blog">{t.nav.blog}</a></li>
+			<li class="navbar-link"><a href={lang === 'no' ? '/' : `/${lang}`}>{t.nav.home}</a></li>
+			<li class="navbar-link"><a href={lang === 'no' ? '/blog' : `/${lang}/blog`}>{t.nav.blog}</a></li>
 			<li class="language-select"><LanguageSelect /></li>
 		</ul>
 	</div>

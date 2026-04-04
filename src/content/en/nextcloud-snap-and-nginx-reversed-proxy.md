@@ -2,6 +2,7 @@
 title: Nextcloud, Snap and Nginx reversed proxy
 date: 2022-09-11
 description: An instruction on how to run Nextcloud installed through Snap behind an Nginx reverse proxy.
+id: 9
 ---
 
 ## What is Nextcloud? 

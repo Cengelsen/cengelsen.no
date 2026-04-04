@@ -2,6 +2,7 @@
 title: En Vurdering av Oculus Rift Sin Innovative Kraft
 date: 2022-04-27
 description: Dette er en tekst jeg skrev i 2020 om VV-teknologi, dens historie og hvordan Oculus Rift var en nyskapende suksess.
+id: 3
 ---
 
 Hva er ekte? Ikke bare er dette et eksistensielt spørsmål, men en kilde for skapelse, innovasjon og

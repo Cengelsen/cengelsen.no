@@ -4,7 +4,7 @@
     import { page } from "$app/stores";
 
     $: isScrollable = $page.route.id?.includes('/blog') ?? false;
-    $: isHomePage = $page.route.id === '/[lang]' || $page.route.id === '/';
+    $: isHomePage = $page.route.id === '/[lang=lang]' || $page.route.id === '/';
     $: contentMaxWidth = isHomePage ? '100%' : '700px';
     $: lang = $page.params.lang ?? 'no';
 </script>
