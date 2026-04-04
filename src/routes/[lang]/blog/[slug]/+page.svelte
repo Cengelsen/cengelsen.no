@@ -83,15 +83,16 @@
         font-family: 'Courier New', monospace;
         font-size: 0.875em;
         background-color: var(--color-surface);
-        border: 1px solid #ddd;
+        border: 1px solid var(--color-chrome-border);
         border-radius: var(--radius-sm);
         padding: 0.1em 0.4em;
     }
 
     /* Code blocks */
     .prose :global(pre) {
-        background-color: var(--color-dark);
-        color: #f8f8f2;
+        background-color: var(--color-chrome);
+        color: var(--color-dark);
+        border: 1px solid var(--color-chrome-border);
         border-radius: var(--radius-md);
         padding: var(--space-md);
         overflow-x: auto;
@@ -109,7 +110,7 @@
     /* Horizontal rule */
     .prose :global(hr) {
         border: none;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid var(--color-surface);
         margin: var(--space-xl) 0;
     }
 
@@ -132,7 +133,7 @@
     .prose :global(td) {
         text-align: left;
         padding: var(--space-sm) var(--space-md);
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--color-surface);
     }
 
     .prose :global(th) {

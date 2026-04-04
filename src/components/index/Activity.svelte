@@ -41,5 +41,10 @@
         gap: var(--space-md);
         flex: 1;
         overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .post-list::-webkit-scrollbar {
+        display: none;
     }
 </style>
