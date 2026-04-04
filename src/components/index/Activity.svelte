@@ -19,6 +19,9 @@
 <style>
     .activity {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .activity-title {
@@ -26,6 +29,7 @@
         margin-top: 0;
         margin-bottom: var(--space-md);
         color: var(--color-dark);
+        flex-shrink: 0;
     }
 
     .post-list {
@@ -35,5 +39,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
+        flex: 1;
+        overflow-y: auto;
     }
 </style>

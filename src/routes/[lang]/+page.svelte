@@ -26,9 +26,11 @@
 <style>
     .content-wrapper {
         display: flex;
+        flex: 1;
         gap: var(--space-lg);
         padding: var(--space-lg);
         align-items: flex-start;
+        overflow: hidden;
     }
 
     .profile-column {
@@ -41,17 +43,27 @@
     .activity-column {
         flex: 1;
         min-width: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: 100%;
     }
 
     @media (max-width: 700px) {
         .content-wrapper {
             flex-direction: column;
             padding: var(--space-md);
+            overflow-y: auto;
         }
 
         .profile-column {
             width: 100%;
             position: static;
+        }
+
+        .activity-column {
+            overflow: visible;
+            height: auto;
         }
     }
 </style>

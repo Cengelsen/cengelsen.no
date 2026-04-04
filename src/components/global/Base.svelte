@@ -18,12 +18,16 @@
     #app-shell {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
         max-width: var(--max-content-width);
         margin: 0 auto;
     }
 
     .main-content {
         flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 </style>
