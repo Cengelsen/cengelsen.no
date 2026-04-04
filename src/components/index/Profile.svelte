@@ -26,15 +26,19 @@
 </script>
 
 <div class="profile">
-    <img src={imageUrl} alt={name} class="profile-image" />
-    <h2 class="profile-name">{name}</h2>
-    <p class="profile-description">{description}</p>
-    <div class="social-links">
-        {#each socialLinks as link}
-            <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.platform}>
-                <Fa icon={link.iconClass} size="1.5x" />
-            </a>
-        {/each}
+    <div class="profile-left">
+        <img src={imageUrl} alt={name} class="profile-image" />
+        <div class="social-links">
+            {#each socialLinks as link}
+                <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.platform}>
+                    <Fa icon={link.iconClass} size="1.5x" />
+                </a>
+            {/each}
+        </div>
+    </div>
+    <div class="profile-text">
+        <h2 class="profile-name">{name}</h2>
+        <p class="profile-description">{description}</p>
     </div>
 </div>
 
@@ -49,6 +53,10 @@
         border-radius: var(--radius-lg);
         padding: var(--space-lg) var(--space-md);
         box-shadow: var(--shadow-sm);
+    }
+
+    .profile-left {
+        display: contents;
     }
 
     .profile-image {
@@ -92,28 +100,42 @@
     @media (max-width: 700px) {
         .profile {
             flex-direction: row;
-            flex-wrap: wrap;
+            align-items: flex-start;
             text-align: left;
             gap: var(--space-md);
             padding: var(--space-md);
+        }
+
+        .profile-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            gap: var(--space-sm);
         }
 
         .profile-image {
             width: 80px;
             height: 80px;
             margin-bottom: 0;
-            flex-shrink: 0;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
         }
 
         .profile-name,
         .profile-description {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .social-links {
             width: 100%;
-            justify-content: flex-start;
         }
     }
 </style>
