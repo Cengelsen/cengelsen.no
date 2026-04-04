@@ -9,11 +9,13 @@
 <section class="activity">
     <h2 class="activity-title">{title}</h2>
 
-    <ul class="post-list">
-        {#each recentPosts as post}
-            <li><Post {post} /></li>
-        {/each}
-    </ul>
+    <div class="post-list-wrapper">
+        <ul class="post-list">
+            {#each recentPosts as post}
+                <li><Post {post} /></li>
+            {/each}
+        </ul>
+    </div>
 </section>
 
 <style>
@@ -32,14 +34,35 @@
         flex-shrink: 0;
     }
 
+    .post-list-wrapper {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        background-color: oklch(26% 0 0);
+        border-radius: var(--radius-md);
+        padding: var(--space-md);
+    }
+
+    .post-list-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4rem;
+        background: linear-gradient(to bottom, transparent, oklch(26% 0 0));
+        pointer-events: none;
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+
     .post-list {
         list-style-type: none;
-        padding: 0;
+        padding: 4px 0 var(--space-lg);
         margin: 0;
         display: flex;
         flex-direction: column;
         gap: var(--space-md);
-        flex: 1;
+        height: 100%;
         overflow-y: auto;
         scrollbar-width: none;
     }
