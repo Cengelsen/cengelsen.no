@@ -15,9 +15,12 @@
 
 <style>
     .prose {
-        max-width: 72ch;
+        width: 100%;
+        max-width: var(--content-max-width);
         margin: 0 auto;
         padding: var(--space-xl) var(--space-lg);
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     /* Headings */
@@ -31,9 +34,9 @@
         color: var(--color-dark);
     }
 
-    .prose :global(h1) { font-size: 2rem; margin-top: var(--space-lg); }
-    .prose :global(h2) { font-size: 1.5rem; }
-    .prose :global(h3) { font-size: 1.25rem; }
+    .prose :global(h1) { font-size: clamp(1.5rem, 5vw, 2rem); margin-top: var(--space-lg); }
+    .prose :global(h2) { font-size: clamp(1.2rem, 4vw, 1.5rem); }
+    .prose :global(h3) { font-size: clamp(1.1rem, 3.5vw, 1.25rem); }
     .prose :global(h4) { font-size: 1.1rem; }
 
     /* Paragraphs */
@@ -141,9 +144,21 @@
         font-weight: 600;
     }
 
+    /* Wrap tables so they scroll horizontally on narrow viewports */
+    .prose :global(table) {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     @media (max-width: 700px) {
         .prose {
             padding: var(--space-md);
+        }
+
+        .prose :global(ul),
+        .prose :global(ol) {
+            padding-left: var(--space-lg);
         }
     }
 </style>

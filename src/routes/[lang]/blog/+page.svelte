@@ -8,7 +8,7 @@
 	export let data: PageData;
 
 	$: t = translations[$page.params.lang as Lang];
-	let posts = data.posts;
+	$: posts = data.posts;
 </script>
 
 <div class="content-wrapper">
@@ -27,7 +27,8 @@
 
 <style>
 	.content-wrapper {
-		max-width: 700px;
+		width: 100%;
+		max-width: var(--content-max-width);
 		margin: 0 auto;
 		padding: var(--space-xl) var(--space-lg);
 	}

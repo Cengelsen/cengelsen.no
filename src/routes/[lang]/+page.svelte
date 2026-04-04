@@ -10,7 +10,7 @@
 
     $: t = translations[$page.params.lang as Lang];
 
-    let posts = data.posts;
+    $: posts = data.posts;
 </script>
 
 <div class="content-wrapper">
@@ -47,6 +47,12 @@
         flex-direction: column;
         overflow: hidden;
         height: 100%;
+    }
+
+    @media (max-width: 860px) {
+        .profile-column {
+            width: 220px;
+        }
     }
 
     @media (max-width: 700px) {

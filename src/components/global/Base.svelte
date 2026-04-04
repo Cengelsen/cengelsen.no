@@ -4,9 +4,11 @@
     import { page } from "$app/stores";
 
     $: isScrollable = $page.route.id?.includes('/blog') ?? false;
+    $: isHomePage = $page.route.id === '/[lang]';
+    $: contentMaxWidth = isHomePage ? '100%' : '700px';
 </script>
 
-<div id="app-shell" class:scrollable={isScrollable}>
+<div id="app-shell" class:scrollable={isScrollable} style="--content-max-width: {contentMaxWidth}">
     <div class="navbar-wrapper" class:sticky-nav={isScrollable}>
         <Navbar lang={$page.params.lang} />
     </div>
@@ -23,6 +25,7 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
+        height: 100dvh;
         overflow: hidden;
         max-width: var(--max-content-width);
         margin: 0 auto;
@@ -31,6 +34,7 @@
     #app-shell.scrollable {
         height: auto;
         min-height: 100vh;
+        min-height: 100dvh;
         overflow: visible;
     }
 

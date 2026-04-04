@@ -12,11 +12,12 @@
 
 <style>
 	.language-select {
-		font-size: 2.5rem;
+		font-size: 1.75rem;
 		text-decoration: none;
 		margin: 0;
-		padding: 0;
-		width: fit-content;
-		height: 5vh;
+		padding: var(--space-xs);
+		display: flex;
+		align-items: center;
+		line-height: 1;
 	}
 </style>

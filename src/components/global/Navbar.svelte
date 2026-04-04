@@ -28,6 +28,10 @@
 	.navbar-container {
 		display: flex;
 		height: 100%;
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		padding: 0 var(--space-lg);
+		width: 100%;
 	}
 
 	.navbar-menu {
@@ -35,9 +39,9 @@
 		list-style-type: none;
 		align-items: center;
 		gap: var(--space-md);
-		margin: auto;
+		margin: 0;
 		padding: 0;
-		width: 90%;
+		width: 100%;
 		height: 100%;
 	}
 
@@ -65,8 +69,11 @@
 			min-height: var(--navbar-height);
 		}
 
+		.navbar-container {
+			padding: 0 var(--space-md);
+		}
+
 		.navbar-menu {
-			width: 95%;
 			flex-wrap: wrap;
 			padding: var(--space-sm) 0;
 		}

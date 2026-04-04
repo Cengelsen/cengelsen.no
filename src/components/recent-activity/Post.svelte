@@ -3,11 +3,24 @@
     import { page } from '$app/stores';
 
     export let post: Post;
+
+    function formatDate(dateStr: string): string {
+        if (!dateStr) return '';
+        const date = new Date(dateStr.includes('T') ? dateStr : dateStr + 'T00:00:00');
+        return new Intl.DateTimeFormat('nb-NO', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        }).format(date);
+    }
 </script>
 
 <a class="post" href="/{$page.params.lang}/blog/{post.slug}">
     <h2 class="post-title">{post.title}</h2>
-    <p class="post-date">{post.date}</p>
+    <p class="post-date">{formatDate(post.date)}</p>
     <p class="post-description">{post.description}</p>
 </a>
 
@@ -22,13 +35,18 @@
         text-decoration: none;
         color: inherit;
         padding: var(--space-md);
-        transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .post:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateY(-1px);
-        border-color: var(--color-accent);
+    @media (hover: hover) {
+        .post {
+            transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .post:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+            border-color: var(--color-accent);
+        }
     }
 
     .post-title {

@@ -21,7 +21,7 @@ export async function loadPosts(lang: string): Promise<Post[]> {
 	const dir = path.join(process.cwd(), 'src', 'content', lang);
 	const files = await fs.readdir(dir);
 
-	return Promise.all(
+	const posts = await Promise.all(
 		files
 			.filter((f) => f.endsWith('.md'))
 			.map(async (file) => {
@@ -30,9 +30,15 @@ export async function loadPosts(lang: string): Promise<Post[]> {
 				return {
 					slug: file.replace('.md', ''),
 					title: data.title ?? '',
-					date: data.date ?? '',
+					date: data.date ? String(data.date) : '',
 					description: data.description ?? ''
 				};
 			})
 	);
+
+	return posts.sort((a, b) => {
+		const dateA = a.date ? new Date(a.date).getTime() : 0;
+		const dateB = b.date ? new Date(b.date).getTime() : 0;
+		return dateB - dateA;
+	});
 }
