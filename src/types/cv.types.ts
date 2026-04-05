@@ -13,6 +13,7 @@ export interface WorkExperience {
 	startDate: string;
 	endDate?: string;
 	description: string[];
+	profiles?: string[];
 }
 
 export interface Education {
@@ -22,11 +23,13 @@ export interface Education {
 	startDate: string;
 	endDate?: string;
 	description?: string;
+	profiles?: string[];
 }
 
 export interface SkillCategory {
 	category: string;
 	skills: string[];
+	profiles?: string[];
 }
 
 export interface LanguageProficiency {
@@ -39,6 +42,7 @@ export interface Certificate {
 	issuer: string;
 	date: string;
 	credentialUrl?: string;
+	profiles?: string[];
 }
 
 export interface Project {
@@ -47,12 +51,22 @@ export interface Project {
 	techStack: string[];
 	githubUrl?: string;
 	liveUrl?: string;
+	profiles?: string[];
 }
 
 export interface ContactLink {
 	platform: string;
 	url: string;
 	label: string;
+}
+
+export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';
+
+export interface CvProfile {
+	id: string;
+	label: string;
+	sections: CvSectionKey[];
+	summary: CvSummary;
 }
 
 export interface CvData {
@@ -68,3 +82,4 @@ export interface CvData {
 }
 
 export type CvDataMap = Record<Lang, CvData>;
+export type CvProfileMap = Record<Lang, Record<string, CvProfile>>;

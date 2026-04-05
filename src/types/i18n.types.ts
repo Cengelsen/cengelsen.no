@@ -34,6 +34,7 @@ export interface Translations {
 		viewCredential: string;
 		viewProject: string;
 		liveDemo: string;
+		allProfiles: string;
 	};
 }
 

@@ -17,7 +17,8 @@ export const cvData: CvDataMap = {
 					'Ansvarlig for markedsføring, økonomi, regnskap og kundeforhold.',
 					'Driver aktivt merkevarebygging og rekruttering av frivillige.',
 					'Planlegger og gjennomfører sosiale aktiviteter for et stort frivilligmiljø.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'Nordic USV AS',
@@ -28,7 +29,8 @@ export const cvData: CvDataMap = {
 				description: [
 					'Utviklet frontend og backend i Django for en B2B-nettplattform.',
 					'Bidro til produktstrategi og brukeropplevelse for en ny tjeneste innen ubemannede fartøy og miljødata.'
-				]
+				],
+				profiles: ['developer']
 			},
 			{
 				company: 'Studentradioen i Bergen',
@@ -39,7 +41,8 @@ export const cvData: CvDataMap = {
 				description: [
 					'Ledet teknisk drift og koordinerte frivillige.',
 					'Sikret stabil plattform for sendinger, arrangementer og ekstern kommunikasjon.'
-				]
+				],
+				profiles: ['developer', 'administrator']
 			},
 			{
 				company: 'Forsvaret',
@@ -61,7 +64,8 @@ export const cvData: CvDataMap = {
 				endDate: '2026-01',
 				description: [
 					'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
-				]
+				],
+				profiles: ['developer', 'administrator']
 			},
 			{
 				company: 'friByte',
@@ -71,7 +75,8 @@ export const cvData: CvDataMap = {
 				endDate: '2022-12',
 				description: [
 					'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'friByte',
@@ -81,7 +86,8 @@ export const cvData: CvDataMap = {
 				endDate: '2021-12',
 				description: [
 					'Assisterte leder med daglig drift og organisering av aktiviteter.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'friByte',
@@ -91,7 +97,8 @@ export const cvData: CvDataMap = {
 				endDate: '2024-06',
 				description: [
 					'Organiserte sosiale arrangementer for medlemmene.'
-				]
+				],
+				profiles: ['community-builder']
 			}
 		],
 		education: [
@@ -122,19 +129,23 @@ export const cvData: CvDataMap = {
 		skills: [
 			{
 				category: 'Programmeringsspråk',
-				skills: ['TypeScript', 'JavaScript', 'Python', 'Java']
+				skills: ['TypeScript', 'JavaScript', 'Python', 'Java'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Rammeverk & biblioteker',
-				skills: ['Svelte', 'SvelteKit', 'Django', 'React', 'Node.js']
+				skills: ['Svelte', 'SvelteKit', 'Django', 'React', 'Node.js'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Verktøy & plattformer',
-				skills: ['Git', 'Docker', 'Linux', 'VS Code']
+				skills: ['Git', 'Docker', 'Linux', 'VS Code'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Ledelse & forretning',
-				skills: ['Markedsføring', 'Merkevarebygging', 'Community-bygging', 'Vekststrategi', 'Prosjektledelse', 'Budsjett', 'CRM']
+				skills: ['Markedsføring', 'Merkevarebygging', 'Community-bygging', 'Vekststrategi', 'Prosjektledelse', 'Budsjett', 'CRM'],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				category: 'Fagområder',
@@ -207,7 +218,8 @@ export const cvData: CvDataMap = {
 					'Responsible for marketing, finances, accounting and customer relations.',
 					'Actively driving brand building and recruitment of volunteers.',
 					'Planning and executing social activities for a large volunteer community.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'Nordic USV AS',
@@ -218,7 +230,8 @@ export const cvData: CvDataMap = {
 				description: [
 					'Developed frontend and backend in Django for a B2B web platform.',
 					'Contributed to product strategy and user experience for a new service in unmanned vessels and environmental data.'
-				]
+				],
+				profiles: ['developer']
 			},
 			{
 				company: 'Studentradioen i Bergen',
@@ -229,7 +242,8 @@ export const cvData: CvDataMap = {
 				description: [
 					'Led technical operations and coordinated volunteers.',
 					'Ensured a stable platform for broadcasts, events and external communication.'
-				]
+				],
+				profiles: ['developer', 'administrator']
 			},
 			{
 				company: 'Norwegian Armed Forces',
@@ -251,7 +265,8 @@ export const cvData: CvDataMap = {
 				endDate: '2026-01',
 				description: [
 					'Led the IT department and was responsible for technical infrastructure.'
-				]
+				],
+				profiles: ['developer', 'administrator']
 			},
 			{
 				company: 'friByte',
@@ -261,7 +276,8 @@ export const cvData: CvDataMap = {
 				endDate: '2022-12',
 				description: [
 					'Led the student organization that operates IT services for student associations in Bergen.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'friByte',
@@ -271,7 +287,8 @@ export const cvData: CvDataMap = {
 				endDate: '2021-12',
 				description: [
 					'Assisted the president with daily operations and activity planning.'
-				]
+				],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				company: 'friByte',
@@ -281,7 +298,8 @@ export const cvData: CvDataMap = {
 				endDate: '2024-06',
 				description: [
 					'Organized social events for members.'
-				]
+				],
+				profiles: ['community-builder']
 			}
 		],
 		education: [
@@ -312,19 +330,23 @@ export const cvData: CvDataMap = {
 		skills: [
 			{
 				category: 'Programming Languages',
-				skills: ['TypeScript', 'JavaScript', 'Python', 'Java']
+				skills: ['TypeScript', 'JavaScript', 'Python', 'Java'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Frameworks & Libraries',
-				skills: ['Svelte', 'SvelteKit', 'Django', 'React', 'Node.js']
+				skills: ['Svelte', 'SvelteKit', 'Django', 'React', 'Node.js'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Tools & Platforms',
-				skills: ['Git', 'Docker', 'Linux', 'VS Code']
+				skills: ['Git', 'Docker', 'Linux', 'VS Code'],
+				profiles: ['developer']
 			},
 			{
 				category: 'Leadership & Business',
-				skills: ['Marketing', 'Brand Building', 'Community Building', 'Growth Strategy', 'Project Management', 'Budgeting', 'CRM']
+				skills: ['Marketing', 'Brand Building', 'Community Building', 'Growth Strategy', 'Project Management', 'Budgeting', 'CRM'],
+				profiles: ['administrator', 'community-builder']
 			},
 			{
 				category: 'Domains',
