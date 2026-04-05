@@ -1,45 +1,43 @@
 import { Feed } from 'feed';
 import type { Post } from './posts';
 
+export const SITE_URL = 'https://test.cengelsen.no';
+
 interface FeedOptions {
-	origin: string;
+	site: string;
 	blogPath: string;
+	feedPath: string;
 	lang: string;
 	title: string;
 	description: string;
 }
 
-function prepareContentForFeed(html: string, origin: string): string {
+function prepareContentForFeed(html: string, site: string): string {
 	return html
-		.replace(/src="\//g, `src="${origin}/`)
-		.replace(/href="\//g, `href="${origin}/`)
+		.replace(/src="\//g, `src="${site}/`)
+		.replace(/href="\//g, `href="${site}/`)
 		.replace(/<(img|br|hr)([^>]*?)(?<!\/)>/g, '<$1$2 />');
 }
 
 export function generateRssFeed(posts: Post[], options: FeedOptions): string {
-	const { origin, blogPath, lang, title, description } = options;
-
-	const feedUrl = blogPath === '/blog'
-		? `${origin}/rss.xml`
-		: `${origin}${blogPath.replace('/blog', '')}/rss.xml`;
+	const { site, blogPath, feedPath, lang, title, description } = options;
 
 	const feed = new Feed({
 		title,
 		description,
-		id: `${origin}${blogPath}`,
-		link: `${origin}${blogPath}`,
+		id: `${site}${blogPath}`,
+		link: `${site}${blogPath}`,
 		language: lang,
 		feedLinks: {
-			rss: feedUrl
+			rss: `${site}${feedPath}`
 		},
-		copyright: '',
 		updated: posts.length > 0 && posts[0].date
 			? new Date(posts[0].date)
 			: new Date()
 	});
 
 	for (const post of posts.filter((p) => p.title && p.date)) {
-		const url = `${origin}${blogPath}/${post.slug}`;
+		const url = `${site}${blogPath}/${post.slug}`;
 
 		feed.addItem({
 			title: post.title,
@@ -47,7 +45,7 @@ export function generateRssFeed(posts: Post[], options: FeedOptions): string {
 			link: url,
 			description: post.description,
 			date: new Date(post.date),
-			content: post.content ? prepareContentForFeed(post.content, origin) : undefined
+			content: post.content ? prepareContentForFeed(post.content, site) : undefined
 		});
 	}
 

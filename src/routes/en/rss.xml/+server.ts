@@ -1,19 +1,24 @@
 import { loadPosts } from '$lib/posts';
-import { generateRssFeed } from '$lib/rss';
+import { generateRssFeed, SITE_URL } from '$lib/rss';
+import type { RequestHandler } from './$types';
 
 export const prerender = true;
 
-export const GET = async ({ url }) => {
+export const GET: RequestHandler = async () => {
 	const posts = await loadPosts('en', { includeContent: true });
 	const xml = generateRssFeed(posts, {
-		origin: url.origin,
+		site: SITE_URL,
 		blogPath: '/en/blog',
+		feedPath: '/en/rss.xml',
 		lang: 'en',
 		title: 'cengelsen.no (English)',
 		description: 'Blog posts from cengelsen.no — in English'
 	});
 
 	return new Response(xml, {
-		headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' }
+		headers: {
+			'Content-Type': 'application/xml; charset=utf-8',
+			'Cache-Control': 'max-age=0, s-maxage=3600'
+		}
 	});
 };
