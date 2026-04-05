@@ -9,10 +9,11 @@ interface FeedOptions {
 	description: string;
 }
 
-function absolutifyUrls(html: string, origin: string): string {
+function prepareContentForFeed(html: string, origin: string): string {
 	return html
 		.replace(/src="\//g, `src="${origin}/`)
-		.replace(/href="\//g, `href="${origin}/`);
+		.replace(/href="\//g, `href="${origin}/`)
+		.replace(/<(img|br|hr)([^>]*?)(?<!\/)>/g, '<$1$2 />');
 }
 
 export function generateRssFeed(posts: Post[], options: FeedOptions): string {
@@ -46,7 +47,7 @@ export function generateRssFeed(posts: Post[], options: FeedOptions): string {
 			link: url,
 			description: post.description,
 			date: new Date(post.date),
-			content: post.content ? absolutifyUrls(post.content, origin) : undefined
+			content: post.content ? prepareContentForFeed(post.content, origin) : undefined
 		});
 	}
 

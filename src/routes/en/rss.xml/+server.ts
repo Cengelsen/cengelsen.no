@@ -9,8 +9,8 @@ export const GET = async ({ url }) => {
 		origin: url.origin,
 		blogPath: '/en/blog',
 		lang: 'en',
-		title: 'cengelsen.no',
-		description: 'Blog posts from cengelsen.no'
+		title: 'cengelsen.no (English)',
+		description: 'Blog posts from cengelsen.no — in English'
 	});
 
 	return new Response(xml, {
