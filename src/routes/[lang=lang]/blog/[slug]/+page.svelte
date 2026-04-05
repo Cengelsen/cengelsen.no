@@ -1,16 +1,16 @@
 <script lang="ts">
     import type { PageData } from './$types';
-    import SvelteMarkdown from 'svelte-markdown';
+    import { renderMarkdown } from '$lib/markdown';
 
     export let data: PageData;
 
     const title = data.frontmatter.title;
-    const content = data.content;
+    const html = renderMarkdown(data.content);
 </script>
 
 <article class="prose">
     <h1>{title}</h1>
-    <SvelteMarkdown source={content} />
+    {@html html}
 </article>
 
 <style>
@@ -54,7 +54,21 @@
     }
 
     .prose :global(li) {
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-md);
+    }
+
+    .prose :global(li p) {
+        display: block;
+        margin-bottom: var(--space-sm);
+    }
+
+    .prose :global(li p:last-child) {
+        margin-bottom: 0;
+    }
+
+    .prose :global(li > ul),
+    .prose :global(li > ol) {
+        margin-top: var(--space-sm);
     }
 
     /* Links */
