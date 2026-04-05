@@ -9,6 +9,11 @@
     $: lang = $page.params.lang ?? 'no';
 </script>
 
+<svelte:head>
+    <link rel="alternate" type="application/rss+xml" title="cengelsen.no (norsk)" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="cengelsen.no (english)" href="/en/rss.xml" />
+</svelte:head>
+
 <div id="app-shell" class:scrollable={isScrollable} style="--content-max-width: {contentMaxWidth}">
     <div class="navbar-wrapper" class:sticky-nav={isScrollable}>
         <Navbar lang={lang} />

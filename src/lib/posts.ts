@@ -2,6 +2,7 @@ import { error } from '@sveltejs/kit';
 import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { renderMarkdown } from './markdown';
 
 export const SUPPORTED_LANGS = ['en', 'no'] as const;
 export type Lang = (typeof SUPPORTED_LANGS)[number];
@@ -15,6 +16,11 @@ export interface Post {
 	title: string;
 	date: string;
 	description: string;
+	content?: string;
+}
+
+interface LoadPostsOptions {
+	includeContent?: boolean;
 }
 
 export function slugify(title: string): string {
@@ -26,11 +32,12 @@ export function slugify(title: string): string {
 		.replace(/-+/g, '-');
 }
 
-export async function loadPosts(lang: string): Promise<Post[]> {
+export async function loadPosts(lang: string, options?: LoadPostsOptions): Promise<Post[]> {
 	if (!SUPPORTED_LANGS.includes(lang as Lang)) {
 		throw error(404, { message: `Unsupported language: ${lang}` });
 	}
 
+	const includeContent = options?.includeContent ?? false;
 	const dir = path.join(process.cwd(), 'src', 'content', lang);
 	const files = await fs.readdir(dir);
 
@@ -39,14 +46,18 @@ export async function loadPosts(lang: string): Promise<Post[]> {
 			.filter((f) => f.endsWith('.md'))
 			.map(async (file) => {
 				const raw = await fs.readFile(path.join(dir, file), 'utf-8');
-				const { data } = matter(raw);
-				return {
+				const { data, content } = matter(raw);
+				const post: Post = {
 					id: data.id ?? null,
 					slug: slugify(data.title ?? ''),
 					title: data.title ?? '',
 					date: data.date ? String(data.date) : '',
 					description: data.description ?? ''
 				};
+				if (includeContent) {
+					post.content = renderMarkdown(content);
+				}
+				return post;
 			})
 	);
 
