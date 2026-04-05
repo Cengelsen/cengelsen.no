@@ -1,4 +1,4 @@
-import { marked } from 'marked';
+import { marked, type RendererThis } from 'marked';
 import { markedEmoji } from 'marked-emoji';
 import emojilib from 'emojilib';
 
@@ -18,6 +18,20 @@ marked.use(
 		renderer: (token) => token.emoji
 	})
 );
+
+marked.use({
+	renderer: {
+		heading(this: RendererThis, { tokens, depth }) {
+			const text = this.parser.parseInline(tokens);
+			const id = text
+				.toLowerCase()
+				.replace(/[^\p{L}\p{N}\s-]/gu, '')
+				.trim()
+				.replace(/\s+/g, '-');
+			return `<h${depth} id="${id}">${text}</h${depth}>\n`;
+		}
+	}
+});
 
 marked.setOptions({
 	breaks: true,

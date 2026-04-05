@@ -372,7 +372,7 @@ utdataen gir en detaljert visning av de behandlede dataene, inkludert titler,
 tidsstempler, ytringer og full tekst. JSON-format er valgt for sin lesbarhet
 og lette inspeksjon, noe som gjør det praktisk for videre analyse eller deling av resultatene.
 
-![Figur 1: Eksempel på en følelsesanalysegrafikk for et forslagsobjekt.](/images/inf319rapport/Decorator_object.png)
+![Figur 1: Eksempel på en følelsesanalysegrafikk for et forslagsobjekt.](/images/inf319rapport/Decorator_object.webp)
 
 ## Relatert arbeid
 
@@ -507,8 +507,8 @@ blir diskutert, blir den samme identifikatoren anvendt på seksjonen i møterefe
 
 Her er noen flere eksempler på grafer produsert av vår implementering.
 
-![Eksempel 1](/images/inf319rapport/Async_Context_16.png)
-![Eksempel 2](/images/inf319rapport/Decorator_export_ordering_3.png) 
-![Eksempel 3](/images/inf319rapport/Intl_era_and_monthCode_for_Stage_2_2.png)
-![Eksempel 4](/images/inf319rapport/Intl_Locale_Info_API_Stage_3_update_9.png)
-![Eksempel 5](/images/inf319rapport/Type_Annotations_Proposal_Update_14.png)
+![Eksempel 1](/images/inf319rapport/Async_Context_16.webp)
+![Eksempel 2](/images/inf319rapport/Decorator_export_ordering_3.webp) 
+![Eksempel 3](/images/inf319rapport/Intl_era_and_monthCode_for_Stage_2_2.webp)
+![Eksempel 4](/images/inf319rapport/Intl_Locale_Info_API_Stage_3_update_9.webp)
+![Eksempel 5](/images/inf319rapport/Type_Annotations_Proposal_Update_14.webp)

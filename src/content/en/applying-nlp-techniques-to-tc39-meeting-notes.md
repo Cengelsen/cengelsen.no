@@ -478,7 +478,7 @@ and ease of inspection, making it convenient for further analysis or sharing of
 results.
 
 
-![Figur 1: Example of a sentiment graph of a proposal object.](/images/inf319rapport/Decorator_object.png)
+![Figur 1: Example of a sentiment graph of a proposal object.](/images/inf319rapport/Decorator_object.webp)
 
 
 ## Related work
@@ -627,8 +627,8 @@ estimation of similarity.
 
 Here are some further example graphs produced by our implementation.
 
-![Example 1](/images/inf319rapport/Async_Context_16.png)
-![Example 2](/images/inf319rapport/Decorator_export_ordering_3.png)
-![Example 3](/images/inf319rapport/Intl_era_and_monthCode_for_Stage_2_2.png)
-![Example 4](/images/inf319rapport/Intl_Locale_Info_API_Stage_3_update_9.png)
-![Example 5](/images/inf319rapport/Type_Annotations_Proposal_Update_14.png)
+![Example 1](/images/inf319rapport/Async_Context_16.webp)
+![Example 2](/images/inf319rapport/Decorator_export_ordering_3.webp)
+![Example 3](/images/inf319rapport/Intl_era_and_monthCode_for_Stage_2_2.webp)
+![Example 4](/images/inf319rapport/Intl_Locale_Info_API_Stage_3_update_9.webp)
+![Example 5](/images/inf319rapport/Type_Annotations_Proposal_Update_14.webp)
