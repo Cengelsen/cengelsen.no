@@ -23,6 +23,7 @@ export interface Translations {
 	cv: {
 		pageTitle: string;
 		experience: string;
+		volunteer: string;
 		education: string;
 		skills: string;
 		languages: string;

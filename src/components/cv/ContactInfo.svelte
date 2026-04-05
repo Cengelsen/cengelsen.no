@@ -2,7 +2,7 @@
     import type { ContactLink } from '../../types/cv.types';
     import Fa from 'svelte-fa';
     import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-    import { faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
+    import { faEnvelope, faPhone, faLink } from '@fortawesome/free-solid-svg-icons';
 
     export let entries: ContactLink[];
 
@@ -11,6 +11,7 @@
         if (key === 'linkedin') return faLinkedin;
         if (key === 'github') return faGithub;
         if (key === 'epost' || key === 'email') return faEnvelope;
+        if (key === 'telefon' || key === 'phone') return faPhone;
         return faLink;
     }
 </script>

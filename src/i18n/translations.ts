@@ -20,6 +20,7 @@ export const translations: TranslationMap = {
 		cv: {
 			pageTitle: 'Curriculum Vitae',
 			experience: 'Work Experience',
+			volunteer: 'Volunteer Experience',
 			education: 'Education',
 			skills: 'Skills',
 			languages: 'Languages',
@@ -52,6 +53,7 @@ export const translations: TranslationMap = {
 		cv: {
 			pageTitle: 'Curriculum Vitae',
 			experience: 'Arbeidserfaring',
+			volunteer: 'Frivillig arbeid',
 			education: 'Utdanning',
 			skills: 'Ferdigheter',
 			languages: 'Språk',

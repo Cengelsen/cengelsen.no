@@ -28,6 +28,10 @@
 		<WorkExperience entries={cv.experience} presentLabel={t.cv.present} />
 	</CvSection>
 
+	<CvSection title={t.cv.volunteer}>
+		<WorkExperience entries={cv.volunteer} presentLabel={t.cv.present} />
+	</CvSection>
+
 	<CvSection title={t.cv.education}>
 		<Education entries={cv.education} presentLabel={t.cv.present} />
 	</CvSection>

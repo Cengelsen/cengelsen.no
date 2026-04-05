@@ -58,6 +58,7 @@ export interface ContactLink {
 export interface CvData {
 	summary: CvSummary;
 	experience: WorkExperience[];
+	volunteer: WorkExperience[];
 	education: Education[];
 	skills: SkillCategory[];
 	languages: LanguageProficiency[];
