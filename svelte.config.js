@@ -14,7 +14,8 @@ const config = {
 			fallback: '404.html'
 		}),
 		prerender: {
-			handleHttpError: 'warn'
+			handleHttpError: 'warn',
+			origin: 'https://test.cengelsen.no'
 		}
 	}
 };
