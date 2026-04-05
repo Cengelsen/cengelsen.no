@@ -4,6 +4,7 @@ export interface Translations {
 	nav: {
 		home: string;
 		blog: string;
+		cv: string;
 	};
 
 	profile: {
@@ -17,6 +18,21 @@ export interface Translations {
 	blog: {
 		title: string;
 		empty: string;
+	};
+
+	cv: {
+		pageTitle: string;
+		experience: string;
+		education: string;
+		skills: string;
+		languages: string;
+		certificates: string;
+		projects: string;
+		contact: string;
+		present: string;
+		viewCredential: string;
+		viewProject: string;
+		liveDemo: string;
 	};
 }
 

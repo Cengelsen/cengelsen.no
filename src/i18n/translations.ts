@@ -4,7 +4,8 @@ export const translations: TranslationMap = {
 	en: {
 		nav: {
 			home: 'Home',
-			blog: 'Blog'
+			blog: 'Blog',
+			cv: 'CV'
 		},
 		profile: {
 			description: 'A passionate developer with a love for creating innovative solutions.'
@@ -15,12 +16,27 @@ export const translations: TranslationMap = {
 		blog: {
 			title: 'Blog Posts',
 			empty: 'No posts available.'
+		},
+		cv: {
+			pageTitle: 'Curriculum Vitae',
+			experience: 'Work Experience',
+			education: 'Education',
+			skills: 'Skills',
+			languages: 'Languages',
+			certificates: 'Certificates',
+			projects: 'Featured Projects',
+			contact: 'Contact',
+			present: 'Present',
+			viewCredential: 'View credential',
+			viewProject: 'Source code',
+			liveDemo: 'Live demo'
 		}
 	},
 	no: {
 		nav: {
 			home: 'Hjem',
-			blog: 'Blogg'
+			blog: 'Blogg',
+			cv: 'CV'
 		},
 		profile: {
 			description:
@@ -32,6 +48,20 @@ export const translations: TranslationMap = {
 		blog: {
 			title: 'Blogginnlegg',
 			empty: 'Ingen innlegg tilgjengelig.'
+		},
+		cv: {
+			pageTitle: 'Curriculum Vitae',
+			experience: 'Arbeidserfaring',
+			education: 'Utdanning',
+			skills: 'Ferdigheter',
+			languages: 'Språk',
+			certificates: 'Sertifiseringer',
+			projects: 'Utvalgte prosjekter',
+			contact: 'Kontakt',
+			present: 'Nåværende',
+			viewCredential: 'Se sertifisering',
+			viewProject: 'Kildekode',
+			liveDemo: 'Live demo'
 		}
 	}
 };

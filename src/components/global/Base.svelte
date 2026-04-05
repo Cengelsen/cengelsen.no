@@ -3,7 +3,7 @@
     import Footer from "./Footer.svelte";
     import { page } from "$app/stores";
 
-    $: isScrollable = $page.route.id?.includes('/blog') ?? false;
+    $: isScrollable = ($page.route.id?.includes('/blog') || $page.route.id?.includes('/cv')) ?? false;
     $: isHomePage = $page.route.id === '/[lang=lang]' || $page.route.id === '/';
     $: contentMaxWidth = isHomePage ? '100%' : '700px';
     $: lang = $page.params.lang ?? 'no';
