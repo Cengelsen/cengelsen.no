@@ -33,7 +33,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: var(--space-sm);
-        margin-bottom: var(--space-2xl);
         justify-content: center;
     }
 

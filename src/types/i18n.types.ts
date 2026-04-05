@@ -35,6 +35,7 @@ export interface Translations {
 		viewProject: string;
 		liveDemo: string;
 		allProfiles: string;
+		print: string;
 	};
 }
 

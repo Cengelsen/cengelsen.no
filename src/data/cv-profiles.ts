@@ -13,7 +13,8 @@ export const cvProfiles: CvProfileMap = {
 				title: 'Fullstack-utvikler',
 				bio: 'Utvikler med erfaring i fullstack-utvikling, Django, SvelteKit og AI. Brenner for å bygge brukervennlige løsninger med moderne teknologi.',
 				location: 'Bergen, Norge'
-			}
+			},
+			accentColor: 'oklch(55% 0.2 250)'
 		},
 		administrator: {
 			id: 'administrator',
@@ -23,7 +24,8 @@ export const cvProfiles: CvProfileMap = {
 				title: 'Daglig leder & administrator',
 				bio: 'Daglig leder med erfaring innen organisasjonsledelse, økonomi og drift. Har ledet både frivillige organisasjoner og tekniske team.',
 				location: 'Bergen, Norge'
-			}
+			},
+			accentColor: 'oklch(35% 0.10 260)'
 		},
 		'community-builder': {
 			id: 'community-builder',
@@ -33,8 +35,9 @@ export const cvProfiles: CvProfileMap = {
 				title: 'Community-bygger',
 				bio: 'Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon, relasjonsbygging og rekruttering av frivillige.',
 				location: 'Bergen, Norge'
-			}
-		},
+			},
+			accentColor: 'oklch(65% 0.18 50)'
+		}
 	},
 	en: {
 		developer: {
@@ -45,7 +48,8 @@ export const cvProfiles: CvProfileMap = {
 				title: 'Full-Stack Developer',
 				bio: 'Developer with experience in full-stack development, Django, SvelteKit and AI. Passionate about building user-friendly solutions with modern technology.',
 				location: 'Bergen, Norway'
-			}
+			},
+			accentColor: 'oklch(55% 0.2 250)'
 		},
 		administrator: {
 			id: 'administrator',
@@ -55,7 +59,8 @@ export const cvProfiles: CvProfileMap = {
 				title: 'General Manager & Administrator',
 				bio: 'General manager with experience in organizational leadership, finance and operations. Has led both volunteer organizations and technical teams.',
 				location: 'Bergen, Norway'
-			}
+			},
+			accentColor: 'oklch(35% 0.10 260)'
 		},
 		'community-builder': {
 			id: 'community-builder',
@@ -65,7 +70,8 @@ export const cvProfiles: CvProfileMap = {
 				title: 'Community Builder',
 				bio: 'Passionate about creating engagement and growth through strategic communication, relationship building and volunteer recruitment.',
 				location: 'Bergen, Norway'
-			}
-		},
+			},
+			accentColor: 'oklch(65% 0.18 50)'
+		}
 	}
 };

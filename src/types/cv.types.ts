@@ -67,6 +67,7 @@ export interface CvProfile {
 	label: string;
 	sections: CvSectionKey[];
 	summary: CvSummary;
+	accentColor: string;
 }
 
 export interface CvData {

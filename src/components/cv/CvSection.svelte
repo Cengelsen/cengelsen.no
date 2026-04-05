@@ -1,8 +1,9 @@
 <script lang="ts">
     export let title: string;
+    export let section: string = '';
 </script>
 
-<section class="cv-section">
+<section class="cv-section" data-section={section}>
     <h2 class="cv-section-title">{title}</h2>
     <div class="cv-section-content">
         <slot />

@@ -31,7 +31,8 @@ export const translations: TranslationMap = {
 			viewCredential: 'View credential',
 			viewProject: 'Source code',
 			liveDemo: 'Live demo',
-			allProfiles: 'All'
+			allProfiles: 'All',
+			print: 'Print'
 		}
 	},
 	no: {
@@ -65,7 +66,8 @@ export const translations: TranslationMap = {
 			viewCredential: 'Se sertifisering',
 			viewProject: 'Kildekode',
 			liveDemo: 'Live demo',
-			allProfiles: 'Alle'
+			allProfiles: 'Alle',
+			print: 'Skriv ut'
 		}
 	}
 };

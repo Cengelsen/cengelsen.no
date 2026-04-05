@@ -59,4 +59,24 @@
     #app-shell.scrollable .main-content {
         overflow: visible;
     }
+
+    @media print {
+        .navbar-wrapper {
+            display: none !important;
+        }
+
+        #app-shell :global(.footer) {
+            display: none !important;
+        }
+
+        #app-shell {
+            height: auto;
+            overflow: visible;
+            max-width: none;
+        }
+
+        .main-content {
+            overflow: visible;
+        }
+    }
 </style>
