@@ -4,7 +4,7 @@
     import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
     export let name = "Christian Kårbø Engelsen";
-    export let imageUrl = "../../../profile/profile1.png";
+    export let imageUrl = "../../../profile/profile1.webp";
     export let description = "En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.";
     export let socialLinks = [
         {
