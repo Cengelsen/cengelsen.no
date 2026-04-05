@@ -79,7 +79,7 @@ Denne seksjonen kan bli litt lang og pedantisk, så [klikk her om du vil lese fo
 
 Nå vet jeg ikke hvordan det er i din by, men Bergen er ikke særlig oversiktlig når det gjelder å finne diverse hendelser som skjer rundt i byen. Det er ikke ett sentralt sted hvor en kan hente ut absolutt alle hendelser som skjer. De ulike typene hendelser, er spredd ut på en god del forskjellige nettsider. 
 
-De aller fleste arrangører har en egen nettside, hvor de legger ut hendelsesdetaljer, men ikke alle. De som ikke har egen nettside, legger bare ut hendelsesinformasjonen på Facebook :nauseated_face: eller Instagram :vomiting_face:, hvilket ikke er idéelt for alle.
+De aller fleste arrangører har en egen nettside, hvor de legger ut hendelsesdetaljer, men ikke alle. De som ikke har egen nettside, legger bare ut hendelsesinformasjonen på Facebook :nauseated_face: eller Instagram :vomit:, hvilket ikke er idéelt for alle.
 
 arrangørene bruker tjenester som [Ticketmaster for Bergen](https://www.ticketmaster.no/city/bergen/40500), [TicketCo for Bergen](https://ticketco.events/no/nb/m?pattern=bergen), [Bergenlive](https://www.bergenlive.no/konsertkalender/), [Studentbergen](https://www.studentbergen.no/studentkalender) og [Meetup for Bergen](https://www.meetup.com/find/?source=EVENTS&eventType=inPerson&sortField=DATETIME&location=no--Bergen) for å legge ut arrangementsinformasjon i tillegg til sin egen side. [Det Akademiske Kvarter](https://kvarteret.no/events) er et eksempel på en side som henter ut en liste av alle arrangementer fra studentbergen, hvor lokalet er Det Akademiske Kvarter. 
 
@@ -107,7 +107,7 @@ Jeg ser for meg to løsninger på dette problemet.
 
 1. **Vi normaliserer å abonnere på andres kalendere.**
 
-   Hver arrangør, samt hvert hendelsestorg, lager sin egen tekniske løsning som genererer en `.ics`-URL. En god løsning på dette er Echo sin: [https://echo.uib.no/beta/calendar](https://echo.uib.no/beta/calendar). Her kan du "bygge" din egen `.ics`-URL ved å krysse av for hvilke typer hendelser du vil følge med på. Da får du en konstant oppdaterende liste med hendelser. Dette er forholdsvis bedre enn å lytte på en URL for hvert individuelle hendelse, siden min personlige kalender blir brått ganske rotete. En semi-dårlig løsning er [BOB](https://bergenbibliotek.no/arrangement/alle-arrangementer) sin løsning. Den gir meg absolutt alle hendelser, men jeg kan ikke filtrere ut de som er absolutt ikke relevant for meg. 
+   Hver arrangør, samt hvert hendelsestorg, lager sin egen tekniske løsning som genererer en `.ics`-URL. En god løsning på dette er Echo sin: [https://echo.uib.no/for-studenter/arrangementer?view=week](https://echo.uib.no/for-studenter/arrangementer?view=week). Her kan du "bygge" din egen `.ics`-URL ved å krysse av for hvilke typer hendelser du vil følge med på. Da får du en konstant oppdaterende liste med hendelser. Dette er forholdsvis bedre enn å lytte på en URL for hvert individuelle hendelse, siden min personlige kalender blir brått ganske rotete. En semi-dårlig løsning er [BOB](https://bergenbibliotek.no/arrangement/alle-arrangementer) sin løsning. Den gir meg absolutt alle hendelser, men jeg kan ikke filtrere ut de som er absolutt ikke relevant for meg. 
 
 2. **Én kalender-tjeneste opprettes for alle arrangører.**
 

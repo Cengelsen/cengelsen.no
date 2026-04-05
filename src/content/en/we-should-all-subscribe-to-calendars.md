@@ -75,7 +75,7 @@ This section might get a bit long and pedantic, so [click here if you want to sk
 
 I'm not sure how it is in your city, but Bergen is not particularly organized when it comes to finding various occurrences happening around the city. There isn't one central place where you can fetch all  happening. The different types of occurrences are spread out across quite a few different websites.
 
-Most organizers have their own website where they post event details, but not all. Those who don't have their own website simply post event information on Facebook 🤢 or Instagram 🤮, which is not ideal for everyone.
+Most organizers have their own website where they post event details, but not all. Those who don't have their own website simply post event information on Facebook :nauseated_face: or Instagram :vomit:, which is not ideal for everyone.
 
 Organizers use services like [Ticketmaster for Bergen](https://www.ticketmaster.no/city/bergen/40500), [TicketCo for Bergen](https://ticketco.events/no/nb/m?pattern=bergen), [Bergenlive](https://www.bergenlive.no/konsertkalender/), [Studentbergen](https://www.studentbergen.no/studentkalender), and [Meetup for Bergen](https://www.meetup.com/find/?source=EVENTS&eventType=inPerson&sortField=DATETIME&location=no--Bergen) to post event information in addition to their own site. [Det Akademiske Kvarter](https://kvarteret.no/events) is an example of a site that extracts a list of all events from Studentbergen, where the venue is Det Akademiske Kvarter.
 
@@ -103,7 +103,7 @@ I envision two solutions to this problem.
 
 1. **We normalize subscribing to others' calendars.**
 
-   Each organizer, or "event market," creates their own technical solution that generates an `.ics` URL. A good solution to this is Echo's: [https://echo.uib.no/beta/calendar](https://echo.uib.no/beta/calendar). Here, you can "build" your own `.ics` URL by checking off which types of occurrences you want to keep track of. Then you get a constantly updating list of occurrences. This is relatively better than listening to a URL for each individual event, as my personal calendar suddenly becomes quite cluttered. A semi-poor solution is [BOB's](https://bergenbibliotek.no/arrangement/alle-arrangementer) solution. It gives me all occurrences, but I can't filter out those that are absolutely irrelevant to me.
+   Each organizer, or "event market," creates their own technical solution that generates an `.ics` URL. A good solution to this is Echo's: [https://echo.uib.no/for-studenter/arrangementer?view=week](https://echo.uib.no/for-studenter/arrangementer?view=week). Here, you can "build" your own `.ics` URL by checking off which types of occurrences you want to keep track of. Then you get a constantly updating list of occurrences. This is relatively better than listening to a URL for each individual event, as my personal calendar suddenly becomes quite cluttered. A semi-poor solution is [BOB's](https://bergenbibliotek.no/arrangement/alle-arrangementer) solution. It gives me all occurrences, but I can't filter out those that are absolutely irrelevant to me.
 
 2. **One calendar service is created for all organizers.**
 
