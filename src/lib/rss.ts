@@ -8,6 +8,12 @@ interface FeedOptions {
 	description: string;
 }
 
+function absolutifyUrls(html: string, origin: string): string {
+	return html
+		.replace(/src="\//g, `src="${origin}/`)
+		.replace(/href="\//g, `href="${origin}/`);
+}
+
 function escapeXml(str: string): string {
 	return str
 		.replace(/&/g, '&amp;')
@@ -29,7 +35,7 @@ export function generateRssFeed(posts: Post[], options: FeedOptions): string {
 		.map((post) => {
 			const url = `${origin}${blogPath}/${post.slug}`;
 			const contentEncoded = post.content
-				? `\n      <content:encoded><![CDATA[${post.content}]]></content:encoded>`
+				? `\n      <content:encoded><![CDATA[${absolutifyUrls(post.content, origin)}]]></content:encoded>`
 				: '';
 			return `    <item>
       <title>${escapeXml(post.title)}</title>
