@@ -60,7 +60,14 @@ export interface ContactLink {
 	label: string;
 }
 
-export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';
+export interface Coursework {
+	name: string;
+	code: string;
+	institution: string;
+	description: string;
+}
+
+export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';
 
 export interface CvProfile {
 	id: string;
@@ -75,6 +82,7 @@ export interface CvData {
 	experience: WorkExperience[];
 	volunteer: WorkExperience[];
 	education: Education[];
+	coursework: Coursework[];
 	skills: SkillCategory[];
 	languages: LanguageProficiency[];
 	certificates: Certificate[];

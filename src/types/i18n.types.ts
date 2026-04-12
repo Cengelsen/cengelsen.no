@@ -25,6 +25,7 @@ export interface Translations {
 		experience: string;
 		volunteer: string;
 		education: string;
+		coursework: string;
 		skills: string;
 		languages: string;
 		certificates: string;

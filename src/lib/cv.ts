@@ -14,6 +14,7 @@ export function filterCvByProfile(cv: CvData, profileId: string): CvData {
 		experience: byProfile(cv.experience, profileId),
 		volunteer: byProfile(cv.volunteer, profileId),
 		education: byProfile(cv.education, profileId),
+		coursework: cv.coursework,
 		skills: byProfile(cv.skills, profileId),
 		languages: cv.languages,
 		certificates: byProfile(cv.certificates, profileId),

@@ -7,6 +7,7 @@
     import CvSection from './CvSection.svelte';
     import WorkExperience from './WorkExperience.svelte';
     import Education from './Education.svelte';
+    import Coursework from './Coursework.svelte';
     import Skills from './Skills.svelte';
     import Languages from './Languages.svelte';
     import Certificates from './Certificates.svelte';
@@ -21,7 +22,7 @@
 
     const defaultAccent = 'oklch(80% 0.16 75)';
     const defaultSections: CvSectionKey[] = [
-        'experience', 'volunteer', 'education', 'skills',
+        'experience', 'volunteer', 'education', 'coursework', 'skills',
         'languages', 'certificates', 'projects', 'contact'
     ];
 
@@ -35,6 +36,7 @@
             experience: t.cv.experience,
             volunteer: t.cv.volunteer,
             education: t.cv.education,
+            coursework: t.cv.coursework,
             skills: t.cv.skills,
             languages: t.cv.languages,
             certificates: t.cv.certificates,
@@ -74,6 +76,8 @@
                     <WorkExperience entries={cv.volunteer} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'education'}
                     <Education entries={cv.education} presentLabel={t.cv.present} />
+                {:else if sectionKey === 'coursework'}
+                    <Coursework entries={cv.coursework} />
                 {:else if sectionKey === 'skills'}
                     <Skills categories={cv.skills} />
                 {:else if sectionKey === 'languages'}
@@ -261,6 +265,46 @@
 
         .cv-page :global(.entry-description li) {
             margin-bottom: 1pt;
+        }
+
+        /* ── Coursework ────────────────────────────────────────── */
+        .cv-page :global(.coursework-section) {
+            gap: 0.3rem;
+        }
+
+        .cv-page :global(.institution-name) {
+            font-size: 9pt;
+            color: #1a1a1a;
+            margin-bottom: 2pt;
+        }
+
+        .cv-page :global(.course-grid) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2pt;
+        }
+
+        .cv-page :global(.course-card) {
+            padding: 2pt 4pt;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            border-radius: 0;
+        }
+
+        .cv-page :global(.course-name) {
+            font-size: 8pt;
+            color: #1a1a1a;
+        }
+
+        .cv-page :global(.course-code) {
+            font-size: 7pt;
+            color: #555;
+        }
+
+        .cv-page :global(.course-description) {
+            font-size: 7pt;
+            color: #333;
+            line-height: 1.3;
         }
 
         /* ── Skills ─────────────────────────────────────────────── */
@@ -456,6 +500,7 @@
         .cv-page[data-profile="developer"] :global([data-section="experience"]),
         .cv-page[data-profile="developer"] :global([data-section="projects"]),
         .cv-page[data-profile="developer"] :global([data-section="education"]),
+        .cv-page[data-profile="developer"] :global([data-section="coursework"]),
         .cv-page[data-profile="developer"] :global([data-section="volunteer"]) {
             grid-column: 1;
         }
