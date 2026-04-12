@@ -77,7 +77,7 @@
                 {:else if sectionKey === 'education'}
                     <Education entries={cv.education} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'coursework'}
-                    <Coursework entries={cv.coursework} replacesLabel={t.cv.courseReplaces} essayLabel={t.cv.courseEssay} {lang} />
+                    <Coursework entries={cv.coursework} replacesLabel={t.cv.courseReplaces} essayLabel={t.cv.courseEssay} overlapLabel={t.cv.courseOverlap} {lang} />
                 {:else if sectionKey === 'skills'}
                     <Skills categories={cv.skills} />
                 {:else if sectionKey === 'languages'}
@@ -307,10 +307,6 @@
             line-height: 1.3;
         }
 
-        .cv-page :global(.course-card.shared) {
-            border: 1px solid var(--cv-accent);
-        }
-
         .cv-page :global(.course-essay) {
             font-size: 7pt;
             color: var(--cv-accent);
@@ -321,15 +317,31 @@
             color: #555;
         }
 
-        .cv-page :global(.course-shared-badges) {
-            gap: 2pt;
+        .cv-page :global(.overlap-section) {
+            margin-bottom: 0;
         }
 
-        .cv-page :global(.shared-badge) {
+        .cv-page :global(.overlap-divider) {
+            border-top: 0.5pt solid #ccc;
+            margin: 3pt 0;
+        }
+
+        .cv-page :global(.overlap-note) {
+            font-size: 7pt;
+            color: #555;
+        }
+
+        .cv-page :global(.overlap-item) {
+            padding: 1pt 3pt;
+            border: 0.5pt dashed #999;
+        }
+
+        .cv-page :global(.overlap-name) {
+            font-size: 7pt;
+        }
+
+        .cv-page :global(.overlap-code) {
             font-size: 6pt;
-            padding: 0 2pt;
-            color: var(--cv-accent);
-            border: 0.5pt solid var(--cv-accent);
         }
 
         /* ── Skills ─────────────────────────────────────────────── */
