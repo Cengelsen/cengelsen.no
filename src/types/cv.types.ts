@@ -68,6 +68,7 @@ export interface Coursework {
 	description: string;
 	replaces?: string;
 	blogSlug?: string;
+	courseType?: 'mandatory' | 'specialization' | 'elective';
 }
 
 export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';

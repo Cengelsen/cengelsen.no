@@ -29,6 +29,9 @@ export interface Translations {
 		courseReplaces: string;
 		courseEssay: string;
 		courseOverlap: string;
+		courseMandatory: string;
+		courseSpecialization: string;
+		courseElective: string;
 		skills: string;
 		languages: string;
 		certificates: string;

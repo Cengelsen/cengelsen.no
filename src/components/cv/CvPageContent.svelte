@@ -77,7 +77,14 @@
                 {:else if sectionKey === 'education'}
                     <Education entries={cv.education} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'coursework'}
-                    <Coursework entries={cv.coursework} replacesLabel={t.cv.courseReplaces} essayLabel={t.cv.courseEssay} overlapLabel={t.cv.courseOverlap} {lang} />
+                    <Coursework
+                        entries={cv.coursework}
+                        replacesLabel={t.cv.courseReplaces}
+                        essayLabel={t.cv.courseEssay}
+                        overlapLabel={t.cv.courseOverlap}
+                        typeLabels={{ mandatory: t.cv.courseMandatory, specialization: t.cv.courseSpecialization, elective: t.cv.courseElective }}
+                        {lang}
+                    />
                 {:else if sectionKey === 'skills'}
                     <Skills categories={cv.skills} />
                 {:else if sectionKey === 'languages'}
@@ -305,6 +312,15 @@
             font-size: 7pt;
             color: #333;
             line-height: 1.3;
+        }
+
+        .cv-page :global(.type-group) {
+            border-width: 0.5pt;
+            padding: 3pt 4pt;
+        }
+
+        .cv-page :global(.type-label) {
+            font-size: 6pt;
         }
 
         .cv-page :global(.course-essay) {
