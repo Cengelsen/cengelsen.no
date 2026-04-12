@@ -55,55 +55,124 @@ export const cvData: CvDataMap = {
 				]
 			}
 		],
-		volunteer: [
-			{
-				company: 'Det Akademiske Kvarter',
-				companyUrl: 'https://kvarteret.no',
-				role: 'IT-leder',
-				startDate: '2022-02',
-				endDate: '2026-01',
-				description: [
-					'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
-				],
-				profiles: ['developer', 'administrator']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'Leder',
-				startDate: '2021-12',
-				endDate: '2022-12',
-				description: [
-					'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
-				],
-				profiles: ['administrator', 'community-builder']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'Nestleder',
-				startDate: '2021-01',
-				endDate: '2021-12',
-				description: [
-					'Assisterte leder med daglig drift og organisering av aktiviteter.'
-				],
-				profiles: ['administrator', 'community-builder']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'Sosialansvarlig',
-				startDate: '2023-12',
-				endDate: '2024-06',
-				description: [
-					'Organiserte sosiale arrangementer for medlemmene.'
-				],
-				profiles: ['community-builder']
-			}
-		],
-		education: [
-			{
-				institution: 'Universitetet i Bergen',
+	volunteer: [
+		{
+			company: 'Bergen Open Source',
+			companyUrl: 'https://boskonf.no',
+			role: 'Leder',
+			startDate: '2025-02',
+			description: [
+				'Leder for Bergen Open Source-fellesskapet og konferansen.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Chief Technology Developer',
+			startDate: '2025-02',
+			description: [
+				'Teknologiansvarlig for AI Safety Bergen.'
+			],
+			profiles: ['developer']
+		},
+		{
+			company: 'Hulen Bergen',
+			companyUrl: 'https://hulen.no',
+			role: 'IT-medlem',
+			startDate: '2025-02',
+			endDate: '2025-09',
+			description: [
+				'Bidro til IT-drift og teknisk støtte for Hulen.'
+			],
+			profiles: ['developer']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Medlem',
+			startDate: '2024-01',
+			description: [
+				'Aktivt medlem i AI Safety Bergen.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Kurstilrettelegger',
+			startDate: '2024-01',
+			endDate: '2024-06',
+			description: [
+				'Tilrettela kurs om AI-sikkerhet og AI-alignment.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Sosialansvarlig',
+			startDate: '2023-08',
+			endDate: '2024-03',
+			description: [
+				'Organiserte sosiale arrangementer for medlemmene.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'Det Akademiske Kvarter',
+			companyUrl: 'https://kvarteret.no',
+			role: 'IT-leder',
+			startDate: '2022-02',
+			endDate: '2026-01',
+			description: [
+				'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
+			],
+			profiles: ['developer', 'administrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Leder',
+			startDate: '2021-12',
+			endDate: '2022-12',
+			description: [
+				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'Phonofestivalen',
+			role: 'Produksjonsansvarlig',
+			startDate: '2021-09',
+			endDate: '2022-02',
+			description: [
+				'Ansvarlig for produksjon og logistikk under festivalen.'
+			],
+			profiles: ['administrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Nestleder',
+			startDate: '2021-01',
+			endDate: '2021-12',
+			description: [
+				'Assisterte leder med daglig drift og organisering av aktiviteter.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'Studentersamfunnet i Bergen',
+			role: 'IT-ansvarlig',
+			startDate: '2018-08',
+			endDate: '2020-06',
+			description: [
+				'Ansvarlig for IT-drift og teknisk infrastruktur for Studentersamfunnet.'
+			],
+			profiles: ['developer', 'administrator']
+		}
+	],
+	education: [
+		{
+			institution: 'Universitetet i Bergen',
 				degree: 'Mastergrad',
 				field: 'Informasjonsvitenskap',
 				startDate: '2024',
@@ -256,55 +325,124 @@ export const cvData: CvDataMap = {
 				]
 			}
 		],
-		volunteer: [
-			{
-				company: 'Det Akademiske Kvarter',
-				companyUrl: 'https://kvarteret.no',
-				role: 'IT Manager',
-				startDate: '2022-02',
-				endDate: '2026-01',
-				description: [
-					'Led the IT department and was responsible for technical infrastructure.'
-				],
-				profiles: ['developer', 'administrator']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'President',
-				startDate: '2021-12',
-				endDate: '2022-12',
-				description: [
-					'Led the student organization that operates IT services for student associations in Bergen.'
-				],
-				profiles: ['administrator', 'community-builder']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'Vice President',
-				startDate: '2021-01',
-				endDate: '2021-12',
-				description: [
-					'Assisted the president with daily operations and activity planning.'
-				],
-				profiles: ['administrator', 'community-builder']
-			},
-			{
-				company: 'friByte',
-				companyUrl: 'https://fribyte.no',
-				role: 'Social Coordinator',
-				startDate: '2023-12',
-				endDate: '2024-06',
-				description: [
-					'Organized social events for members.'
-				],
-				profiles: ['community-builder']
-			}
-		],
-		education: [
-			{
-				institution: 'University of Bergen',
+	volunteer: [
+		{
+			company: 'Bergen Open Source',
+			companyUrl: 'https://boskonf.no',
+			role: 'Leader',
+			startDate: '2025-02',
+			description: [
+				'Leader of the Bergen Open Source community and conference.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Chief Technology Developer',
+			startDate: '2025-02',
+			description: [
+				'Technology lead for AI Safety Bergen.'
+			],
+			profiles: ['developer']
+		},
+		{
+			company: 'Hulen Bergen',
+			companyUrl: 'https://hulen.no',
+			role: 'IT Member',
+			startDate: '2025-02',
+			endDate: '2025-09',
+			description: [
+				'Contributed to IT operations and technical support for Hulen.'
+			],
+			profiles: ['developer']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Member',
+			startDate: '2024-01',
+			description: [
+				'Active member of AI Safety Bergen.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Course Facilitator',
+			startDate: '2024-01',
+			endDate: '2024-06',
+			description: [
+				'Facilitated courses on AI safety and AI alignment.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Social Coordinator',
+			startDate: '2023-08',
+			endDate: '2024-03',
+			description: [
+				'Organized social events for members.'
+			],
+			profiles: ['community-builder']
+		},
+		{
+			company: 'Det Akademiske Kvarter',
+			companyUrl: 'https://kvarteret.no',
+			role: 'IT Manager',
+			startDate: '2022-02',
+			endDate: '2026-01',
+			description: [
+				'Led the IT department and was responsible for technical infrastructure.'
+			],
+			profiles: ['developer', 'administrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'President',
+			startDate: '2021-12',
+			endDate: '2022-12',
+			description: [
+				'Led the student organization that operates IT services for student associations in Bergen.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'Phonofestivalen',
+			role: 'Production Manager',
+			startDate: '2021-09',
+			endDate: '2022-02',
+			description: [
+				'Responsible for production and logistics during the festival.'
+			],
+			profiles: ['administrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Vice President',
+			startDate: '2021-01',
+			endDate: '2021-12',
+			description: [
+				'Assisted the president with daily operations and activity planning.'
+			],
+			profiles: ['administrator', 'community-builder']
+		},
+		{
+			company: 'Studentersamfunnet i Bergen',
+			role: 'IT Manager',
+			startDate: '2018-08',
+			endDate: '2020-06',
+			description: [
+				'Responsible for IT operations and technical infrastructure for Studentersamfunnet.'
+			],
+			profiles: ['developer', 'administrator']
+		}
+	],
+	education: [
+		{
+			institution: 'University of Bergen',
 				degree: 'Master\'s Degree',
 				field: 'Information Science',
 				startDate: '2024',
