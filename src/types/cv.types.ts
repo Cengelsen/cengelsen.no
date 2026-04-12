@@ -64,7 +64,10 @@ export interface Coursework {
 	name: string;
 	code: string;
 	institution: string;
+	degrees: string[];
 	description: string;
+	replaces?: string;
+	blogSlug?: string;
 }
 
 export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';

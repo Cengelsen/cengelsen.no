@@ -77,7 +77,7 @@
                 {:else if sectionKey === 'education'}
                     <Education entries={cv.education} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'coursework'}
-                    <Coursework entries={cv.coursework} />
+                    <Coursework entries={cv.coursework} replacesLabel={t.cv.courseReplaces} essayLabel={t.cv.courseEssay} {lang} />
                 {:else if sectionKey === 'skills'}
                     <Skills categories={cv.skills} />
                 {:else if sectionKey === 'languages'}
@@ -272,7 +272,7 @@
             gap: 0.3rem;
         }
 
-        .cv-page :global(.institution-name) {
+        .cv-page :global(.degree-name) {
             font-size: 9pt;
             color: #1a1a1a;
             margin-bottom: 2pt;
@@ -305,6 +305,31 @@
             font-size: 7pt;
             color: #333;
             line-height: 1.3;
+        }
+
+        .cv-page :global(.course-card.shared) {
+            border: 1px solid var(--cv-accent);
+        }
+
+        .cv-page :global(.course-essay) {
+            font-size: 7pt;
+            color: var(--cv-accent);
+        }
+
+        .cv-page :global(.course-replaces) {
+            font-size: 6pt;
+            color: #555;
+        }
+
+        .cv-page :global(.course-shared-badges) {
+            gap: 2pt;
+        }
+
+        .cv-page :global(.shared-badge) {
+            font-size: 6pt;
+            padding: 0 2pt;
+            color: var(--cv-accent);
+            border: 0.5pt solid var(--cv-accent);
         }
 
         /* ── Skills ─────────────────────────────────────────────── */
