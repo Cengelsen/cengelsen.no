@@ -13,6 +13,7 @@ export interface WorkExperience {
 	startDate: string;
 	endDate?: string;
 	description: string[];
+	skillTags?: string[];
 	profiles?: string[];
 }
 
@@ -51,6 +52,7 @@ export interface Project {
 	techStack: string[];
 	githubUrl?: string;
 	liveUrl?: string;
+	skillTags?: string[];
 	profiles?: string[];
 }
 
@@ -68,6 +70,7 @@ export interface Coursework {
 	description: string;
 	replaces?: string;
 	blogSlug?: string;
+	skillTags?: string[];
 	courseType?: 'mandatory' | 'specialization' | 'elective';
 }
 

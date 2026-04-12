@@ -67,6 +67,13 @@
                                         <span class="course-code">{course.code}</span>
                                     </div>
                                     <p class="course-description">{course.description}</p>
+                                    {#if course.skillTags?.length}
+                                        <div class="course-skills">
+                                            {#each course.skillTags as tag}
+                                                <span class="skill-tag">{tag}</span>
+                                            {/each}
+                                        </div>
+                                    {/if}
                                     {#if course.blogSlug}
                                         <a class="course-essay" href="{blogBase}/{course.blogSlug}">{essayLabel} →</a>
                                     {/if}
@@ -86,6 +93,13 @@
                                     <span class="course-code">{course.code}</span>
                                 </div>
                                 <p class="course-description">{course.description}</p>
+                                {#if course.skillTags?.length}
+                                    <div class="course-skills">
+                                        {#each course.skillTags as tag}
+                                            <span class="skill-tag">{tag}</span>
+                                        {/each}
+                                    </div>
+                                {/if}
                                 {#if course.blogSlug}
                                     <a class="course-essay" href="{blogBase}/{course.blogSlug}">{essayLabel} →</a>
                                 {/if}
@@ -213,6 +227,22 @@
 
     .course-essay:hover {
         text-decoration: underline;
+    }
+
+    .course-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+    }
+
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 1px var(--space-xs);
+        background-color: oklch(80% 0.16 75 / 0.12);
+        color: var(--color-accent);
+        border-radius: var(--radius-sm);
+        border: 1px solid oklch(80% 0.16 75 / 0.25);
+        font-weight: 500;
     }
 
     .course-replaces {

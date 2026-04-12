@@ -19,6 +19,13 @@
                     <span class="tech-tag">{tech}</span>
                 {/each}
             </div>
+            {#if project.skillTags?.length}
+                <div class="project-skills">
+                    {#each project.skillTags as tag}
+                        <span class="skill-tag">{tag}</span>
+                    {/each}
+                </div>
+            {/if}
             <div class="project-links">
                 {#if project.githubUrl}
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="project-link">
@@ -82,6 +89,23 @@
         color: var(--color-accent);
         border-radius: var(--radius-sm);
         border: 1px solid oklch(80% 0.16 75 / 0.25);
+    }
+
+    .project-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-bottom: var(--space-md);
+    }
+
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 1px var(--space-xs);
+        background-color: oklch(80% 0.16 75 / 0.12);
+        color: var(--color-accent);
+        border-radius: var(--radius-sm);
+        border: 1px solid oklch(80% 0.16 75 / 0.25);
+        font-weight: 500;
     }
 
     .project-links {

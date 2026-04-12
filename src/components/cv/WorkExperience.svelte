@@ -28,6 +28,13 @@
                     <li>{bullet}</li>
                 {/each}
             </ul>
+            {#if entry.skillTags?.length}
+                <div class="entry-skills">
+                    {#each entry.skillTags as tag}
+                        <span class="skill-tag">{tag}</span>
+                    {/each}
+                </div>
+            {/if}
         </div>
     {/each}
 </div>
@@ -103,6 +110,23 @@
 
     .entry-description li {
         margin-bottom: var(--space-xs);
+    }
+
+    .entry-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        margin-top: var(--space-sm);
+    }
+
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 1px var(--space-xs);
+        background-color: oklch(80% 0.16 75 / 0.12);
+        color: var(--color-accent);
+        border-radius: var(--radius-sm);
+        border: 1px solid oklch(80% 0.16 75 / 0.25);
+        font-weight: 500;
     }
 
     @media (max-width: 700px) {
