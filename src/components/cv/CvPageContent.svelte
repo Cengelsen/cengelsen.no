@@ -59,15 +59,14 @@
 
     <div class="cv-toolbar">
         <ProfileSelector activeProfileId={activeProfile?.id ?? null} {lang} />
-        <a
-            class="download-btn"
-            href="/pdf/cv-{profileId}-{lang}.pdf"
-            download="cv-{profileId}-{lang}.pdf"
+        <span
+            class="download-btn disabled"
             aria-label={t.cv.download}
+            aria-disabled="true"
         >
             <Fa icon={faDownload} />
             {t.cv.download}
-        </a>
+        </span>
     </div>
 
     {#each sections as sectionKey (sectionKey)}
@@ -139,6 +138,12 @@
     .download-btn:hover {
         background-color: var(--color-accent);
         color: var(--color-bg, white);
+    }
+
+    .download-btn.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        pointer-events: none;
     }
 
     @media (max-width: 700px) {

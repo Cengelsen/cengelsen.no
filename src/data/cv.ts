@@ -74,6 +74,7 @@ export const cvData: CvDataMap = {
 			company: 'AI Safety Bergen',
 			role: 'Chief Technology Developer',
 			startDate: '2025-02',
+			endDate: '2026-01',
 			description: [
 				'Teknologiansvarlig for AI Safety Bergen.'
 			],
@@ -96,6 +97,7 @@ export const cvData: CvDataMap = {
 			company: 'AI Safety Bergen',
 			role: 'Medlem',
 			startDate: '2024-01',
+			endDate: '2026-01',
 			description: [
 				'Aktivt medlem i AI Safety Bergen.'
 			],
@@ -237,6 +239,7 @@ export const cvData: CvDataMap = {
 			{ name: 'Forskningsemne innen Nettverk og Tekst-analyse', code: 'INFO371', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Metodar for analyse av tekst- og nettverksdata, inkludert språkmodellar, dokumentklustring, vegleia maskinlæring og nettverksmodellar.', skillTags: ['Python', 'NLP'] },
 			{ name: 'Forskningsmetoder i Menneske-Maskin Interaksjon', code: 'INFO362', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Teori og praksis innan IKT-støtta samarbeid (CSCW) og gruppevaresystem. Dekker samarbeidsteknologiar, sosiale nettverk og evaluering av samarbeidsløysingar.' },
 			{ name: 'Logikk for Multi-Agent Systemer', code: 'INFO382', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Formelle logikkar for resonnering om multi-agent-interaksjon, inkludert epistemisk logikk, temporallogikk, koalisjonslogikk og alternating-time temporal logic.' },
+			{ name: 'Masteroppgåve i Informasjonsvitskap', code: 'INFO390', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Sjølvstendig forskingsarbeid under rettleiing om eit relevant tema innanfor informasjonsvitskap. Studenten skal vise avansert kunnskap og vitskapleg metode, meistre bruk av kjelder, og gjere greie for problemstilling, metode og resultat.' },
 			{ name: 'Informatikkprosjekt II', code: 'INF319', institution: 'Universitetet i Bergen', degrees: ['Tilleggsemner'], description: 'Avansert prosjektarbeid i informatikk gjennomført i samråd med ein rettleiar. Inkluderer programmering, dokumentasjon i form av teknisk rapport og munnleg presentasjon.', skillTags: ['Python', 'NLP'], blogSlug: 'anvendelse-av-nlp-teknikker-på-tc39s-møtereferater' }
 		],
 		skills: [
@@ -404,6 +407,7 @@ export const cvData: CvDataMap = {
 			company: 'AI Safety Bergen',
 			role: 'Chief Technology Developer',
 			startDate: '2025-02',
+			endDate: '2026-01',
 			description: [
 				'Technology lead for AI Safety Bergen.'
 			],
@@ -426,6 +430,7 @@ export const cvData: CvDataMap = {
 			company: 'AI Safety Bergen',
 			role: 'Member',
 			startDate: '2024-01',
+			endDate: '2026-01',
 			description: [
 				'Active member of AI Safety Bergen.'
 			],
@@ -567,6 +572,7 @@ export const cvData: CvDataMap = {
 			{ name: 'Research Topic in Networks and Text Analysis', code: 'INFO371', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Methods for analyzing text and network data, including language models, document clustering, supervised machine learning, and network models.', skillTags: ['Python', 'NLP'] },
 			{ name: 'Research Methods in Human-Computer Interaction', code: 'INFO362', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Theory and practice of computer-supported cooperative work (CSCW) and groupware systems. Covers collaboration technologies, social networks, and evaluation of cooperative solutions.' },
 			{ name: 'Logic for Multi-Agent Systems', code: 'INFO382', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Formal logics for reasoning about multi-agent interaction, including epistemic logic, temporal logic, coalition logic, and alternating-time temporal logic.' },
+			{ name: 'Master\'s Thesis in Information Science', code: 'INFO390', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Independent research project under supervision on a relevant topic in information science. Demonstrates advanced knowledge and scientific methodology, including problem formulation, literature review, data collection, analysis and critical evaluation.' },
 			{ name: 'Informatics Project II', code: 'INF319', institution: 'University of Bergen', degrees: ['Additional courses'], description: 'Advanced project work in informatics carried out with a supervisor. Includes programming, documentation in the form of a technical report, and an oral presentation.', skillTags: ['Python', 'NLP'], blogSlug: 'applying-nlp-techniques-to-tc39-meeting-notes' }
 		],
 		skills: [

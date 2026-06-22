@@ -1,20 +1,41 @@
 #let data = json("_cv-data.json")
 #let accent = rgb(data.accentColor)
+#let profile = data.profileId
+#let is-developer = profile == "developer"
+#let is-conservative = profile == "administrator"
+#let is-functional = profile == "community-builder"
 
 #let skill-tag(label) = {
-  box(
-    fill: accent.lighten(88%),
-    stroke: 0.5pt + accent.lighten(40%),
-    radius: 2pt,
-    inset: (x: 4pt, y: 1.5pt),
-  )[#text(size: 7.5pt, fill: accent)[#label]]
+  if is-conservative {
+    text(size: 8pt, fill: luma(60))[#label]
+  } else {
+    box(
+      fill: accent.lighten(88%),
+      stroke: 0.5pt + accent.lighten(40%),
+      radius: 2pt,
+      inset: (x: 4pt, y: 1.5pt),
+    )[#text(size: 7.5pt, fill: accent)[#label]]
+  }
+}
+
+#let render-inline-skills(tags) = {
+  if is-conservative {
+    text(size: 8pt, fill: luma(60))[#tags.join(" · ")]
+  } else {
+    tags.map(t => skill-tag(t)).join(h(3pt))
+  }
 }
 
 // ── Page setup ──────────────────────────────────────────────────────
 
 #set page(
   paper: "a4",
-  margin: (top: 1.5cm, bottom: 1.8cm, left: 1.3cm, right: 1.3cm),
+  margin: (
+    top: if is-conservative { 2cm } else { 1.8cm },
+    bottom: 2cm,
+    left: 2cm,
+    right: 2cm,
+  ),
   footer: context {
     let current = counter(page).get().first()
     let total = counter(page).final().first()
@@ -28,49 +49,87 @@
 
 #set text(
   font: ("Inter", "Noto Sans", "Liberation Sans", "DejaVu Sans"),
-  size: 10pt,
+  size: if is-functional { 10.5pt } else { 10pt },
   fill: luma(30),
 )
-#set par(leading: 0.6em, spacing: 0.8em)
+#set par(
+  leading: if is-functional { 0.7em } else { 0.65em },
+  spacing: if is-functional { 0.9em } else { 0.8em },
+)
 #set heading(numbering: none)
 
 #show heading.where(level: 1): it => {
-  v(0.5em)
+  v(if is-functional { 0.8em } else { 0.5em })
   block(below: 0.3em)[
-    #text(size: 10pt, weight: "bold", fill: accent, tracking: 0.08em)[#upper(it.body)]
+    #text(
+      size: 12pt,
+      weight: "bold",
+      fill: accent,
+      tracking: if is-conservative { 0.03em } else { 0.08em },
+    )[#if is-conservative { it.body } else { upper(it.body) }]
     #v(2pt)
-    #line(length: 100%, stroke: 1.2pt + accent)
+    #line(
+      length: 100%,
+      stroke: if is-conservative { 0.7pt + accent } else { 1.2pt + accent },
+    )
   ]
 }
 
 // ── Header ──────────────────────────────────────────────────────────
 
 #align(center)[
-  #text(size: 18pt, weight: "bold", fill: luma(20))[#data.name]
+  #text(size: if is-conservative { 20pt } else { 18pt }, weight: "bold", fill: luma(20))[#data.name]
   #v(3pt)
   #text(size: 11pt, fill: accent, weight: 500)[#data.summary.title]
   #v(2pt)
   #text(size: 9pt, fill: luma(110))[#data.summary.location]
   #v(6pt)
-  #text(size: 9pt, fill: luma(70))[#data.summary.bio]
+  #text(size: if is-functional { 9.5pt } else { 9pt }, fill: luma(70))[#data.summary.bio]
+  #if (is-developer or is-functional) and data.contact.len() > 0 [
+    #v(8pt)
+    #{
+      let items = data.contact.map(entry => {
+        [#text(size: 8pt, weight: 600, fill: luma(80))[#entry.platform] #h(2pt) #text(size: 8pt, fill: accent)[#link(entry.url)[#entry.label]]]
+      })
+      items.join([#h(0.6em)#text(size: 8pt, fill: luma(170))[|]#h(0.6em)])
+    }
+  ]
 ]
 #v(4pt)
-#line(length: 100%, stroke: 1.5pt + accent)
+#line(
+  length: 100%,
+  stroke: if is-conservative { 1pt + accent } else { 1.5pt + accent },
+)
 
 // ── Section renderers ───────────────────────────────────────────────
 
-#let render-work(entries) = {
-  for entry in entries {
-    block(breakable: false, below: 0.5em)[
+#let entry-gap = if is-functional { 0.7em } else { 0.5em }
+
+#let render-work(entries, hero-company: false) = {
+  for (i, entry) in entries.enumerate() {
+    if is-conservative and i > 0 {
+      v(1pt)
+      line(length: 100%, stroke: 0.3pt + luma(200))
+      v(3pt)
+    }
+    block(breakable: false, below: entry-gap)[
       #grid(
         columns: (1fr, auto),
         gutter: 0.5em,
-        text(size: 10pt, weight: "bold")[#entry.role],
+        {
+          if hero-company [
+            #text(size: 10pt, weight: "bold")[#entry.company] #h(4pt) #text(size: 9pt, fill: luma(70), style: "italic")[#entry.role]
+          ] else [
+            #text(size: 10pt, weight: "bold")[#entry.role]
+          ]
+        },
         text(size: 8pt, fill: luma(110))[
           #entry.startDate — #if entry.endDate == none { data.labels.present } else { entry.endDate }
         ],
       )
-      #text(size: 9pt, fill: luma(70))[#entry.company]
+      #if not hero-company [
+        #text(size: 9pt, fill: luma(70))[#entry.company]
+      ]
       #v(2pt)
       #for bullet in entry.description [
         #pad(left: 0.6em)[
@@ -79,7 +138,7 @@
       ]
       #if entry.skillTags.len() > 0 [
         #v(3pt)
-        #entry.skillTags.map(t => skill-tag(t)).join(h(3pt))
+        #render-inline-skills(entry.skillTags)
       ]
     ]
   }
@@ -87,7 +146,7 @@
 
 #let render-education(entries) = {
   for entry in entries {
-    block(breakable: false, below: 0.5em)[
+    block(breakable: false, below: entry-gap)[
       #grid(
         columns: (1fr, auto),
         gutter: 0.5em,
@@ -148,7 +207,7 @@
             #text(size: 7pt, fill: luma(70))[#course.description]
             #if course.skillTags.len() > 0 [
               #v(1pt)
-              #course.skillTags.map(t => skill-tag(t)).join(h(2pt))
+              #render-inline-skills(course.skillTags)
             ]
             #if course.replaces != none [
               #v(1pt)
@@ -163,12 +222,35 @@
 }
 
 #let render-skills(categories) = {
-  for cat in categories {
-    block(below: 0.5em)[
-      #text(size: 9pt, weight: "bold", tracking: 0.03em)[#upper(cat.category)]
-      #v(3pt)
-      #cat.skills.map(s => skill-tag(s)).join(h(3pt))
-    ]
+  if is-developer {
+    grid(
+      columns: (1fr, 1fr),
+      column-gutter: 1.5em,
+      row-gutter: 0.6em,
+      ..categories.map(cat => [
+        #text(size: 9pt, weight: "bold", tracking: 0.03em)[#upper(cat.category)]
+        #v(3pt)
+        #render-inline-skills(cat.skills)
+      ])
+    )
+  } else if is-conservative {
+    grid(
+      columns: (auto, 1fr),
+      column-gutter: 1.2em,
+      row-gutter: 0.5em,
+      ..categories.map(cat => (
+        [#text(size: 9pt, weight: "bold")[#cat.category]],
+        [#text(size: 8pt, fill: luma(60))[#cat.skills.join("  ·  ")]],
+      )).flatten()
+    )
+  } else {
+    for cat in categories {
+      block(below: entry-gap)[
+        #text(size: 9pt, weight: "bold", tracking: 0.03em)[#upper(cat.category)]
+        #v(3pt)
+        #render-inline-skills(cat.skills)
+      ]
+    }
   }
 }
 
@@ -201,24 +283,28 @@
 
 #let render-projects(entries) = {
   for project in entries {
-    block(breakable: false, below: 0.5em)[
+    block(breakable: false, below: entry-gap)[
       #text(size: 9pt, weight: "bold")[#project.name]
       #linebreak()
       #text(size: 8pt, fill: luma(70))[#project.description]
       #v(2pt)
-      #project.techStack.map(t => skill-tag(t)).join(h(3pt))
+      #render-inline-skills(project.techStack)
       #if project.skillTags.len() > 0 [
-        #h(3pt)
-        #project.skillTags.map(t => skill-tag(t)).join(h(3pt))
+        #if is-conservative [
+          #text(size: 8pt, fill: luma(60))[ · ]#render-inline-skills(project.skillTags)
+        ] else [
+          #h(3pt)
+          #render-inline-skills(project.skillTags)
+        ]
       ]
       #v(2pt)
       #{
         if project.githubUrl != none [
-          #text(size: 8pt, fill: accent)[#link(project.githubUrl)[#data.labels.viewProject]]
+          #text(size: 8pt, fill: accent)[#underline(offset: 2pt, stroke: 0.5pt + accent)[#link(project.githubUrl)[#data.labels.viewProject]]]
           #h(1em)
         ]
         if project.liveUrl != none [
-          #text(size: 8pt, fill: accent)[#link(project.liveUrl)[#data.labels.liveDemo]]
+          #text(size: 8pt, fill: accent)[#underline(offset: 2pt, stroke: 0.5pt + accent)[#link(project.liveUrl)[#data.labels.liveDemo]]]
         ]
       }
     ]
@@ -243,7 +329,7 @@
     render-work(data.experience)
   } else if section == "volunteer" and data.volunteer.len() > 0 {
     heading(level: 1)[#data.labels.volunteer]
-    render-work(data.volunteer)
+    render-work(data.volunteer, hero-company: is-functional)
   } else if section == "education" and data.education.len() > 0 {
     heading(level: 1)[#data.labels.education]
     render-education(data.education)
@@ -262,7 +348,7 @@
   } else if section == "projects" and data.projects.len() > 0 {
     heading(level: 1)[#data.labels.projects]
     render-projects(data.projects)
-  } else if section == "contact" and data.contact.len() > 0 {
+  } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-functional {
     heading(level: 1)[#data.labels.contact]
     render-contact(data.contact)
   }
