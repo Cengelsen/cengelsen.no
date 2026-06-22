@@ -122,7 +122,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Organiserte sosiale arrangementer for medlemmene.'
 			],
-			skillTags: ['Git', 'Linux', 'Linux-systemadministrasjon'],
+			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
 			profiles: ['community-builder']
 		},
 		{
@@ -146,7 +146,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
 			],
-			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Community-bygging', 'Git', 'Linux', 'Linux-systemadministrasjon'],
+			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Community-bygging', 'Git', 'Linux', 'Systemadministrasjon'],
 			profiles: ['administrator', 'community-builder']
 		},
 		{
@@ -168,7 +168,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Assisterte leder med daglig drift og organisering av aktiviteter.'
 			],
-			skillTags: ['Git', 'Linux', 'Linux-systemadministrasjon'],
+			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
 			profiles: ['administrator', 'community-builder']
 		},
 		{
@@ -189,6 +189,7 @@ export const cvData: CvDataMap = {
 				degree: 'Mastergrad',
 				field: 'Informasjonsvitenskap',
 				startDate: '2024',
+				endDate: '2026',
 				description: '120 studiepoeng. Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
 			},
 			{
@@ -246,7 +247,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Rammeverk & biblioteker',
-				skills: ['Svelte', 'SvelteKit', 'Django', 'Flask', 'Hugo', 'React', 'Node.js', 'ROS2'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2'],
 				profiles: ['developer']
 			},
 			{
@@ -256,7 +257,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Verktøy & systemer',
-				skills: ['Git', 'Docker', 'Linux', 'Shell-skripting', 'VS Code', 'Webhooks'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks'],
 				profiles: ['developer']
 			},
 			{
@@ -266,17 +267,17 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Ledelse & forretning',
-				skills: ['Non-profit-ledelse', 'IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Community-bygging', 'Vekststrategi', 'CRM'],
+				skills: ['Non-profit-ledelse', 'IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Community-bygging', 'Vekststrategi'],
 				profiles: ['administrator', 'community-builder']
 			},
 			{
 				category: 'Teknisk drift',
-				skills: ['Linux-systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring', 'Tekniske rapporter', 'Feilsøking av maskinvare', 'Vedlikehold og reparasjon', 'Visma'],
+				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring'],
 				profiles: ['administrator']
 			},
 			{
 				category: 'Generelt',
-				skills: ['Analytiske ferdigheter', 'Teamarbeid', 'Problemløsning', 'Akademisk skriving']
+				skills: ['Teamarbeid', 'Akademisk skriving']
 			}
 		],
 		languages: [
@@ -451,7 +452,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Organized social events for members.'
 			],
-			skillTags: ['Git', 'Linux', 'Linux System Administration'],
+			skillTags: ['Git', 'Linux', 'System Administration'],
 			profiles: ['community-builder']
 		},
 		{
@@ -475,7 +476,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Led the student organization that operates IT services for student associations in Bergen.'
 			],
-			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Community Building', 'Git', 'Linux', 'Linux System Administration'],
+			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Community Building', 'Git', 'Linux', 'System Administration'],
 			profiles: ['administrator', 'community-builder']
 		},
 		{
@@ -497,7 +498,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Assisted the president with daily operations and activity planning.'
 			],
-			skillTags: ['Git', 'Linux', 'Linux System Administration'],
+			skillTags: ['Git', 'Linux', 'System Administration'],
 			profiles: ['administrator', 'community-builder']
 		},
 		{
@@ -518,6 +519,7 @@ export const cvData: CvDataMap = {
 				degree: 'Master\'s Degree',
 				field: 'Information Science',
 				startDate: '2024',
+				endDate: '2026',
 				description: '120 ECTS credits. Specialization in information architecture, user behaviour and digital communication.'
 			},
 			{
@@ -575,7 +577,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Frameworks & Libraries',
-				skills: ['Svelte', 'SvelteKit', 'Django', 'Flask', 'Hugo', 'React', 'Node.js', 'ROS2'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2'],
 				profiles: ['developer']
 			},
 			{
@@ -585,7 +587,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Tools & Systems',
-				skills: ['Git', 'Docker', 'Linux', 'Shell Scripting', 'VS Code', 'Webhooks'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks'],
 				profiles: ['developer']
 			},
 			{
@@ -595,17 +597,17 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Leadership & Business',
-				skills: ['Non-Profit Management', 'IT Management', 'Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Community Building', 'Growth Strategy', 'CRM'],
+				skills: ['Non-Profit Management', 'IT Management', 'Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Community Building', 'Growth Strategy'],
 				profiles: ['administrator', 'community-builder']
 			},
 			{
 				category: 'Technical Operations',
-				skills: ['Linux System Administration', 'Technical Support', 'Technical Training', 'Technical Reports', 'Hardware Troubleshooting', 'Maintenance & Repair', 'Visma'],
+				skills: ['System Administration', 'Technical Support', 'Technical Training'],
 				profiles: ['administrator']
 			},
 			{
 				category: 'General',
-				skills: ['Analytical Skills', 'Teamwork', 'Problem Solving', 'Academic Writing']
+				skills: ['Teamwork', 'Academic Writing']
 			}
 		],
 		languages: [

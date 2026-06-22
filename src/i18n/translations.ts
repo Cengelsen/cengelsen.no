@@ -39,7 +39,7 @@ export const translations: TranslationMap = {
 			viewProject: 'Source code',
 			liveDemo: 'Live demo',
 			allProfiles: 'All',
-			print: 'Print'
+			download: 'Download PDF'
 		}
 	},
 	no: {
@@ -81,7 +81,7 @@ export const translations: TranslationMap = {
 			viewProject: 'Kildekode',
 			liveDemo: 'Live demo',
 			allProfiles: 'Alle',
-			print: 'Skriv ut'
+			download: 'Last ned PDF'
 		}
 	}
 };
