@@ -1,6 +1,6 @@
 import type { CvProfileMap } from '../types/cv.types';
 
-export const PROFILE_SLUGS = ['developer', 'administrator', 'community-builder'] as const;
+export const PROFILE_SLUGS = ['developer', 'administrator', 'organization-builder'] as const;
 export type ProfileSlug = (typeof PROFILE_SLUGS)[number];
 
 export const cvProfiles: CvProfileMap = {
@@ -27,13 +27,13 @@ export const cvProfiles: CvProfileMap = {
 			},
 			accentColor: 'oklch(35% 0.10 260)'
 		},
-		'community-builder': {
-			id: 'community-builder',
-			label: 'Community-bygger',
+		'organization-builder': {
+			id: 'organization-builder',
+			label: 'Organisasjonsbygger',
 			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'contact'],
 			summary: {
-				title: 'Community-bygger',
-				bio: 'Community-bygger med bred erfaring fra studentorganisasjoner, konferanser og frivilligmiljøer i Bergen. Har rekruttert og ledet frivillige, organisert arrangementer og bygget nettverk på tvers av organisasjoner.',
+				title: 'Organisasjonsbygger',
+				bio: 'Organisasjonsbygger med bred erfaring fra studentorganisasjoner, konferanser og frivilligmiljøer i Bergen. Har rekruttert og ledet frivillige, organisert arrangementer og bygget nettverk på tvers av organisasjoner.',
 				location: 'Bergen, Norge'
 			},
 			accentColor: 'oklch(65% 0.18 50)'
@@ -62,13 +62,13 @@ export const cvProfiles: CvProfileMap = {
 			},
 			accentColor: 'oklch(35% 0.10 260)'
 		},
-		'community-builder': {
-			id: 'community-builder',
-			label: 'Community Builder',
+		'organization-builder': {
+			id: 'organization-builder',
+			label: 'Organization Builder',
 			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'contact'],
 			summary: {
-				title: 'Community Builder',
-				bio: 'Community builder with broad experience from student organizations, conferences and volunteer communities in Bergen. Has recruited and led volunteers, organized events and built networks across organizations.',
+				title: 'Organization Builder',
+				bio: 'Organization builder with broad experience from student organizations, conferences and volunteer communities in Bergen. Has recruited and led volunteers, organized events and built networks across organizations.',
 				location: 'Bergen, Norway'
 			},
 			accentColor: 'oklch(65% 0.18 50)'

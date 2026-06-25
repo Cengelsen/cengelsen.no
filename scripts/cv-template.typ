@@ -3,7 +3,7 @@
 #let profile = data.profileId
 #let is-developer = profile == "developer"
 #let is-conservative = profile == "administrator"
-#let is-functional = profile == "community-builder"
+#let is-functional = profile == "organization-builder"
 
 #let skill-tag(label) = {
   if is-conservative {

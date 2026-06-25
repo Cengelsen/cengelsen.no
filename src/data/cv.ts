@@ -4,7 +4,7 @@ export const cvData: CvDataMap = {
 	no: {
 		summary: {
 			title: 'Fullstack-utvikler & daglig leder',
-			bio: 'Daglig leder med erfaring innen organisasjonsledelse, markedsføring og community-bygging. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging.',
+			bio: 'Daglig leder med erfaring innen organisasjonsledelse, markedsføring og organisasjonsbygging. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging.',
 			location: 'Bergen, Norge'
 		},
 		experience: [
@@ -18,8 +18,8 @@ export const cvData: CvDataMap = {
 					'Driver aktivt merkevarebygging og rekruttering av frivillige.',
 					'Planlegger og gjennomfører sosiale aktiviteter for et stort frivilligmiljø.'
 				],
-				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Community-bygging'],
-				profiles: ['administrator', 'community-builder']
+				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsbygging'],
+				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				company: 'Nordic USV AS',
@@ -67,8 +67,8 @@ export const cvData: CvDataMap = {
 			description: [
 				'Leder for Bergen Open Source-fellesskapet og konferansen.'
 			],
-			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Community-bygging', 'Git'],
-			profiles: ['administrator', 'community-builder']
+			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Organisasjonsbygging', 'Git'],
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -102,7 +102,7 @@ export const cvData: CvDataMap = {
 				'Aktivt medlem i AI Safety Bergen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -113,7 +113,7 @@ export const cvData: CvDataMap = {
 				'Tilrettela kurs om AI-sikkerhet og AI-alignment.'
 			],
 			skillTags: ['Git'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'friByte',
@@ -125,7 +125,7 @@ export const cvData: CvDataMap = {
 				'Organiserte sosiale arrangementer for medlemmene.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -136,7 +136,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
 			],
-			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Community-bygging', 'Azure', 'Git'],
+			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Azure', 'Git'],
 			profiles: ['developer', 'administrator']
 		},
 		{
@@ -148,8 +148,8 @@ export const cvData: CvDataMap = {
 			description: [
 				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
 			],
-			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Community-bygging', 'Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'community-builder']
+			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Git', 'Linux', 'Systemadministrasjon'],
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -171,7 +171,7 @@ export const cvData: CvDataMap = {
 				'Assisterte leder med daglig drift og organisering av aktiviteter.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'community-builder']
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -270,8 +270,8 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Ledelse & forretning',
-				skills: ['Non-profit-ledelse', 'IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Community-bygging', 'Vekststrategi'],
-				profiles: ['administrator', 'community-builder']
+				skills: ['Non-profit-ledelse', 'IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Organisasjonsbygging', 'Vekststrategi'],
+				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				category: 'Teknisk drift',
@@ -337,7 +337,7 @@ export const cvData: CvDataMap = {
 	en: {
 		summary: {
 			title: 'Full-Stack Developer & General Manager',
-			bio: 'General manager with experience in organizational leadership, marketing and community building. Passionate about creating engagement and growth through strategic communication and relationship building.',
+			bio: 'General manager with experience in organizational leadership, marketing and organization building. Passionate about creating engagement and growth through strategic communication and relationship building.',
 			location: 'Bergen, Norway'
 		},
 		experience: [
@@ -351,8 +351,8 @@ export const cvData: CvDataMap = {
 					'Actively driving brand building and recruitment of volunteers.',
 					'Planning and executing social activities for a large volunteer community.'
 				],
-				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Community Building'],
-				profiles: ['administrator', 'community-builder']
+				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Building'],
+				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				company: 'Nordic USV AS',
@@ -400,8 +400,8 @@ export const cvData: CvDataMap = {
 			description: [
 				'Leader of the Bergen Open Source community and conference.'
 			],
-			skillTags: ['Non-Profit Management', 'Project Management', 'Community Building', 'Git'],
-			profiles: ['administrator', 'community-builder']
+			skillTags: ['Non-Profit Management', 'Project Management', 'Organization Building', 'Git'],
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -435,7 +435,7 @@ export const cvData: CvDataMap = {
 				'Active member of AI Safety Bergen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -446,7 +446,7 @@ export const cvData: CvDataMap = {
 				'Facilitated courses on AI safety and AI alignment.'
 			],
 			skillTags: ['Git'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'friByte',
@@ -458,7 +458,7 @@ export const cvData: CvDataMap = {
 				'Organized social events for members.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['community-builder']
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -469,7 +469,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Led the IT department and was responsible for technical infrastructure.'
 			],
-			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Community Building', 'Azure', 'Git'],
+			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Organization Building', 'Azure', 'Git'],
 			profiles: ['developer', 'administrator']
 		},
 		{
@@ -481,8 +481,8 @@ export const cvData: CvDataMap = {
 			description: [
 				'Led the student organization that operates IT services for student associations in Bergen.'
 			],
-			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Community Building', 'Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'community-builder']
+			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Organization Building', 'Git', 'Linux', 'System Administration'],
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -504,7 +504,7 @@ export const cvData: CvDataMap = {
 				'Assisted the president with daily operations and activity planning.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'community-builder']
+			profiles: ['administrator', 'organization-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -603,8 +603,8 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Leadership & Business',
-				skills: ['Non-Profit Management', 'IT Management', 'Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Community Building', 'Growth Strategy'],
-				profiles: ['administrator', 'community-builder']
+				skills: ['Non-Profit Management', 'IT Management', 'Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Organization Building', 'Growth Strategy'],
+				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				category: 'Technical Operations',
