@@ -5,8 +5,7 @@
 
     $: isScrollable = ($page.route.id?.includes('/blog') || $page.route.id?.includes('/cv')) ?? false;
     $: isHomePage = $page.route.id === '/[lang=lang]' || $page.route.id === '/';
-    $: isCvPage = $page.route.id?.includes('/cv') ?? false;
-    $: contentMaxWidth = isHomePage ? '100%' : isCvPage ? '85vw' : '700px';
+    $: contentMaxWidth = isHomePage ? '100%' : '700px';
     $: lang = $page.params.lang ?? 'no';
 </script>
 
@@ -15,7 +14,7 @@
     <link rel="alternate" type="application/rss+xml" title="cengelsen.no (English)" href="/en/rss.xml" />
 </svelte:head>
 
-<div id="app-shell" class:scrollable={isScrollable} class:cv-page-shell={isCvPage} style="--content-max-width: {contentMaxWidth}">
+<div id="app-shell" class:scrollable={isScrollable} style="--content-max-width: {contentMaxWidth}">
     <div class="navbar-wrapper" class:sticky-nav={isScrollable}>
         <Navbar lang={lang} />
     </div>
@@ -43,10 +42,6 @@
         min-height: 100vh;
         min-height: 100dvh;
         overflow: visible;
-    }
-
-    #app-shell.cv-page-shell {
-        max-width: 85vw;
     }
 
     .navbar-wrapper {

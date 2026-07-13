@@ -110,9 +110,22 @@
 <style>
     .cv-page {
         width: 100%;
-        max-width: 85vw;
+        max-width: var(--content-max-width);
         margin: 0 auto;
         padding: var(--space-xl) var(--space-lg);
+    }
+
+    @media (max-width: 1024px) {
+        .cv-page {
+            max-width: 85%;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .cv-page {
+            max-width: 90%;
+            padding: var(--space-lg) var(--space-md);
+        }
     }
 
     .cv-toolbar {
@@ -148,12 +161,6 @@
         opacity: 0.4;
         cursor: not-allowed;
         pointer-events: none;
-    }
-
-    @media (max-width: 700px) {
-        .cv-page {
-            padding: var(--space-lg) var(--space-md);
-        }
     }
 
 </style>
