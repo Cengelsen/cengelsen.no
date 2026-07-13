@@ -317,6 +317,12 @@
         flex-shrink: 0;
     }
 
+    .course-credits,
+    .course-essay {
+        color: var(--color-dark);
+        background-color: oklch(36% 0.03 75 / 0.5);
+    }
+
     .course-credits {
         position: absolute;
         top: 0;
@@ -331,13 +337,10 @@
         font-size: 0.8rem;
         font-weight: 700;
         line-height: 1;
-        color: var(--color-accent);
-        background-color: oklch(80% 0.16 75 / 0.16);
         clip-path: polygon(100% 0, 0 0, 100% 100%);
-        border-bottom-left-radius: var(--radius-sm);
         box-shadow:
-            inset 0 0 0 1px oklch(80% 0.16 75 / 0.35),
-            -1px 1px 0 oklch(80% 0.16 75 / 0.2);
+            inset 0 0 0 1px var(--color-chrome-border),
+            -1px 1px 0 oklch(22% 0 0 / 0.25);
     }
 
     .course-description {
@@ -361,12 +364,10 @@
         align-items: flex-end;
         justify-content: flex-end;
         padding: 0 0.3rem 0.3rem 0;
-        color: var(--color-accent);
-        background-color: oklch(80% 0.16 75 / 0.16);
         clip-path: polygon(100% 100%, 0 100%, 100% 0);
         box-shadow:
-            inset 0 0 0 1px oklch(80% 0.16 75 / 0.35),
-            -1px -1px 0 oklch(80% 0.16 75 / 0.2);
+            inset 0 0 0 1px var(--color-chrome-border),
+            -1px -1px 0 oklch(22% 0 0 / 0.25);
         text-decoration: none;
         cursor: pointer;
     }
@@ -380,12 +381,12 @@
     }
 
     .course-essay:hover {
-        color: var(--color-accent);
-        background-color: oklch(80% 0.16 75 / 0.28);
+        color: var(--color-dark);
+        background-color: oklch(42% 0.04 75 / 0.65);
     }
 
     .course-essay:focus-visible {
-        outline: 2px solid var(--color-accent);
+        outline: 2px solid var(--color-chrome-border);
         outline-offset: -2px;
     }
 
