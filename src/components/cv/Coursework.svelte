@@ -96,7 +96,6 @@
                                 class="course-card"
                                 class:has-credits={hasCredits(course.credits)}
                                 class:has-essay={!!course.blogSlug}
-                                class:has-footer={!!(course.replaces || replacedBy)}
                             >
                                 {#if hasCredits(course.credits)}
                                     <span class="course-credits">{course.credits}</span>
@@ -104,18 +103,17 @@
                                 <div class="course-header">
                                     <h3 class="course-name">{course.name}</h3>
                                 </div>
-                                <div class="course-body">
+                                <div class="course-body" class:course-body--full={!course.skillTags?.length}>
                                     <div class="course-content">
                                         <p class="course-description">{course.description}</p>
                                     </div>
-                                    <div class="course-props">
-                                        <span class="course-code">{course.code}</span>
-                                        {#if course.skillTags?.length}
+                                    {#if course.skillTags?.length}
+                                        <div class="course-props">
                                             {#each course.skillTags as tag}
                                                 <span class="skill-tag">{tag}</span>
                                             {/each}
-                                        {/if}
-                                    </div>
+                                        </div>
+                                    {/if}
                                 </div>
                                 {#if course.blogSlug}
                                     <a
@@ -127,15 +125,18 @@
                                         <Fa icon={faFileLines} size="1.15x" />
                                     </a>
                                 {/if}
-                                {#if course.replaces}
-                                    <div class="course-replacement-footer">
-                                        {replacesLabel} {course.replaces}
-                                    </div>
-                                {:else if replacedBy}
-                                    <div class="course-replacement-footer">
-                                        {replacedByLabel} {replacedBy.code}
-                                    </div>
-                                {/if}
+                                <div class="course-footer">
+                                    <span class="course-code">{course.code}</span>
+                                    {#if course.replaces}
+                                        <span class="course-footer-note">
+                                            {replacesLabel} {course.replaces}
+                                        </span>
+                                    {:else if replacedBy}
+                                        <span class="course-footer-note">
+                                            {replacedByLabel} {replacedBy.code}
+                                        </span>
+                                    {/if}
+                                </div>
                             </div>
                         {/each}
                     </div>
@@ -257,9 +258,13 @@
 
     .course-body {
         display: grid;
-        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+        grid-template-columns: minmax(0, 1fr) minmax(3rem, auto);
         gap: var(--space-sm);
         align-items: stretch;
+    }
+
+    .course-body--full {
+        grid-template-columns: 1fr;
     }
 
     .course-content {
@@ -273,10 +278,12 @@
     .course-props {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
         align-self: stretch;
         gap: 3px;
-        min-width: 0;
+        flex-shrink: 0;
+        min-width: 3rem;
         height: 100%;
         border-left: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
         padding-left: var(--space-sm);
@@ -364,8 +371,8 @@
         cursor: pointer;
     }
 
-    .course-card.has-footer .course-essay {
-        bottom: 1.75rem;
+    .course-card.has-essay .course-essay {
+        bottom: 2rem;
     }
 
     .course-card.has-essay .course-body {
@@ -393,16 +400,41 @@
         width: fit-content;
     }
 
-    .course-replacement-footer {
-        margin: var(--space-xs) calc(-1 * var(--space-md)) calc(-1 * var(--space-sm));
-        padding: 0.35rem var(--space-md);
+    .course-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        margin-top: auto;
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        margin-bottom: calc(-1 * var(--space-sm));
+        padding: 0 var(--space-md);
+        height: 2rem;
+        min-height: 2rem;
+        flex-shrink: 0;
         border-top: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
         background-color: oklch(50% 0 0 / 0.06);
+        width: calc(100% + 2 * var(--space-md));
+        box-sizing: border-box;
+    }
+
+    .course-footer .course-code {
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .course-footer-note {
+        flex: 1;
+        min-width: 0;
         font-size: 0.7rem;
         color: var(--color-muted);
         font-style: italic;
         text-align: center;
-        width: calc(100% + 2 * var(--space-md));
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     @media (max-width: 700px) {
@@ -417,10 +449,13 @@
         }
 
         .course-props {
-            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             align-self: auto;
             height: auto;
-            gap: 3px;
+            gap: var(--space-xs);
             width: 100%;
             border-left: none;
             padding-left: 0;
