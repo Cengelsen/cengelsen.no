@@ -72,7 +72,7 @@ export const cvData: CvDataMap = {
 		},
 		{
 			company: 'AI Safety Bergen',
-			role: 'Chief Technology Developer',
+			role: 'Teknologidirektør',
 			startDate: '2025-02',
 			endDate: '2026-01',
 			description: [

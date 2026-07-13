@@ -6,6 +6,7 @@
     import CvHeader from './CvHeader.svelte';
     import CvSection from './CvSection.svelte';
     import WorkExperience from './WorkExperience.svelte';
+    import CareerTimeline from './CareerTimeline.svelte';
     import Education from './Education.svelte';
     import Coursework from './Coursework.svelte';
     import Skills from './Skills.svelte';
@@ -58,7 +59,27 @@
         return Array.isArray(data) && data.length > 0;
     }
 
+    const careerSectionKeys = ['experience', 'volunteer', 'education'] as const;
 
+    let careerView: 'list' | 'timeline' = 'list';
+
+    $: hasCareerEntries = careerSectionKeys.some(
+        (key) => sections.includes(key) && hasEntries(key)
+    );
+    $: firstCareerSection = careerSectionKeys.find(
+        (key) => sections.includes(key) && hasEntries(key)
+    );
+    $: timelineExperience = sections.includes('experience') && hasEntries('experience') ? cv.experience : [];
+    $: timelineVolunteer = sections.includes('volunteer') && hasEntries('volunteer') ? cv.volunteer : [];
+    $: timelineEducation = sections.includes('education') && hasEntries('education') ? cv.education : [];
+    $: careerToggleAnchor =
+        sections.includes('experience') && hasEntries('experience')
+            ? 'experience'
+            : firstCareerSection;
+
+    function isCareerSection(sectionKey: CvSectionKey): boolean {
+        return (careerSectionKeys as readonly CvSectionKey[]).includes(sectionKey);
+    }
 </script>
 
 <div class="cv-page" data-profile={profileId} style="--cv-accent: {accentColor}">
@@ -77,7 +98,49 @@
     </div>
 
     {#each sections as sectionKey (sectionKey)}
-        {#if hasEntries(sectionKey)}
+        {#if sectionKey === careerToggleAnchor && hasCareerEntries}
+            <div class="career-view-controls">
+                <div class="view-toggle" role="group" aria-label={t.cv.careerViewToggle}>
+                    <button
+                        type="button"
+                        class="view-btn"
+                        class:active={careerView === 'list'}
+                        aria-pressed={careerView === 'list'}
+                        on:click={() => (careerView = 'list')}
+                    >
+                        {t.cv.careerViewList}
+                    </button>
+                    <button
+                        type="button"
+                        class="view-btn"
+                        class:active={careerView === 'timeline'}
+                        aria-pressed={careerView === 'timeline'}
+                        on:click={() => (careerView = 'timeline')}
+                    >
+                        {t.cv.careerViewTimeline}
+                    </button>
+                </div>
+            </div>
+        {/if}
+
+        {#if careerView === 'timeline' && isCareerSection(sectionKey)}
+            {#if sectionKey === careerToggleAnchor}
+                <CvSection title={t.cv.careerTimeline} section="career-timeline">
+                    <CareerTimeline
+                        experience={timelineExperience}
+                        volunteer={timelineVolunteer}
+                        education={timelineEducation}
+                        presentLabel={t.cv.present}
+                        ariaLabel={t.cv.careerTimeline}
+                        kindLabels={{
+                            experience: t.cv.careerKindExperience,
+                            education: t.cv.careerKindEducation,
+                            volunteer: t.cv.careerKindVolunteer
+                        }}
+                    />
+                </CvSection>
+            {/if}
+        {:else if hasEntries(sectionKey)}
             <CvSection title={getSectionTitle(sectionKey)} section={sectionKey} compact={isCompactSection(sectionKey)}>
                 {#if sectionKey === 'experience'}
                     <WorkExperience entries={cv.experience} presentLabel={t.cv.present} />
@@ -172,6 +235,48 @@
         opacity: 0.4;
         cursor: not-allowed;
         pointer-events: none;
+    }
+
+    .career-view-controls {
+        margin-bottom: var(--space-md);
+    }
+
+    .view-toggle {
+        display: inline-flex;
+        border: 1px solid var(--color-chrome-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+    }
+
+    .view-btn {
+        appearance: none;
+        border: none;
+        background: transparent;
+        color: var(--color-muted);
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 0.3rem 0.75rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .view-btn + .view-btn {
+        border-left: 1px solid var(--color-chrome-border);
+    }
+
+    .view-btn:hover {
+        color: var(--color-dark);
+        background-color: oklch(50% 0 0 / 0.08);
+    }
+
+    .view-btn.active {
+        color: var(--color-dark);
+        background-color: oklch(80% 0.16 75 / 0.18);
+    }
+
+    .view-btn:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: -2px;
     }
 
 </style>

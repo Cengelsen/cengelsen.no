@@ -24,6 +24,13 @@ export interface Translations {
 		pageTitle: string;
 		experience: string;
 		volunteer: string;
+		careerViewList: string;
+		careerViewTimeline: string;
+		careerViewToggle: string;
+		careerTimeline: string;
+		careerKindExperience: string;
+		careerKindVolunteer: string;
+		careerKindEducation: string;
 		education: string;
 		educationCreditsUnit: string;
 		courseCreditsLabel: string;
