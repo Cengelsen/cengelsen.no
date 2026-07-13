@@ -4,32 +4,46 @@
 
     export let activeProfileId: string | null = null;
     export let lang: string;
+    export let allProfilesLabel: string;
 
     $: profiles = Object.values(cvProfiles[lang as Lang] ?? cvProfiles['no']);
     $: basePath = lang === 'no' ? '/cv' : `/${lang}/cv`;
 </script>
 
 <nav class="profile-selector" aria-label="CV profiles">
-    <a
-        href={basePath}
-        class="profile-link"
-        class:active={activeProfileId === null}
-    >
-        {lang === 'no' ? 'Alle' : 'All'}
-    </a>
-    {#each profiles as profile}
+    <div class="profile-selector-default">
         <a
-            href="{basePath}/{profile.id}"
+            href={basePath}
             class="profile-link"
-            class:active={activeProfileId === profile.id}
+            class:active={activeProfileId === null}
         >
-            {profile.label}
+            {allProfilesLabel}
         </a>
-    {/each}
+    </div>
+    <div class="profile-selector-profiles">
+        {#each profiles as profile}
+            <a
+                href="{basePath}/{profile.id}"
+                class="profile-link"
+                class:active={activeProfileId === profile.id}
+            >
+                {profile.label}
+            </a>
+        {/each}
+    </div>
 </nav>
 
 <style>
     .profile-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+        width: 100%;
+    }
+
+    .profile-selector-default,
+    .profile-selector-profiles {
         display: flex;
         flex-wrap: wrap;
         gap: var(--space-sm);

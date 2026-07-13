@@ -60,7 +60,7 @@
     <CvHeader {summary} />
 
     <div class="cv-toolbar">
-        <ProfileSelector activeProfileId={activeProfile?.id ?? null} {lang} />
+        <ProfileSelector activeProfileId={activeProfile?.id ?? null} {lang} allProfilesLabel={t.cv.allProfiles} />
         <span
             class="download-btn disabled"
             aria-label={t.cv.download}
@@ -110,7 +110,7 @@
 <style>
     .cv-page {
         width: 100%;
-        max-width: var(--content-max-width);
+        max-width: 85vw;
         margin: 0 auto;
         padding: var(--space-xl) var(--space-lg);
     }

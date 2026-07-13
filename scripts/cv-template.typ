@@ -2,6 +2,7 @@
 #let accent = rgb(data.accentColor)
 #let profile = data.profileId
 #let is-developer = profile == "developer"
+#let is-sysadmin = profile == "systemadministrator"
 #let is-conservative = profile == "administrator"
 #let is-functional = profile == "organization-builder"
 
@@ -85,7 +86,7 @@
   #text(size: 9pt, fill: luma(110))[#data.summary.location]
   #v(6pt)
   #text(size: if is-functional { 9.5pt } else { 9pt }, fill: luma(70))[#data.summary.bio]
-  #if (is-developer or is-functional) and data.contact.len() > 0 [
+  #if (is-developer or is-sysadmin or is-functional) and data.contact.len() > 0 [
     #v(8pt)
     #{
       let items = data.contact.map(entry => {
@@ -361,7 +362,7 @@
   } else if section == "qualities" and data.qualities.len() > 0 {
     heading(level: 1)[#data.labels.qualities]
     render-qualities(data.qualities)
-  } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-functional {
+  } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-sysadmin and not is-functional {
     heading(level: 1)[#data.labels.contact]
     render-contact(data.contact)
   }

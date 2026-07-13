@@ -52,11 +52,13 @@
     .cv-bio {
         font-size: var(--font-size-base);
         color: var(--color-mid);
+        width: 100%;
         margin: 0;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
         line-height: var(--line-height-base);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        white-space: normal;
     }
 
     @media (max-width: 700px) {

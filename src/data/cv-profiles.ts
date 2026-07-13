@@ -1,6 +1,6 @@
 import type { CvProfileMap } from '../types/cv.types';
 
-export const PROFILE_SLUGS = ['developer', 'administrator', 'organization-builder'] as const;
+export const PROFILE_SLUGS = ['developer', 'systemadministrator', 'administrator', 'organization-builder'] as const;
 export type ProfileSlug = (typeof PROFILE_SLUGS)[number];
 
 export const cvProfiles: CvProfileMap = {
@@ -16,12 +16,23 @@ export const cvProfiles: CvProfileMap = {
 			},
 			accentColor: 'oklch(55% 0.2 250)'
 		},
+		systemadministrator: {
+			id: 'systemadministrator',
+			label: 'Systemadministrator',
+			sections: ['skills', 'experience', 'volunteer', 'education', 'languages', 'qualities', 'contact'],
+			summary: {
+				title: 'Systemadministrator',
+				bio: 'Systemadministrator med erfaring innen Linux, Docker, nettverk, skytjenester og teknisk drift for studentorganisasjoner. Har ledet IT-avdelinger, sikret stabil infrastruktur og gitt teknisk brukerstøtte og opplæring.',
+				location: 'Bergen, Norge'
+			},
+			accentColor: 'oklch(50% 0.14 165)'
+		},
 		administrator: {
 			id: 'administrator',
-			label: 'Administrator',
+			label: 'Leder',
 			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'qualities', 'contact'],
 			summary: {
-				title: 'Daglig leder & administrator',
+				title: 'Daglig leder',
 				bio: 'Daglig leder med erfaring innen organisasjonsledelse, økonomi, forvaltning, markedsføring og HR. Har ledet IT-avdelinger, planlagt og styrt budsjetter, holdt løpende dialog med ledelse, og bygget opp stabile lag som varer over lengre tid.',
 				location: 'Bergen, Norge'
 			},
@@ -51,12 +62,23 @@ export const cvProfiles: CvProfileMap = {
 			},
 			accentColor: 'oklch(55% 0.2 250)'
 		},
+		systemadministrator: {
+			id: 'systemadministrator',
+			label: 'System Administrator',
+			sections: ['skills', 'experience', 'volunteer', 'education', 'languages', 'qualities', 'contact'],
+			summary: {
+				title: 'System Administrator',
+				bio: 'System administrator with experience in Linux, Docker, networking, cloud services and technical operations for student organizations. Has led IT departments, maintained stable infrastructure, and provided technical support and training.',
+				location: 'Bergen, Norway'
+			},
+			accentColor: 'oklch(50% 0.14 165)'
+		},
 		administrator: {
 			id: 'administrator',
-			label: 'Administrator',
+			label: 'Leader',
 			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'qualities', 'contact'],
 			summary: {
-				title: 'Managing Director & Administrator',
+				title: 'Managing Director',
 				bio: 'Managing director with experience in organizational leadership, finance, administration, marketing and HR. Has led IT departments, planned and managed budgets, maintained ongoing dialogue with leadership, and built stable teams that last over time.',
 				location: 'Bergen, Norway'
 			},

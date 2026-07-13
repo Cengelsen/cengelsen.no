@@ -33,7 +33,7 @@ export const translations: TranslationMap = {
 			languages: 'Languages',
 			certificates: 'Certificates',
 			projects: 'Featured Projects',
-			qualities: 'My Qualities and Values',
+			qualities: 'Qualities and Values',
 			contact: 'Contact',
 			present: 'Present',
 			viewCredential: 'View credential',
@@ -76,13 +76,13 @@ export const translations: TranslationMap = {
 			languages: 'Språk',
 			certificates: 'Sertifiseringer',
 			projects: 'Utvalgte prosjekter',
-			qualities: 'Mine kvaliteter og verdier',
+			qualities: 'Kvaliteter og verdier',
 			contact: 'Kontakt',
 			present: 'Nåværende',
 			viewCredential: 'Se sertifisering',
 			viewProject: 'Kildekode',
 			liveDemo: 'Live demo',
-			allProfiles: 'Alle',
+			allProfiles: 'Alt',
 			download: 'Last ned PDF (kommer snart)'
 		}
 	}

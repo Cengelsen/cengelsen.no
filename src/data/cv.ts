@@ -4,7 +4,7 @@ export const cvData: CvDataMap = {
 	no: {
 		summary: {
 			title: 'Organisasjonsutvikler || teknologientusiast || systemadministrator || ÅKK-forkjemper',
-			bio: 'Teknologientusiast med erfaring innen organisasjonsledelse, programvareutvikling og systemadministrasjon. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging, med fokus på IT-prosjekter og Åpen kildekode (ÅKK). Elsker å forme, vedlikeholde og effektivisere organisasjonsstrukturer og prosedyrer.',
+			bio: 'Teknologientusiast med erfaring innen organisasjonsledelse, programvareutvikling og systemadministrasjon. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging, med fokus på IT-prosjekter og åpen kildekode (ÅKK). Elsker å forme, vedlikeholde og effektivisere organisasjonsstrukturer og prosedyrer.',
 			location: 'Bergen, Norge'
 		},
 		experience: [
@@ -18,7 +18,7 @@ export const cvData: CvDataMap = {
 					'Driver aktivt merkevarebygging og rekruttering av frivillige.',
 					'Planlegger og gjennomfører sosiale aktiviteter for et stort frivilligmiljø.'
 				],
-				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsbygging'],
+				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsutvikling'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -45,7 +45,7 @@ export const cvData: CvDataMap = {
 					'Sikret stabil plattform for sendinger, arrangementer og ekstern kommunikasjon.'
 				],
 				skillTags: ['IT-ledelse', 'Rekruttering'],
-				profiles: ['developer', 'administrator']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				company: 'Forsvaret',
@@ -91,7 +91,7 @@ export const cvData: CvDataMap = {
 				'Bidro til IT-drift og teknisk støtte for Hulen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['developer']
+			profiles: ['developer', 'systemadministrator']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -125,7 +125,7 @@ export const cvData: CvDataMap = {
 				'Organiserte sosiale arrangementer for medlemmene.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -137,7 +137,7 @@ export const cvData: CvDataMap = {
 				'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
 			],
 			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Azure', 'Git'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
 			company: 'friByte',
@@ -149,7 +149,7 @@ export const cvData: CvDataMap = {
 				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
 			],
 			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -171,7 +171,7 @@ export const cvData: CvDataMap = {
 				'Assisterte leder med daglig drift og organisering av aktiviteter.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -182,7 +182,7 @@ export const cvData: CvDataMap = {
 				'Ansvarlig for IT-drift og teknisk infrastruktur for Studentersamfunnet.'
 			],
 			skillTags: ['IT-ledelse'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
 	education: [
@@ -257,12 +257,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Databaser & sky',
 				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Verktøy & systemer',
 				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'KI & datavitenskap',
@@ -277,7 +277,7 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Teknisk drift',
 				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring'],
-				profiles: ['administrator']
+				profiles: ['systemadministrator']
 			},
 			{
 				category: 'Generelt',
@@ -355,8 +355,8 @@ export const cvData: CvDataMap = {
 	},
 	en: {
 		summary: {
-			title: 'Full-Stack Developer & General Manager',
-			bio: 'General manager with experience in organizational leadership, marketing and organization building. Passionate about creating engagement and growth through strategic communication and relationship building.',
+			title: 'Organization Developer || Technology Enthusiast || System Administrator || Open Source Advocate',
+			bio: 'Technology enthusiast with experience in organizational leadership, software development and system administration. Passionate about creating engagement and growth through strategic communication and relationship building, with a focus on IT projects and open source. Loves shaping, maintaining and streamlining organizational structures and procedures.',
 			location: 'Bergen, Norway'
 		},
 		experience: [
@@ -370,7 +370,7 @@ export const cvData: CvDataMap = {
 					'Actively driving brand building and recruitment of volunteers.',
 					'Planning and executing social activities for a large volunteer community.'
 				],
-				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Building'],
+				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Development'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -397,7 +397,7 @@ export const cvData: CvDataMap = {
 					'Ensured a stable platform for broadcasts, events and external communication.'
 				],
 				skillTags: ['IT Management', 'Recruitment'],
-				profiles: ['developer', 'administrator']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				company: 'Norwegian Armed Forces',
@@ -443,7 +443,7 @@ export const cvData: CvDataMap = {
 				'Contributed to IT operations and technical support for Hulen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['developer']
+			profiles: ['developer', 'systemadministrator']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -477,7 +477,7 @@ export const cvData: CvDataMap = {
 				'Organized social events for members.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -489,7 +489,7 @@ export const cvData: CvDataMap = {
 				'Led the IT department and was responsible for technical infrastructure.'
 			],
 			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Organization Building', 'Azure', 'Git'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
 			company: 'friByte',
@@ -501,7 +501,7 @@ export const cvData: CvDataMap = {
 				'Led the student organization that operates IT services for student associations in Bergen.'
 			],
 			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Organization Building', 'Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -523,7 +523,7 @@ export const cvData: CvDataMap = {
 				'Assisted the president with daily operations and activity planning.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -534,7 +534,7 @@ export const cvData: CvDataMap = {
 				'Responsible for IT operations and technical infrastructure for Studentersamfunnet.'
 			],
 			skillTags: ['IT Management'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
 	education: [
@@ -609,12 +609,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Databases & Cloud',
 				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Tools & Systems',
 				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'AI & Data Science',
@@ -629,7 +629,7 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Technical Operations',
 				skills: ['System Administration', 'Technical Support', 'Technical Training'],
-				profiles: ['administrator']
+				profiles: ['systemadministrator']
 			},
 			{
 				category: 'General',

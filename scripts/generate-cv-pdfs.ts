@@ -18,6 +18,7 @@ const CV_NAME = 'Christian Kårbø Engelsen';
 
 const ACCENT_HEX: Record<string, string> = {
 	'oklch(55% 0.2 250)': '#2563eb',
+	'oklch(50% 0.14 165)': '#2d7a6a',
 	'oklch(35% 0.10 260)': '#1e3a5f',
 	'oklch(65% 0.18 50)': '#c27832',
 	'oklch(80% 0.16 75)': '#b89530'
