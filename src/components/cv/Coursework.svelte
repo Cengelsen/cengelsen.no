@@ -1,14 +1,24 @@
 <script lang="ts">
     import type { Coursework } from '../../types/cv.types';
+    import { computeDegreeCredits } from '../../lib/education-credits';
+    import Fa from 'svelte-fa';
+    import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
     export let entries: Coursework[];
     export let replacesLabel: string = 'Replaces';
+    export let replacedByLabel: string = 'Replaced by';
     export let essayLabel: string = 'Essay';
     export let overlapLabel: string = 'Also counts towards this degree';
+    export let creditsUnit: string = 'ECTS credits';
     export let typeLabels: Record<string, string> = { mandatory: 'Mandatory', specialization: 'Specialization', elective: 'Elective' };
     export let lang: string = 'no';
 
     $: blogBase = lang === 'no' ? '/blog' : `/${lang}/blog`;
+
+    $: replacedByMap = entries.reduce<Record<string, Coursework>>((acc, entry) => {
+        if (entry.replaces) acc[entry.replaces] = entry;
+        return acc;
+    }, {});
 
     const typeOrder = ['mandatory', 'specialization', 'elective'] as const;
 
@@ -35,12 +45,22 @@
         if (untyped.length > 0) groups.push({ type: null, courses: untyped });
         return groups;
     }
+
+    function hasCredits(credits: number | undefined): credits is number {
+        return credits != null && credits > 0;
+    }
 </script>
 
 <div class="coursework-section">
     {#each Object.entries(grouped) as [degree, { primary, overlap }]}
+        {@const degreeCredits = computeDegreeCredits(entries, degree)}
         <div class="degree-group">
-            <h4 class="degree-name">{degree}</h4>
+            <div class="degree-header">
+                <h4 class="degree-name">{degree}</h4>
+                {#if degreeCredits > 0}
+                    <span class="degree-credits">{degreeCredits} {creditsUnit}</span>
+                {/if}
+            </div>
             {#if overlap.length > 0}
                 <div class="overlap-section">
                     <p class="overlap-note">{overlapLabel}:</p>
@@ -49,6 +69,9 @@
                             <li class="overlap-item">
                                 <span class="overlap-name">{course.name}</span>
                                 <span class="overlap-code">{course.code}</span>
+                                {#if hasCredits(course.credits)}
+                                    <span class="overlap-credits">{course.credits}</span>
+                                {/if}
                             </li>
                         {/each}
                     </ul>
@@ -56,60 +79,67 @@
                 <hr class="overlap-divider" />
             {/if}
             {#each groupByType(primary) as { type, courses }}
-                {#if type}
-                    <div class="type-group type-group--{type}">
+                <div
+                    class="course-group"
+                    class:type-group={type != null}
+                    class:type-group--mandatory={type === 'mandatory'}
+                    class:type-group--specialization={type === 'specialization'}
+                    class:type-group--elective={type === 'elective'}
+                >
+                    {#if type}
                         <span class="type-label type-label--{type}">{typeLabels[type]}</span>
-                        <div class="course-grid">
-                            {#each courses as course}
-                                <div class="course-card">
-                                    <div class="course-header">
-                                        <h3 class="course-name">{course.name}</h3>
-                                        <span class="course-code">{course.code}</span>
+                    {/if}
+                    <div class="course-grid">
+                        {#each courses as course}
+                            {@const replacedBy = replacedByMap[course.code]}
+                            <div
+                                class="course-card"
+                                class:has-credits={hasCredits(course.credits)}
+                                class:has-essay={!!course.blogSlug}
+                                class:has-footer={!!(course.replaces || replacedBy)}
+                            >
+                                {#if hasCredits(course.credits)}
+                                    <span class="course-credits">{course.credits}</span>
+                                {/if}
+                                <div class="course-header">
+                                    <h3 class="course-name">{course.name}</h3>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-content">
+                                        <p class="course-description">{course.description}</p>
                                     </div>
-                                    <p class="course-description">{course.description}</p>
-                                    {#if course.skillTags?.length}
-                                        <div class="course-skills">
+                                    <div class="course-props">
+                                        <span class="course-code">{course.code}</span>
+                                        {#if course.skillTags?.length}
                                             {#each course.skillTags as tag}
                                                 <span class="skill-tag">{tag}</span>
                                             {/each}
-                                        </div>
-                                    {/if}
-                                    {#if course.blogSlug}
-                                        <a class="course-essay" href="{blogBase}/{course.blogSlug}">{essayLabel} →</a>
-                                    {/if}
-                                    {#if course.replaces}
-                                        <span class="course-replaces">{replacesLabel} {course.replaces}</span>
-                                    {/if}
-                                </div>
-                            {/each}
-                        </div>
-                    </div>
-                {:else}
-                    <div class="course-grid">
-                        {#each courses as course}
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <h3 class="course-name">{course.name}</h3>
-                                    <span class="course-code">{course.code}</span>
-                                </div>
-                                <p class="course-description">{course.description}</p>
-                                {#if course.skillTags?.length}
-                                    <div class="course-skills">
-                                        {#each course.skillTags as tag}
-                                            <span class="skill-tag">{tag}</span>
-                                        {/each}
+                                        {/if}
                                     </div>
-                                {/if}
+                                </div>
                                 {#if course.blogSlug}
-                                    <a class="course-essay" href="{blogBase}/{course.blogSlug}">{essayLabel} →</a>
+                                    <a
+                                        class="course-essay"
+                                        href="{blogBase}/{course.blogSlug}"
+                                        title={essayLabel}
+                                        aria-label={essayLabel}
+                                    >
+                                        <Fa icon={faFileLines} size="1.15x" />
+                                    </a>
                                 {/if}
                                 {#if course.replaces}
-                                    <span class="course-replaces">{replacesLabel} {course.replaces}</span>
+                                    <div class="course-replacement-footer">
+                                        {replacesLabel} {course.replaces}
+                                    </div>
+                                {:else if replacedBy}
+                                    <div class="course-replacement-footer">
+                                        {replacedByLabel} {replacedBy.code}
+                                    </div>
                                 {/if}
                             </div>
                         {/each}
                     </div>
-                {/if}
+                </div>
             {/each}
         </div>
     {/each}
@@ -120,16 +150,40 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-lg);
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .degree-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: var(--space-sm);
+        flex-wrap: wrap;
+        margin-bottom: var(--space-sm);
     }
 
     .degree-name {
         font-size: var(--font-size-sm);
         font-weight: 600;
         color: var(--color-dark);
-        margin: 0 0 var(--space-sm) 0;
+        margin: 0;
+    }
+
+    .degree-credits {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        color: var(--color-accent);
+        white-space: nowrap;
     }
 
     .degree-group {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .course-group {
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
@@ -139,9 +193,6 @@
         border: 1px solid oklch(50% 0 0 / 0.12);
         border-radius: var(--radius-md);
         padding: var(--space-sm) var(--space-md);
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-sm);
     }
 
     .type-group--mandatory {
@@ -177,24 +228,63 @@
 
     .course-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
         gap: var(--space-sm);
+        min-width: 0;
     }
 
     .course-card {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xs);
+        position: relative;
+        min-width: 0;
+        max-width: 100%;
         padding: var(--space-sm) var(--space-md);
         background-color: var(--color-surface);
         border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+        overflow: hidden;
+    }
+
+    .course-card.has-credits .course-header {
+        padding-right: 2rem;
     }
 
     .course-header {
         display: flex;
-        justify-content: space-between;
-        align-items: baseline;
+        align-items: flex-start;
+    }
+
+    .course-body {
+        display: grid;
+        grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
         gap: var(--space-sm);
+        align-items: stretch;
+    }
+
+    .course-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .course-props {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: stretch;
+        gap: 3px;
+        min-width: 0;
+        height: 100%;
+        border-left: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
+        padding-left: var(--space-sm);
+    }
+
+    .course-props > * {
+        display: block;
+        max-width: 100%;
     }
 
     .course-name {
@@ -202,14 +292,45 @@
         font-weight: 600;
         color: var(--color-dark);
         margin: 0;
+        min-width: 0;
+        flex: 1;
     }
 
     .course-code {
         font-size: 0.75rem;
-        color: var(--color-muted);
+        font-weight: 600;
+        color: var(--color-dark);
         font-family: var(--font-mono, monospace);
-        white-space: nowrap;
+        letter-spacing: 0.02em;
+        background-color: oklch(50% 0 0 / 0.06);
+        border: 1px solid oklch(50% 0 0 / 0.12);
+        border-radius: 2px;
+        padding: 0 4px;
+        width: fit-content;
         flex-shrink: 0;
+    }
+
+    .course-credits {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0.35rem 0.45rem 0 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--color-accent);
+        background-color: oklch(80% 0.16 75 / 0.16);
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+        border-bottom-left-radius: var(--radius-sm);
+        box-shadow:
+            inset 0 0 0 1px oklch(80% 0.16 75 / 0.35),
+            -1px 1px 0 oklch(80% 0.16 75 / 0.2);
     }
 
     .course-description {
@@ -217,38 +338,95 @@
         color: var(--color-mid);
         margin: 0;
         line-height: var(--line-height-base);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .course-essay {
-        font-size: var(--font-size-sm);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 0 0.3rem 0.3rem 0;
         color: var(--color-accent);
+        background-color: oklch(80% 0.16 75 / 0.16);
+        clip-path: polygon(100% 100%, 0 100%, 100% 0);
+        box-shadow:
+            inset 0 0 0 1px oklch(80% 0.16 75 / 0.35),
+            -1px -1px 0 oklch(80% 0.16 75 / 0.2);
         text-decoration: none;
+        cursor: pointer;
+    }
+
+    .course-card.has-footer .course-essay {
+        bottom: 1.75rem;
+    }
+
+    .course-card.has-essay .course-body {
+        padding-bottom: 1.5rem;
     }
 
     .course-essay:hover {
-        text-decoration: underline;
+        color: var(--color-accent);
+        background-color: oklch(80% 0.16 75 / 0.28);
     }
 
-    .course-skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-xs);
+    .course-essay:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: -2px;
     }
 
     .skill-tag {
         font-size: 0.7rem;
-        padding: 1px var(--space-xs);
+        padding: 0 4px;
         background-color: oklch(80% 0.16 75 / 0.12);
         color: var(--color-accent);
-        border-radius: var(--radius-sm);
+        border-radius: 2px;
         border: 1px solid oklch(80% 0.16 75 / 0.25);
         font-weight: 500;
+        width: fit-content;
     }
 
-    .course-replaces {
+    .course-replacement-footer {
+        margin: var(--space-xs) calc(-1 * var(--space-md)) calc(-1 * var(--space-sm));
+        padding: 0.35rem var(--space-md);
+        border-top: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
+        background-color: oklch(50% 0 0 / 0.06);
         font-size: 0.7rem;
         color: var(--color-muted);
         font-style: italic;
+        text-align: center;
+        width: calc(100% + 2 * var(--space-md));
+    }
+
+    @media (max-width: 700px) {
+        .course-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .course-body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .course-props {
+            align-items: flex-start;
+            align-self: auto;
+            height: auto;
+            gap: 3px;
+            width: 100%;
+            border-left: none;
+            padding-left: 0;
+            border-top: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
+            padding-top: var(--space-xs);
+        }
     }
 
     .overlap-section {
@@ -285,6 +463,12 @@
         border: 1px dashed var(--color-muted);
         border-radius: var(--radius-sm);
         opacity: 0.85;
+    }
+
+    .overlap-credits {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--color-accent);
     }
 
     .overlap-name {

@@ -151,12 +151,35 @@
       #grid(
         columns: (1fr, auto),
         gutter: 0.5em,
-        text(size: 10pt, weight: "bold")[#entry.degree — #entry.field],
-        text(size: 8pt, fill: luma(110))[
-          #entry.startDate — #if entry.endDate == none { data.labels.present } else { entry.endDate }
-        ],
+        align: (left, right),
+        text(size: 10pt, weight: "bold")[#entry.field],
+        align(right, stack(
+          dir: ttb,
+          spacing: 2pt,
+          if entry.credits != none [
+            box(
+              fill: accent.lighten(88%),
+              stroke: 0.5pt + accent.lighten(60%),
+              radius: 2pt,
+              inset: (x: 5pt, y: 2pt),
+            )[
+              #text(size: 8pt, weight: "bold", fill: accent)[
+                #entry.credits #data.labels.educationCreditsUnit
+              ]
+            ]
+          ],
+          text(size: 8pt, fill: luma(110))[
+            #entry.startDate — #if entry.endDate == none { data.labels.present } else { entry.endDate }
+          ],
+        )),
       )
-      #text(size: 9pt, fill: luma(70))[#entry.institution]
+      #text(size: 9pt, fill: luma(70))[
+        #entry.institution
+        #h(0.25em)
+        #text(fill: luma(110))[·]
+        #h(0.25em)
+        #entry.degree
+      ]
       #if entry.description != none [
         #v(2pt)
         #text(size: 9pt, fill: luma(50))[#entry.description]
@@ -168,7 +191,15 @@
 #let render-coursework(groups) = {
   for group in groups {
     block(below: 0.8em)[
-      #text(size: 9.5pt, weight: "bold")[#group.degree]
+      #grid(
+        columns: (1fr, auto),
+        gutter: 0.5em,
+        align: (left, right),
+        text(size: 9.5pt, weight: "bold")[#group.degree],
+        if group.credits != none and group.credits > 0 [
+          text(size: 8pt, weight: "bold", fill: accent)[#group.credits #data.labels.educationCreditsUnit]
+        ],
+      )
       #v(4pt)
 
       #if group.overlap.len() > 0 [
@@ -183,6 +214,10 @@
             #text(size: 7pt, fill: luma(70))[#item.name]
             #h(3pt)
             #text(size: 6.5pt, fill: luma(130))[#item.code]
+            #if item.credits != none [
+              #h(3pt)
+              #text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #item.credits]
+            ]
           ]
           #h(3pt)
         ]
@@ -202,8 +237,16 @@
             #grid(
               columns: (1fr, auto),
               gutter: 4pt,
+              align: (left, right),
               text(size: 8pt, weight: 600)[#course.name],
-              text(size: 7pt, fill: luma(130))[#course.code],
+              align(right, stack(
+                dir: ttb,
+                spacing: 1pt,
+                text(size: 7pt, fill: luma(130))[#course.code],
+                if course.credits != none {
+                  text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #course.credits]
+                },
+              )),
             )
             #text(size: 7pt, fill: luma(70))[#course.description]
             #if course.skillTags.len() > 0 [

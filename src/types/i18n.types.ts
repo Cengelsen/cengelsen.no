@@ -25,8 +25,11 @@ export interface Translations {
 		experience: string;
 		volunteer: string;
 		education: string;
+		educationCreditsUnit: string;
+		courseCreditsLabel: string;
 		coursework: string;
 		courseReplaces: string;
+		courseReplacedBy: string;
 		courseEssay: string;
 		courseOverlap: string;
 		courseMandatory: string;

@@ -21,6 +21,7 @@ export interface Education {
 	institution: string;
 	degree: string;
 	field: string;
+	credits?: number;
 	startDate: string;
 	endDate?: string;
 	description?: string;
@@ -73,6 +74,7 @@ export interface Coursework {
 	code: string;
 	institution: string;
 	degrees: string[];
+	credits?: number;
 	description: string;
 	replaces?: string;
 	blogSlug?: string;

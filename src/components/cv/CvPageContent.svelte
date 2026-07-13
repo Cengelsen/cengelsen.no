@@ -79,13 +79,19 @@
                 {:else if sectionKey === 'volunteer'}
                     <WorkExperience entries={cv.volunteer} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'education'}
-                    <Education entries={cv.education} presentLabel={t.cv.present} />
+                    <Education
+                        entries={cv.education}
+                        presentLabel={t.cv.present}
+                        creditsUnit={t.cv.educationCreditsUnit}
+                    />
                 {:else if sectionKey === 'coursework'}
                     <Coursework
                         entries={cv.coursework}
                         replacesLabel={t.cv.courseReplaces}
+                        replacedByLabel={t.cv.courseReplacedBy}
                         essayLabel={t.cv.courseEssay}
                         overlapLabel={t.cv.courseOverlap}
+                        creditsUnit={t.cv.educationCreditsUnit}
                         typeLabels={{ mandatory: t.cv.courseMandatory, specialization: t.cv.courseSpecialization, elective: t.cv.courseElective }}
                         {lang}
                     />

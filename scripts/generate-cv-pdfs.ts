@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { cvData } from '../src/data/cv.ts';
 import { cvProfiles, PROFILE_SLUGS } from '../src/data/cv-profiles.ts';
 import { translations } from '../src/i18n/translations.ts';
+import { prepareCv, computeDegreeCredits } from '../src/lib/education-credits.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -52,29 +53,31 @@ function filterByProfile<T extends { profiles?: string[] }>(
 interface SimpleCourse {
 	name: string;
 	code: string;
+	credits: number | null;
 	description: string;
 	skillTags: string[];
 	replaces: string | null;
 }
 
-function simpleCourse(c: Record<string, unknown>): SimpleCourse {
+function simpleCourse(c: import('../src/types/cv.types.ts').Coursework): SimpleCourse {
 	return {
-		name: c.name as string,
-		code: c.code as string,
-		description: c.description as string,
-		skillTags: (c.skillTags as string[]) || [],
-		replaces: (c.replaces as string) || null
+		name: c.name,
+		code: c.code,
+		credits: c.credits && c.credits > 0 ? c.credits : null,
+		description: c.description,
+		skillTags: c.skillTags || [],
+		replaces: c.replaces || null
 	};
 }
 
 function processCoursework(
-	coursework: Record<string, unknown>[],
+	coursework: import('../src/types/cv.types.ts').Coursework[],
 	typeLabels: Record<string, string>
 ) {
-	const grouped: Record<string, { primary: Record<string, unknown>[]; overlap: Record<string, unknown>[] }> = {};
+	const grouped: Record<string, { primary: import('../src/types/cv.types.ts').Coursework[]; overlap: import('../src/types/cv.types.ts').Coursework[] }> = {};
 
 	for (const entry of coursework) {
-		const degrees = entry.degrees as string[];
+		const degrees = entry.degrees;
 		const primary = degrees[0];
 		if (!grouped[primary]) grouped[primary] = { primary: [], overlap: [] };
 		grouped[primary].primary.push(entry);
@@ -112,7 +115,12 @@ function processCoursework(
 
 		return {
 			degree,
-			overlap: overlap.map((c) => ({ name: c.name as string, code: c.code as string })),
+			credits: computeDegreeCredits(coursework, degree),
+			overlap: overlap.map((c) => ({
+				name: c.name,
+				code: c.code,
+				credits: c.credits ?? null
+			})),
 			typeGroups
 		};
 	});
@@ -136,7 +144,7 @@ function main() {
 
 	for (const lang of langs) {
 		const t = translations[lang];
-		const cv = cvData[lang];
+		const cv = prepareCv(cvData[lang], lang);
 		const typeLabels: Record<string, string> = {
 			mandatory: t.cv.courseMandatory,
 			specialization: t.cv.courseSpecialization,
@@ -177,6 +185,8 @@ function main() {
 					experience: t.cv.experience,
 					volunteer: t.cv.volunteer,
 					education: t.cv.education,
+					educationCreditsUnit: t.cv.educationCreditsUnit,
+					courseCreditsLabel: t.cv.courseCreditsLabel,
 					coursework: t.cv.coursework,
 					skills: t.cv.skills,
 					languages: t.cv.languages,
@@ -211,14 +221,12 @@ function main() {
 					degree: e.degree,
 					field: e.field,
 					institution: e.institution,
+					credits: e.credits ?? null,
 					startDate: e.startDate,
 					endDate: e.endDate || null,
 					description: e.description || null
 				})),
-				courseworkGroups: processCoursework(
-					filtered.coursework as unknown as Record<string, unknown>[],
-					typeLabels
-				),
+				courseworkGroups: processCoursework(filtered.coursework, typeLabels),
 				skills: filtered.skills.map((s) => ({
 					category: s.category,
 					skills: s.skills

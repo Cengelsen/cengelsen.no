@@ -192,7 +192,7 @@ export const cvData: CvDataMap = {
 				field: 'Informasjonsvitenskap',
 				startDate: '2024',
 				endDate: '2026',
-				description: '120 studiepoeng. Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
+				description: 'Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
@@ -200,7 +200,7 @@ export const cvData: CvDataMap = {
 				field: 'Kognitiv vitenskap',
 				startDate: '2018',
 				endDate: '2025',
-				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap. 180 studiepoeng.'
+				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
@@ -544,7 +544,7 @@ export const cvData: CvDataMap = {
 				field: 'Information Science',
 				startDate: '2024',
 				endDate: '2026',
-				description: '120 ECTS credits. Specialization in information architecture, user behaviour and digital communication.'
+				description: 'Specialization in information architecture, user behaviour and digital communication.'
 			},
 			{
 				institution: 'University of Bergen',
@@ -552,7 +552,7 @@ export const cvData: CvDataMap = {
 				field: 'Cognitive Science',
 				startDate: '2018',
 				endDate: '2025',
-				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science. 180 ECTS credits.'
+				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science.'
 			},
 			{
 				institution: 'University of Bergen',

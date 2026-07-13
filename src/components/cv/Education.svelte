@@ -3,6 +3,7 @@
 
     export let entries: Education[];
     export let presentLabel: string = 'Present';
+    export let creditsUnit: string = 'ECTS credits';
 </script>
 
 <div class="timeline">
@@ -10,12 +11,21 @@
         <div class="timeline-entry">
             <div class="timeline-header">
                 <div>
-                    <h3 class="entry-degree">{entry.degree} — {entry.field}</h3>
-                    <p class="entry-institution">{entry.institution}</p>
+                    <h3 class="entry-field">{entry.field}</h3>
+                    <p class="entry-meta">
+                        <span class="entry-institution">{entry.institution}</span>
+                        <span class="entry-meta-separator" aria-hidden="true">·</span>
+                        <span class="entry-degree">{entry.degree}</span>
+                    </p>
                 </div>
-                <span class="entry-dates">
-                    {entry.startDate} — {entry.endDate ?? presentLabel}
-                </span>
+                <div class="entry-aside">
+                    {#if entry.credits}
+                        <span class="entry-credits">{entry.credits} {creditsUnit}</span>
+                    {/if}
+                    <span class="entry-dates">
+                        {entry.startDate} — {entry.endDate ?? presentLabel}
+                    </span>
+                </div>
             </div>
             {#if entry.description}
                 <p class="entry-description">{entry.description}</p>
@@ -56,24 +66,51 @@
         flex-wrap: wrap;
     }
 
-    .entry-degree {
+    .entry-field {
         font-size: var(--font-size-base);
         font-weight: 600;
         color: var(--color-dark);
         margin: 0;
     }
 
-    .entry-institution {
+    .entry-meta {
         font-size: var(--font-size-sm);
         color: var(--color-mid);
         margin: var(--space-xs) 0 0 0;
+    }
+
+    .entry-meta-separator {
+        margin: 0 var(--space-xs);
+        color: var(--color-muted);
+    }
+
+    .entry-degree {
+        color: var(--color-mid);
+    }
+
+    .entry-aside {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-xs);
+        flex-shrink: 0;
+    }
+
+    .entry-credits {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        color: var(--color-accent);
+        background-color: oklch(80% 0.16 75 / 0.12);
+        border: 1px solid oklch(80% 0.16 75 / 0.25);
+        border-radius: var(--radius-sm);
+        padding: 2px var(--space-sm);
+        white-space: nowrap;
     }
 
     .entry-dates {
         font-size: var(--font-size-sm);
         color: var(--color-muted);
         white-space: nowrap;
-        flex-shrink: 0;
     }
 
     .entry-description {
@@ -87,6 +124,10 @@
         .timeline-header {
             flex-direction: column;
             gap: var(--space-xs);
+        }
+
+        .entry-aside {
+            align-items: flex-start;
         }
     }
 </style>

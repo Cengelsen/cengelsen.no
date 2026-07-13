@@ -1,4 +1,6 @@
+import { prepareCv } from './education-credits';
 import type { CvData } from '../types/cv.types';
+import type { Lang } from './posts';
 
 interface Filterable {
 	profiles?: string[];
@@ -8,18 +10,19 @@ function byProfile<T extends Filterable>(entries: T[], profileId: string): T[] {
 	return entries.filter((e) => !e.profiles || e.profiles.includes(profileId));
 }
 
-export function filterCvByProfile(cv: CvData, profileId: string): CvData {
+export function filterCvByProfile(cv: CvData, profileId: string, lang: Lang): CvData {
+	const prepared = prepareCv(cv, lang);
+
 	return {
-		summary: cv.summary,
-		experience: byProfile(cv.experience, profileId),
-		volunteer: byProfile(cv.volunteer, profileId),
-		education: byProfile(cv.education, profileId),
-		coursework: cv.coursework,
-		skills: byProfile(cv.skills, profileId),
-		languages: cv.languages,
-		certificates: byProfile(cv.certificates, profileId),
-		projects: byProfile(cv.projects, profileId),
-		qualities: byProfile(cv.qualities, profileId),
-		contact: cv.contact
+		...prepared,
+		experience: byProfile(prepared.experience, profileId),
+		volunteer: byProfile(prepared.volunteer, profileId),
+		education: byProfile(prepared.education, profileId),
+		skills: byProfile(prepared.skills, profileId),
+		certificates: byProfile(prepared.certificates, profileId),
+		projects: byProfile(prepared.projects, profileId),
+		qualities: byProfile(prepared.qualities, profileId)
 	};
 }
+
+export { prepareCv } from './education-credits';
