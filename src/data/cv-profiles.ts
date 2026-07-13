@@ -8,10 +8,10 @@ export const cvProfiles: CvProfileMap = {
 		developer: {
 			id: 'developer',
 			label: 'Utvikler',
-			sections: ['skills', 'experience', 'projects', 'volunteer', 'education', 'languages', 'contact'],
+			sections: ['skills', 'experience', 'projects', 'volunteer', 'education', 'languages', 'qualities', 'contact'],
 			summary: {
 				title: 'Fullstack-utvikler',
-				bio: 'Fullstack-utvikler med erfaring i SvelteKit, Django, Python og AI. Har bygget B2B-plattformer og ledet teknisk drift for studentorganisasjoner. Bakgrunn fra kognitiv vitenskap og kunstig intelligens.',
+				bio: 'Fullstack-utvikler med erfaring innen Svelte, React, VueJS, Django, systemadministrasjon, skytjenester og KI. Har bygget B2B-plattformer og ledet IT-prosjekter for studentorganisasjoner. Bakgrunn fra kognitiv vitenskap, kunstig intelligens og informasjonsvitenskap.',
 				location: 'Bergen, Norge'
 			},
 			accentColor: 'oklch(55% 0.2 250)'
@@ -19,21 +19,21 @@ export const cvProfiles: CvProfileMap = {
 		administrator: {
 			id: 'administrator',
 			label: 'Administrator',
-			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'contact'],
+			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'qualities', 'contact'],
 			summary: {
 				title: 'Daglig leder & administrator',
-				bio: 'Daglig leder med erfaring innen organisasjonsledelse, økonomi, markedsføring og drift av frivillige organisasjoner. Har ledet IT-avdelinger, styrt budsjetter og bygget opp stabile team.',
+				bio: 'Daglig leder med erfaring innen organisasjonsledelse, økonomi, forvaltning, markedsføring og HR. Har ledet IT-avdelinger, planlagt og styrt budsjetter, holdt løpende dialog med ledelse, og bygget opp stabile lag som varer over lengre tid.',
 				location: 'Bergen, Norge'
 			},
 			accentColor: 'oklch(35% 0.10 260)'
 		},
 		'organization-builder': {
 			id: 'organization-builder',
-			label: 'Organisasjonsbygger',
-			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'contact'],
+			label: 'Organisasjonsutvikler',
+			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'qualities', 'contact'],
 			summary: {
-				title: 'Organisasjonsbygger',
-				bio: 'Organisasjonsbygger med bred erfaring fra studentorganisasjoner, konferanser og frivilligmiljøer i Bergen. Har rekruttert og ledet frivillige, organisert arrangementer og bygget nettverk på tvers av organisasjoner.',
+				title: 'Organisasjonsutvikler',
+				bio: 'Organisasjonsutvikler med bred erfaring fra studentorganisasjoner, konferanser og frivilligmiljøer i Bergen. Har rekruttert og ledet frivillige, organisert arrangementer og bygget nettverk på tvers av organisasjoner. Har også erfaring med å bygge opp og vedlikeholde organisasjonsstrukturer og prosedyrer.',
 				location: 'Bergen, Norge'
 			},
 			accentColor: 'oklch(65% 0.18 50)'
@@ -43,10 +43,10 @@ export const cvProfiles: CvProfileMap = {
 		developer: {
 			id: 'developer',
 			label: 'Developer',
-			sections: ['skills', 'experience', 'projects', 'volunteer', 'education', 'languages', 'contact'],
+			sections: ['skills', 'experience', 'projects', 'volunteer', 'education', 'languages', 'qualities', 'contact'],
 			summary: {
 				title: 'Full-Stack Developer',
-				bio: 'Full-stack developer experienced in SvelteKit, Django, Python and AI. Has built B2B platforms and led technical operations for student organizations. Background in cognitive science and artificial intelligence.',
+				bio: 'Full-stack developer with experience in Svelte, React, VueJS, Django, system administration, cloud services and AI. Has built B2B platforms and led IT projects for student organizations. Background in cognitive science, artificial intelligence and information science.',
 				location: 'Bergen, Norway'
 			},
 			accentColor: 'oklch(55% 0.2 250)'
@@ -54,21 +54,21 @@ export const cvProfiles: CvProfileMap = {
 		administrator: {
 			id: 'administrator',
 			label: 'Administrator',
-			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'contact'],
+			sections: ['experience', 'volunteer', 'education', 'skills', 'certificates', 'languages', 'qualities', 'contact'],
 			summary: {
-				title: 'General Manager & Administrator',
-				bio: 'General manager experienced in organizational leadership, finance, marketing and operations of volunteer organizations. Has led IT departments, managed budgets and built stable teams.',
+				title: 'Managing Director & Administrator',
+				bio: 'Managing director with experience in organizational leadership, finance, administration, marketing and HR. Has led IT departments, planned and managed budgets, maintained ongoing dialogue with leadership, and built stable teams that last over time.',
 				location: 'Bergen, Norway'
 			},
 			accentColor: 'oklch(35% 0.10 260)'
 		},
 		'organization-builder': {
 			id: 'organization-builder',
-			label: 'Organization Builder',
-			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'contact'],
+			label: 'Organization Developer',
+			sections: ['volunteer', 'experience', 'skills', 'projects', 'education', 'languages', 'qualities', 'contact'],
 			summary: {
-				title: 'Organization Builder',
-				bio: 'Organization builder with broad experience from student organizations, conferences and volunteer communities in Bergen. Has recruited and led volunteers, organized events and built networks across organizations.',
+				title: 'Organization Developer',
+				bio: 'Organization developer with broad experience from student organizations, conferences and volunteer communities in Bergen. Has recruited and led volunteers, organized events and built networks across organizations. Also has experience building and maintaining organizational structures and procedures.',
 				location: 'Bergen, Norway'
 			},
 			accentColor: 'oklch(65% 0.18 50)'

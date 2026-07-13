@@ -36,6 +36,7 @@ export interface Translations {
 		languages: string;
 		certificates: string;
 		projects: string;
+		qualities: string;
 		contact: string;
 		present: string;
 		viewCredential: string;

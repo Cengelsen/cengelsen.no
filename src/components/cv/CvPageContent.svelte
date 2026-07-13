@@ -12,6 +12,7 @@
     import Languages from './Languages.svelte';
     import Certificates from './Certificates.svelte';
     import Projects from './Projects.svelte';
+    import Qualities from './Qualities.svelte';
     import ContactInfo from './ContactInfo.svelte';
     import ProfileSelector from './ProfileSelector.svelte';
 
@@ -22,7 +23,7 @@
 
     const defaultAccent = 'oklch(80% 0.16 75)';
     const defaultSections: CvSectionKey[] = [
-        'experience', 'volunteer', 'education', 'coursework', 'skills',
+        'qualities', 'experience', 'volunteer', 'education', 'coursework', 'skills',
         'languages', 'certificates', 'projects', 'contact'
     ];
 
@@ -41,6 +42,7 @@
             languages: t.cv.languages,
             certificates: t.cv.certificates,
             projects: t.cv.projects,
+            qualities: t.cv.qualities,
             contact: t.cv.contact
         };
         return titles[key];
@@ -95,6 +97,8 @@
                     <Certificates entries={cv.certificates} viewCredentialLabel={t.cv.viewCredential} />
                 {:else if sectionKey === 'projects'}
                     <Projects entries={cv.projects} sourceLabel={t.cv.viewProject} liveDemoLabel={t.cv.liveDemo} />
+                {:else if sectionKey === 'qualities'}
+                    <Qualities entries={cv.qualities} />
                 {:else if sectionKey === 'contact'}
                     <ContactInfo entries={cv.contact} />
                 {/if}

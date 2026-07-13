@@ -3,8 +3,8 @@ import type { CvDataMap } from '../types/cv.types';
 export const cvData: CvDataMap = {
 	no: {
 		summary: {
-			title: 'Fullstack-utvikler & daglig leder',
-			bio: 'Daglig leder med erfaring innen organisasjonsledelse, markedsføring og organisasjonsbygging. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging.',
+			title: 'Organisasjonsutvikler || teknologientusiast || systemadministrator || ÅKK-forkjemper',
+			bio: 'Teknologientusiast med erfaring innen organisasjonsledelse, programvareutvikling og systemadministrasjon. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging, med fokus på IT-prosjekter og Åpen kildekode (ÅKK). Elsker å forme, vedlikeholde og effektivisere organisasjonsstrukturer og prosedyrer.',
 			location: 'Bergen, Norge'
 		},
 		experience: [
@@ -288,6 +288,24 @@ export const cvData: CvDataMap = {
 			{ language: 'Norsk (bokmål)', proficiency: 'Morsmål' },
 			{ language: 'Engelsk', proficiency: 'Flytende' },
 			{ language: 'Tysk', proficiency: 'Grunnleggende' }
+		],
+		qualities: [
+			{
+				name: 'Åpenhet',
+				description: 'Tror på åpen kildekode, deling av kunnskap og transparent kommunikasjon.'
+			},
+			{
+				name: 'Engasjement',
+				description: 'Motiveres av å skape engasjement og vekst i team og organisasjoner.'
+			},
+			{
+				name: 'Relasjonsbygging',
+				description: 'Bygger tillit og nettverk på tvers av fagmiljøer og organisasjoner.'
+			},
+			{
+				name: 'Struktur og effektivitet',
+				description: 'Forme og vedlikeholde organisasjonsstrukturer og prosedyrer som skalerer.'
+			}
 		],
 		certificates: [
 			{
@@ -622,6 +640,24 @@ export const cvData: CvDataMap = {
 			{ language: 'Norwegian (Bokmål)', proficiency: 'Native' },
 			{ language: 'English', proficiency: 'Fluent' },
 			{ language: 'German', proficiency: 'Basic' }
+		],
+		qualities: [
+			{
+				name: 'Transparency',
+				description: 'Believes in open source, knowledge sharing and transparent communication.'
+			},
+			{
+				name: 'Engagement',
+				description: 'Motivated by creating engagement and growth in teams and organizations.'
+			},
+			{
+				name: 'Relationship Building',
+				description: 'Builds trust and networks across professional communities and organizations.'
+			},
+			{
+				name: 'Structure and Efficiency',
+				description: 'Shapes and maintains organizational structures and procedures that scale.'
+			}
 		],
 		certificates: [
 			{

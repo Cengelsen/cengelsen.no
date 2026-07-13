@@ -25,6 +25,7 @@ const ACCENT_HEX: Record<string, string> = {
 
 const DEFAULT_ACCENT = 'oklch(80% 0.16 75)';
 const DEFAULT_SECTIONS = [
+	'qualities',
 	'experience',
 	'volunteer',
 	'education',
@@ -157,6 +158,7 @@ function main() {
 						languages: cv.languages,
 						certificates: filterByProfile(cv.certificates, profileId),
 						projects: filterByProfile(cv.projects, profileId),
+						qualities: filterByProfile(cv.qualities, profileId),
 						contact: cv.contact
 					};
 
@@ -179,6 +181,7 @@ function main() {
 					languages: t.cv.languages,
 					certificates: t.cv.certificates,
 					projects: t.cv.projects,
+					qualities: t.cv.qualities,
 					contact: t.cv.contact,
 					present: t.cv.present,
 					courseReplaces: t.cv.courseReplaces,
@@ -233,6 +236,10 @@ function main() {
 					githubUrl: p.githubUrl || null,
 					liveUrl: p.liveUrl || null,
 					skillTags: p.skillTags || []
+				})),
+				qualities: filtered.qualities.map((q) => ({
+					name: q.name,
+					description: q.description
 				})),
 				contact: filtered.contact
 			};

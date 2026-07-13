@@ -266,6 +266,16 @@
   }
 }
 
+#let render-qualities(entries) = {
+  for entry in entries {
+    block(below: 4pt)[
+      #text(size: 9pt, weight: 600)[#entry.name]
+      #linebreak()
+      #text(size: 8pt, fill: luma(70))[#entry.description]
+    ]
+  }
+}
+
 #let render-certificates(entries) = {
   for entry in entries {
     block(breakable: false, below: 0.4em)[
@@ -348,6 +358,9 @@
   } else if section == "projects" and data.projects.len() > 0 {
     heading(level: 1)[#data.labels.projects]
     render-projects(data.projects)
+  } else if section == "qualities" and data.qualities.len() > 0 {
+    heading(level: 1)[#data.labels.qualities]
+    render-qualities(data.qualities)
   } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-functional {
     heading(level: 1)[#data.labels.contact]
     render-contact(data.contact)

@@ -19,6 +19,7 @@ export function filterCvByProfile(cv: CvData, profileId: string): CvData {
 		languages: cv.languages,
 		certificates: byProfile(cv.certificates, profileId),
 		projects: byProfile(cv.projects, profileId),
+		qualities: byProfile(cv.qualities, profileId),
 		contact: cv.contact
 	};
 }

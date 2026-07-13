@@ -38,6 +38,12 @@ export interface LanguageProficiency {
 	proficiency: string;
 }
 
+export interface QualityValue {
+	name: string;
+	description: string;
+	profiles?: string[];
+}
+
 export interface Certificate {
 	name: string;
 	issuer: string;
@@ -74,7 +80,7 @@ export interface Coursework {
 	courseType?: 'mandatory' | 'specialization' | 'elective';
 }
 
-export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';
+export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'qualities' | 'contact';
 
 export interface CvProfile {
 	id: string;
@@ -94,6 +100,7 @@ export interface CvData {
 	languages: LanguageProficiency[];
 	certificates: Certificate[];
 	projects: Project[];
+	qualities: QualityValue[];
 	contact: ContactLink[];
 }
 
