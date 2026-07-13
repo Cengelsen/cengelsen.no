@@ -39,4 +39,28 @@
         color: var(--color-muted);
         font-style: italic;
     }
+
+    :global(.cv-section--compact) .languages-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-xs);
+    }
+
+    :global(.cv-section--compact) .language-item {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    :global(.cv-section--compact) .language-name {
+        font-size: var(--font-size-sm);
+    }
+
+    :global(.cv-section--compact) .language-proficiency {
+        font-size: 0.8125rem;
+    }
+
+    @media (max-width: 700px) {
+        :global(.cv-section--compact) .languages-list {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

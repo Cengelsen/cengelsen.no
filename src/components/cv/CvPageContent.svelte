@@ -31,6 +31,11 @@
     $: summary = activeProfile ? activeProfile.summary : cv.summary;
     $: accentColor = activeProfile?.accentColor ?? defaultAccent;
     $: profileId = activeProfile?.id ?? 'all';
+    $: skillsIndex = sections.indexOf('skills');
+
+    function isCompactSection(sectionKey: CvSectionKey): boolean {
+        return skillsIndex >= 0 && sections.indexOf(sectionKey) > skillsIndex;
+    }
 
     function getSectionTitle(key: CvSectionKey): string {
         const titles: Record<CvSectionKey, string> = {
@@ -73,7 +78,7 @@
 
     {#each sections as sectionKey (sectionKey)}
         {#if hasEntries(sectionKey)}
-            <CvSection title={getSectionTitle(sectionKey)} section={sectionKey}>
+            <CvSection title={getSectionTitle(sectionKey)} section={sectionKey} compact={isCompactSection(sectionKey)}>
                 {#if sectionKey === 'experience'}
                     <WorkExperience entries={cv.experience} presentLabel={t.cv.present} />
                 {:else if sectionKey === 'volunteer'}

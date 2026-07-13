@@ -75,4 +75,32 @@
         font-size: var(--font-size-sm);
         color: var(--color-mid);
     }
+
+    :global(.cv-section--compact) .contact-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-xs);
+    }
+
+    :global(.cv-section--compact) .contact-item {
+        gap: var(--space-sm);
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    :global(.cv-section--compact) .contact-icon {
+        font-size: 1rem;
+        width: 1.5rem;
+    }
+
+    :global(.cv-section--compact) .contact-platform,
+    :global(.cv-section--compact) .contact-label {
+        font-size: 0.8125rem;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 700px) {
+        :global(.cv-section--compact) .contact-list {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

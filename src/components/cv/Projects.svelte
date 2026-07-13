@@ -126,4 +126,40 @@
     .project-link:hover {
         text-decoration: underline;
     }
+
+    :global(.cv-section--compact) .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-sm);
+    }
+
+    :global(.cv-section--compact) .project-card {
+        padding: var(--space-sm);
+        box-shadow: none;
+        border: 1px solid oklch(50% 0 0 / 0.12);
+    }
+
+    :global(.cv-section--compact) .project-name {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--space-xs);
+    }
+
+    :global(.cv-section--compact) .project-description {
+        margin-bottom: var(--space-sm);
+        line-height: 1.4;
+    }
+
+    :global(.cv-section--compact) .project-tech,
+    :global(.cv-section--compact) .project-skills {
+        margin-bottom: var(--space-sm);
+    }
+
+    :global(.cv-section--compact) .project-links {
+        gap: var(--space-sm);
+    }
+
+    @media (max-width: 700px) {
+        :global(.cv-section--compact) .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

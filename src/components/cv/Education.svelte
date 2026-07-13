@@ -130,4 +130,21 @@
             align-items: flex-start;
         }
     }
+
+    :global(.cv-section--compact) .timeline {
+        gap: var(--space-md);
+        padding-left: var(--space-md);
+    }
+
+    :global(.cv-section--compact) .timeline-entry::before {
+        left: calc(-1 * var(--space-md) - 7px);
+    }
+
+    :global(.cv-section--compact) .entry-field {
+        font-size: var(--font-size-sm);
+    }
+
+    :global(.cv-section--compact) .entry-description {
+        margin-top: var(--space-xs);
+    }
 </style>
