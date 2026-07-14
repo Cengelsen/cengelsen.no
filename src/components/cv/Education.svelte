@@ -1,9 +1,12 @@
 <script lang="ts">
     import type { Education } from '../../types/cv.types';
+    import type { Lang } from '../../lib/posts';
+    import { formatCvDateDisplay } from '../../lib/cv-dates';
 
     export let entries: Education[];
     export let presentLabel: string = 'Present';
     export let creditsUnit: string = 'ECTS credits';
+    export let lang: Lang = 'no';
 </script>
 
 <div class="timeline">
@@ -23,7 +26,7 @@
                         <span class="entry-credits">{entry.credits} {creditsUnit}</span>
                     {/if}
                     <span class="entry-dates">
-                        {entry.startDate} — {entry.endDate ?? presentLabel}
+                        {formatCvDateDisplay(entry.startDate, lang)} — {entry.endDate ? formatCvDateDisplay(entry.endDate, lang) : presentLabel}
                     </span>
                 </div>
             </div>

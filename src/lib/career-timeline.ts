@@ -42,9 +42,16 @@ export interface CareerTimelineEntry {
 export interface CareerTimelineLayout {
 	items: CareerTimelineEntry[];
 	laneCount: number;
+	window: TimelineWindow;
+	axisMinMonth: MonthIndex;
+	axisMaxMonth: MonthIndex;
+	ticks: { month: MonthIndex; label: string }[];
+}
+
+export interface TimelineWindow {
+	index: number;
 	minMonth: MonthIndex;
 	maxMonth: MonthIndex;
-	ticks: { month: MonthIndex; label: string }[];
 }
 
 export interface CareerTimelineLaneLayout {
@@ -58,12 +65,18 @@ export interface CareerTimelineCategoryLayout {
 	heightRem: number;
 }
 
-const LANE_MIN_HEIGHT_REM = 5.5;
+const LANE_MIN_HEIGHT_REM = 11 / 6;
 const LANE_GAP_REM = 0.25;
 const CATEGORY_GAP_REM = 0.5;
+/** padding-top + border-top on non-first category rows (must match CareerTimeline.svelte). */
+const CATEGORY_CHROME_REM = 0.15 + 1 / 16;
 const TIME_SCALE_REM = 0.45;
-const MIN_TIME_WIDTH_REM = 14;
 const PLOT_PADDING_REM = 0.5;
+
+export const TIMELINE_EARLIEST_YEAR = 1997;
+export const TIMELINE_WINDOW_YEARS = 5;
+export const TIMELINE_WINDOW_MONTHS = TIMELINE_WINDOW_YEARS * 12;
+export const TIMELINE_EARLIEST_MONTH = TIMELINE_EARLIEST_YEAR * 12;
 
 /** Fallback palette for organizations without a documented brand color. */
 const ORG_COLORS = [
@@ -139,16 +152,52 @@ function organizationColor(organization: string, palette: Map<string, string>): 
 	return color;
 }
 
-function buildTicks(minMonth: MonthIndex, maxMonth: MonthIndex): { month: MonthIndex; label: string }[] {
+function buildWindowTicks(axisMinMonth: MonthIndex): { month: MonthIndex; label: string }[] {
 	const ticks: { month: MonthIndex; label: string }[] = [];
-	const startYear = Math.floor(minMonth / 12);
-	const endYear = Math.floor(maxMonth / 12);
+	const startYear = Math.floor(axisMinMonth / 12);
+	const endYear = Math.floor((axisMinMonth + TIMELINE_WINDOW_MONTHS) / 12);
 
 	for (let year = startYear; year <= endYear; year++) {
 		ticks.push({ month: year * 12, label: String(year) });
 	}
 
 	return ticks;
+}
+
+export function buildTimelineWindows(
+	presentMonth: MonthIndex = currentMonthIndex(),
+	earliestMonth: MonthIndex = TIMELINE_EARLIEST_MONTH
+): TimelineWindow[] {
+	const windows: TimelineWindow[] = [];
+	let maxMonth = presentMonth;
+
+	while (maxMonth > earliestMonth) {
+		let minMonth = maxMonth - TIMELINE_WINDOW_MONTHS;
+		if (minMonth < earliestMonth) {
+			minMonth = earliestMonth;
+		}
+
+		windows.push({ index: windows.length, minMonth, maxMonth });
+
+		if (minMonth <= earliestMonth) break;
+		maxMonth = minMonth;
+	}
+
+	return windows;
+}
+
+export function formatWindowLabel(window: TimelineWindow): string {
+	const minYear = Math.floor(window.minMonth / 12);
+	const maxYear = Math.floor(window.maxMonth / 12);
+	return `${maxYear} – ${minYear}`;
+}
+
+function entryOverlapsWindow(
+	startMonth: MonthIndex,
+	endMonth: MonthIndex,
+	window: TimelineWindow
+): boolean {
+	return overlaps(startMonth, endMonth, window.minMonth, window.maxMonth);
 }
 
 function workSource(entry: WorkExperience, kind: CareerEntryKind): CareerTimelineSource {
@@ -226,15 +275,26 @@ export function buildCareerTimeline(
 	experience: WorkExperience[],
 	volunteer: WorkExperience[],
 	education: Education[],
+	window: TimelineWindow,
 	presentMonth: MonthIndex = currentMonthIndex()
 ): CareerTimelineLayout {
 	const palette = new Map<string, string>();
 
-	const sources: CareerTimelineSource[] = [
+	const allSources: CareerTimelineSource[] = [
 		...experience.map((entry) => workSource(entry, 'experience')),
 		...education.map(educationSource),
 		...volunteer.map((entry) => workSource(entry, 'volunteer'))
 	];
+
+	for (const source of allSources) {
+		organizationColor(source.organization, palette);
+	}
+
+	const sources = allSources.filter((source) => {
+		const startMonth = parseCvDate(source.startDate);
+		const endMonth = endCvDate(source.endDate, presentMonth);
+		return entryOverlapsWindow(startMonth, endMonth, window);
+	});
 
 	const items: CareerTimelineEntry[] = [];
 	for (const kind of KIND_PRIORITY_ORDER) {
@@ -243,21 +303,22 @@ export function buildCareerTimeline(
 		items.push(...kindItems);
 	}
 
-	const minMonth = items.length > 0 ? Math.min(...items.map((item) => item.startMonth)) : presentMonth;
-	const maxMonth = items.length > 0 ? Math.max(...items.map((item) => item.endMonth)) : presentMonth;
+	const axisMinMonth = window.minMonth;
+	const axisMaxMonth = window.minMonth + TIMELINE_WINDOW_MONTHS;
 
 	return {
 		items,
 		laneCount: items.length > 0 ? Math.max(...items.map((item) => item.lane)) + 1 : 1,
-		minMonth,
-		maxMonth,
-		ticks: buildTicks(minMonth, maxMonth)
+		window,
+		axisMinMonth,
+		axisMaxMonth,
+		ticks: buildWindowTicks(axisMinMonth)
 	};
 }
 
 function blockContentHeightRem(item: CareerTimelineEntry): number {
 	const labelChars = Math.max(item.organization.length, item.title.length);
-	return Math.max(LANE_MIN_HEIGHT_REM, labelChars * 0.42);
+	return Math.max(LANE_MIN_HEIGHT_REM, labelChars * 0.14);
 }
 
 function buildLaneLayoutsForItems(items: CareerTimelineEntry[]): CareerTimelineLaneLayout[] {
@@ -276,13 +337,19 @@ function buildLaneLayoutsForItems(items: CareerTimelineEntry[]): CareerTimelineL
 }
 
 export function buildCategoryLayouts(layout: CareerTimelineLayout): CareerTimelineCategoryLayout[] {
-	return KIND_PRIORITY_ORDER.flatMap((kind) => {
+	const categories: CareerTimelineCategoryLayout[] = [];
+
+	for (const kind of KIND_PRIORITY_ORDER) {
 		const kindItems = layout.items.filter((item) => item.kind === kind);
-		if (kindItems.length === 0) return [];
+		if (kindItems.length === 0) continue;
 
 		const lanes = buildLaneLayoutsForItems(kindItems);
-		return [{ kind, lanes, heightRem: plotHeightRem(lanes) }];
-	});
+		const laneHeightRem = plotHeightRem(lanes);
+		const chromeRem = categories.length > 0 ? CATEGORY_CHROME_REM : 0;
+		categories.push({ kind, lanes, heightRem: laneHeightRem + chromeRem });
+	}
+
+	return categories;
 }
 
 export function plotCategoryHeightRem(categories: CareerTimelineCategoryLayout[]): number {
@@ -292,9 +359,24 @@ export function plotCategoryHeightRem(categories: CareerTimelineCategoryLayout[]
 	);
 }
 
-export function plotTimeWidthRem(layout: CareerTimelineLayout): number {
-	const spanMonths = Math.max(layout.maxMonth - layout.minMonth, 1);
-	return Math.max(spanMonths * TIME_SCALE_REM, MIN_TIME_WIDTH_REM) + PLOT_PADDING_REM;
+export function plotTimeWidthRem(): number {
+	return TIMELINE_WINDOW_MONTHS * TIME_SCALE_REM + PLOT_PADDING_REM;
+}
+
+export function clippedBarPosition(
+	startMonth: MonthIndex,
+	endMonth: MonthIndex,
+	window: TimelineWindow,
+	axisMinMonth: MonthIndex,
+	axisMaxMonth: MonthIndex
+): { left: number; width: number } | null {
+	const visibleStart = Math.max(startMonth, window.minMonth);
+	const visibleEnd = Math.min(endMonth, window.maxMonth);
+	if (visibleStart > visibleEnd) return null;
+
+	const left = monthPosition(visibleEnd, axisMinMonth, axisMaxMonth);
+	const right = monthPosition(visibleStart, axisMinMonth, axisMaxMonth);
+	return { left, width: Math.max(right - left, 2.5) };
 }
 
 export function plotHeightRem(lanes: CareerTimelineLaneLayout[]): number {
@@ -307,13 +389,4 @@ export function plotHeightRem(lanes: CareerTimelineLaneLayout[]): number {
 export function monthPosition(month: MonthIndex, minMonth: MonthIndex, maxMonth: MonthIndex): number {
 	const span = Math.max(maxMonth - minMonth, 1);
 	return ((maxMonth - month) / span) * 100;
-}
-
-export function formatCvRange(
-	startDate: string,
-	endDate: string | undefined,
-	presentLabel: string
-): string {
-	if (!endDate) return `${startDate} — ${presentLabel}`;
-	return `${startDate} — ${endDate}`;
 }

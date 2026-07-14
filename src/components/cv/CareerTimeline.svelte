@@ -4,124 +4,190 @@
     import {
         buildCareerTimeline,
         buildCategoryLayouts,
+        buildTimelineWindows,
         CATEGORY_COLORS,
-        formatCvRange,
+        clippedBarPosition,
+        formatWindowLabel,
         monthPosition,
-        plotCategoryHeightRem,
-        plotTimeWidthRem
+        plotCategoryHeightRem
     } from '../../lib/career-timeline';
+    import type { Lang } from '../../lib/posts';
+    import { currentMonthIndex, formatCvRange } from '../../lib/cv-dates';
 
     export let experience: WorkExperience[] = [];
     export let volunteer: WorkExperience[] = [];
     export let education: Education[] = [];
     export let presentLabel: string = 'Present';
+    export let lang: Lang = 'no';
     export let ariaLabel: string = 'Career timeline';
+    export let newerLabel: string = 'Newer';
+    export let olderLabel: string = 'Older';
+    export let screenNavLabel: string = 'Timeline period';
     export let kindLabels: Record<CareerEntryKind, string> = {
         experience: 'Work',
         education: 'Education',
         volunteer: 'Volunteer'
     };
 
-    $: layout = buildCareerTimeline(experience, volunteer, education);
-    $: categoryLayouts = buildCategoryLayouts(layout);
-    $: plotWidth = plotTimeWidthRem(layout);
-    $: chartHeight = plotCategoryHeightRem(categoryLayouts);
-    $: organizations = [
-        ...new Map(layout.items.map((item) => [item.organization, item.color])).entries()
-    ].sort(([a], [b]) => a.localeCompare(b));
+    const presentMonth = currentMonthIndex();
 
-    function barStyle(startMonth: number, endMonth: number): string {
-        const left = monthPosition(endMonth, layout.minMonth, layout.maxMonth);
-        const right = monthPosition(startMonth, layout.minMonth, layout.maxMonth);
-        const width = Math.max(right - left, 2.5);
-        return `left: ${left}%; width: ${width}%;`;
+    let screenIndex = 0;
+
+    $: windows = buildTimelineWindows(presentMonth);
+    $: screenIndex = Math.min(screenIndex, Math.max(windows.length - 1, 0));
+    $: activeWindow = windows[screenIndex];
+    $: windowLabel = activeWindow ? formatWindowLabel(activeWindow) : '';
+    $: layout = activeWindow
+        ? buildCareerTimeline(experience, volunteer, education, activeWindow, presentMonth)
+        : null;
+    $: categoryLayouts = layout ? buildCategoryLayouts(layout) : [];
+    $: chartHeight = plotCategoryHeightRem(categoryLayouts);
+
+    function barStyle(startMonth: number, endMonth: number): string | null {
+        if (!layout) return null;
+        const position = clippedBarPosition(
+            startMonth,
+            endMonth,
+            layout.window,
+            layout.axisMinMonth,
+            layout.axisMaxMonth
+        );
+        if (!position) return null;
+        return `left: ${position.left}%; width: ${position.width}%;`;
     }
 
     function tickStyle(month: number): string {
-        return `left: ${monthPosition(month, layout.minMonth, layout.maxMonth)}%;`;
+        if (!layout) return '';
+        return `left: ${monthPosition(month, layout.axisMinMonth, layout.axisMaxMonth)}%;`;
+    }
+
+    function showNewer() {
+        screenIndex = Math.max(screenIndex - 1, 0);
+    }
+
+    function showOlder() {
+        screenIndex = Math.min(screenIndex + 1, windows.length - 1);
     }
 </script>
 
 <div class="overlap-chart">
-    <div class="chart-body">
-        <div class="chart-row">
-            <div class="y-axis" aria-hidden="true">
-                {#each categoryLayouts as category (category.kind)}
+    {#if windows.length > 1}
+        <div class="timeline-nav" role="group" aria-label={screenNavLabel}>
+            <button
+                type="button"
+                class="nav-btn"
+                disabled={screenIndex === 0}
+                aria-label={newerLabel}
+                on:click={showNewer}
+            >
+                ‹ {newerLabel}
+            </button>
+            <button
+                type="button"
+                class="nav-btn"
+                disabled={screenIndex === windows.length - 1}
+                aria-label={olderLabel}
+                on:click={showOlder}
+            >
+                {olderLabel} ›
+            </button>
+        </div>
+    {/if}
+
+    {#if layout}
+        <div class="chart-body">
+            <div class="chart-row">
+                <div class="plot-area">
                     <div
-                        class="category-label"
-                        style="height: {category.heightRem}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
+                        class="plot-column"
+                        role="list"
+                        aria-label="{ariaLabel}, {windowLabel}"
                     >
-                        <span class="category-swatch" aria-hidden="true"></span>
-                        <span class="category-name">{kindLabels[category.kind]}</span>
-                    </div>
-                {/each}
-            </div>
-
-            <div class="plot-area">
-                <div class="plot-column" style="width: {plotWidth}rem" role="list" aria-label={ariaLabel}>
-                    <div class="x-axis" aria-hidden="true">
-                        {#each layout.ticks as tick}
-                            <span class="axis-tick" style={tickStyle(tick.month)}>
-                                {tick.label}
-                            </span>
-                        {/each}
-                    </div>
-
-                    <div class="plot-body" style="height: {chartHeight}rem">
-                        {#each layout.ticks as tick}
-                            <div class="grid-line" style={tickStyle(tick.month)}></div>
-                        {/each}
-
-                        <div class="categories">
-                            {#each categoryLayouts as category (category.kind)}
-                                <section
-                                    class="category"
-                                    style="height: {category.heightRem}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
-                                    aria-label={kindLabels[category.kind]}
-                                >
-                                    <div class="lanes">
-                                        {#each category.lanes as lane, laneIndex (laneIndex)}
-                                            <div class="lane" style="height: {lane.heightRem}rem">
-                                                {#each lane.items as item (item.id)}
-                                                    <div
-                                                        class="overlap-bar"
-                                                        role="listitem"
-                                                        style="{barStyle(item.startMonth, item.endMonth)} --bar-color: {item.color};"
-                                                        title="{item.title} — {item.organization}: {formatCvRange(item.startDate, item.endDate, presentLabel)}"
-                                                    >
-                                                        <span class="bar-label">
-                                                            <span class="bar-role">{item.title}</span>
-                                                            <span class="bar-organization">
-                                                                {#if item.url}
-                                                                    <a href={item.url} target="_blank" rel="noopener noreferrer">{item.organization}</a>
-                                                                {:else}
-                                                                    {item.organization}
-                                                                {/if}
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                {/each}
-                                            </div>
-                                        {/each}
-                                    </div>
-                                </section>
+                        <div class="x-axis" aria-hidden="true">
+                            {#each layout.ticks as tick}
+                                <span class="axis-tick" style={tickStyle(tick.month)}>
+                                    {tick.label}
+                                </span>
                             {/each}
+                        </div>
+
+                        <div class="plot-body" style="height: {chartHeight}rem">
+                            {#each layout.ticks as tick}
+                                <div class="grid-line" style={tickStyle(tick.month)}></div>
+                            {/each}
+
+                            <div class="categories">
+                                {#each categoryLayouts as category (category.kind)}
+                                    <section
+                                        class="category"
+                                        style="height: {category.heightRem}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
+                                        aria-label={kindLabels[category.kind]}
+                                    >
+                                        <div class="lanes">
+                                            {#each category.lanes as lane, laneIndex (laneIndex)}
+                                                <div class="lane" style="height: {lane.heightRem}rem">
+                                                    {#each lane.items as item (item.id)}
+                                                        {@const style = barStyle(item.startMonth, item.endMonth)}
+                                                        {#if style}
+                                                            <div
+                                                                class="overlap-bar"
+                                                                role="listitem"
+                                                                style="{style} --bar-color: {item.color};"
+                                                                title="{item.title} — {item.organization}: {formatCvRange(item.startDate, item.endDate, presentLabel, lang)}"
+                                                            >
+                                                                <span class="bar-label">
+                                                                    <span class="bar-role">{item.title}</span>
+                                                                    <span class="bar-organization">{item.organization}</span>
+                                                                </span>
+                                                            </div>
+                                                        {/if}
+                                                    {/each}
+                                                </div>
+                                            {/each}
+                                        </div>
+                                    </section>
+                                {/each}
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="y-axis" aria-hidden="true">
+                    {#each categoryLayouts as category (category.kind)}
+                        <div
+                            class="category-label"
+                            style="height: {category.heightRem}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
+                        >
+                            <span class="category-swatch" aria-hidden="true"></span>
+                            <span class="category-name">{kindLabels[category.kind]}</span>
+                        </div>
+                    {/each}
+                </div>
             </div>
         </div>
-    </div>
 
-    {#if organizations.length > 0}
-        <ul class="org-legend">
-            {#each organizations as [organization, color]}
-                <li class="legend-item">
-                    <span class="legend-swatch" style="background-color: {color}"></span>
-                    <span>{organization}</span>
-                </li>
-            {/each}
-        </ul>
+        {#if windows.length > 1}
+            <div class="timeline-nav" role="group" aria-label={screenNavLabel}>
+                <button
+                    type="button"
+                    class="nav-btn"
+                    disabled={screenIndex === 0}
+                    aria-label={newerLabel}
+                    on:click={showNewer}
+                >
+                    ‹ {newerLabel}
+                </button>
+                <button
+                    type="button"
+                    class="nav-btn"
+                    disabled={screenIndex === windows.length - 1}
+                    aria-label={olderLabel}
+                    on:click={showOlder}
+                >
+                    {olderLabel} ›
+                </button>
+            </div>
+        {/if}
     {/if}
 </div>
 
@@ -132,6 +198,43 @@
         gap: var(--space-sm);
         min-width: 0;
         width: 100%;
+        max-width: 100%;
+    }
+
+    .timeline-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+        flex-wrap: wrap;
+    }
+
+    .nav-btn {
+        appearance: none;
+        border: 1px solid var(--color-chrome-border);
+        border-radius: var(--radius-md);
+        background: transparent;
+        color: var(--color-mid);
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.45rem 0.9rem;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+        color: var(--color-dark);
+        background-color: oklch(50% 0 0 / 0.08);
+    }
+
+    .nav-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+    }
+
+    .nav-btn:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
     }
 
     .chart-body {
@@ -140,17 +243,26 @@
     }
 
     .chart-row {
-        display: grid;
-        grid-template-columns: 4.5rem minmax(0, 1fr);
-        gap: var(--space-sm);
-        align-items: start;
+        position: relative;
+        width: 100%;
+    }
+
+    .plot-area {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
     }
 
     .y-axis {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        margin-right: var(--space-sm);
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        padding-top: calc(1.35rem + var(--space-xs));
+        padding-top: calc(1.85rem + var(--space-xs));
+        width: max-content;
     }
 
     .category-label {
@@ -178,22 +290,17 @@
         line-height: 1.2;
     }
 
-    .plot-area {
-        min-width: 0;
-        overflow-x: auto;
-    }
-
     .plot-column {
         position: relative;
         padding: 0 calc(var(--space-xs) / 2);
         box-sizing: border-box;
-        width: max-content;
-        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
     }
 
     .x-axis {
         position: relative;
-        height: 1.35rem;
+        height: 1.85rem;
         margin-bottom: var(--space-xs);
         border-bottom: 1px solid var(--color-chrome-border);
     }
@@ -251,10 +358,12 @@
 
     .axis-tick {
         position: absolute;
-        bottom: 0.2rem;
+        bottom: 0.35rem;
         transform: translateX(-50%);
-        font-size: 0.7rem;
-        color: var(--color-muted);
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--color-dark);
+        letter-spacing: 0.02em;
         white-space: nowrap;
         line-height: 1;
     }
@@ -271,7 +380,7 @@
         border-left-width: 3px;
         border-left-color: var(--bar-color);
         box-shadow: inset 0 0 0 1px oklch(0% 0 0 / 0.08);
-        padding: var(--space-xs) var(--space-sm);
+        padding: calc(var(--space-xs) / 2) var(--space-sm);
         overflow: hidden;
         cursor: default;
         transition: filter 0.15s ease;
@@ -297,8 +406,8 @@
         line-height: 1.25;
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
         -webkit-box-orient: vertical;
         text-wrap: balance;
     }
@@ -310,51 +419,12 @@
         line-height: 1.2;
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
         -webkit-box-orient: vertical;
     }
 
-    .bar-organization a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .bar-organization a:hover {
-        color: var(--color-accent);
-        text-decoration: underline;
-    }
-
-    .org-legend {
-        list-style: none;
-        margin: var(--space-sm) 0 0 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-sm) var(--space-md);
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: var(--space-xs);
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: var(--color-mid);
-    }
-
-    .legend-swatch {
-        width: 0.75rem;
-        height: 0.75rem;
-        border-radius: 2px;
-        flex-shrink: 0;
-    }
-
     @media (max-width: 700px) {
-        .chart-row {
-            grid-template-columns: 3.25rem minmax(0, 1fr);
-        }
-
         .category-name {
             font-size: 0.65rem;
         }

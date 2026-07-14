@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { CvData, CvProfile, CvSectionKey } from '../../types/cv.types';
     import type { Translations } from '../../types/i18n.types';
+    import type { Lang } from '../../lib/posts';
     import Fa from 'svelte-fa';
     import { faDownload } from '@fortawesome/free-solid-svg-icons';
     import CvHeader from './CvHeader.svelte';
@@ -20,7 +21,7 @@
     export let cv: CvData;
     export let t: Translations;
     export let activeProfile: CvProfile | null = null;
-    export let lang: string;
+    export let lang: Lang;
 
     const defaultAccent = 'oklch(80% 0.16 75)';
     const defaultSections: CvSectionKey[] = [
@@ -126,12 +127,16 @@
         {#if careerView === 'timeline' && isCareerSection(sectionKey)}
             {#if sectionKey === careerToggleAnchor}
                 <CvSection title={t.cv.careerTimeline} section="career-timeline">
-                    <CareerTimeline
-                        experience={timelineExperience}
-                        volunteer={timelineVolunteer}
-                        education={timelineEducation}
-                        presentLabel={t.cv.present}
+                        <CareerTimeline
+                            experience={timelineExperience}
+                            volunteer={timelineVolunteer}
+                            education={timelineEducation}
+                            {lang}
+                            presentLabel={t.cv.present}
                         ariaLabel={t.cv.careerTimeline}
+                        newerLabel={t.cv.careerTimelineNewer}
+                        olderLabel={t.cv.careerTimelineOlder}
+                        screenNavLabel={t.cv.careerTimelinePeriod}
                         kindLabels={{
                             experience: t.cv.careerKindExperience,
                             education: t.cv.careerKindEducation,
@@ -151,6 +156,7 @@
                         entries={cv.education}
                         presentLabel={t.cv.present}
                         creditsUnit={t.cv.educationCreditsUnit}
+                        lang={lang}
                     />
                 {:else if sectionKey === 'coursework'}
                     <Coursework
@@ -277,6 +283,10 @@
     .view-btn:focus-visible {
         outline: 2px solid var(--color-accent);
         outline-offset: -2px;
+    }
+
+    :global(.cv-section[data-section='career-timeline'] .cv-section-content) {
+        overflow-x: visible;
     }
 
 </style>

@@ -190,24 +190,24 @@ export const cvData: CvDataMap = {
 			institution: 'Universitetet i Bergen',
 				degree: 'Mastergrad',
 				field: 'Informasjonsvitenskap',
-				startDate: '2024',
-				endDate: '2026',
+				startDate: '2024-08',
+				endDate: '2026-07',
 				description: 'Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
 				degree: 'Bachelorgrad',
 				field: 'Kognitiv vitenskap',
-				startDate: '2018',
-				endDate: '2025',
+				startDate: '2018-08',
+				endDate: '2024-07',
 				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
 				degree: 'Bachelorgrad',
 				field: 'Kunstig intelligens',
-				startDate: '2022',
-				endDate: '2024',
+				startDate: '2022-08',
+				endDate: '2024-07',
 				description: 'Kunstige agenter, maskinlæring og utvikling av AI-løsninger. Kombinerer informatikk og informasjonsvitenskap.'
 			}
 		],
@@ -542,24 +542,24 @@ export const cvData: CvDataMap = {
 			institution: 'University of Bergen',
 				degree: 'Master\'s Degree',
 				field: 'Information Science',
-				startDate: '2024',
-				endDate: '2026',
+				startDate: '2024-08',
+				endDate: '2026-07',
 				description: 'Specialization in information architecture, user behaviour and digital communication.'
 			},
 			{
 				institution: 'University of Bergen',
 				degree: 'Bachelor\'s Degree',
 				field: 'Cognitive Science',
-				startDate: '2018',
-				endDate: '2025',
+				startDate: '2018-08',
+				endDate: '2024-07',
 				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science.'
 			},
 			{
 				institution: 'University of Bergen',
 				degree: 'Bachelor\'s Degree',
 				field: 'Artificial Intelligence',
-				startDate: '2022',
-				endDate: '2024',
+				startDate: '2022-08',
+				endDate: '2024-07',
 				description: 'Artificial agents, machine learning and development of AI solutions. Combines computer science and information science.'
 			}
 		],

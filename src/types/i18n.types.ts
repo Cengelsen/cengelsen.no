@@ -31,6 +31,9 @@ export interface Translations {
 		careerKindExperience: string;
 		careerKindVolunteer: string;
 		careerKindEducation: string;
+		careerTimelineNewer: string;
+		careerTimelineOlder: string;
+		careerTimelinePeriod: string;
 		education: string;
 		educationCreditsUnit: string;
 		courseCreditsLabel: string;
