@@ -15,7 +15,6 @@
     import Certificates from './Certificates.svelte';
     import Projects from './Projects.svelte';
     import Qualities from './Qualities.svelte';
-    import ContactInfo from './ContactInfo.svelte';
     import ProfileSelector from './ProfileSelector.svelte';
 
     export let cv: CvData;
@@ -30,6 +29,7 @@
     ];
 
     $: sections = activeProfile ? activeProfile.sections : defaultSections;
+    $: contentSections = sections.filter((sectionKey) => sectionKey !== 'contact');
     $: summary = activeProfile ? activeProfile.summary : cv.summary;
     $: accentColor = activeProfile?.accentColor ?? defaultAccent;
     $: profileId = activeProfile?.id ?? 'all';
@@ -84,7 +84,7 @@
 </script>
 
 <div class="cv-page" data-profile={profileId} style="--cv-accent: {accentColor}">
-    <CvHeader {summary} />
+    <CvHeader {summary} contact={cv.contact} />
 
     <div class="cv-toolbar">
         <ProfileSelector activeProfileId={activeProfile?.id ?? null} {lang} allProfilesLabel={t.cv.allProfiles} />
@@ -98,7 +98,7 @@
         </span>
     </div>
 
-    {#each sections as sectionKey (sectionKey)}
+    {#each contentSections as sectionKey (sectionKey)}
         {#if sectionKey === careerToggleAnchor && hasCareerEntries}
             <div class="career-view-controls">
                 <div class="view-toggle" role="group" aria-label={t.cv.careerViewToggle}>
@@ -181,8 +181,6 @@
                     <Projects entries={cv.projects} sourceLabel={t.cv.viewProject} liveDemoLabel={t.cv.liveDemo} />
                 {:else if sectionKey === 'qualities'}
                     <Qualities entries={cv.qualities} />
-                {:else if sectionKey === 'contact'}
-                    <ContactInfo entries={cv.contact} />
                 {/if}
             </CvSection>
         {/if}

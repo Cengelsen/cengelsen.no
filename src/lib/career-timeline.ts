@@ -39,13 +39,25 @@ export interface CareerTimelineEntry {
 	color: string;
 }
 
+export interface TimelineTick {
+	/** January 1 of the year, when it falls inside the axis range. */
+	month: MonthIndex;
+	label: string;
+	/** When the Jan tick sits on the axis max, the label extends right/down into the year. */
+	align: 'start' | 'end';
+}
+
 export interface CareerTimelineLayout {
 	items: CareerTimelineEntry[];
 	laneCount: number;
 	window: TimelineWindow;
 	axisMinMonth: MonthIndex;
 	axisMaxMonth: MonthIndex;
-	ticks: { month: MonthIndex; label: string }[];
+	/** Latest month shown for entries (present, or axis max when earlier). */
+	displayMaxMonth: MonthIndex;
+	/** Vertical (desktop) / horizontal (mobile) lines at each 1 January within the axis. */
+	gridLines: MonthIndex[];
+	ticks: TimelineTick[];
 }
 
 export interface TimelineWindow {
@@ -158,23 +170,28 @@ function organizationColor(organization: string, palette: Map<string, string>): 
 	return color;
 }
 
-function buildRangeTicks(
-	axisMinMonth: MonthIndex,
-	axisMaxMonth: MonthIndex
-): { month: MonthIndex; label: string }[] {
-	const ticks: { month: MonthIndex; label: string }[] = [];
+function buildJanuaryGridLines(axisMinMonth: MonthIndex, axisMaxMonth: MonthIndex): MonthIndex[] {
+	const lines: MonthIndex[] = [];
 	const startYear = Math.floor(axisMinMonth / 12);
 	const endYear = Math.floor(axisMaxMonth / 12);
 
 	for (let year = startYear; year <= endYear; year++) {
-		ticks.push({ month: year * 12, label: String(year) });
+		const january = parseCvDate(`${year}-01`);
+		if (january >= axisMinMonth && january <= axisMaxMonth) {
+			lines.push(january);
+		}
 	}
 
-	return ticks;
+	return lines;
 }
 
-function buildWindowTicks(axisMinMonth: MonthIndex): { month: MonthIndex; label: string }[] {
-	return buildRangeTicks(axisMinMonth, axisMinMonth + TIMELINE_WINDOW_MONTHS);
+function buildRangeTicks(axisMinMonth: MonthIndex, axisMaxMonth: MonthIndex): TimelineTick[] {
+	return buildJanuaryGridLines(axisMinMonth, axisMaxMonth).map((month) => ({
+		month,
+		label: String(Math.floor(month / 12)),
+		// Newer time is to the left on the axis; most year labels extend left into their year.
+		align: month >= axisMaxMonth ? ('start' as const) : ('end' as const)
+	}));
 }
 
 export function buildTimelineWindows(
@@ -199,18 +216,33 @@ export function buildTimelineWindows(
 	return windows;
 }
 
-export function formatWindowLabel(window: TimelineWindow): string {
-	const minYear = Math.floor(window.minMonth / 12);
-	const maxYear = Math.floor(window.maxMonth / 12);
-	return `${maxYear} – ${minYear}`;
+function timelineAxisRange(
+	window: TimelineWindow,
+	presentMonth: MonthIndex
+): { axisMinMonth: MonthIndex; axisMaxMonth: MonthIndex; displayMaxMonth: MonthIndex } {
+	const axisMinMonth = window.minMonth;
+	const axisMaxMonth = window.minMonth + TIMELINE_WINDOW_MONTHS;
+	const displayMaxMonth = Math.min(axisMaxMonth, presentMonth);
+	return { axisMinMonth, axisMaxMonth, displayMaxMonth };
 }
 
-function entryOverlapsWindow(
+function entryOverlapsAxisRange(
 	startMonth: MonthIndex,
 	endMonth: MonthIndex,
-	window: TimelineWindow
+	axisMinMonth: MonthIndex,
+	displayMaxMonth: MonthIndex
 ): boolean {
-	return overlaps(startMonth, endMonth, window.minMonth, window.maxMonth);
+	return overlaps(startMonth, endMonth, axisMinMonth, displayMaxMonth);
+}
+
+export function formatWindowLabel(
+	window: TimelineWindow,
+	presentMonth: MonthIndex = currentMonthIndex()
+): string {
+	const minYear = Math.floor(window.minMonth / 12);
+	const { displayMaxMonth } = timelineAxisRange(window, presentMonth);
+	const maxYear = Math.floor(displayMaxMonth / 12);
+	return `${maxYear} – ${minYear}`;
 }
 
 function workSource(entry: WorkExperience, kind: CareerEntryKind): CareerTimelineSource {
@@ -303,10 +335,12 @@ export function buildCareerTimeline(
 		organizationColor(source.organization, palette);
 	}
 
+	const { axisMinMonth, axisMaxMonth, displayMaxMonth } = timelineAxisRange(window, presentMonth);
+
 	const sources = allSources.filter((source) => {
 		const startMonth = parseCvDate(source.startDate);
 		const endMonth = endCvDate(source.endDate, presentMonth);
-		return entryOverlapsWindow(startMonth, endMonth, window);
+		return entryOverlapsAxisRange(startMonth, endMonth, axisMinMonth, displayMaxMonth);
 	});
 
 	const items: CareerTimelineEntry[] = [];
@@ -316,8 +350,7 @@ export function buildCareerTimeline(
 		items.push(...kindItems);
 	}
 
-	const axisMinMonth = window.minMonth;
-	const axisMaxMonth = window.minMonth + TIMELINE_WINDOW_MONTHS;
+	const gridLines = buildJanuaryGridLines(axisMinMonth, axisMaxMonth);
 
 	return {
 		items,
@@ -325,7 +358,9 @@ export function buildCareerTimeline(
 		window,
 		axisMinMonth,
 		axisMaxMonth,
-		ticks: buildWindowTicks(axisMinMonth)
+		displayMaxMonth,
+		gridLines,
+		ticks: buildRangeTicks(axisMinMonth, axisMaxMonth)
 	};
 }
 
@@ -341,7 +376,7 @@ export function earliestCareerMonth(
 		...volunteer.map((entry) => workSource(entry, 'volunteer'))
 	];
 
-	if (allSources.length === 0) return TIMELINE_EARLIEST_MONTH;
+	if (allSources.length === 0) return presentMonth;
 
 	let earliest = presentMonth;
 	for (const source of allSources) {
@@ -371,10 +406,13 @@ export function buildMobileCareerTimeline(
 		organizationColor(source.organization, palette);
 	}
 
+	const axisMinMonth = minMonth;
+	const axisMaxMonth = presentMonth;
+
 	const sources = allSources.filter((source) => {
 		const startMonth = parseCvDate(source.startDate);
 		const endMonth = endCvDate(source.endDate, presentMonth);
-		return entryOverlapsWindow(startMonth, endMonth, window);
+		return entryOverlapsAxisRange(startMonth, endMonth, axisMinMonth, axisMaxMonth);
 	});
 
 	const items: CareerTimelineEntry[] = [];
@@ -384,8 +422,7 @@ export function buildMobileCareerTimeline(
 		items.push(...kindItems);
 	}
 
-	const axisMinMonth = minMonth;
-	const axisMaxMonth = presentMonth;
+	const gridLines = buildJanuaryGridLines(axisMinMonth, axisMaxMonth);
 
 	return {
 		items,
@@ -393,6 +430,8 @@ export function buildMobileCareerTimeline(
 		window,
 		axisMinMonth,
 		axisMaxMonth,
+		displayMaxMonth: axisMaxMonth,
+		gridLines,
 		ticks: buildRangeTicks(axisMinMonth, axisMaxMonth)
 	};
 }
@@ -459,13 +498,13 @@ export function monthPositionPadded(
 export function clippedBarPositionVertical(
 	startMonth: MonthIndex,
 	endMonth: MonthIndex,
-	window: TimelineWindow,
 	axisMinMonth: MonthIndex,
 	axisMaxMonth: MonthIndex,
+	displayMaxMonth: MonthIndex,
 	padded = false
 ): { top: number; height: number } | null {
-	const visibleStart = Math.max(startMonth, window.minMonth);
-	const visibleEnd = Math.min(endMonth, window.maxMonth);
+	const visibleStart = Math.max(startMonth, axisMinMonth);
+	const visibleEnd = Math.min(endMonth, displayMaxMonth);
 	if (visibleStart > visibleEnd) return null;
 
 	const position = padded ? monthPositionPadded : monthPosition;
@@ -504,12 +543,12 @@ export function mobilePlotWidthRem(categories: CareerTimelineCategoryLayout[]): 
 export function clippedBarPosition(
 	startMonth: MonthIndex,
 	endMonth: MonthIndex,
-	window: TimelineWindow,
 	axisMinMonth: MonthIndex,
-	axisMaxMonth: MonthIndex
+	axisMaxMonth: MonthIndex,
+	displayMaxMonth: MonthIndex
 ): { left: number; width: number } | null {
-	const visibleStart = Math.max(startMonth, window.minMonth);
-	const visibleEnd = Math.min(endMonth, window.maxMonth);
+	const visibleStart = Math.max(startMonth, axisMinMonth);
+	const visibleEnd = Math.min(endMonth, displayMaxMonth);
 	if (visibleStart > visibleEnd) return null;
 
 	const left = monthPosition(visibleEnd, axisMinMonth, axisMaxMonth);

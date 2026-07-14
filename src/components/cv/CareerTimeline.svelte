@@ -6,6 +6,7 @@
         buildCategoryLayouts,
         buildMobileCareerTimeline,
         buildTimelineWindows,
+        earliestCareerMonth,
         CATEGORY_COLORS,
         clippedBarPosition,
         clippedBarPositionVertical,
@@ -40,7 +41,8 @@
 
     let screenIndex = 0;
 
-    $: windows = buildTimelineWindows(presentMonth);
+    $: earliestMonth = earliestCareerMonth(experience, volunteer, education, presentMonth);
+    $: windows = buildTimelineWindows(presentMonth, earliestMonth);
     $: screenIndex = Math.min(screenIndex, Math.max(windows.length - 1, 0));
     $: activeWindow = windows[screenIndex];
     $: windowLabel = activeWindow ? formatWindowLabel(activeWindow) : '';
@@ -59,9 +61,9 @@
         const position = clippedBarPosition(
             startMonth,
             endMonth,
-            layout.window,
             layout.axisMinMonth,
-            layout.axisMaxMonth
+            layout.axisMaxMonth,
+            layout.displayMaxMonth
         );
         if (!position) return null;
         return `left: ${position.left}%; width: ${position.width}%;`;
@@ -76,9 +78,9 @@
         const position = clippedBarPositionVertical(
             startMonth,
             endMonth,
-            mobileLayout.window,
             mobileLayout.axisMinMonth,
             mobileLayout.axisMaxMonth,
+            mobileLayout.displayMaxMonth,
             true
         );
         if (!position) return null;
@@ -86,12 +88,21 @@
         return `top: ${position.top}%; height: ${position.height}%; left: ${lane.left}%; width: ${lane.width}%;`;
     }
 
-    function tickStyle(month: number): string {
+    function gridLineStyle(month: number): string {
         if (!layout) return '';
         return `left: ${monthPosition(month, layout.axisMinMonth, layout.axisMaxMonth)}%;`;
     }
 
-    function mobileTickStyle(month: number): string {
+    function tickLabelStyle(month: number): string {
+        if (!layout) return '';
+        return `left: ${monthPosition(month, layout.axisMinMonth, layout.axisMaxMonth)}%;`;
+    }
+
+    function mobileGridLineStyle(month: number): string {
+        return `top: ${monthPositionPadded(month, mobileLayout.axisMinMonth, mobileLayout.axisMaxMonth)}%;`;
+    }
+
+    function mobileTickLabelStyle(month: number): string {
         return `top: ${monthPositionPadded(month, mobileLayout.axisMinMonth, mobileLayout.axisMaxMonth)}%;`;
     }
 
@@ -137,18 +148,25 @@
                         role="list"
                         aria-label="{ariaLabel}, {windowLabel}"
                     >
+                        <div class="time-grid" aria-hidden="true">
+                            {#each layout.gridLines as month}
+                                <div class="grid-line" style={gridLineStyle(month)}></div>
+                            {/each}
+                        </div>
+
                         <div class="x-axis" aria-hidden="true">
                             {#each layout.ticks as tick}
-                                <span class="axis-tick" style={tickStyle(tick.month)}>
+                                <span
+                                    class="axis-tick"
+                                    class:axis-tick--into-year={tick.align === 'end'}
+                                    style={tickLabelStyle(tick.month)}
+                                >
                                     {tick.label}
                                 </span>
                             {/each}
                         </div>
 
                         <div class="plot-body" style="height: {chartHeight}rem">
-                            {#each layout.ticks as tick}
-                                <div class="grid-line" style={tickStyle(tick.month)}></div>
-                            {/each}
 
                             <div class="categories">
                                 {#each categoryLayouts as category (category.kind)}
@@ -231,7 +249,11 @@
                                 aria-hidden="true"
                             >
                                 {#each mobileLayout.ticks as tick}
-                                    <span class="mobile-year-tick" style={mobileTickStyle(tick.month)}>
+                                    <span
+                                        class="mobile-year-tick"
+                                        class:mobile-year-tick--into-year={tick.align === 'end'}
+                                        style={mobileTickLabelStyle(tick.month)}
+                                    >
                                         {tick.label}
                                     </span>
                                 {/each}
@@ -241,8 +263,8 @@
                                 class="mobile-plot-grid"
                                 style="width: {mobilePlotWidth}rem; height: {mobilePlotHeight}rem"
                             >
-                                {#each mobileLayout.ticks as tick}
-                                    <div class="mobile-grid-line" style={mobileTickStyle(tick.month)}></div>
+                                {#each mobileLayout.gridLines as month}
+                                    <div class="mobile-grid-line" style={mobileGridLineStyle(month)}></div>
                                 {/each}
 
                                 {#each mobileCategoryLayouts as category (category.kind)}
@@ -420,8 +442,16 @@
         max-width: 100%;
     }
 
+    .time-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
     .x-axis {
         position: relative;
+        z-index: 1;
         height: 1.85rem;
         margin-bottom: var(--space-xs);
         border-bottom: 1px solid var(--color-chrome-border);
@@ -429,6 +459,7 @@
 
     .plot-body {
         position: relative;
+        z-index: 1;
     }
 
     .grid-line {
@@ -436,7 +467,7 @@
         top: 0;
         bottom: 0;
         width: 0;
-        border-left: 1px solid oklch(50% 0 0 / 0.12);
+        border-left: 1px solid var(--color-chrome-border);
         pointer-events: none;
         z-index: 0;
     }
@@ -481,13 +512,19 @@
     .axis-tick {
         position: absolute;
         bottom: 0.35rem;
-        transform: translateX(-50%);
+        padding-left: 0.2rem;
         font-size: 0.82rem;
         font-weight: 600;
         color: var(--color-dark);
         letter-spacing: 0.02em;
         white-space: nowrap;
         line-height: 1;
+    }
+
+    .axis-tick--into-year {
+        padding-left: 0;
+        padding-right: 0.2rem;
+        transform: translateX(-100%);
     }
 
     .overlap-bar {
@@ -632,17 +669,24 @@
             position: absolute;
             left: 0;
             right: 0;
-            transform: translateY(-50%);
+            padding-left: 0.2rem;
             font-size: 0.72rem;
             font-weight: 600;
             color: var(--color-dark);
             white-space: nowrap;
             line-height: 1;
-            text-align: right;
-            padding-right: 0.2rem;
+            text-align: left;
             box-sizing: border-box;
             overflow: hidden;
             text-overflow: clip;
+        }
+
+        .mobile-year-tick--into-year {
+            padding-left: 0;
+            padding-right: 0.2rem;
+            text-align: right;
+            transform: translateY(-100%);
+            padding-bottom: 0.15rem;
         }
 
         .mobile-plot-grid {
@@ -657,7 +701,7 @@
             left: 0;
             right: 0;
             height: 0;
-            border-top: 1px solid oklch(50% 0 0 / 0.12);
+            border-top: 1px solid var(--color-chrome-border);
             pointer-events: none;
             z-index: 0;
         }

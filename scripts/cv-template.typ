@@ -86,14 +86,17 @@
   #text(size: 9pt, fill: luma(110))[#data.summary.location]
   #v(6pt)
   #text(size: if is-functional { 9.5pt } else { 9pt }, fill: luma(70))[#data.summary.bio]
-  #if (is-developer or is-sysadmin or is-functional) and data.contact.len() > 0 [
-    #v(8pt)
+  #if data.contact.len() > 0 [
+    #v(6pt)
+    #line(length: 100%, stroke: 0.5pt + luma(210))
+    #v(6pt)
     #{
       let items = data.contact.map(entry => {
         [#text(size: 8pt, weight: 600, fill: luma(80))[#entry.platform] #h(2pt) #text(size: 8pt, fill: accent)[#link(entry.url)[#entry.label]]]
       })
       items.join([#h(0.6em)#text(size: 8pt, fill: luma(170))[|]#h(0.6em)])
     }
+    #v(6pt)
   ]
 ]
 #v(4pt)
@@ -454,8 +457,5 @@
   } else if section == "qualities" and data.qualities.len() > 0 {
     heading(level: 1)[#data.labels.qualities]
     render-qualities(data.qualities)
-  } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-sysadmin and not is-functional {
-    heading(level: 1)[#data.labels.contact]
-    render-contact(data.contact)
   }
 }
