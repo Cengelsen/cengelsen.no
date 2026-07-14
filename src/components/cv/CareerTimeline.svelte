@@ -4,11 +4,18 @@
     import {
         buildCareerTimeline,
         buildCategoryLayouts,
+        buildMobileCareerTimeline,
         buildTimelineWindows,
         CATEGORY_COLORS,
         clippedBarPosition,
+        clippedBarPositionVertical,
         formatWindowLabel,
+        mobileCategoryColumnWidthRem,
+        mobileLaneOffset,
+        mobilePlotHeightRem,
+        mobilePlotWidthRem,
         monthPosition,
+        monthPositionPadded,
         plotCategoryHeightRem
     } from '../../lib/career-timeline';
     import type { Lang } from '../../lib/posts';
@@ -40,8 +47,12 @@
     $: layout = activeWindow
         ? buildCareerTimeline(experience, volunteer, education, activeWindow, presentMonth)
         : null;
+    $: mobileLayout = buildMobileCareerTimeline(experience, volunteer, education, presentMonth);
     $: categoryLayouts = layout ? buildCategoryLayouts(layout) : [];
+    $: mobileCategoryLayouts = buildCategoryLayouts(mobileLayout);
     $: chartHeight = plotCategoryHeightRem(categoryLayouts);
+    $: mobilePlotHeight = mobilePlotHeightRem(mobileLayout.axisMinMonth, mobileLayout.axisMaxMonth);
+    $: mobilePlotWidth = mobilePlotWidthRem(mobileCategoryLayouts);
 
     function barStyle(startMonth: number, endMonth: number): string | null {
         if (!layout) return null;
@@ -56,9 +67,32 @@
         return `left: ${position.left}%; width: ${position.width}%;`;
     }
 
+    function mobileBarStyle(
+        startMonth: number,
+        endMonth: number,
+        laneIndex: number,
+        laneCount: number
+    ): string | null {
+        const position = clippedBarPositionVertical(
+            startMonth,
+            endMonth,
+            mobileLayout.window,
+            mobileLayout.axisMinMonth,
+            mobileLayout.axisMaxMonth,
+            true
+        );
+        if (!position) return null;
+        const lane = mobileLaneOffset(laneIndex, laneCount);
+        return `top: ${position.top}%; height: ${position.height}%; left: ${lane.left}%; width: ${lane.width}%;`;
+    }
+
     function tickStyle(month: number): string {
         if (!layout) return '';
         return `left: ${monthPosition(month, layout.axisMinMonth, layout.axisMaxMonth)}%;`;
+    }
+
+    function mobileTickStyle(month: number): string {
+        return `top: ${monthPositionPadded(month, mobileLayout.axisMinMonth, mobileLayout.axisMaxMonth)}%;`;
     }
 
     function showNewer() {
@@ -96,7 +130,7 @@
 
     {#if layout}
         <div class="chart-body">
-            <div class="chart-row">
+            <div class="chart-row plot-desktop">
                 <div class="plot-area">
                     <div
                         class="plot-column"
@@ -164,6 +198,89 @@
                     {/each}
                 </div>
             </div>
+
+            <div
+                class="plot-mobile"
+                role="list"
+                aria-label="{ariaLabel}, {formatWindowLabel(mobileLayout.window)}"
+            >
+                <div class="mobile-scroll">
+                    <div
+                        class="mobile-chart"
+                        style="width: calc({mobilePlotWidth}rem + var(--mobile-y-axis-width));"
+                    >
+                        <div class="mobile-header-row">
+                            <div class="mobile-y-spacer" aria-hidden="true"></div>
+                            <div class="mobile-category-axis" style="width: {mobilePlotWidth}rem">
+                                {#each mobileCategoryLayouts as category (category.kind)}
+                                    <div
+                                        class="mobile-category-header"
+                                        style="width: {mobileCategoryColumnWidthRem(category)}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
+                                    >
+                                        <span class="category-swatch" aria-hidden="true"></span>
+                                        <span class="category-name">{kindLabels[category.kind]}</span>
+                                    </div>
+                                {/each}
+                            </div>
+                        </div>
+
+                        <div class="mobile-body-row">
+                            <div
+                                class="mobile-y-axis"
+                                style="height: {mobilePlotHeight}rem"
+                                aria-hidden="true"
+                            >
+                                {#each mobileLayout.ticks as tick}
+                                    <span class="mobile-year-tick" style={mobileTickStyle(tick.month)}>
+                                        {tick.label}
+                                    </span>
+                                {/each}
+                            </div>
+
+                            <div
+                                class="mobile-plot-grid"
+                                style="width: {mobilePlotWidth}rem; height: {mobilePlotHeight}rem"
+                            >
+                                {#each mobileLayout.ticks as tick}
+                                    <div class="mobile-grid-line" style={mobileTickStyle(tick.month)}></div>
+                                {/each}
+
+                                {#each mobileCategoryLayouts as category (category.kind)}
+                                    <div
+                                        class="mobile-category-column"
+                                        style="width: {mobileCategoryColumnWidthRem(category)}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
+                                        aria-label={kindLabels[category.kind]}
+                                    >
+                                        {#each category.lanes as lane, laneIndex (laneIndex)}
+                                            {#each lane.items as item (item.id)}
+                                                {@const style = mobileBarStyle(
+                                                    item.startMonth,
+                                                    item.endMonth,
+                                                    laneIndex,
+                                                    category.lanes.length
+                                                )}
+                                                {#if style}
+                                                    <div
+                                                        class="overlap-bar mobile-bar"
+                                                        role="listitem"
+                                                        style="{style} --bar-color: {item.color};"
+                                                        title="{item.title} — {item.organization}: {formatCvRange(item.startDate, item.endDate, presentLabel, lang)}"
+                                                    >
+                                                        <span class="bar-label">
+                                                            <span class="bar-role">{item.title}</span>
+                                                            <span class="bar-organization">{item.organization}</span>
+                                                        </span>
+                                                    </div>
+                                                {/if}
+                                            {/each}
+                                        {/each}
+                                    </div>
+                                {/each}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {#if windows.length > 1}
@@ -193,12 +310,17 @@
 
 <style>
     .overlap-chart {
+        --mobile-y-axis-width: 2.75rem;
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
         min-width: 0;
         width: 100%;
         max-width: 100%;
+    }
+
+    .plot-mobile {
+        display: none;
     }
 
     .timeline-nav {
@@ -425,6 +547,139 @@
     }
 
     @media (max-width: 700px) {
+        .plot-desktop {
+            display: none;
+        }
+
+        .plot-mobile {
+            display: block;
+        }
+
+        .timeline-nav {
+            display: none;
+        }
+
+        .chart-body {
+            width: 100%;
+        }
+
+        .mobile-scroll {
+            overflow-x: auto;
+            overflow-y: visible;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .plot-mobile {
+            overflow: visible;
+        }
+
+        .mobile-chart {
+            min-width: 100%;
+        }
+
+        .mobile-header-row,
+        .mobile-body-row {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .mobile-y-spacer {
+            flex: 0 0 var(--mobile-y-axis-width);
+            position: sticky;
+            left: 0;
+            z-index: 3;
+            background-color: var(--color-chrome);
+        }
+
+        .mobile-category-axis {
+            display: flex;
+            gap: var(--space-xs);
+            flex: 0 0 auto;
+            padding-bottom: var(--space-xs);
+            border-bottom: 1px solid var(--color-chrome-border);
+        }
+
+        .mobile-category-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            flex: 0 0 auto;
+            box-sizing: border-box;
+            padding: 0 var(--space-xs);
+            text-align: center;
+        }
+
+        .mobile-category-header .category-name {
+            text-align: center;
+            color: var(--category-color);
+        }
+
+        .mobile-y-axis {
+            flex: 0 0 var(--mobile-y-axis-width);
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            border-right: 1px solid var(--color-chrome-border);
+            background-color: var(--color-chrome);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .mobile-year-tick {
+            position: absolute;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            white-space: nowrap;
+            line-height: 1;
+            text-align: right;
+            padding-right: 0.2rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            text-overflow: clip;
+        }
+
+        .mobile-plot-grid {
+            position: relative;
+            display: flex;
+            gap: var(--space-xs);
+            flex: 0 0 auto;
+        }
+
+        .mobile-grid-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 0;
+            border-top: 1px solid oklch(50% 0 0 / 0.12);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .mobile-category-column {
+            position: relative;
+            flex: 0 0 auto;
+            height: 100%;
+            border-top: 3px solid var(--category-color);
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .mobile-bar {
+            min-width: 0;
+            min-height: 2.75rem;
+            border-left-width: 1px;
+            border-top-width: 3px;
+            border-top-color: var(--bar-color);
+            padding: var(--space-xs) calc(var(--space-xs) / 2);
+        }
+
         .category-name {
             font-size: 0.65rem;
         }

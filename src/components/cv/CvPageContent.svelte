@@ -286,7 +286,21 @@
     }
 
     :global(.cv-section[data-section='career-timeline'] .cv-section-content) {
-        overflow-x: visible;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    @media (max-width: 700px) {
+        :global(.cv-section[data-section='career-timeline'] .cv-section-content) {
+            overflow-x: clip;
+            overflow-y: visible;
+        }
+    }
+
+    @media (min-width: 701px) {
+        :global(.cv-section[data-section='career-timeline'] .cv-section-content) {
+            overflow-x: visible;
+        }
     }
 
 </style>

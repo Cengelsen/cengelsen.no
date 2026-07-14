@@ -72,6 +72,12 @@ const CATEGORY_GAP_REM = 0.5;
 const CATEGORY_CHROME_REM = 0.15 + 1 / 16;
 const TIME_SCALE_REM = 0.45;
 const PLOT_PADDING_REM = 0.5;
+export const MOBILE_LANE_WIDTH_REM = 5.5;
+export const MOBILE_CATEGORY_MIN_WIDTH_REM = 6;
+export const MOBILE_TIME_SCALE_REM = 0.55;
+export const MOBILE_CATEGORY_GAP_REM = 0.35;
+export const MOBILE_Y_AXIS_WIDTH_REM = 2.75;
+export const MOBILE_AXIS_INSET_PERCENT = 2;
 
 export const TIMELINE_EARLIEST_YEAR = 1997;
 export const TIMELINE_WINDOW_YEARS = 5;
@@ -152,16 +158,23 @@ function organizationColor(organization: string, palette: Map<string, string>): 
 	return color;
 }
 
-function buildWindowTicks(axisMinMonth: MonthIndex): { month: MonthIndex; label: string }[] {
+function buildRangeTicks(
+	axisMinMonth: MonthIndex,
+	axisMaxMonth: MonthIndex
+): { month: MonthIndex; label: string }[] {
 	const ticks: { month: MonthIndex; label: string }[] = [];
 	const startYear = Math.floor(axisMinMonth / 12);
-	const endYear = Math.floor((axisMinMonth + TIMELINE_WINDOW_MONTHS) / 12);
+	const endYear = Math.floor(axisMaxMonth / 12);
 
 	for (let year = startYear; year <= endYear; year++) {
 		ticks.push({ month: year * 12, label: String(year) });
 	}
 
 	return ticks;
+}
+
+function buildWindowTicks(axisMinMonth: MonthIndex): { month: MonthIndex; label: string }[] {
+	return buildRangeTicks(axisMinMonth, axisMinMonth + TIMELINE_WINDOW_MONTHS);
 }
 
 export function buildTimelineWindows(
@@ -316,6 +329,74 @@ export function buildCareerTimeline(
 	};
 }
 
+export function earliestCareerMonth(
+	experience: WorkExperience[],
+	volunteer: WorkExperience[],
+	education: Education[],
+	presentMonth: MonthIndex = currentMonthIndex()
+): MonthIndex {
+	const allSources: CareerTimelineSource[] = [
+		...experience.map((entry) => workSource(entry, 'experience')),
+		...education.map(educationSource),
+		...volunteer.map((entry) => workSource(entry, 'volunteer'))
+	];
+
+	if (allSources.length === 0) return TIMELINE_EARLIEST_MONTH;
+
+	let earliest = presentMonth;
+	for (const source of allSources) {
+		earliest = Math.min(earliest, parseCvDate(source.startDate));
+	}
+
+	return Math.floor(earliest / 12) * 12;
+}
+
+export function buildMobileCareerTimeline(
+	experience: WorkExperience[],
+	volunteer: WorkExperience[],
+	education: Education[],
+	presentMonth: MonthIndex = currentMonthIndex()
+): CareerTimelineLayout {
+	const palette = new Map<string, string>();
+	const minMonth = earliestCareerMonth(experience, volunteer, education, presentMonth);
+	const window: TimelineWindow = { index: 0, minMonth, maxMonth: presentMonth };
+
+	const allSources: CareerTimelineSource[] = [
+		...experience.map((entry) => workSource(entry, 'experience')),
+		...education.map(educationSource),
+		...volunteer.map((entry) => workSource(entry, 'volunteer'))
+	];
+
+	for (const source of allSources) {
+		organizationColor(source.organization, palette);
+	}
+
+	const sources = allSources.filter((source) => {
+		const startMonth = parseCvDate(source.startDate);
+		const endMonth = endCvDate(source.endDate, presentMonth);
+		return entryOverlapsWindow(startMonth, endMonth, window);
+	});
+
+	const items: CareerTimelineEntry[] = [];
+	for (const kind of KIND_PRIORITY_ORDER) {
+		const kindSources = sources.filter((source) => source.kind === kind);
+		const { items: kindItems } = assignLanes(kindSources, presentMonth, palette);
+		items.push(...kindItems);
+	}
+
+	const axisMinMonth = minMonth;
+	const axisMaxMonth = presentMonth;
+
+	return {
+		items,
+		laneCount: items.length > 0 ? Math.max(...items.map((item) => item.lane)) + 1 : 1,
+		window,
+		axisMinMonth,
+		axisMaxMonth,
+		ticks: buildRangeTicks(axisMinMonth, axisMaxMonth)
+	};
+}
+
 function blockContentHeightRem(item: CareerTimelineEntry): number {
 	const labelChars = Math.max(item.organization.length, item.title.length);
 	return Math.max(LANE_MIN_HEIGHT_REM, labelChars * 0.14);
@@ -361,6 +442,63 @@ export function plotCategoryHeightRem(categories: CareerTimelineCategoryLayout[]
 
 export function plotTimeWidthRem(): number {
 	return TIMELINE_WINDOW_MONTHS * TIME_SCALE_REM + PLOT_PADDING_REM;
+}
+
+export function monthPositionPadded(
+	month: MonthIndex,
+	minMonth: MonthIndex,
+	maxMonth: MonthIndex,
+	insetPercent: number = MOBILE_AXIS_INSET_PERCENT
+): number {
+	const span = Math.max(maxMonth - minMonth, 1);
+	const raw = ((maxMonth - month) / span) * 100;
+	const scale = (100 - insetPercent * 2) / 100;
+	return insetPercent + raw * scale;
+}
+
+export function clippedBarPositionVertical(
+	startMonth: MonthIndex,
+	endMonth: MonthIndex,
+	window: TimelineWindow,
+	axisMinMonth: MonthIndex,
+	axisMaxMonth: MonthIndex,
+	padded = false
+): { top: number; height: number } | null {
+	const visibleStart = Math.max(startMonth, window.minMonth);
+	const visibleEnd = Math.min(endMonth, window.maxMonth);
+	if (visibleStart > visibleEnd) return null;
+
+	const position = padded ? monthPositionPadded : monthPosition;
+	const top = position(visibleEnd, axisMinMonth, axisMaxMonth);
+	const bottom = position(visibleStart, axisMinMonth, axisMaxMonth);
+	return { top, height: Math.max(bottom - top, 2.5) };
+}
+
+export function mobileLaneOffset(
+	laneIndex: number,
+	laneCount: number
+): { left: number; width: number } {
+	const width = 100 / laneCount;
+	return { left: laneIndex * width, width };
+}
+
+export function mobilePlotHeightRem(axisMinMonth: MonthIndex, axisMaxMonth: MonthIndex): number {
+	const monthSpan = Math.max(axisMaxMonth - axisMinMonth, 1);
+	return monthSpan * MOBILE_TIME_SCALE_REM + PLOT_PADDING_REM;
+}
+
+export function mobileCategoryColumnWidthRem(category: CareerTimelineCategoryLayout): number {
+	const laneCount = Math.max(category.lanes.length, 1);
+	return Math.max(MOBILE_CATEGORY_MIN_WIDTH_REM, laneCount * MOBILE_LANE_WIDTH_REM);
+}
+
+export function mobilePlotWidthRem(categories: CareerTimelineCategoryLayout[]): number {
+	if (categories.length === 0) return MOBILE_CATEGORY_MIN_WIDTH_REM;
+
+	return (
+		categories.reduce((sum, category) => sum + mobileCategoryColumnWidthRem(category), 0) +
+		Math.max(categories.length - 1, 0) * MOBILE_CATEGORY_GAP_REM
+	);
 }
 
 export function clippedBarPosition(
