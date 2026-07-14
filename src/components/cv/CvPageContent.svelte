@@ -165,6 +165,8 @@
                         replacedByLabel={t.cv.courseReplacedBy}
                         essayLabel={t.cv.courseEssay}
                         overlapLabel={t.cv.courseOverlap}
+                        replacedSectionLabel={t.cv.courseReplacedSection}
+                        totalCreditsLabel={t.cv.courseCreditsTotal}
                         creditsUnit={t.cv.educationCreditsUnit}
                         typeLabels={{ mandatory: t.cv.courseMandatory, specialization: t.cv.courseSpecialization, elective: t.cv.courseElective }}
                         {lang}

@@ -188,7 +188,27 @@
   }
 }
 
-#let render-coursework(groups) = {
+#let render-coursework(groups, replaced) = {
+  if data.courseworkTotalCredits != none and data.courseworkTotalCredits > 0 [
+    #block(below: 0.8em, width: 100%)[
+      #box(
+        width: 100%,
+        stroke: 0.5pt + luma(190),
+        fill: luma(248),
+        radius: 2pt,
+        inset: (x: 8pt, y: 4pt),
+      )[
+        #grid(
+          columns: (1fr, auto),
+          gutter: 0.5em,
+          align: (left, right),
+          text(size: 8.5pt, weight: "bold")[#data.labels.courseCreditsTotal],
+          text(size: 8.5pt, weight: "bold", fill: accent)[#data.courseworkTotalCredits #data.labels.educationCreditsUnit],
+        )
+      ]
+    ]
+  ]
+
   for group in groups {
     block(below: 0.8em)[
       #grid(
@@ -242,7 +262,9 @@
               align(right, stack(
                 dir: ttb,
                 spacing: 1pt,
-                text(size: 7pt, fill: luma(130))[#course.code],
+                text(size: 7pt, fill: luma(130))[
+                  #course.code#if course.semester != none { " · " + course.semester }
+                ],
                 if course.credits != none {
                   text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #course.credits]
                 },
@@ -263,6 +285,33 @@
       ]
     ]
   }
+
+  if replaced.len() > 0 [
+    #block(below: 0.8em)[
+      #text(size: 9.5pt, weight: "bold")[#data.labels.courseReplacedSection]
+      #v(4pt)
+      #for item in replaced [
+        #box(
+          stroke: 0.5pt + luma(160),
+          radius: 2pt,
+          inset: (x: 4pt, y: 1pt),
+        )[
+          #text(size: 7pt, fill: luma(70))[#item.name]
+          #h(3pt)
+          #text(size: 6.5pt, fill: luma(130))[#item.code]
+          #if item.credits != none [
+            #h(3pt)
+            #text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #item.credits]
+          ]
+          #if item.replacedBy != none [
+            #h(3pt)
+            #text(size: 6.5pt, fill: luma(120), style: "italic")[#data.labels.courseReplacedBy #item.replacedBy]
+          ]
+        ]
+        #h(3pt)
+      ]
+    ]
+  ]
 }
 
 #let render-skills(categories) = {
@@ -387,9 +436,9 @@
   } else if section == "education" and data.education.len() > 0 {
     heading(level: 1)[#data.labels.education]
     render-education(data.education)
-  } else if section == "coursework" and data.courseworkGroups.len() > 0 {
+  } else if section == "coursework" and (data.courseworkGroups.len() > 0 or data.courseworkReplaced.len() > 0) {
     heading(level: 1)[#data.labels.coursework]
-    render-coursework(data.courseworkGroups)
+    render-coursework(data.courseworkGroups, data.courseworkReplaced)
   } else if section == "skills" and data.skills.len() > 0 {
     heading(level: 1)[#data.labels.skills]
     render-skills(data.skills)

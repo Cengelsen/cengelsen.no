@@ -4,6 +4,7 @@
  * and https://www.uib.no/infomedia/123437/tatt-opp-pa-kogvit-for-2019 (historical KOGVIT plan).
  */
 export const courseCreditsByCode: Record<string, number> = {
+	AIKI100: 10,
 	AIKI110: 10,
 	AIKI210: 10,
 	DASPSTAT: 5,
@@ -23,7 +24,7 @@ export const courseCreditsByCode: Record<string, number> = {
 	INFO283: 5,
 	INFO284: 10,
 	INFO282: 10,
-	INFO362: 15,
+	INFO361: 15,
 	INFO371: 15,
 	INFO381: 15,
 	INFO382: 15,

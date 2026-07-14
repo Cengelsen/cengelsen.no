@@ -1,4 +1,5 @@
 import { courseCreditsByCode } from '../data/course-credits';
+import { courseSemestersByCode } from '../data/course-semesters';
 import type { Coursework, CvData, Education } from '../types/cv.types';
 import type { Lang } from './posts';
 
@@ -13,7 +14,8 @@ export function educationDegreeKey(degree: string, field: string, lang: Lang): s
 export function enrichCoursework(coursework: Coursework[]): Coursework[] {
 	return coursework.map((course) => ({
 		...course,
-		credits: course.credits ?? courseCreditsByCode[course.code] ?? 0
+		credits: course.credits ?? courseCreditsByCode[course.code] ?? 0,
+		semester: course.semester ?? courseSemestersByCode[course.code]
 	}));
 }
 

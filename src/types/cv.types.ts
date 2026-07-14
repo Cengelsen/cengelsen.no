@@ -75,11 +75,13 @@ export interface Coursework {
 	institution: string;
 	degrees: string[];
 	credits?: number;
+	semester?: string;
 	description: string;
 	replaces?: string;
 	blogSlug?: string;
 	skillTags?: string[];
 	courseType?: 'mandatory' | 'specialization' | 'elective';
+	courseTypesByDegree?: Partial<Record<string, 'mandatory' | 'specialization' | 'elective'>>;
 }
 
 export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'qualities' | 'contact';

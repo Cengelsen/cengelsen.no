@@ -1,6 +1,9 @@
 <script lang="ts">
     import type { Coursework } from '../../types/cv.types';
-    import { computeDegreeCredits } from '../../lib/education-credits';
+    import { computeDegreeCredits, sumCourseCredits } from '../../lib/education-credits';
+    import { groupCourseworkByDegree, groupCoursesByType, getStandaloneCourses } from '../../lib/coursework';
+    import { formatCourseSemester } from '../../data/course-semesters';
+    import type { Lang } from '../../lib/posts';
     import Fa from 'svelte-fa';
     import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +12,8 @@
     export let replacedByLabel: string = 'Replaced by';
     export let essayLabel: string = 'Essay';
     export let overlapLabel: string = 'Also counts towards this degree';
+    export let replacedSectionLabel: string = 'Replaced courses';
+    export let totalCreditsLabel: string = 'Total';
     export let creditsUnit: string = 'ECTS credits';
     export let typeLabels: Record<string, string> = { mandatory: 'Mandatory', specialization: 'Specialization', elective: 'Elective' };
     export let lang: string = 'no';
@@ -20,30 +25,13 @@
         return acc;
     }, {});
 
-    const typeOrder = ['mandatory', 'specialization', 'elective'] as const;
+    $: grouped = groupCourseworkByDegree(entries);
+    $: standaloneCourses = getStandaloneCourses(entries);
+    $: totalCredits = sumCourseCredits(entries);
 
-    $: grouped = entries.reduce<Record<string, { primary: Coursework[]; overlap: Coursework[] }>>((acc, entry) => {
-        const primary = entry.degrees[0];
-        (acc[primary] ??= { primary: [], overlap: [] }).primary.push(entry);
-
-        for (const deg of entry.degrees.slice(1)) {
-            (acc[deg] ??= { primary: [], overlap: [] }).overlap.push(entry);
-        }
-        return acc;
-    }, {});
-
-    function groupByType(courses: Coursework[]): { type: string | null; courses: Coursework[] }[] {
-        const hasTypes = courses.some(c => c.courseType);
-        if (!hasTypes) return [{ type: null, courses }];
-
-        const groups: { type: string | null; courses: Coursework[] }[] = [];
-        for (const t of typeOrder) {
-            const matching = courses.filter(c => c.courseType === t);
-            if (matching.length > 0) groups.push({ type: t, courses: matching });
-        }
-        const untyped = courses.filter(c => !c.courseType);
-        if (untyped.length > 0) groups.push({ type: null, courses: untyped });
-        return groups;
+    function semesterLabel(code: string | undefined): string | undefined {
+        if (!code) return undefined;
+        return formatCourseSemester(code, lang as Lang);
     }
 
     function hasCredits(credits: number | undefined): credits is number {
@@ -52,6 +40,12 @@
 </script>
 
 <div class="coursework-section">
+    {#if totalCredits > 0}
+        <div class="coursework-total">
+            <span class="coursework-total-label">{totalCreditsLabel}</span>
+            <span class="coursework-total-value">{totalCredits} {creditsUnit}</span>
+        </div>
+    {/if}
     {#each Object.entries(grouped) as [degree, { primary, overlap }]}
         {@const degreeCredits = computeDegreeCredits(entries, degree)}
         <div class="degree-group">
@@ -68,7 +62,9 @@
                         {#each overlap as course}
                             <li class="overlap-item">
                                 <span class="overlap-name">{course.name}</span>
-                                <span class="overlap-code">{course.code}</span>
+                                <span class="overlap-code">
+                                    {course.code}{#if course.semester} · {semesterLabel(course.semester)}{/if}
+                                </span>
                                 {#if hasCredits(course.credits)}
                                     <span class="overlap-credits">{course.credits}</span>
                                 {/if}
@@ -78,7 +74,7 @@
                 </div>
                 <hr class="overlap-divider" />
             {/if}
-            {#each groupByType(primary) as { type, courses }}
+            {#each groupCoursesByType(primary, degree) as { type, courses: typedCourses }}
                 <div
                     class="course-group"
                     class:type-group={type != null}
@@ -90,7 +86,7 @@
                         <span class="type-label type-label--{type}">{typeLabels[type]}</span>
                     {/if}
                     <div class="course-grid">
-                        {#each courses as course}
+                        {#each typedCourses as course}
                             {@const replacedBy = replacedByMap[course.code]}
                             <div
                                 class="course-card"
@@ -126,7 +122,9 @@
                                     </a>
                                 {/if}
                                 <div class="course-footer">
-                                    <span class="course-code">{course.code}</span>
+                                    <span class="course-code">
+                                        {course.code}{#if course.semester} · {semesterLabel(course.semester)}{/if}
+                                    </span>
                                     {#if course.replaces}
                                         <span class="course-footer-note">
                                             {replacesLabel} {course.replaces}
@@ -144,6 +142,30 @@
             {/each}
         </div>
     {/each}
+    {#if standaloneCourses.length > 0}
+        <div class="degree-group replaced-group">
+            <div class="degree-header">
+                <h4 class="degree-name">{replacedSectionLabel}</h4>
+            </div>
+            <ul class="overlap-list">
+                {#each standaloneCourses as course}
+                    {@const replacedBy = replacedByMap[course.code]}
+                    <li class="overlap-item">
+                        <span class="overlap-name">{course.name}</span>
+                        <span class="overlap-code">
+                            {course.code}{#if course.semester} · {semesterLabel(course.semester)}{/if}
+                        </span>
+                        {#if hasCredits(course.credits)}
+                            <span class="overlap-credits">{course.credits}</span>
+                        {/if}
+                        {#if replacedBy}
+                            <span class="overlap-replaced">{replacedByLabel} {replacedBy.code}</span>
+                        {/if}
+                    </li>
+                {/each}
+            </ul>
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -153,6 +175,31 @@
         gap: var(--space-lg);
         min-width: 0;
         max-width: 100%;
+    }
+
+    .coursework-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-sm);
+        width: 100%;
+        padding: var(--space-xs) var(--space-md);
+        border: 1px solid var(--color-chrome-border, oklch(50% 0 0 / 0.15));
+        border-radius: var(--radius-md);
+        background-color: oklch(50% 0 0 / 0.04);
+    }
+
+    .coursework-total-label {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+
+    .coursework-total-value {
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        color: var(--color-accent);
+        white-space: nowrap;
     }
 
     .degree-header {
@@ -516,5 +563,11 @@
         font-size: 0.7rem;
         color: var(--color-muted);
         font-family: var(--font-mono, monospace);
+    }
+
+    .overlap-replaced {
+        font-size: 0.7rem;
+        color: var(--color-muted);
+        font-style: italic;
     }
 </style>

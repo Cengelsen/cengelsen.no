@@ -42,6 +42,8 @@ export interface Translations {
 		courseReplacedBy: string;
 		courseEssay: string;
 		courseOverlap: string;
+		courseReplacedSection: string;
+		courseCreditsTotal: string;
 		courseMandatory: string;
 		courseSpecialization: string;
 		courseElective: string;
