@@ -21,6 +21,7 @@ export interface Education {
 	institution: string;
 	degree: string;
 	field: string;
+	credits?: number;
 	startDate: string;
 	endDate?: string;
 	description?: string;
@@ -36,6 +37,12 @@ export interface SkillCategory {
 export interface LanguageProficiency {
 	language: string;
 	proficiency: string;
+}
+
+export interface QualityValue {
+	name: string;
+	description: string;
+	profiles?: string[];
 }
 
 export interface Certificate {
@@ -67,14 +74,17 @@ export interface Coursework {
 	code: string;
 	institution: string;
 	degrees: string[];
+	credits?: number;
+	semester?: string;
 	description: string;
 	replaces?: string;
 	blogSlug?: string;
 	skillTags?: string[];
 	courseType?: 'mandatory' | 'specialization' | 'elective';
+	courseTypesByDegree?: Partial<Record<string, 'mandatory' | 'specialization' | 'elective'>>;
 }
 
-export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'contact';
+export type CvSectionKey = 'experience' | 'volunteer' | 'education' | 'coursework' | 'skills' | 'languages' | 'certificates' | 'projects' | 'qualities' | 'contact';
 
 export interface CvProfile {
 	id: string;
@@ -94,6 +104,7 @@ export interface CvData {
 	languages: LanguageProficiency[];
 	certificates: Certificate[];
 	projects: Project[];
+	qualities: QualityValue[];
 	contact: ContactLink[];
 }
 

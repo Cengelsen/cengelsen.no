@@ -81,4 +81,36 @@
     .cert-link:hover {
         text-decoration: underline;
     }
+
+    :global(.cv-section--compact) .certificates-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-sm);
+    }
+
+    :global(.cv-section--compact) .cert-item {
+        padding: var(--space-sm);
+        gap: var(--space-sm);
+        border-radius: var(--radius-sm);
+    }
+
+    :global(.cv-section--compact) .cert-name {
+        font-size: var(--font-size-sm);
+    }
+
+    :global(.cv-section--compact) .cert-issuer,
+    :global(.cv-section--compact) .cert-date {
+        font-size: 0.8125rem;
+        margin-top: 2px;
+    }
+
+    :global(.cv-section--compact) .cert-link {
+        font-size: 0.8125rem;
+    }
+
+    @media (max-width: 700px) {
+        :global(.cv-section--compact) .certificates-list {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

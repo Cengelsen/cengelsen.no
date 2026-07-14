@@ -1,10 +1,12 @@
 <script lang="ts">
-    import type { CvSummary } from '../../types/cv.types';
+    import type { CvSummary, ContactLink } from '../../types/cv.types';
     import Fa from 'svelte-fa';
     import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+    import ContactInfo from './ContactInfo.svelte';
 
     export let name: string = 'Christian Kårbø Engelsen';
     export let summary: CvSummary;
+    export let contact: ContactLink[] = [];
 </script>
 
 <header class="cv-header">
@@ -15,13 +17,18 @@
         {summary.location}
     </p>
     <p class="cv-bio">{summary.bio}</p>
+    {#if contact.length > 0}
+        <div class="cv-header-contact">
+            <ContactInfo entries={contact} variant="header" />
+        </div>
+    {/if}
 </header>
 
 <style>
     .cv-header {
         text-align: center;
         margin-bottom: var(--space-2xl);
-        padding-bottom: var(--space-xl);
+        padding-bottom: 0;
         border-bottom: 2px solid var(--color-chrome-border);
     }
 
@@ -52,11 +59,19 @@
     .cv-bio {
         font-size: var(--font-size-base);
         color: var(--color-mid);
+        width: 100%;
         margin: 0;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
         line-height: var(--line-height-base);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        white-space: normal;
+    }
+
+    .cv-header-contact {
+        margin-top: var(--space-md);
+        padding: var(--space-md) 0;
+        border-top: 1px solid var(--color-chrome-border);
     }
 
     @media (max-width: 700px) {

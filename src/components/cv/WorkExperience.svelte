@@ -135,4 +135,26 @@
             gap: var(--space-xs);
         }
     }
+
+    :global(.cv-section--compact) .timeline {
+        gap: var(--space-md);
+        padding-left: var(--space-md);
+    }
+
+    :global(.cv-section--compact) .timeline-entry::before {
+        left: calc(-1 * var(--space-md) - 7px);
+    }
+
+    :global(.cv-section--compact) .entry-role {
+        font-size: var(--font-size-sm);
+    }
+
+    :global(.cv-section--compact) .entry-description {
+        margin-top: var(--space-xs);
+        padding-left: var(--space-md);
+    }
+
+    :global(.cv-section--compact) .entry-description li {
+        margin-bottom: 2px;
+    }
 </style>

@@ -2,6 +2,7 @@
 #let accent = rgb(data.accentColor)
 #let profile = data.profileId
 #let is-developer = profile == "developer"
+#let is-sysadmin = profile == "systemadministrator"
 #let is-conservative = profile == "administrator"
 #let is-functional = profile == "organization-builder"
 
@@ -85,14 +86,17 @@
   #text(size: 9pt, fill: luma(110))[#data.summary.location]
   #v(6pt)
   #text(size: if is-functional { 9.5pt } else { 9pt }, fill: luma(70))[#data.summary.bio]
-  #if (is-developer or is-functional) and data.contact.len() > 0 [
-    #v(8pt)
+  #if data.contact.len() > 0 [
+    #v(6pt)
+    #line(length: 100%, stroke: 0.5pt + luma(210))
+    #v(6pt)
     #{
       let items = data.contact.map(entry => {
         [#text(size: 8pt, weight: 600, fill: luma(80))[#entry.platform] #h(2pt) #text(size: 8pt, fill: accent)[#link(entry.url)[#entry.label]]]
       })
       items.join([#h(0.6em)#text(size: 8pt, fill: luma(170))[|]#h(0.6em)])
     }
+    #v(6pt)
   ]
 ]
 #v(4pt)
@@ -150,12 +154,35 @@
       #grid(
         columns: (1fr, auto),
         gutter: 0.5em,
-        text(size: 10pt, weight: "bold")[#entry.degree — #entry.field],
-        text(size: 8pt, fill: luma(110))[
-          #entry.startDate — #if entry.endDate == none { data.labels.present } else { entry.endDate }
-        ],
+        align: (left, right),
+        text(size: 10pt, weight: "bold")[#entry.field],
+        align(right, stack(
+          dir: ttb,
+          spacing: 2pt,
+          if entry.credits != none [
+            box(
+              fill: accent.lighten(88%),
+              stroke: 0.5pt + accent.lighten(60%),
+              radius: 2pt,
+              inset: (x: 5pt, y: 2pt),
+            )[
+              #text(size: 8pt, weight: "bold", fill: accent)[
+                #entry.credits #data.labels.educationCreditsUnit
+              ]
+            ]
+          ],
+          text(size: 8pt, fill: luma(110))[
+            #entry.startDate — #if entry.endDate == none { data.labels.present } else { entry.endDate }
+          ],
+        )),
       )
-      #text(size: 9pt, fill: luma(70))[#entry.institution]
+      #text(size: 9pt, fill: luma(70))[
+        #entry.institution
+        #h(0.25em)
+        #text(fill: luma(110))[·]
+        #h(0.25em)
+        #entry.degree
+      ]
       #if entry.description != none [
         #v(2pt)
         #text(size: 9pt, fill: luma(50))[#entry.description]
@@ -164,10 +191,38 @@
   }
 }
 
-#let render-coursework(groups) = {
+#let render-coursework(groups, replaced) = {
+  if data.courseworkTotalCredits != none and data.courseworkTotalCredits > 0 [
+    #block(below: 0.8em, width: 100%)[
+      #box(
+        width: 100%,
+        stroke: 0.5pt + luma(190),
+        fill: luma(248),
+        radius: 2pt,
+        inset: (x: 8pt, y: 4pt),
+      )[
+        #grid(
+          columns: (1fr, auto),
+          gutter: 0.5em,
+          align: (left, right),
+          text(size: 8.5pt, weight: "bold")[#data.labels.courseCreditsTotal],
+          text(size: 8.5pt, weight: "bold", fill: accent)[#data.courseworkTotalCredits #data.labels.educationCreditsUnit],
+        )
+      ]
+    ]
+  ]
+
   for group in groups {
     block(below: 0.8em)[
-      #text(size: 9.5pt, weight: "bold")[#group.degree]
+      #grid(
+        columns: (1fr, auto),
+        gutter: 0.5em,
+        align: (left, right),
+        text(size: 9.5pt, weight: "bold")[#group.degree],
+        if group.credits != none and group.credits > 0 [
+          text(size: 8pt, weight: "bold", fill: accent)[#group.credits #data.labels.educationCreditsUnit]
+        ],
+      )
       #v(4pt)
 
       #if group.overlap.len() > 0 [
@@ -182,6 +237,10 @@
             #text(size: 7pt, fill: luma(70))[#item.name]
             #h(3pt)
             #text(size: 6.5pt, fill: luma(130))[#item.code]
+            #if item.credits != none [
+              #h(3pt)
+              #text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #item.credits]
+            ]
           ]
           #h(3pt)
         ]
@@ -201,8 +260,18 @@
             #grid(
               columns: (1fr, auto),
               gutter: 4pt,
+              align: (left, right),
               text(size: 8pt, weight: 600)[#course.name],
-              text(size: 7pt, fill: luma(130))[#course.code],
+              align(right, stack(
+                dir: ttb,
+                spacing: 1pt,
+                text(size: 7pt, fill: luma(130))[
+                  #course.code#if course.semester != none { " · " + course.semester }
+                ],
+                if course.credits != none {
+                  text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #course.credits]
+                },
+              )),
             )
             #text(size: 7pt, fill: luma(70))[#course.description]
             #if course.skillTags.len() > 0 [
@@ -219,6 +288,33 @@
       ]
     ]
   }
+
+  if replaced.len() > 0 [
+    #block(below: 0.8em)[
+      #text(size: 9.5pt, weight: "bold")[#data.labels.courseReplacedSection]
+      #v(4pt)
+      #for item in replaced [
+        #box(
+          stroke: 0.5pt + luma(160),
+          radius: 2pt,
+          inset: (x: 4pt, y: 1pt),
+        )[
+          #text(size: 7pt, fill: luma(70))[#item.name]
+          #h(3pt)
+          #text(size: 6.5pt, fill: luma(130))[#item.code]
+          #if item.credits != none [
+            #h(3pt)
+            #text(size: 6.5pt, weight: "bold", fill: accent)[#data.labels.courseCreditsLabel #item.credits]
+          ]
+          #if item.replacedBy != none [
+            #h(3pt)
+            #text(size: 6.5pt, fill: luma(120), style: "italic")[#data.labels.courseReplacedBy #item.replacedBy]
+          ]
+        ]
+        #h(3pt)
+      ]
+    ]
+  ]
 }
 
 #let render-skills(categories) = {
@@ -262,6 +358,16 @@
         text(size: 9pt, weight: 600)[#entry.language],
         text(size: 8pt, fill: luma(110), style: "italic")[#entry.proficiency],
       )
+    ]
+  }
+}
+
+#let render-qualities(entries) = {
+  for entry in entries {
+    block(below: 4pt)[
+      #text(size: 9pt, weight: 600)[#entry.name]
+      #linebreak()
+      #text(size: 8pt, fill: luma(70))[#entry.description]
     ]
   }
 }
@@ -333,9 +439,9 @@
   } else if section == "education" and data.education.len() > 0 {
     heading(level: 1)[#data.labels.education]
     render-education(data.education)
-  } else if section == "coursework" and data.courseworkGroups.len() > 0 {
+  } else if section == "coursework" and (data.courseworkGroups.len() > 0 or data.courseworkReplaced.len() > 0) {
     heading(level: 1)[#data.labels.coursework]
-    render-coursework(data.courseworkGroups)
+    render-coursework(data.courseworkGroups, data.courseworkReplaced)
   } else if section == "skills" and data.skills.len() > 0 {
     heading(level: 1)[#data.labels.skills]
     render-skills(data.skills)
@@ -348,8 +454,8 @@
   } else if section == "projects" and data.projects.len() > 0 {
     heading(level: 1)[#data.labels.projects]
     render-projects(data.projects)
-  } else if section == "contact" and data.contact.len() > 0 and not is-developer and not is-functional {
-    heading(level: 1)[#data.labels.contact]
-    render-contact(data.contact)
+  } else if section == "qualities" and data.qualities.len() > 0 {
+    heading(level: 1)[#data.labels.qualities]
+    render-qualities(data.qualities)
   }
 }

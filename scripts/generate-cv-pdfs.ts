@@ -6,6 +6,10 @@ import { fileURLToPath } from 'url';
 import { cvData } from '../src/data/cv.ts';
 import { cvProfiles, PROFILE_SLUGS } from '../src/data/cv-profiles.ts';
 import { translations } from '../src/i18n/translations.ts';
+import { prepareCv, computeDegreeCredits, sumCourseCredits } from '../src/lib/education-credits.ts';
+import { groupCourseworkByDegree, groupCoursesByType, getStandaloneCourses } from '../src/lib/coursework.ts';
+import { formatCourseSemester } from '../src/data/course-semesters.ts';
+import type { Lang } from '../src/lib/posts.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,6 +22,7 @@ const CV_NAME = 'Christian Kårbø Engelsen';
 
 const ACCENT_HEX: Record<string, string> = {
 	'oklch(55% 0.2 250)': '#2563eb',
+	'oklch(50% 0.14 165)': '#2d7a6a',
 	'oklch(35% 0.10 260)': '#1e3a5f',
 	'oklch(65% 0.18 50)': '#c27832',
 	'oklch(80% 0.16 75)': '#b89530'
@@ -25,6 +30,7 @@ const ACCENT_HEX: Record<string, string> = {
 
 const DEFAULT_ACCENT = 'oklch(80% 0.16 75)';
 const DEFAULT_SECTIONS = [
+	'qualities',
 	'experience',
 	'volunteer',
 	'education',
@@ -50,70 +56,69 @@ function filterByProfile<T extends { profiles?: string[] }>(
 interface SimpleCourse {
 	name: string;
 	code: string;
+	credits: number | null;
+	semester: string | null;
 	description: string;
 	skillTags: string[];
 	replaces: string | null;
 }
 
-function simpleCourse(c: Record<string, unknown>): SimpleCourse {
+function simpleCourse(
+	c: import('../src/types/cv.types.ts').Coursework,
+	lang: Lang
+): SimpleCourse {
 	return {
-		name: c.name as string,
-		code: c.code as string,
-		description: c.description as string,
-		skillTags: (c.skillTags as string[]) || [],
-		replaces: (c.replaces as string) || null
+		name: c.name,
+		code: c.code,
+		credits: c.credits && c.credits > 0 ? c.credits : null,
+		semester: c.semester ? formatCourseSemester(c.semester, lang) : null,
+		description: c.description,
+		skillTags: c.skillTags || [],
+		replaces: c.replaces || null
 	};
 }
 
 function processCoursework(
-	coursework: Record<string, unknown>[],
-	typeLabels: Record<string, string>
+	coursework: import('../src/types/cv.types.ts').Coursework[],
+	typeLabels: Record<string, string>,
+	lang: Lang
 ) {
-	const grouped: Record<string, { primary: Record<string, unknown>[]; overlap: Record<string, unknown>[] }> = {};
+	const grouped = groupCourseworkByDegree(coursework);
+	const replacedByMap = coursework.reduce<Record<string, import('../src/types/cv.types.ts').Coursework>>(
+		(acc, entry) => {
+			if (entry.replaces) acc[entry.replaces] = entry;
+			return acc;
+		},
+		{}
+	);
 
-	for (const entry of coursework) {
-		const degrees = entry.degrees as string[];
-		const primary = degrees[0];
-		if (!grouped[primary]) grouped[primary] = { primary: [], overlap: [] };
-		grouped[primary].primary.push(entry);
+	const groups = Object.entries(grouped).map(([degree, { primary, overlap }]) => ({
+		degree,
+		credits: computeDegreeCredits(coursework, degree),
+		overlap: overlap.map((course) => ({
+			name: course.name,
+			code: course.semester
+				? `${course.code} · ${formatCourseSemester(course.semester, lang)}`
+				: course.code,
+			credits: course.credits ?? null
+		})),
+		typeGroups: groupCoursesByType(primary, degree).map(({ type, courses: typedCourses }) => ({
+			type,
+			typeLabel: type ? typeLabels[type] || type : '',
+			courses: typedCourses.map((course) => simpleCourse(course, lang))
+		}))
+	}));
 
-		for (const deg of degrees.slice(1)) {
-			if (!grouped[deg]) grouped[deg] = { primary: [], overlap: [] };
-			grouped[deg].overlap.push(entry);
-		}
-	}
+	const replacedCourses = getStandaloneCourses(coursework).map((course) => ({
+		name: course.name,
+		code: course.semester
+			? `${course.code} · ${formatCourseSemester(course.semester, lang)}`
+			: course.code,
+		credits: course.credits ?? null,
+		replacedBy: replacedByMap[course.code]?.code ?? null
+	}));
 
-	const typeOrder = ['mandatory', 'specialization', 'elective'];
-
-	return Object.entries(grouped).map(([degree, { primary, overlap }]) => {
-		const typeGroups: { type: string | null; typeLabel: string; courses: SimpleCourse[] }[] = [];
-		const hasTypes = primary.some((c) => c.courseType);
-
-		if (hasTypes) {
-			for (const t of typeOrder) {
-				const matching = primary.filter((c) => c.courseType === t);
-				if (matching.length > 0) {
-					typeGroups.push({
-						type: t,
-						typeLabel: typeLabels[t] || t,
-						courses: matching.map(simpleCourse)
-					});
-				}
-			}
-			const untyped = primary.filter((c) => !c.courseType);
-			if (untyped.length > 0) {
-				typeGroups.push({ type: null, typeLabel: '', courses: untyped.map(simpleCourse) });
-			}
-		} else {
-			typeGroups.push({ type: null, typeLabel: '', courses: primary.map(simpleCourse) });
-		}
-
-		return {
-			degree,
-			overlap: overlap.map((c) => ({ name: c.name as string, code: c.code as string })),
-			typeGroups
-		};
-	});
+	return { groups, replacedCourses };
 }
 
 function main() {
@@ -134,7 +139,7 @@ function main() {
 
 	for (const lang of langs) {
 		const t = translations[lang];
-		const cv = cvData[lang];
+		const cv = prepareCv(cvData[lang], lang);
 		const typeLabels: Record<string, string> = {
 			mandatory: t.cv.courseMandatory,
 			specialization: t.cv.courseSpecialization,
@@ -157,12 +162,15 @@ function main() {
 						languages: cv.languages,
 						certificates: filterByProfile(cv.certificates, profileId),
 						projects: filterByProfile(cv.projects, profileId),
+						qualities: filterByProfile(cv.qualities, profileId),
 						contact: cv.contact
 					};
 
 			const summary = profile ? profile.summary : cv.summary;
 			const sections = profile ? profile.sections : DEFAULT_SECTIONS;
 			const accentColor = profile ? toHex(profile.accentColor) : toHex(DEFAULT_ACCENT);
+
+			const coursework = processCoursework(filtered.coursework, typeLabels, lang);
 
 			const payload = {
 				name: CV_NAME,
@@ -174,15 +182,21 @@ function main() {
 					experience: t.cv.experience,
 					volunteer: t.cv.volunteer,
 					education: t.cv.education,
+					educationCreditsUnit: t.cv.educationCreditsUnit,
+					courseCreditsLabel: t.cv.courseCreditsLabel,
 					coursework: t.cv.coursework,
 					skills: t.cv.skills,
 					languages: t.cv.languages,
 					certificates: t.cv.certificates,
 					projects: t.cv.projects,
+					qualities: t.cv.qualities,
 					contact: t.cv.contact,
 					present: t.cv.present,
 					courseReplaces: t.cv.courseReplaces,
+					courseReplacedBy: t.cv.courseReplacedBy,
 					courseOverlap: t.cv.courseOverlap,
+					courseReplacedSection: t.cv.courseReplacedSection,
+					courseCreditsTotal: t.cv.courseCreditsTotal,
 					viewCredential: t.cv.viewCredential,
 					viewProject: t.cv.viewProject,
 					liveDemo: t.cv.liveDemo
@@ -207,14 +221,14 @@ function main() {
 					degree: e.degree,
 					field: e.field,
 					institution: e.institution,
+					credits: e.credits ?? null,
 					startDate: e.startDate,
 					endDate: e.endDate || null,
 					description: e.description || null
 				})),
-				courseworkGroups: processCoursework(
-					filtered.coursework as unknown as Record<string, unknown>[],
-					typeLabels
-				),
+				courseworkGroups: coursework.groups,
+				courseworkReplaced: coursework.replacedCourses,
+				courseworkTotalCredits: sumCourseCredits(filtered.coursework),
 				skills: filtered.skills.map((s) => ({
 					category: s.category,
 					skills: s.skills
@@ -233,6 +247,10 @@ function main() {
 					githubUrl: p.githubUrl || null,
 					liveUrl: p.liveUrl || null,
 					skillTags: p.skillTags || []
+				})),
+				qualities: filtered.qualities.map((q) => ({
+					name: q.name,
+					description: q.description
 				})),
 				contact: filtered.contact
 			};

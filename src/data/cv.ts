@@ -3,8 +3,8 @@ import type { CvDataMap } from '../types/cv.types';
 export const cvData: CvDataMap = {
 	no: {
 		summary: {
-			title: 'Fullstack-utvikler & daglig leder',
-			bio: 'Daglig leder med erfaring innen organisasjonsledelse, markedsføring og organisasjonsbygging. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging.',
+			title: 'Organisasjonsutvikler || teknologientusiast || systemadministrator || ÅKK-forkjemper',
+			bio: 'Teknologientusiast med erfaring innen organisasjonsledelse, programvareutvikling og systemadministrasjon. Brenner for å skape engasjement og vekst gjennom strategisk kommunikasjon og relasjonsbygging, med fokus på IT-prosjekter og åpen kildekode (ÅKK). Elsker å forme, vedlikeholde og effektivisere organisasjonsstrukturer og prosedyrer.',
 			location: 'Bergen, Norge'
 		},
 		experience: [
@@ -18,7 +18,7 @@ export const cvData: CvDataMap = {
 					'Driver aktivt merkevarebygging og rekruttering av frivillige.',
 					'Planlegger og gjennomfører sosiale aktiviteter for et stort frivilligmiljø.'
 				],
-				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsbygging'],
+				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsutvikling'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -45,7 +45,7 @@ export const cvData: CvDataMap = {
 					'Sikret stabil plattform for sendinger, arrangementer og ekstern kommunikasjon.'
 				],
 				skillTags: ['IT-ledelse', 'Rekruttering'],
-				profiles: ['developer', 'administrator']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				company: 'Forsvaret',
@@ -72,7 +72,7 @@ export const cvData: CvDataMap = {
 		},
 		{
 			company: 'AI Safety Bergen',
-			role: 'Chief Technology Developer',
+			role: 'Teknologidirektør',
 			startDate: '2025-02',
 			endDate: '2026-01',
 			description: [
@@ -91,7 +91,7 @@ export const cvData: CvDataMap = {
 				'Bidro til IT-drift og teknisk støtte for Hulen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['developer']
+			profiles: ['developer', 'systemadministrator']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -125,7 +125,7 @@ export const cvData: CvDataMap = {
 				'Organiserte sosiale arrangementer for medlemmene.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -137,7 +137,7 @@ export const cvData: CvDataMap = {
 				'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
 			],
 			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Azure', 'Git'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
 			company: 'friByte',
@@ -149,7 +149,7 @@ export const cvData: CvDataMap = {
 				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
 			],
 			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -171,7 +171,7 @@ export const cvData: CvDataMap = {
 				'Assisterte leder med daglig drift og organisering av aktiviteter.'
 			],
 			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -182,7 +182,7 @@ export const cvData: CvDataMap = {
 				'Ansvarlig for IT-drift og teknisk infrastruktur for Studentersamfunnet.'
 			],
 			skillTags: ['IT-ledelse'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
 	education: [
@@ -190,24 +190,24 @@ export const cvData: CvDataMap = {
 			institution: 'Universitetet i Bergen',
 				degree: 'Mastergrad',
 				field: 'Informasjonsvitenskap',
-				startDate: '2024',
-				endDate: '2026',
-				description: '120 studiepoeng. Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
+				startDate: '2024-08',
+				endDate: '2026-07',
+				description: 'Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
 				degree: 'Bachelorgrad',
 				field: 'Kognitiv vitenskap',
-				startDate: '2018',
-				endDate: '2025',
-				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap. 180 studiepoeng.'
+				startDate: '2018-08',
+				endDate: '2024-07',
+				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap.'
 			},
 			{
 				institution: 'Universitetet i Bergen',
 				degree: 'Bachelorgrad',
 				field: 'Kunstig intelligens',
-				startDate: '2022',
-				endDate: '2024',
+				startDate: '2022-08',
+				endDate: '2024-07',
 				description: 'Kunstige agenter, maskinlæring og utvikling av AI-løsninger. Kombinerer informatikk og informasjonsvitenskap.'
 			}
 		],
@@ -218,28 +218,29 @@ export const cvData: CvDataMap = {
 			{ name: 'Deduksjon og Metalogikk', code: 'LOG111', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Naturleg deduksjon for setnings- og predikatlogikk med identitet, modellteori og mengdeteori. Inkluderer metalogikk og bevis for eigenskapar ved formelle bevissystem.', courseType: 'mandatory' },
 			{ name: 'Examen Facultatum, Grunnleggende Lingvistikk', code: 'EXFAC00SK', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Innføring i fonetikk, fonologi, morfologi, syntaks og semantikk. Gir eit teoretisk og praktisk grunnlag for studium innan språkrelaterte fag.', courseType: 'mandatory' },
 			{ name: 'Examen Philosophicum', code: 'EXPHIL-MNSEM', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Kunnskaps- og vitskapsteori, etikk og grunnprinsipp for logikk og argumentasjonsteori. Utviklar kritisk og analytisk kompetanse relevant for eige fagområde.', blogSlug: 'et-innblikk-i-bevissthetsfilosofi', courseType: 'mandatory' },
-			{ name: 'Formelle metoder i informasjonsvitenskap', code: 'INFO102', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Diskret matematikk og formelle metodar med vekt på logikk, mengdeteori og bevisføring. Grunnlag for vidare studium i informatikk og informasjonsvitenskap.', courseType: 'specialization' },
+			{ name: 'Formelle metoder for informasjonsvitenskap', code: 'INFO102', institution: 'Universitetet i Bergen', degrees: [], description: 'Grunnleggjande formelle omgrep og metodar innan informasjonsvitskap, inkludert logikk, mengdelære, relasjonar og funksjonar.' },
+			{ name: 'Formelle Metoder for Informasjonsvitenskap', code: 'INFO104', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Elementær logikk og mengdelære, relasjonar, funksjonar, grafar og tre. Dekker kombinatorikk, sannsyn, informasjonsteori og bereknelegheit.', replaces: 'INFO102', courseType: 'specialization', courseTypesByDegree: { 'Bachelorgrad i kunstig intelligens': 'mandatory' } },
 			{ name: 'Funksjonell Programmering', code: 'INF122', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Det funksjonelle paradigmet med rekursjon, høgare ordens funksjonar og ikkje-muterbare datastrukturar. Programmering i eit funksjonelt språk som Haskell.', skillTags: ['Haskell'], courseType: 'mandatory' },
-			{ name: 'Grunnleggende Algoritmer for Kunstig Intelligens', code: 'INFO283', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Grunnleggjande algoritmar og teknikkar nytta i kunstig intelligens, inkludert søkealgoritmar, heuristiske metodar og optimalisering.', skillTags: ['Python', 'Maskinlæring'], courseType: 'specialization' },
 			{ name: 'Introduksjon til Innovasjon og Entreprenørskap', code: 'MCB201', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Innovasjons- og entreprenørskapsteori med praktisk metodearbeid. Utvikling av forretningsmodellar gjennom deltakarbasert design og konseptutvikling.', blogSlug: 'en-vurdering-av-oculus-rift-sin-innovative-kraft', courseType: 'elective' },
 			{ name: 'Introduksjon til Kognitiv Vitenskap', code: 'KOGVIT101', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Tverrfagleg oversikt over kognisjon frå informatikk, lingvistikk, psykologi og filosofi. Dekker kunnskapsrepresentasjon, resonnering, læring, språk, persepsjon og medvit.', blogSlug: 'kan-en-maskin-forstå-språk', courseType: 'mandatory' },
-			{ name: 'Introduksjon til Kunstig Intelligens', code: 'INFO180', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Teoretisk og praktisk grunnlag for kunstig intelligens, inkludert søk i tilstandsrom, kunnskapsrepresentasjon, inferens og maskinlæring.', skillTags: ['Python', 'Søkealgoritmer'], courseType: 'specialization' },
+			{ name: 'Introduksjon til Kunstig Intelligens', code: 'INFO180', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Teoretisk og praktisk grunnlag for kunstig intelligens, inkludert søk i tilstandsrom, kunnskapsrepresentasjon, inferens og maskinlæring.', skillTags: ['Python', 'Søkealgoritmer'], courseType: 'specialization', courseTypesByDegree: { 'Bachelorgrad i kunstig intelligens': 'mandatory' } },
 			{ name: 'Introduksjon til Sinnsfilosofi', code: 'FIL105', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Moderne sinnsfilosofi og tilhøvet mellom mentale og kroppslege eigenskapar. Dekker behaviorisme, identitetsteori, funksjonalisme og medvitsproblematikken.', courseType: 'mandatory' },
-			{ name: 'Introduksjon til formell logikk', code: 'LOG110', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Innføring i setningslogikk og førsteordens predikatlogikk. Vekt på omsetjing frå naturleg språk til formallogisk språk, sanningstabellar og tremetoden.', courseType: 'mandatory' },
+			{ name: 'Introduksjon til formallogikk', code: 'LOG110', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Innføring i setningslogikk og førsteordens predikatlogikk. Vekt på omsetting frå naturleg språk til formallogisk språk, sanningstabellar som bevissystem i setningslogikken og tre-metoden i setnings- og predikatlogikk. Gir grunnlag for vidare studium i kognitiv vitenskap.', courseType: 'mandatory' },
 			{ name: 'Introduksjon til programmering', code: 'INF100', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Praktisk innføring i programmering med eit moderne språk. Dekker variablar, uttrykk, kontrollflyt, tabellar og filhandtering.', skillTags: ['Python'], courseType: 'mandatory' },
 			{ name: 'Kunnskapsrepresentasjon og Resonnering', code: 'INFO282', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Logikkbasert kunnskapsrepresentasjon og ulike former for resonnering, inkludert deduktiv, standard- og abduktiv resonnering. Dekker også resonnering om kunnskap, handling og endring i multi-agentsystem.', skillTags: ['Prolog'], courseType: 'mandatory' },
-			{ name: 'Maskinlæring', code: 'INFO284', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Vegleia læring med djupnelæring, ikkje-vegleia læring inkludert klustring og forsterkingslæring. Praktiske anvendingar i dataanalyse.', skillTags: ['Python', 'Maskinlæring'], replaces: 'INFO283', courseType: 'specialization' },
+			{ name: 'Maskinlæring', code: 'INFO283', institution: 'Universitetet i Bergen', degrees: [], description: 'Innføring i maskinlæring og dataanalyse. Dekker grunnleggjande metodar for vegleia og ikkje-vegleia læring.', skillTags: ['Python'] },
+			{ name: 'Maskinlæring', code: 'INFO284', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap', 'Bachelorgrad i kunstig intelligens'], description: 'Vegleia læring med djupnelæring, ikkje-vegleia læring inkludert klustring og forsterkingslæring. Praktiske anvendingar i dataanalyse.', skillTags: ['Python', 'Maskinlæring'], replaces: 'INFO283', courseType: 'specialization', courseTypesByDegree: { 'Bachelorgrad i kunstig intelligens': 'mandatory' } },
 			{ name: 'Objekt-orientert Programmering', code: 'INF101', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Vidareføring av programmering med fokus på kodekvalitet. Dekker abstraksjonar, objektorientert design, arv, polymorfi, generiske typar og testing.', skillTags: ['Java'], courseType: 'mandatory' },
 			{ name: 'Språk og Kognisjon', code: 'LING122', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Kognisjonsvitskap relatert til språkleg kunnskap, språktileigning og bruk av språk. Utforskar psykologiske og kognitive aspekt ved språk.', courseType: 'mandatory' },
 			{ name: 'Statistikk for Kognitiv Vitenskap', code: 'DASPSTAT', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kognitiv vitenskap'], description: 'Statistiske metodar og analyse retta mot kognitiv vitenskap. Dekker deskriptiv statistikk, hypotesetesting og dataanalyse for kognitive eksperiment.', skillTags: ['R'], courseType: 'mandatory' },
-			{ name: 'Etikk i Kunstig Intelligens', code: 'AIKI210', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Forklarbar KI (XAI), rettferd, algoritmisk ansvarlighet og tillit, kunstig moral og ansvarleg bruk av KI. Inkluderer øving i populærvitskapleg formidling av KI.', skillTags: ['KI-etikk'], blogSlug: 'en-vurdering-av-den-etiske-bruken-av-ki-i-sosiale-medier' },
-			{ name: 'Kunstige Agenter', code: 'AIKI110', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Innføring i kunstige agentar og multi-agentsystem, inkludert agentmodellering, autonom agentarkitektur, kontrollsystem og grunnleggjande robotikk.', skillTags: ['Python', 'ROS2'] },
-			{ name: 'Formelle Metoder for Informasjonsvitenskap', code: 'INFO104', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Elementær logikk og mengdelære, relasjonar, funksjonar, grafar og tre. Dekker kombinatorikk, sannsyn, informasjonsteori og bereknelegheit.', replaces: 'INFO102' },
-			{ name: 'Forskningsemne innen Kunstig Intelligens', code: 'INFO381', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Avanserte tema innan KI, inkludert kunstig liv, multi-agentsystem, maskinlæring, nevrale nettverk, genetiske algoritmer og naturleg språkprosessering.', skillTags: ['Python', 'Maskinlæring'] },
-			{ name: 'Forskningsemne innen Nettverk og Tekst-analyse', code: 'INFO371', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Metodar for analyse av tekst- og nettverksdata, inkludert språkmodellar, dokumentklustring, vegleia maskinlæring og nettverksmodellar.', skillTags: ['Python', 'NLP'] },
-			{ name: 'Forskningsmetoder i Menneske-Maskin Interaksjon', code: 'INFO362', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Teori og praksis innan IKT-støtta samarbeid (CSCW) og gruppevaresystem. Dekker samarbeidsteknologiar, sosiale nettverk og evaluering av samarbeidsløysingar.' },
-			{ name: 'Logikk for Multi-Agent Systemer', code: 'INFO382', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Formelle logikkar for resonnering om multi-agent-interaksjon, inkludert epistemisk logikk, temporallogikk, koalisjonslogikk og alternating-time temporal logic.' },
-			{ name: 'Masteroppgåve i Informasjonsvitskap', code: 'INFO390', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Sjølvstendig forskingsarbeid under rettleiing om eit relevant tema innanfor informasjonsvitskap. Studenten skal vise avansert kunnskap og vitskapleg metode, meistre bruk av kjelder, og gjere greie for problemstilling, metode og resultat.' },
+			{ name: 'Etikk i Kunstig Intelligens', code: 'AIKI210', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Forklarbar KI (XAI), rettferd, algoritmisk ansvarlighet og tillit, kunstig moral og ansvarleg bruk av KI. Inkluderer øving i populærvitskapleg formidling av KI.', skillTags: ['KI-etikk'], blogSlug: 'en-vurdering-av-den-etiske-bruken-av-ki-i-sosiale-medier', courseType: 'mandatory' },
+			{ name: 'Innføring i kunstig intelligens', code: 'AIKI100', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Brei introduksjon til kunstig intelligens som disiplin, inkludert historisk utvikling, etiske implikasjonar og sentrale delområde som maskinlæring, robotikk og naturleg språkforståing.', courseType: 'mandatory' },
+			{ name: 'Kunstige Agenter', code: 'AIKI110', institution: 'Universitetet i Bergen', degrees: ['Bachelorgrad i kunstig intelligens'], description: 'Innføring i kunstige agentar og multi-agentsystem, inkludert agentmodellering, autonom agentarkitektur, kontrollsystem og grunnleggjande robotikk.', skillTags: ['Python', 'ROS2'], courseType: 'mandatory' },
+			{ name: 'Forskningsemne innen Kunstig Intelligens', code: 'INFO381', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Avanserte tema innan KI, inkludert kunstig liv, multi-agentsystem, maskinlæring, nevrale nettverk, genetiske algoritmer og naturleg språkprosessering.', skillTags: ['Python', 'Maskinlæring'], courseType: 'elective' },
+			{ name: 'Forskningsemne innen Nettverk og Tekst-analyse', code: 'INFO371', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Metodar for analyse av tekst- og nettverksdata, inkludert språkmodellar, dokumentklustring, vegleia maskinlæring og nettverksmodellar.', skillTags: ['Python', 'NLP'], courseType: 'elective' },
+			{ name: 'Forskingstema i menneske-maskin interaksjon (HCI)', code: 'INFO361', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Innføring i forskingsfeltet menneske-maskin-interaksjon (HCI). Dekker avanserte konsept og tilnærmingar til analyse og design av interaktive system.', courseType: 'elective' },
+			{ name: 'Logikk for Multi-Agent Systemer', code: 'INFO382', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Formelle logikkar for resonnering om multi-agent-interaksjon, inkludert epistemisk logikk, temporallogikk, koalisjonslogikk og alternating-time temporal logic.', courseType: 'elective' },
+			{ name: 'Masteroppgåve i Informasjonsvitskap', code: 'INFO390', institution: 'Universitetet i Bergen', degrees: ['Mastergrad i informasjonsvitenskap'], description: 'Sjølvstendig forskingsarbeid under rettleiing om eit relevant tema innanfor informasjonsvitskap. Studenten skal vise avansert kunnskap og vitskapleg metode, meistre bruk av kjelder, og gjere greie for problemstilling, metode og resultat.', courseType: 'mandatory' },
 			{ name: 'Informatikkprosjekt I', code: 'INF218', institution: 'Universitetet i Bergen', degrees: ['Tilleggsemner'], description: 'Sjølvvalgt prosjektarbeid i informatikk gjennomført i samråd med ein rettleiar. Analyse av standardiserings- og evolusjonsprosessar for programmeringsspråk. Inkluderer programmering, dokumentasjon i form av teknisk rapport og munnleg presentasjon.' },
 			{ name: 'Informatikkprosjekt II', code: 'INF319', institution: 'Universitetet i Bergen', degrees: ['Tilleggsemner'], description: 'Avansert prosjektarbeid i informatikk gjennomført i samråd med ein rettleiar. Inkluderer programmering, dokumentasjon i form av teknisk rapport og munnleg presentasjon.', skillTags: ['Python', 'NLP'], blogSlug: 'anvendelse-av-nlp-teknikker-på-tc39s-møtereferater' }
 		],
@@ -257,12 +258,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Databaser & sky',
 				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Verktøy & systemer',
 				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'KI & datavitenskap',
@@ -277,7 +278,7 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Teknisk drift',
 				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring'],
-				profiles: ['administrator']
+				profiles: ['systemadministrator']
 			},
 			{
 				category: 'Generelt',
@@ -288,6 +289,24 @@ export const cvData: CvDataMap = {
 			{ language: 'Norsk (bokmål)', proficiency: 'Morsmål' },
 			{ language: 'Engelsk', proficiency: 'Flytende' },
 			{ language: 'Tysk', proficiency: 'Grunnleggende' }
+		],
+		qualities: [
+			{
+				name: 'Åpenhet',
+				description: 'Tror på åpen kildekode, deling av kunnskap og transparent kommunikasjon.'
+			},
+			{
+				name: 'Engasjement',
+				description: 'Motiveres av å skape engasjement og vekst i team og organisasjoner.'
+			},
+			{
+				name: 'Relasjonsbygging',
+				description: 'Bygger tillit og nettverk på tvers av fagmiljøer og organisasjoner.'
+			},
+			{
+				name: 'Struktur og effektivitet',
+				description: 'Forme og vedlikeholde organisasjonsstrukturer og prosedyrer som skalerer.'
+			}
 		],
 		certificates: [
 			{
@@ -337,8 +356,8 @@ export const cvData: CvDataMap = {
 	},
 	en: {
 		summary: {
-			title: 'Full-Stack Developer & General Manager',
-			bio: 'General manager with experience in organizational leadership, marketing and organization building. Passionate about creating engagement and growth through strategic communication and relationship building.',
+			title: 'Organization Developer || Technology Enthusiast || System Administrator || Open Source Advocate',
+			bio: 'Technology enthusiast with experience in organizational leadership, software development and system administration. Passionate about creating engagement and growth through strategic communication and relationship building, with a focus on IT projects and open source. Loves shaping, maintaining and streamlining organizational structures and procedures.',
 			location: 'Bergen, Norway'
 		},
 		experience: [
@@ -352,7 +371,7 @@ export const cvData: CvDataMap = {
 					'Actively driving brand building and recruitment of volunteers.',
 					'Planning and executing social activities for a large volunteer community.'
 				],
-				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Building'],
+				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Development'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -379,7 +398,7 @@ export const cvData: CvDataMap = {
 					'Ensured a stable platform for broadcasts, events and external communication.'
 				],
 				skillTags: ['IT Management', 'Recruitment'],
-				profiles: ['developer', 'administrator']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				company: 'Norwegian Armed Forces',
@@ -425,7 +444,7 @@ export const cvData: CvDataMap = {
 				'Contributed to IT operations and technical support for Hulen.'
 			],
 			skillTags: ['Git'],
-			profiles: ['developer']
+			profiles: ['developer', 'systemadministrator']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -459,7 +478,7 @@ export const cvData: CvDataMap = {
 				'Organized social events for members.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -471,7 +490,7 @@ export const cvData: CvDataMap = {
 				'Led the IT department and was responsible for technical infrastructure.'
 			],
 			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Organization Building', 'Azure', 'Git'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
 			company: 'friByte',
@@ -483,7 +502,7 @@ export const cvData: CvDataMap = {
 				'Led the student organization that operates IT services for student associations in Bergen.'
 			],
 			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Organization Building', 'Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Phonofestivalen',
@@ -505,7 +524,7 @@ export const cvData: CvDataMap = {
 				'Assisted the president with daily operations and activity planning.'
 			],
 			skillTags: ['Git', 'Linux', 'System Administration'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -516,7 +535,7 @@ export const cvData: CvDataMap = {
 				'Responsible for IT operations and technical infrastructure for Studentersamfunnet.'
 			],
 			skillTags: ['IT Management'],
-			profiles: ['developer', 'administrator']
+			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
 	education: [
@@ -524,24 +543,24 @@ export const cvData: CvDataMap = {
 			institution: 'University of Bergen',
 				degree: 'Master\'s Degree',
 				field: 'Information Science',
-				startDate: '2024',
-				endDate: '2026',
-				description: '120 ECTS credits. Specialization in information architecture, user behaviour and digital communication.'
+				startDate: '2024-08',
+				endDate: '2026-07',
+				description: 'Specialization in information architecture, user behaviour and digital communication.'
 			},
 			{
 				institution: 'University of Bergen',
 				degree: 'Bachelor\'s Degree',
 				field: 'Cognitive Science',
-				startDate: '2018',
-				endDate: '2025',
-				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science. 180 ECTS credits.'
+				startDate: '2018-08',
+				endDate: '2024-07',
+				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science.'
 			},
 			{
 				institution: 'University of Bergen',
 				degree: 'Bachelor\'s Degree',
 				field: 'Artificial Intelligence',
-				startDate: '2022',
-				endDate: '2024',
+				startDate: '2022-08',
+				endDate: '2024-07',
 				description: 'Artificial agents, machine learning and development of AI solutions. Combines computer science and information science.'
 			}
 		],
@@ -552,28 +571,29 @@ export const cvData: CvDataMap = {
 			{ name: 'Deduction and Metalogic', code: 'LOG111', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Natural deduction for propositional and first-order predicate logic with identity, model theory, and set theory. Includes metalogic and proofs of properties of formal proof systems.', courseType: 'mandatory' },
 			{ name: 'Examen Facultatum, Basic Linguistics', code: 'EXFAC00SK', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Introduction to phonetics, phonology, morphology, syntax, and semantics. Provides a theoretical and practical foundation for language-related studies.', courseType: 'mandatory' },
 			{ name: 'Examen Philosophicum', code: 'EXPHIL-MNSEM', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Philosophy of science, ethics, and fundamentals of logic and argumentation theory. Develops critical and analytical competence relevant to one\'s own field of study.', blogSlug: 'a-short-insight-into-the-philosophy-of-mind', courseType: 'mandatory' },
-			{ name: 'Formal Methods in Information Science', code: 'INFO102', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Discrete mathematics and formal methods with emphasis on logic, set theory, and proof techniques. Foundation for further studies in computer science and information science.', courseType: 'specialization' },
+			{ name: 'Formal Methods for Information Science', code: 'INFO102', institution: 'University of Bergen', degrees: [], description: 'Fundamental formal concepts and methods in information science, including logic, set theory, relations, and functions.' },
+			{ name: 'Formal Methods for Information Science', code: 'INFO104', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Elementary logic and set theory, relations, functions, graphs, and trees. Covers combinatorics, probability, information theory, and computability.', replaces: 'INFO102', courseType: 'specialization', courseTypesByDegree: { 'Bachelor\'s in Artificial Intelligence': 'mandatory' } },
 			{ name: 'Functional Programming', code: 'INF122', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'The functional paradigm with recursion, higher-order functions, and immutable data structures. Programming in a functional language such as Haskell.', skillTags: ['Haskell'], courseType: 'mandatory' },
-			{ name: 'Fundamental Algorithms for Artificial Intelligence', code: 'INFO283', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Fundamental algorithms and techniques used in artificial intelligence, including search algorithms, heuristic methods, and optimization.', skillTags: ['Python', 'Machine Learning'], courseType: 'specialization' },
 			{ name: 'Introduction to Innovation and Entrepreneurship', code: 'MCB201', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Innovation and entrepreneurship theory with practical methodology. Development of business models through participatory design and concept development.', blogSlug: 'a-review-of-the-innovative-power-of-the-oculus-rift', courseType: 'elective' },
 			{ name: 'Introduction to Cognitive Science', code: 'KOGVIT101', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Interdisciplinary overview of cognition from computer science, linguistics, psychology, and philosophy. Covers knowledge representation, reasoning, learning, language, perception, and consciousness.', blogSlug: 'can-a-machine-understand-language', courseType: 'mandatory' },
-			{ name: 'Introduction to Artificial Intelligence', code: 'INFO180', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Theoretical and practical foundations of AI including state-space search, knowledge representation, inference, and machine learning.', skillTags: ['Python', 'Search Algorithms'], courseType: 'specialization' },
+			{ name: 'Introduction to Artificial Intelligence', code: 'INFO180', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Theoretical and practical foundations of AI including state-space search, knowledge representation, inference, and machine learning.', skillTags: ['Python', 'Search Algorithms'], courseType: 'specialization', courseTypesByDegree: { 'Bachelor\'s in Artificial Intelligence': 'mandatory' } },
 			{ name: 'Introduction to Philosophy of Mind', code: 'FIL105', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Modern philosophy of mind and the relationship between mental and physical properties. Covers behaviorism, identity theory, functionalism, and the problem of consciousness.', courseType: 'mandatory' },
-			{ name: 'Introduction to Formal Logic', code: 'LOG110', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Introduction to propositional logic and first-order predicate logic. Emphasis on translation from natural language to formal logical language, truth tables, and the tree method.', courseType: 'mandatory' },
+			{ name: 'Introduction to Formal Logic', code: 'LOG110', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Introduction to propositional logic and first-order predicate logic. Emphasis on translating natural language into formal logic, truth tables as a proof system in propositional logic, and the tree method in propositional and predicate logic. Provides a foundation for further study in cognitive science.', courseType: 'mandatory' },
 			{ name: 'Introduction to Programming', code: 'INF100', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Practical introduction to programming using a modern language. Covers variables, expressions, control flow, arrays, and file handling.', skillTags: ['Python'], courseType: 'mandatory' },
 			{ name: 'Knowledge Representation and Reasoning', code: 'INFO282', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Logic-based knowledge representation and various forms of reasoning including deductive, default, and abductive reasoning. Also covers reasoning about knowledge, action, and change in multi-agent systems.', skillTags: ['Prolog'], courseType: 'mandatory' },
-			{ name: 'Machine Learning', code: 'INFO284', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Supervised learning with deep learning, unsupervised learning including clustering, and reinforcement learning. Practical applications in data analysis.', skillTags: ['Python', 'Machine Learning'], replaces: 'INFO283', courseType: 'specialization' },
+			{ name: 'Machine Learning', code: 'INFO283', institution: 'University of Bergen', degrees: [], description: 'Introduction to machine learning and data analysis. Covers fundamental methods for supervised and unsupervised learning.', skillTags: ['Python'] },
+			{ name: 'Machine Learning', code: 'INFO284', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science', 'Bachelor\'s in Artificial Intelligence'], description: 'Supervised learning with deep learning, unsupervised learning including clustering, and reinforcement learning. Practical applications in data analysis.', skillTags: ['Python', 'Machine Learning'], replaces: 'INFO283', courseType: 'specialization', courseTypesByDegree: { 'Bachelor\'s in Artificial Intelligence': 'mandatory' } },
 			{ name: 'Object-Oriented Programming', code: 'INF101', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Continuation of programming with focus on code quality. Covers abstractions, object-oriented design, inheritance, polymorphism, generics, and testing.', skillTags: ['Java'], courseType: 'mandatory' },
 			{ name: 'Language and Cognition', code: 'LING122', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Cognitive science related to linguistic knowledge, language acquisition, and language use. Explores the psychological and cognitive aspects of language.', courseType: 'mandatory' },
 			{ name: 'Statistics for Cognitive Science', code: 'DASPSTAT', institution: 'University of Bergen', degrees: ['Bachelor\'s in Cognitive Science'], description: 'Statistical methods and analysis for cognitive science. Covers descriptive statistics, hypothesis testing, and data analysis for cognitive experiments.', skillTags: ['R'], courseType: 'mandatory' },
-			{ name: 'Ethics in Artificial Intelligence', code: 'AIKI210', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Explainable AI (XAI), fairness, algorithmic accountability and trust, artificial morality, and responsible use of AI. Includes practice in popular dissemination of AI.', skillTags: ['AI Ethics'], blogSlug: 'examination-of-the-ethical-use-of-ai-in-social-media' },
-			{ name: 'Artificial Agents', code: 'AIKI110', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Introduction to artificial agents and multi-agent systems, including agent modeling, autonomous agent architecture, control systems, and basic robotics.', skillTags: ['Python', 'ROS2'] },
-			{ name: 'Formal Methods for Information Science', code: 'INFO104', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Elementary logic and set theory, relations, functions, graphs, and trees. Covers combinatorics, probability, information theory, and computability.', replaces: 'INFO102' },
-			{ name: 'Research Topic in Artificial Intelligence', code: 'INFO381', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Advanced topics in AI including artificial life, multi-agent systems, machine learning, neural networks, genetic algorithms, and natural language processing.', skillTags: ['Python', 'Machine Learning'] },
-			{ name: 'Research Topic in Networks and Text Analysis', code: 'INFO371', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Methods for analyzing text and network data, including language models, document clustering, supervised machine learning, and network models.', skillTags: ['Python', 'NLP'] },
-			{ name: 'Research Methods in Human-Computer Interaction', code: 'INFO362', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Theory and practice of computer-supported cooperative work (CSCW) and groupware systems. Covers collaboration technologies, social networks, and evaluation of cooperative solutions.' },
-			{ name: 'Logic for Multi-Agent Systems', code: 'INFO382', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Formal logics for reasoning about multi-agent interaction, including epistemic logic, temporal logic, coalition logic, and alternating-time temporal logic.' },
-			{ name: 'Master\'s Thesis in Information Science', code: 'INFO390', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Independent research project under supervision on a relevant topic in information science. Demonstrates advanced knowledge and scientific methodology, including problem formulation, literature review, data collection, analysis and critical evaluation.' },
+			{ name: 'Ethics in Artificial Intelligence', code: 'AIKI210', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Explainable AI (XAI), fairness, algorithmic accountability and trust, artificial morality, and responsible use of AI. Includes practice in popular dissemination of AI.', skillTags: ['AI Ethics'], blogSlug: 'examination-of-the-ethical-use-of-ai-in-social-media', courseType: 'mandatory' },
+			{ name: 'Introduction to Artificial Intelligence', code: 'AIKI100', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Broad introduction to artificial intelligence as a discipline, including historical development, ethical implications, and key subfields such as machine learning, robotics, and natural language understanding.', courseType: 'mandatory' },
+			{ name: 'Artificial Agents', code: 'AIKI110', institution: 'University of Bergen', degrees: ['Bachelor\'s in Artificial Intelligence'], description: 'Introduction to artificial agents and multi-agent systems, including agent modeling, autonomous agent architecture, control systems, and basic robotics.', skillTags: ['Python', 'ROS2'], courseType: 'mandatory' },
+			{ name: 'Research Topic in Artificial Intelligence', code: 'INFO381', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Advanced topics in AI including artificial life, multi-agent systems, machine learning, neural networks, genetic algorithms, and natural language processing.', skillTags: ['Python', 'Machine Learning'], courseType: 'elective' },
+			{ name: 'Research Topic in Networks and Text Analysis', code: 'INFO371', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Methods for analyzing text and network data, including language models, document clustering, supervised machine learning, and network models.', skillTags: ['Python', 'NLP'], courseType: 'elective' },
+			{ name: 'Research Topics in Human-Computer Interaction', code: 'INFO361', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Introduction to the HCI research field. Covers advanced concepts and approaches for analyzing and designing interactive systems.', courseType: 'elective' },
+			{ name: 'Logic for Multi-Agent Systems', code: 'INFO382', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Formal logics for reasoning about multi-agent interaction, including epistemic logic, temporal logic, coalition logic, and alternating-time temporal logic.', courseType: 'elective' },
+			{ name: 'Master\'s Thesis in Information Science', code: 'INFO390', institution: 'University of Bergen', degrees: ['Master\'s in Information Science'], description: 'Independent research project under supervision on a relevant topic in information science. Demonstrates advanced knowledge and scientific methodology, including problem formulation, literature review, data collection, analysis and critical evaluation.', courseType: 'mandatory' },
 			{ name: 'Self-chosen Informatics Project I', code: 'INF218', institution: 'University of Bergen', degrees: ['Additional courses'], description: 'Self-chosen project work in informatics carried out with a supervisor. Project: analyzing programming language standardization and evolution processes. Includes programming, documentation in the form of a technical report, and an oral presentation.' },
 			{ name: 'Informatics Project II', code: 'INF319', institution: 'University of Bergen', degrees: ['Additional courses'], description: 'Advanced project work in informatics carried out with a supervisor. Includes programming, documentation in the form of a technical report, and an oral presentation.', skillTags: ['Python', 'NLP'], blogSlug: 'applying-nlp-techniques-to-tc39s-meeting-notes' }
 		],
@@ -591,12 +611,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Databases & Cloud',
 				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Tools & Systems',
 				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks'],
-				profiles: ['developer']
+				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'AI & Data Science',
@@ -611,7 +631,7 @@ export const cvData: CvDataMap = {
 			{
 				category: 'Technical Operations',
 				skills: ['System Administration', 'Technical Support', 'Technical Training'],
-				profiles: ['administrator']
+				profiles: ['systemadministrator']
 			},
 			{
 				category: 'General',
@@ -622,6 +642,24 @@ export const cvData: CvDataMap = {
 			{ language: 'Norwegian (Bokmål)', proficiency: 'Native' },
 			{ language: 'English', proficiency: 'Fluent' },
 			{ language: 'German', proficiency: 'Basic' }
+		],
+		qualities: [
+			{
+				name: 'Transparency',
+				description: 'Believes in open source, knowledge sharing and transparent communication.'
+			},
+			{
+				name: 'Engagement',
+				description: 'Motivated by creating engagement and growth in teams and organizations.'
+			},
+			{
+				name: 'Relationship Building',
+				description: 'Builds trust and networks across professional communities and organizations.'
+			},
+			{
+				name: 'Structure and Efficiency',
+				description: 'Shapes and maintains organizational structures and procedures that scale.'
+			}
 		],
 		certificates: [
 			{

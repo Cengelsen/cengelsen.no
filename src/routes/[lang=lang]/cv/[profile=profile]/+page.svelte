@@ -4,14 +4,14 @@
 	import { translations } from '../../../../i18n/translations';
 	import { cvData } from '../../../../data/cv';
 	import { cvProfiles } from '../../../../data/cv-profiles';
-	import { filterCvByProfile } from '$lib/cv';
+	import { filterCvByProfile, prepareCv } from '$lib/cv';
 	import CvPageContent from '../../../../components/cv/CvPageContent.svelte';
 
 	$: lang = $page.params.lang as Lang;
 	$: t = translations[lang];
 	$: profileId = $page.params.profile;
 	$: profile = cvProfiles[lang][profileId] ?? null;
-	$: cv = profile ? filterCvByProfile(cvData[lang], profile.id) : cvData[lang];
+	$: cv = profile ? filterCvByProfile(cvData[lang], profile.id, lang) : prepareCv(cvData[lang], lang);
 </script>
 
 <svelte:head>
