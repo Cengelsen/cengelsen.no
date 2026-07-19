@@ -91,3 +91,12 @@ export function generateRssFeed(posts: Post[], options: FeedOptions): string {
 
 	return feed.rss2();
 }
+
+export function rssResponse(xml: string): Response {
+	return new Response(xml, {
+		headers: {
+			'Content-Type': 'application/rss+xml; charset=utf-8',
+			'Cache-Control': 'public, max-age=3600, s-maxage=86400'
+		}
+	});
+}

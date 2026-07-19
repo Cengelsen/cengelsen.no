@@ -1,5 +1,5 @@
 import { loadPosts } from '$lib/posts';
-import { generateRssFeed } from '$lib/rss';
+import { generateRssFeed, rssResponse } from '$lib/rss';
 import { SITE_URL } from '$lib/site';
 import type { RequestHandler } from './$types';
 
@@ -16,10 +16,5 @@ export const GET: RequestHandler = async () => {
 		description: 'Blog posts from cengelsen.no — in English'
 	});
 
-	return new Response(xml, {
-		headers: {
-			'Content-Type': 'application/xml; charset=utf-8',
-			'Cache-Control': 'max-age=0, s-maxage=3600'
-		}
-	});
+	return rssResponse(xml);
 };
