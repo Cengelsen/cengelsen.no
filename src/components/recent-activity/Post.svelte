@@ -21,7 +21,7 @@
 
 <a class="post" href="{blogBase}/{post.slug}">
     <h2 class="post-title">{post.title}</h2>
-    <p class="post-date">{formatDate(post.date)}</p>
+    <p class="post-date">{formatDate(post.pubDate)}</p>
     <p class="post-description">{post.description}</p>
 </a>
 

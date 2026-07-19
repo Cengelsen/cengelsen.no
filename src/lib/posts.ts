@@ -11,13 +11,24 @@ export const LANG_PREFIXES = ['en'] as const;
 export type LangPrefix = (typeof LANG_PREFIXES)[number];
 
 export interface Post {
-	id: number | null;
-	fileSlug: string;
+	id: number;
 	slug: string;
 	title: string;
-	date: string;
+	pubDate: string;
 	description: string;
 	content?: string;
+}
+
+function normalizePubDate(value: unknown): string {
+	if (!value) {
+		return '';
+	}
+
+	if (value instanceof Date) {
+		return value.toISOString();
+	}
+
+	return String(value);
 }
 
 interface LoadPostsOptions {
@@ -48,12 +59,16 @@ export async function loadPosts(lang: string, options?: LoadPostsOptions): Promi
 			.map(async (file) => {
 				const raw = await fs.readFile(path.join(dir, file), 'utf-8');
 				const { data, content } = matter(raw);
+				const id = data.id;
+				if (typeof id !== 'number') {
+					throw error(500, { message: `Post "${file}" is missing a numeric id in frontmatter` });
+				}
+
 				const post: Post = {
-					id: data.id ?? null,
-					fileSlug: file.replace(/\.md$/, ''),
+					id,
 					slug: slugify(data.title ?? ''),
 					title: data.title ?? '',
-					date: data.date ? String(data.date) : '',
+					pubDate: normalizePubDate(data.pubDate),
 					description: data.description ?? ''
 				};
 				if (includeContent) {
@@ -64,8 +79,8 @@ export async function loadPosts(lang: string, options?: LoadPostsOptions): Promi
 	);
 
 	return posts.sort((a, b) => {
-		const dateA = a.date ? new Date(a.date).getTime() : 0;
-		const dateB = b.date ? new Date(b.date).getTime() : 0;
+		const dateA = a.pubDate ? new Date(a.pubDate).getTime() : 0;
+		const dateB = b.pubDate ? new Date(b.pubDate).getTime() : 0;
 		return dateB - dateA;
 	});
 }

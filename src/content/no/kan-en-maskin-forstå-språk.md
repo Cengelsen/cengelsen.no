@@ -1,6 +1,6 @@
 ---
 title: Kan En Maskin Forstå Språk?
-date: 2022-04-27
+pubDate: 2022-04-27T12:00:00+02:00
 description: Dette er en tekst jeg skrev i 2021, hvor jeg diskuterer hvorvidt en NSG KI kan forstå språk eller ikke.
 id: 2
 ---

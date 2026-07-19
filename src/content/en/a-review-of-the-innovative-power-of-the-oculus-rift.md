@@ -1,6 +1,6 @@
 ---
 title: A Review of the Innovative Power of the Oculus Rift
-date: 2022-04-27
+pubDate: 2022-04-27T14:00:00+02:00
 description: This is a text i wrote in 2020 about VR-technology, it's history and how the Oculus Rift was an innovative success.
 id: 3
 ---

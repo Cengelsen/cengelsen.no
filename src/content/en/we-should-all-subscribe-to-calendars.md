@@ -1,6 +1,6 @@
 ---
 title: We Should All Subscribe to Calendars
-date: 2024-02-26
+pubDate: 2024-02-26T10:00:00+01:00
 description: We should normalize subscribing to calendar feeds so we never miss occurrences again. Plus, it's less cumbersome.
 id: 7
 ---

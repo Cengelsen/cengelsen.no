@@ -1,6 +1,6 @@
 ---
 title: Vi Burde Alle Abonnere På Kalendere
-date: 2024-02-26
+pubDate: 2024-02-26T10:00:00+01:00
 description: Vi burde normalisere å abonnere på kalenderstrømmer, slik at vi aldri går glipp av hendelser igjen. Pluss, det er mindre tungvint.
 id: 7
 ---

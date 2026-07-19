@@ -1,6 +1,6 @@
 ---
 title: Applying NLP Techniques to TC39's meeting notes
-date: 2023-12-15
+pubDate: 2023-12-15T10:00:00+01:00
 description: This report details a coding project aimed at leveraging Natural Language Processing (NLP) techniques to extract and analyze information from TC39 meeting notes, a crucial aspect of the ECMAScript standardization process
 id: 8
 ---

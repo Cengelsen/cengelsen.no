@@ -38,12 +38,8 @@ function itemDescription(post: Post): string {
 	return post.title;
 }
 
-function stablePostId(site: string, post: Post): string {
-	if (post.id != null) {
-		return `${site}/posts/id/${post.id}`;
-	}
-
-	return `${site}/posts/file/${post.fileSlug}`;
+function stablePostId(site: string, post: Post, lang: string): string {
+	return `${site}/posts/id/${post.id}/${lang}`;
 }
 
 function prepareContentForFeed(html: string, site: string, articleUrl: string): string {
@@ -71,20 +67,20 @@ export function generateRssFeed(posts: Post[], options: FeedOptions): string {
 		feedLinks: {
 			rss: `${site}${feedPath}`
 		},
-		updated: posts.length > 0 && posts[0].date
-			? new Date(posts[0].date)
+		updated: posts.length > 0 && posts[0].pubDate
+			? new Date(posts[0].pubDate)
 			: new Date()
 	});
 
-	for (const post of posts.filter((p) => p.title && p.date)) {
+	for (const post of posts.filter((p) => p.title && p.pubDate)) {
 		const url = `${site}${blogPath}/${post.slug}`;
 
 		feed.addItem({
 			title: post.title,
-			id: stablePostId(site, post),
+			id: stablePostId(site, post, lang),
 			link: url,
 			description: itemDescription(post),
-			date: new Date(post.date),
+			date: new Date(post.pubDate),
 			content: post.content ? prepareContentForFeed(post.content, site, url) : undefined
 		});
 	}
