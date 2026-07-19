@@ -1,5 +1,6 @@
 import { loadPosts } from '$lib/posts';
-import { generateRssFeed, SITE_URL } from '$lib/rss';
+import { generateRssFeed } from '$lib/rss';
+import { SITE_URL } from '$lib/site';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;

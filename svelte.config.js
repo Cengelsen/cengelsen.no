@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { SITE_URL } from './site.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,7 +16,7 @@ const config = {
 		}),
 		prerender: {
 			handleHttpError: 'warn',
-			origin: 'https://test.cengelsen.no'
+			origin: SITE_URL
 		}
 	}
 };

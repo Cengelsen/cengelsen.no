@@ -12,6 +12,7 @@ export type LangPrefix = (typeof LANG_PREFIXES)[number];
 
 export interface Post {
 	id: number | null;
+	fileSlug: string;
 	slug: string;
 	title: string;
 	date: string;
@@ -49,6 +50,7 @@ export async function loadPosts(lang: string, options?: LoadPostsOptions): Promi
 				const { data, content } = matter(raw);
 				const post: Post = {
 					id: data.id ?? null,
+					fileSlug: file.replace(/\.md$/, ''),
 					slug: slugify(data.title ?? ''),
 					title: data.title ?? '',
 					date: data.date ? String(data.date) : '',
