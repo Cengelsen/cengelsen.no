@@ -9,13 +9,14 @@
     export let data: PageData;
 
     $: t = translations[$page.params.lang as Lang];
+    $: lang = $page.params.lang as Lang;
 
     $: posts = data.posts;
 </script>
 
 <div class="content-wrapper">
     <aside class="profile-column">
-        <Profile description={t.profile.description} />
+        <Profile description={t.profile.description} {lang} />
     </aside>
 
     <section class="activity-column">

@@ -1,26 +1,46 @@
 <script lang="ts">
     import Fa from "svelte-fa";
-    import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-    import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+    import { faBluesky, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+    import { faEnvelope, faRss } from "@fortawesome/free-solid-svg-icons";
+    import type { Lang } from "$lib/posts";
 
     export let name = "Christian Kårbø Engelsen";
     export let imageUrl = "../../../profile/profile1.webp";
     export let description = "En lidenskapelig utvikler med et kjennetegn for å skape innovative løsninger.";
-    export let socialLinks = [
+    export let lang: Lang = "no";
+
+    $: rssPath = lang === "no" ? "/rss.xml" : "/en/rss.xml";
+
+    $: socialLinks = [
         {
             platform: "LinkedIn",
             url: "https://www.linkedin.com/in/christian-kårbø-engelsen-7a07941aa",
-            iconClass: faLinkedin
+            iconClass: faLinkedin,
+            external: true
         },
         {
             platform: "GitHub",
             url: "https://github.com/Cengelsen",
-            iconClass: faGithub
+            iconClass: faGithub,
+            external: true
+        },
+        {
+            platform: "Bluesky",
+            url: "https://bsky.app/profile/cengelsen.bsky.social",
+            iconClass: faBluesky,
+            external: true
         },
         {
             platform: "Epost",
             url: "mailto:ckengelsen97@gmail.com",
-            iconClass: faEnvelope
+            iconClass: faEnvelope,
+            external: false
+        },
+        {
+            platform: "RSS",
+            url: rssPath,
+            iconClass: faRss,
+            external: false
         }
     ];
 </script>
@@ -30,7 +50,12 @@
         <img src={imageUrl} alt={name} class="profile-image" />
         <div class="social-links">
             {#each socialLinks as link}
-                <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.platform}>
+                <a
+                    href={link.url}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    aria-label={link.platform}
+                >
                     <Fa icon={link.iconClass} size="1.5x" />
                 </a>
             {/each}

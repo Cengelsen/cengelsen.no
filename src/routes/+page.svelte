@@ -12,7 +12,7 @@
 
 <div class="content-wrapper">
 	<aside class="profile-column">
-		<Profile description={t.profile.description} />
+		<Profile description={t.profile.description} lang="no" />
 	</aside>
 
 	<section class="activity-column">
