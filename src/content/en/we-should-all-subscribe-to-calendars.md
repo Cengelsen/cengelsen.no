@@ -48,13 +48,13 @@ This section might get a bit long and pedantic, so [click here if you want to sk
         A party that centers around an activity. In such an occurrence, there is an expectation, and sometimes a soft requirement, for the participant to actively engage in the activity.
 
       - Inactive Party
-        
+
         A social occurrence without an activity as the focus. In such an occurrence, there is no expectation or requirement for active participation. The focus is solely on social interaction.
 
    - Appointment
-   
+
      A type of occurrence with the nature and purpose of a party. However, it differs in the sense of scope. An appointment is smaller and more formal in nature. An appointment always has a predetermined goal, while a party has not. This type can be further divided into two subcategories.
-    
+
       - Serious Appointment
 
         This is a type of meeting where participants meet for productive purposes. The meeting is of a serious nature and often related to work.
@@ -64,7 +64,7 @@ This section might get a bit long and pedantic, so [click here if you want to sk
         This is a type of meeting where participants meet for casual purposes. The meeting is of a relaxed nature and often related to social interaction in leisure time.
 
    - Deadline
-     
+
      A type of occurrence in the calendar feed that is similar in nature to an appointment. The difference is that one participant has not necessarily agreed to the time, which is mostly exclusively determined by the organizer. It is a strict requirement that this deadline must be met by the participant to participate. The purpose of deadlines are usually to ensure that goals are met on time, or that work is done in a timely manner.
 
    - Gym
