@@ -35,7 +35,7 @@ export const cvData: CvDataMap = {
 					'Var aktivt involvert i produktutvikling og brukeropplevelse.'
 				],
 				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Sky-arkitektur', 'Produktutvikling', 'UX'],
-				profiles: ['developer']
+				profiles: ['developer', 'ai-specialist']
 			},
 			{
 				company: 'Studentradioen i Bergen',
@@ -64,9 +64,11 @@ export const cvData: CvDataMap = {
 					'Ansvarlig for håndtering av krypterte meldingstjenester.',
 					'Sikkerhetsklarert til "Strengt hemmelig".',
 					'Forvaltet interne graderte dokumenter og meldinger.',
-					'Gjennomførte skift både på dekk, bysse og bro på rotasjon.'
+					'Gjennomførte skift både på dekk, bysse og bro på rotasjon.',
+					'Oppnådde graden \'Ledende Menig\' ila. tjenesten.'
 				],
-				skillTags: ['Radiokommunikasjon', 'Kryptert kommunikasjon', 'IT-sikkerhet', 'Operativ drift', 'Dokumenthåndtering']
+				skillTags: ['Radiokommunikasjon', 'Kryptert kommunikasjon', 'IT-sikkerhet', 'Operativ drift', 'Dokumenthåndtering'],
+				profiles: []
 			}
 		],
 	volunteer: [
@@ -82,7 +84,7 @@ export const cvData: CvDataMap = {
 				'Organiserte og gjennomførte Bergen Open Source 2025.'
 			],
 			skillTags: ['Organisasjonsbygging', 'Arrangementsledelse', 'Konferanseledelse', 'Rekruttering', 'Prosjektledelse'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'community-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -94,7 +96,7 @@ export const cvData: CvDataMap = {
 				'Deltok i regelmessige styremøter om langsiktig strategi.'
 			],
 			skillTags: ['Webutvikling', 'Styrearbeid', 'Strategi'],
-			profiles: ['developer']
+			profiles: ['developer', 'ai-specialist']
 		},
 		{
 			company: 'Hulen Bergen',
@@ -111,17 +113,6 @@ export const cvData: CvDataMap = {
 		},
 		{
 			company: 'AI Safety Bergen',
-			role: 'Medlem',
-			startDate: '2024-01',
-			endDate: '2026-01',
-			description: [
-				'Aktivt medlem i AI Safety Bergen.'
-			],
-			skillTags: ['AI Safety', 'Styrearbeid'],
-			profiles: ['organization-builder']
-		},
-		{
-			company: 'AI Safety Bergen',
 			role: 'Kurstilrettelegger',
 			startDate: '2024-01',
 			endDate: '2024-06',
@@ -130,7 +121,29 @@ export const cvData: CvDataMap = {
 				'Loset en gruppe gjennom 8 uker med seminarer.'
 			],
 			skillTags: ['AI Safety Governance', 'Undervisning', 'Kursledelse', 'KI-etikk'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'ai-specialist', 'researcher']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Medlem',
+			startDate: '2023-08',
+			endDate: '2023-12',
+			description: [
+				'Aktivt medlem i AI Safety Bergen.'
+			],
+			skillTags: ['AI Safety'],
+			profiles: ['organization-builder', 'ai-specialist']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Kursdeltaker',
+			startDate: '2023-02',
+			endDate: '2023-04',
+			description: [
+				'Deltok i kurs i AI Safety Governance.'
+			],
+			skillTags: ['AI Safety Governance', 'AI Safety'],
+			profiles: ['ai-specialist', 'researcher']
 		},
 		{
 			company: 'friByte',
@@ -144,7 +157,7 @@ export const cvData: CvDataMap = {
 				'Lokalansvarlig og konferansier for Bergen Open Source 2023.'
 			],
 			skillTags: ['Arrangementsledelse', 'Organisasjonsbygging', 'Dokumentasjon', 'Konferanseledelse'],
-			profiles: ['organization-builder', 'systemadministrator']
+			profiles: ['organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -168,7 +181,7 @@ export const cvData: CvDataMap = {
 			companyUrl: 'https://fribyte.no',
 			role: 'Leder',
 			startDate: '2021-12',
-			endDate: '2022-12',
+			endDate: '2022-11',
 			description: [
 				'Forsterket eksisterende kundeforhold og hentet inn nye kunder.',
 				'Overordnet ansvar for rekruttering.',
@@ -180,26 +193,26 @@ export const cvData: CvDataMap = {
 				'Dokumenterte relevante diverse prosesser og tjenester i åpen wiki.'
 			],
 			skillTags: ['Kundeforhold', 'Rekruttering', 'Arrangementsledelse', 'Organisasjonsbygging', 'Django', 'Dokumentasjon'],
-			profiles: ['administrator', 'organization-builder', 'systemadministrator']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
 			company: 'Phonofestivalen',
 			role: 'Produksjonsansvarlig',
 			startDate: '2021-09',
-			endDate: '2022-02',
+			endDate: '2022-01',
 			description: [
 				'Ansvarlig for teknisk gjennomføring av festivalen.',
 				'Planlagte teknisk gjennomførelse.'
 			],
 			skillTags: ['Produksjonsledelse', 'Teknisk planlegging', 'Arrangementsledelse'],
-			profiles: ['administrator']
+			profiles: ['administrator', 'community-builder']
 		},
 		{
 			company: 'friByte',
 			companyUrl: 'https://fribyte.no',
 			role: 'Nestleder',
 			startDate: '2021-01',
-			endDate: '2021-12',
+			endDate: '2021-11',
 			description: [
 				'Bisto leder med fornyelse av organisasjonen.',
 				'Håndterte alt administrativt, som innkalling og referat.',
@@ -214,7 +227,7 @@ export const cvData: CvDataMap = {
 			companyUrl: 'https://fribyte.no',
 			role: 'Medlem',
 			startDate: '2020-09',
-			endDate: '2021-01',
+			endDate: '2020-12',
 			description: [
 				'Først tatt opp som ordinært medlem i friByte.'
 			],
@@ -229,7 +242,7 @@ export const cvData: CvDataMap = {
 				'Sosialansvarlig i PR-etaten til Studentersamfunnet i Bergen.'
 			],
 			skillTags: ['Arrangementsledelse'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'community-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -249,7 +262,7 @@ export const cvData: CvDataMap = {
 				degree: 'Mastergrad',
 				field: 'Informasjonsvitenskap',
 				startDate: '2024-08',
-				endDate: '2026-07',
+				endDate: '2026-06',
 				description: 'Fordypning i informasjonsarkitektur, brukeratferd og digital kommunikasjon.'
 			},
 			{
@@ -257,7 +270,7 @@ export const cvData: CvDataMap = {
 				degree: 'Bachelorgrad',
 				field: 'Kognitiv vitenskap',
 				startDate: '2018-08',
-				endDate: '2024-07',
+				endDate: '2024-06',
 				description: 'Bevissthet, kognitive evner og filosofi rundt KI. Fordypning i informatikk, filosofi og informasjonsvitenskap.'
 			},
 			{
@@ -265,7 +278,7 @@ export const cvData: CvDataMap = {
 				degree: 'Bachelorgrad',
 				field: 'Kunstig intelligens',
 				startDate: '2022-08',
-				endDate: '2024-07',
+				endDate: '2024-06',
 				description: 'Kunstige agenter, maskinlæring og utvikling av AI-løsninger. Kombinerer informatikk og informasjonsvitenskap.'
 			}
 		],
@@ -326,12 +339,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'KI & datavitenskap',
 				skills: ['Maskinlæring', 'NLP', 'Robotikk', 'Søkealgoritmer', 'KI-etikk', 'AI Safety Governance'],
-				profiles: ['developer']
+				profiles: ['developer', 'ai-specialist', 'researcher']
 			},
 			{
 				category: 'Ledelse & forretning',
 				skills: ['Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Organisasjonsbygging', 'Vekststrategi', 'Kundeforhold', 'Arrangementsledelse', 'Konferanseledelse'],
-				profiles: ['administrator', 'organization-builder']
+				profiles: ['administrator', 'organization-builder', 'community-builder']
 			},
 			{
 				category: 'Teknisk drift',
@@ -355,11 +368,13 @@ export const cvData: CvDataMap = {
 			},
 			{
 				name: 'Engasjement',
-				description: 'Motiveres av å skape engasjement og vekst i team og organisasjoner.'
+				description: 'Motiveres av å skape engasjement og vekst i team og organisasjoner.',
+				profiles: ['community-builder']
 			},
 			{
 				name: 'Relasjonsbygging',
-				description: 'Bygger tillit og nettverk på tvers av fagmiljøer og organisasjoner.'
+				description: 'Bygger tillit og nettverk på tvers av fagmiljøer og organisasjoner.',
+				profiles: ['community-builder']
 			},
 			{
 				name: 'Struktur og effektivitet',
@@ -385,13 +400,15 @@ export const cvData: CvDataMap = {
 				techStack: ['SvelteKit', 'TypeScript', 'CSS'],
 				githubUrl: 'https://github.com/Cengelsen',
 				liveUrl: 'https://cengelsen.no',
-				skillTags: ['Hugo']
+				skillTags: ['Hugo'],
+				profiles: ['researcher']
 			},
 			{
 				name: 'Bergen Open Source',
 				description: 'Nettside for Bergen Open Source-konferansen.',
 				techStack: ['Webteknologi'],
-				liveUrl: 'https://boskonf.no'
+				liveUrl: 'https://boskonf.no',
+				profiles: ['community-builder']
 			}
 		],
 		contact: [
@@ -446,7 +463,7 @@ export const cvData: CvDataMap = {
 					'Actively involved in product development and user experience.'
 				],
 				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Cloud Architecture', 'Product Development', 'UX'],
-				profiles: ['developer']
+				profiles: ['developer', 'ai-specialist']
 			},
 			{
 				company: 'Studentradioen i Bergen',
@@ -475,9 +492,11 @@ export const cvData: CvDataMap = {
 					'Responsible for handling encrypted messaging services.',
 					'Security cleared to "Strictly Secret".',
 					'Managed internal classified documents and messages.',
-					'Completed shifts on deck, in the galley and on the bridge on rotation.'
+					'Completed shifts on deck, in the galley and on the bridge on rotation.',
+					'Achieved the rank of Leading Seaman during service.'
 				],
-				skillTags: ['Radio Communication', 'Encrypted Communication', 'IT Security', 'Operational Duty', 'Document Management']
+				skillTags: ['Radio Communication', 'Encrypted Communication', 'IT Security', 'Operational Duty', 'Document Management'],
+				profiles: []
 			}
 		],
 	volunteer: [
@@ -493,7 +512,7 @@ export const cvData: CvDataMap = {
 				'Organized and executed Bergen Open Source 2025.'
 			],
 			skillTags: ['Organization Building', 'Event Management', 'Conference Management', 'Recruitment', 'Project Management'],
-			profiles: ['administrator', 'organization-builder']
+			profiles: ['administrator', 'organization-builder', 'community-builder']
 		},
 		{
 			company: 'AI Safety Bergen',
@@ -505,7 +524,7 @@ export const cvData: CvDataMap = {
 				'Participated in regular board meetings on long-term strategy.'
 			],
 			skillTags: ['Web Development', 'Board Work', 'Strategy'],
-			profiles: ['developer']
+			profiles: ['developer', 'ai-specialist']
 		},
 		{
 			company: 'Hulen Bergen',
@@ -522,17 +541,6 @@ export const cvData: CvDataMap = {
 		},
 		{
 			company: 'AI Safety Bergen',
-			role: 'Member',
-			startDate: '2024-01',
-			endDate: '2026-01',
-			description: [
-				'Active member of AI Safety Bergen.'
-			],
-			skillTags: ['AI Safety', 'Board Work'],
-			profiles: ['organization-builder']
-		},
-		{
-			company: 'AI Safety Bergen',
 			role: 'Course Facilitator',
 			startDate: '2024-01',
 			endDate: '2024-06',
@@ -541,7 +549,29 @@ export const cvData: CvDataMap = {
 				'Guided a group through 8 weeks of seminars.'
 			],
 			skillTags: ['AI Safety Governance', 'Teaching', 'Course Facilitation', 'AI Ethics'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'ai-specialist', 'researcher']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Member',
+			startDate: '2023-08',
+			endDate: '2023-12',
+			description: [
+				'Active member of AI Safety Bergen.'
+			],
+			skillTags: ['AI Safety'],
+			profiles: ['organization-builder', 'ai-specialist']
+		},
+		{
+			company: 'AI Safety Bergen',
+			role: 'Course Participant',
+			startDate: '2023-02',
+			endDate: '2023-04',
+			description: [
+				'Participated in a course on AI Safety Governance.'
+			],
+			skillTags: ['AI Safety Governance', 'AI Safety'],
+			profiles: ['ai-specialist', 'researcher']
 		},
 		{
 			company: 'friByte',
@@ -555,7 +585,7 @@ export const cvData: CvDataMap = {
 				'Local coordinator and host for Bergen Open Source 2023.'
 			],
 			skillTags: ['Event Management', 'Organization Building', 'Documentation', 'Conference Management'],
-			profiles: ['organization-builder', 'systemadministrator']
+			profiles: ['organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
 			company: 'Det Akademiske Kvarter',
@@ -579,7 +609,7 @@ export const cvData: CvDataMap = {
 			companyUrl: 'https://fribyte.no',
 			role: 'President',
 			startDate: '2021-12',
-			endDate: '2022-12',
+			endDate: '2022-11',
 			description: [
 				'Strengthened existing customer relationships and brought in new clients.',
 				'Overall responsibility for recruitment.',
@@ -591,26 +621,26 @@ export const cvData: CvDataMap = {
 				'Documented relevant processes and services in an open wiki.'
 			],
 			skillTags: ['Customer Relations', 'Recruitment', 'Event Management', 'Organization Building', 'Django', 'Documentation'],
-			profiles: ['administrator', 'organization-builder', 'systemadministrator']
+			profiles: ['administrator', 'organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
 			company: 'Phonofestivalen',
 			role: 'Production Manager',
 			startDate: '2021-09',
-			endDate: '2022-02',
+			endDate: '2022-01',
 			description: [
 				'Responsible for the technical execution of the festival.',
 				'Planned the technical execution.'
 			],
 			skillTags: ['Production Management', 'Technical Planning', 'Event Management'],
-			profiles: ['administrator']
+			profiles: ['administrator', 'community-builder']
 		},
 		{
 			company: 'friByte',
 			companyUrl: 'https://fribyte.no',
 			role: 'Vice President',
 			startDate: '2021-01',
-			endDate: '2021-12',
+			endDate: '2021-11',
 			description: [
 				'Supported the president in renewing the organization.',
 				'Handled all administrative tasks, such as meeting invitations and minutes.',
@@ -625,7 +655,7 @@ export const cvData: CvDataMap = {
 			companyUrl: 'https://fribyte.no',
 			role: 'Member',
 			startDate: '2020-09',
-			endDate: '2021-01',
+			endDate: '2020-12',
 			description: [
 				'First admitted as an ordinary member of friByte.'
 			],
@@ -640,7 +670,7 @@ export const cvData: CvDataMap = {
 				'Social coordinator in the PR department of Studentersamfunnet i Bergen.'
 			],
 			skillTags: ['Event Management'],
-			profiles: ['organization-builder']
+			profiles: ['organization-builder', 'community-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
@@ -660,7 +690,7 @@ export const cvData: CvDataMap = {
 				degree: 'Master\'s Degree',
 				field: 'Information Science',
 				startDate: '2024-08',
-				endDate: '2026-07',
+				endDate: '2026-06',
 				description: 'Specialization in information architecture, user behaviour and digital communication.'
 			},
 			{
@@ -668,7 +698,7 @@ export const cvData: CvDataMap = {
 				degree: 'Bachelor\'s Degree',
 				field: 'Cognitive Science',
 				startDate: '2018-08',
-				endDate: '2024-07',
+				endDate: '2024-06',
 				description: 'Consciousness, cognitive abilities and philosophy of AI. Specialization in computer science, philosophy and information science.'
 			},
 			{
@@ -676,7 +706,7 @@ export const cvData: CvDataMap = {
 				degree: 'Bachelor\'s Degree',
 				field: 'Artificial Intelligence',
 				startDate: '2022-08',
-				endDate: '2024-07',
+				endDate: '2024-06',
 				description: 'Artificial agents, machine learning and development of AI solutions. Combines computer science and information science.'
 			}
 		],
@@ -737,12 +767,12 @@ export const cvData: CvDataMap = {
 			{
 				category: 'AI & Data Science',
 				skills: ['Machine Learning', 'NLP', 'Robotics', 'Search Algorithms', 'AI Ethics', 'AI Safety Governance'],
-				profiles: ['developer']
+				profiles: ['developer', 'ai-specialist', 'researcher']
 			},
 			{
 				category: 'Leadership & Business',
 				skills: ['Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Organization Building', 'Growth Strategy', 'Customer Relations', 'Event Management', 'Conference Management'],
-				profiles: ['administrator', 'organization-builder']
+				profiles: ['administrator', 'organization-builder', 'community-builder']
 			},
 			{
 				category: 'Technical Operations',
@@ -766,11 +796,13 @@ export const cvData: CvDataMap = {
 			},
 			{
 				name: 'Engagement',
-				description: 'Motivated by creating engagement and growth in teams and organizations.'
+				description: 'Motivated by creating engagement and growth in teams and organizations.',
+				profiles: ['community-builder']
 			},
 			{
 				name: 'Relationship Building',
-				description: 'Builds trust and networks across professional communities and organizations.'
+				description: 'Builds trust and networks across professional communities and organizations.',
+				profiles: ['community-builder']
 			},
 			{
 				name: 'Structure and Efficiency',
@@ -796,13 +828,15 @@ export const cvData: CvDataMap = {
 				techStack: ['SvelteKit', 'TypeScript', 'CSS'],
 				githubUrl: 'https://github.com/Cengelsen',
 				liveUrl: 'https://cengelsen.no',
-				skillTags: ['Hugo']
+				skillTags: ['Hugo'],
+				profiles: ['researcher']
 			},
 			{
 				name: 'Bergen Open Source',
 				description: 'Website for the Bergen Open Source conference.',
 				techStack: ['Web Technologies'],
-				liveUrl: 'https://boskonf.no'
+				liveUrl: 'https://boskonf.no',
+				profiles: ['community-builder']
 			}
 		],
 		contact: [

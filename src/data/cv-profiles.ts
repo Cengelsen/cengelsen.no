@@ -1,6 +1,14 @@
 import type { CvProfileMap } from '../types/cv.types';
 
-export const PROFILE_SLUGS = ['developer', 'systemadministrator', 'administrator', 'organization-builder'] as const;
+export const PROFILE_SLUGS = [
+	'developer',
+	'systemadministrator',
+	'administrator',
+	'organization-builder',
+	'ai-specialist',
+	'researcher',
+	'community-builder'
+] as const;
 export type ProfileSlug = (typeof PROFILE_SLUGS)[number];
 
 export const cvProfiles: CvProfileMap = {
@@ -48,6 +56,39 @@ export const cvProfiles: CvProfileMap = {
 				location: 'Bergen, Norge'
 			},
 			accentColor: 'oklch(65% 0.18 50)'
+		},
+		'ai-specialist': {
+			id: 'ai-specialist',
+			label: 'KI-spesialist',
+			sections: ['education', 'coursework', 'skills', 'volunteer', 'experience', 'projects', 'languages', 'contact'],
+			summary: {
+				title: 'KI-spesialist',
+				bio: 'KI-spesialist med bachelor i kunstig intelligens (2024) og master i informasjonsvitenskap (2026). Erfaring med maskinlæring, NLP og AI Safety Governance — i undervisning, frivillig arbeid og produktutvikling.',
+				location: 'Bergen, Norge'
+			},
+			accentColor: 'oklch(52% 0.2 320)'
+		},
+		researcher: {
+			id: 'researcher',
+			label: 'Akademiker',
+			sections: ['education', 'coursework', 'experience', 'projects', 'skills', 'languages', 'contact'],
+			summary: {
+				title: 'Akademiker',
+				bio: 'Mastergrad i informasjonsvitenskap (2026) med bakgrunn fra kognitiv vitenskap og kunstig intelligens. Erfaring med forskningsmetode, tekst- og nettverksanalyse, masteroppgave og akademisk formidling.',
+				location: 'Bergen, Norge'
+			},
+			accentColor: 'oklch(45% 0.12 280)'
+		},
+		'community-builder': {
+			id: 'community-builder',
+			label: 'Fellesskapsbygger',
+			sections: ['volunteer', 'experience', 'skills', 'qualities', 'contact'],
+			summary: {
+				title: 'Fellesskapsbygger',
+				bio: 'Bygger fellesskap gjennom konferanser, festivaler og sosiale initiativ i student- og tech-miljøer i Bergen.',
+				location: 'Bergen, Norge'
+			},
+			accentColor: 'oklch(58% 0.16 25)'
 		}
 	},
 	en: {
@@ -94,6 +135,39 @@ export const cvProfiles: CvProfileMap = {
 				location: 'Bergen, Norway'
 			},
 			accentColor: 'oklch(65% 0.18 50)'
+		},
+		'ai-specialist': {
+			id: 'ai-specialist',
+			label: 'AI Specialist',
+			sections: ['education', 'coursework', 'skills', 'volunteer', 'experience', 'projects', 'languages', 'contact'],
+			summary: {
+				title: 'AI Specialist',
+				bio: 'AI specialist with a bachelor\'s in artificial intelligence (2024) and a master\'s in information science (2026). Experience with machine learning, NLP and AI Safety Governance — in teaching, volunteer work and product development.',
+				location: 'Bergen, Norway'
+			},
+			accentColor: 'oklch(52% 0.2 320)'
+		},
+		researcher: {
+			id: 'researcher',
+			label: 'Academic',
+			sections: ['education', 'coursework', 'experience', 'projects', 'skills', 'languages', 'contact'],
+			summary: {
+				title: 'Academic',
+				bio: 'Master\'s degree in information science (2026) with a background in cognitive science and artificial intelligence. Experience with research methodology, text and network analysis, master\'s thesis work and academic communication.',
+				location: 'Bergen, Norway'
+			},
+			accentColor: 'oklch(45% 0.12 280)'
+		},
+		'community-builder': {
+			id: 'community-builder',
+			label: 'Community Builder',
+			sections: ['volunteer', 'experience', 'skills', 'qualities', 'contact'],
+			summary: {
+				title: 'Community Builder',
+				bio: 'Builds communities through conferences, festivals and social initiatives in Bergen\'s student and tech environments.',
+				location: 'Bergen, Norway'
+			},
+			accentColor: 'oklch(58% 0.16 25)'
 		}
 	}
 };

@@ -273,29 +273,32 @@
                                         style="width: {mobileCategoryColumnWidthRem(category)}rem; --category-color: {CATEGORY_COLORS[category.kind]};"
                                         aria-label={kindLabels[category.kind]}
                                     >
-                                        {#each category.lanes as lane, laneIndex (laneIndex)}
-                                            {#each lane.items as item (item.id)}
-                                                {@const style = mobileBarStyle(
-                                                    item.startMonth,
-                                                    item.endMonth,
-                                                    laneIndex,
-                                                    category.lanes.length
-                                                )}
-                                                {#if style}
-                                                    <div
-                                                        class="overlap-bar mobile-bar"
-                                                        role="listitem"
-                                                        style="{style} --bar-color: {item.color};"
-                                                        title="{item.title} — {item.organization}: {formatCvRange(item.startDate, item.endDate, presentLabel, lang)}"
-                                                    >
-                                                        <span class="bar-label">
-                                                            <span class="bar-role">{item.title}</span>
-                                                            <span class="bar-organization">{item.organization}</span>
-                                                        </span>
-                                                    </div>
-                                                {/if}
+                                        <div class="mobile-category-stripe" aria-hidden="true"></div>
+                                        <div class="mobile-category-plot">
+                                            {#each category.lanes as lane, laneIndex (laneIndex)}
+                                                {#each lane.items as item (item.id)}
+                                                    {@const style = mobileBarStyle(
+                                                        item.startMonth,
+                                                        item.endMonth,
+                                                        laneIndex,
+                                                        category.lanes.length
+                                                    )}
+                                                    {#if style}
+                                                        <div
+                                                            class="overlap-bar mobile-bar"
+                                                            role="listitem"
+                                                            style="{style} --bar-color: {item.color};"
+                                                            title="{item.title} — {item.organization}: {formatCvRange(item.startDate, item.endDate, presentLabel, lang)}"
+                                                        >
+                                                            <span class="bar-label">
+                                                                <span class="bar-role">{item.title}</span>
+                                                                <span class="bar-organization">{item.organization}</span>
+                                                            </span>
+                                                        </div>
+                                                    {/if}
+                                                {/each}
                                             {/each}
-                                        {/each}
+                                        </div>
                                     </div>
                                 {/each}
                             </div>
@@ -333,6 +336,7 @@
 <style>
     .overlap-chart {
         --mobile-y-axis-width: 2.75rem;
+        --category-gap: 0.25rem;
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
@@ -404,7 +408,7 @@
         margin-right: var(--space-sm);
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: var(--category-gap);
         padding-top: calc(1.85rem + var(--space-xs));
         width: max-content;
     }
@@ -477,30 +481,42 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: var(--category-gap);
         height: 100%;
     }
 
     .category {
-        position: relative;
+        --category-stripe-width: 3px;
+        display: grid;
+        grid-template-columns: var(--category-stripe-width) minmax(0, 1fr);
         flex: 0 0 auto;
         width: 100%;
-        border-top: 1px solid oklch(50% 0 0 / 0.1);
-        border-left: 3px solid var(--category-color);
-        padding-top: 0.15rem;
         box-sizing: border-box;
+        overflow: visible;
     }
 
-    .category:first-child {
-        border-top: none;
-        padding-top: 0;
+    .category::before {
+        content: '';
+        background-color: var(--category-color);
+        align-self: stretch;
+    }
+
+    .category:not(:first-child)::before {
+        margin-top: calc(var(--category-gap) / -2);
+    }
+
+    .category:not(:last-child)::before {
+        margin-bottom: calc(var(--category-gap) / -2);
     }
 
     .lanes {
+        grid-column: 2;
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: var(--category-gap);
         height: 100%;
+        min-width: 0;
+        box-sizing: border-box;
     }
 
     .lane {
@@ -632,7 +648,7 @@
 
         .mobile-category-axis {
             display: flex;
-            gap: var(--space-xs);
+            gap: var(--category-gap);
             flex: 0 0 auto;
             padding-bottom: var(--space-xs);
             border-bottom: 1px solid var(--color-chrome-border);
@@ -692,7 +708,7 @@
         .mobile-plot-grid {
             position: relative;
             display: flex;
-            gap: var(--space-xs);
+            gap: var(--category-gap);
             flex: 0 0 auto;
         }
 
@@ -707,12 +723,45 @@
         }
 
         .mobile-category-column {
-            position: relative;
+            display: flex;
+            flex-direction: column;
             flex: 0 0 auto;
             height: 100%;
-            border-top: 3px solid var(--category-color);
             box-sizing: border-box;
             z-index: 1;
+        }
+
+        .mobile-category-stripe {
+            flex: 0 0 3px;
+            background-color: var(--category-color);
+            box-sizing: content-box;
+        }
+
+        .mobile-category-column:not(:first-child) .mobile-category-stripe {
+            margin-left: calc(var(--category-gap) / -2);
+        }
+
+        .mobile-category-column:not(:last-child) .mobile-category-stripe {
+            margin-right: calc(var(--category-gap) / -2);
+        }
+
+        .mobile-category-column:not(:first-child):not(:last-child) .mobile-category-stripe {
+            width: calc(100% + var(--category-gap));
+        }
+
+        .mobile-category-column:first-child:not(:last-child) .mobile-category-stripe {
+            width: calc(100% + var(--category-gap) / 2);
+        }
+
+        .mobile-category-column:last-child:not(:first-child) .mobile-category-stripe {
+            width: calc(100% + var(--category-gap) / 2);
+        }
+
+        .mobile-category-plot {
+            position: relative;
+            flex: 1;
+            min-height: 0;
+            box-sizing: border-box;
         }
 
         .mobile-bar {

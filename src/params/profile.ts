@@ -1,5 +1,5 @@
-const VALID_PROFILES = ['developer', 'systemadministrator', 'administrator', 'organization-builder'];
+import { PROFILE_SLUGS } from '../data/cv-profiles';
 
 export function match(param: string): boolean {
-	return VALID_PROFILES.includes(param);
+	return (PROFILE_SLUGS as readonly string[]).includes(param);
 }
