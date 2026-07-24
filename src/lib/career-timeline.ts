@@ -499,21 +499,30 @@ export function monthPositionPadded(
 
 const MIN_BAR_SPAN_PERCENT = 2.5;
 
-/** When min bar size applies, grow toward newer time so the older boundary stays fixed. */
+/** When min bar size applies, grow toward newer time unless that would cross the present buffer. */
 function clampBarSpan(
 	newerEdge: number,
 	olderEdge: number,
-	minSpan: number = MIN_BAR_SPAN_PERCENT
+	minSpan: number = MIN_BAR_SPAN_PERCENT,
+	bufferEdge: number = PRESENT_BUFFER_PERCENT
 ): { newerEdge: number; olderEdge: number; span: number } {
-	const naturalSpan = olderEdge - newerEdge;
+	const clampedNewer = Math.max(bufferEdge, newerEdge);
+	const naturalSpan = olderEdge - clampedNewer;
+
 	if (naturalSpan >= minSpan) {
-		return { newerEdge, olderEdge, span: naturalSpan };
+		return { newerEdge: clampedNewer, olderEdge, span: naturalSpan };
 	}
-	return {
-		newerEdge: newerEdge - (minSpan - naturalSpan),
-		olderEdge,
-		span: minSpan
-	};
+
+	const deficit = minSpan - naturalSpan;
+	const expandNewer = clampedNewer - deficit;
+
+	if (expandNewer >= bufferEdge) {
+		return { newerEdge: expandNewer, olderEdge, span: minSpan };
+	}
+
+	// At the buffer edge: grow toward older time instead of into the stripe zone.
+	const expandOlder = clampedNewer + minSpan;
+	return { newerEdge: clampedNewer, olderEdge: expandOlder, span: expandOlder - clampedNewer };
 }
 export function clippedBarPositionVertical(
 	startMonth: MonthIndex,

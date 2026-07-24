@@ -19,7 +19,7 @@ export const cvData: CvDataMap = {
 					'Tar initiativ til organisasjonsendringer for effektivisering.',
 					'Leder IT-gruppen.'
 				],
-				skillTags: ['Markedsføring', 'Regnskap', 'Budsjett', 'Kundeforhold', 'Organisasjonsutvikling', 'Styresamarbeid'],
+				skillTags: ['Markedsføring', 'Regnskap', 'Visma', 'Budsjett', 'Kundeforhold', 'Organisasjonsutvikling', 'Styresamarbeid'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -34,7 +34,7 @@ export const cvData: CvDataMap = {
 					'Ansvarlig for sky-arkitekturen og CI/CD-prosesser.',
 					'Var aktivt involvert i produktutvikling og brukeropplevelse.'
 				],
-				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Sky-arkitektur', 'Produktutvikling', 'UX'],
+				skillTags: ['Django', 'Svelte', 'Supabase', 'Cloudflare', 'GitHub', 'Docker', 'CI/CD', 'Sky-arkitektur', 'Produktutvikling', 'UX'],
 				profiles: ['developer', 'ai-specialist']
 			},
 			{
@@ -51,7 +51,7 @@ export const cvData: CvDataMap = {
 					'Planlagte større innkjøp for tekniske oppgraderinger.',
 					'Ledet en gruppe frivillige i teknisk gruppe.'
 				],
-				skillTags: ['Radioteknikk', 'Systemadministrasjon', 'Nettverksadministrasjon', 'Teknisk drift', 'Innkjøpsplanlegging', 'Rekruttering'],
+				skillTags: ['DigaSystem', 'Django', 'WordPress', 'Radioteknikk', 'Systemadministrasjon', 'Nettverksadministrasjon', 'Teknisk drift', 'Innkjøpsplanlegging', 'Rekruttering'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
@@ -83,7 +83,7 @@ export const cvData: CvDataMap = {
 				'Konferansier på Bergen Open Source 2025.',
 				'Organiserte og gjennomførte Bergen Open Source 2025.'
 			],
-			skillTags: ['Organisasjonsbygging', 'Arrangementsledelse', 'Konferanseledelse', 'Rekruttering', 'Prosjektledelse'],
+			skillTags: ['AstroJS', 'Codeberg', 'Git', 'Organisasjonsbygging', 'Arrangementsledelse', 'Konferanseledelse', 'Rekruttering', 'Prosjektledelse'],
 			profiles: ['administrator', 'organization-builder', 'community-builder']
 		},
 		{
@@ -95,7 +95,7 @@ export const cvData: CvDataMap = {
 				'Utviklet hjemmesiden til organisasjonen.',
 				'Deltok i regelmessige styremøter om langsiktig strategi.'
 			],
-			skillTags: ['Webutvikling', 'Styrearbeid', 'Strategi'],
+			skillTags: ['Webutvikling', 'Hugo', 'Styrearbeid', 'Strategi'],
 			profiles: ['developer', 'ai-specialist']
 		},
 		{
@@ -108,7 +108,7 @@ export const cvData: CvDataMap = {
 				'Tok initiativ og utviklet et utkast til en intern personaldatabase.',
 				'Rekrutterte aktivt flere frivillige.'
 			],
-			skillTags: ['Databaseutvikling', 'Rekruttering', 'Produktutvikling', 'Git'],
+			skillTags: ['Supabase', 'AstroJS', 'Databaseutvikling', 'Rekruttering', 'Produktutvikling', 'Git'],
 			profiles: ['developer', 'systemadministrator']
 		},
 		{
@@ -120,7 +120,7 @@ export const cvData: CvDataMap = {
 				'Underviste pensum i AI Safety Governance.',
 				'Loset en gruppe gjennom 8 uker med seminarer.'
 			],
-			skillTags: ['AI Safety Governance', 'Undervisning', 'Kursledelse', 'KI-etikk'],
+			skillTags: ['AI Safety', 'AI Safety Governance', 'Undervisning', 'Kursledelse', 'KI-etikk'],
 			profiles: ['organization-builder', 'ai-specialist', 'researcher']
 		},
 		{
@@ -140,9 +140,9 @@ export const cvData: CvDataMap = {
 			startDate: '2023-02',
 			endDate: '2023-04',
 			description: [
-				'Deltok i kurs i AI Safety Governance.'
+				'Gjennomførte kurset AI Safety Policy.'
 			],
-			skillTags: ['AI Safety Governance', 'AI Safety'],
+			skillTags: ['AI Safety Policy', 'AI Safety'],
 			profiles: ['ai-specialist', 'researcher']
 		},
 		{
@@ -156,7 +156,7 @@ export const cvData: CvDataMap = {
 				'Dokumenterte diverse prosesser og tjenester i åpen wiki.',
 				'Lokalansvarlig og konferansier for Bergen Open Source 2023.'
 			],
-			skillTags: ['Arrangementsledelse', 'Organisasjonsbygging', 'Dokumentasjon', 'Konferanseledelse'],
+			skillTags: ['Linux', 'ProxMox', 'Virtualisering', 'Systemadministrasjon', 'Git', 'Arrangementsledelse', 'Organisasjonsbygging', 'Dokumentasjon', 'Konferanseledelse'],
 			profiles: ['organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
@@ -192,7 +192,7 @@ export const cvData: CvDataMap = {
 				'Innførte styrevervene Presseansvarlig og Sosialansvarlig.',
 				'Dokumenterte relevante diverse prosesser og tjenester i åpen wiki.'
 			],
-			skillTags: ['Kundeforhold', 'Rekruttering', 'Arrangementsledelse', 'Organisasjonsbygging', 'Django', 'Dokumentasjon'],
+			skillTags: ['Zola', 'Ganeti', 'Systemadministrasjon', 'Linux', 'FreeBSD', 'Apache', 'Nginx', 'ProxMox', 'Shell-skripting', 'Brannmur', 'Nettverk', 'Git', 'Wireguard', 'Docker', 'Kundeforhold', 'Rekruttering', 'Arrangementsledelse', 'Organisasjonsbygging', 'Dokumentasjon'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
@@ -219,7 +219,7 @@ export const cvData: CvDataMap = {
 				'Migrerte studentradioen sine tjenester over til VM i ProxMox.',
 				'Etablerte kontakt med studentmediene.'
 			],
-			skillTags: ['Administrasjon', 'ProxMox', 'Virtualisering', 'Migrering', 'Systemadministrasjon'],
+			skillTags: ['Zola', 'Ganeti', 'Systemadministrasjon', 'Linux', 'FreeBSD', 'Apache', 'Nginx', 'ProxMox', 'Shell-skripting', 'Brannmur', 'Nettverk', 'Git', 'Wireguard', 'Docker', 'Administrasjon', 'Virtualisering', 'Migrering'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
@@ -323,32 +323,52 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Rammeverk & biblioteker',
-				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'AstroJS', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress', 'Webutvikling'],
 				profiles: ['developer']
 			},
 			{
 				category: 'Databaser & sky',
-				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
+				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure', 'Databaseutvikling', 'Sky-arkitektur'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Verktøy & systemer',
-				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'CI/CD'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'FreeBSD', 'Apache', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'Ganeti', 'Wireguard', 'Codeberg', 'DigaSystem', 'Visma', 'CI/CD'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'KI & datavitenskap',
-				skills: ['Maskinlæring', 'NLP', 'Robotikk', 'Søkealgoritmer', 'KI-etikk', 'AI Safety Governance'],
+				skills: ['Maskinlæring', 'NLP', 'Robotikk', 'Søkealgoritmer', 'KI-etikk', 'AI Safety', 'AI Safety Governance', 'AI Safety Policy'],
 				profiles: ['developer', 'ai-specialist', 'researcher']
 			},
 			{
-				category: 'Ledelse & forretning',
-				skills: ['Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Organisasjonsbygging', 'Vekststrategi', 'Kundeforhold', 'Arrangementsledelse', 'Konferanseledelse'],
+				category: 'Organisasjon & ledelse',
+				skills: ['Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Organisasjonsutvikling', 'Styrearbeid', 'Styresamarbeid', 'Administrasjon', 'Arrangementsledelse', 'Konferanseledelse', 'Kursledelse', 'Undervisning', 'Produksjonsledelse'],
 				profiles: ['administrator', 'organization-builder', 'community-builder']
 			},
 			{
-				category: 'Teknisk drift',
-				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring', 'Radioteknikk', 'Virtualisering', 'Drift og oppetid'],
+				category: 'Forretning & strategi',
+				skills: ['Regnskap', 'Budsjett', 'Merkevarebygging', 'Vekststrategi', 'Kundeforhold', 'Markedsføring', 'Strategi', 'Dokumentasjon', 'Innkjøpsplanlegging', 'Produktutvikling', 'UX'],
+				profiles: ['administrator', 'organization-builder']
+			},
+			{
+				category: 'Infrastruktur & nettverk',
+				skills: ['Systemadministrasjon', 'Virtualisering', 'Nettverksadministrasjon', 'Nettverk', 'Brannmur', 'Migrering', 'Drift og oppetid'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Sikkerhet & operasjoner',
+				skills: ['IT-sikkerhet', 'Kryptert kommunikasjon', 'Operativ drift', 'Dokumenthåndtering'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Radioteknikk',
+				skills: ['Radioteknikk', 'Radiokommunikasjon', 'Teknisk drift', 'Teknisk planlegging'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Brukerstøtte & opplæring',
+				skills: ['Teknisk brukerstøtte', 'Teknisk opplæring'],
 				profiles: ['systemadministrator']
 			},
 			{
@@ -447,7 +467,7 @@ export const cvData: CvDataMap = {
 					'Takes initiative on organizational changes to improve efficiency.',
 					'Leads the IT group.'
 				],
-				skillTags: ['Marketing', 'Accounting', 'Budgeting', 'Customer Relations', 'Organization Development', 'Board Collaboration'],
+				skillTags: ['Marketing', 'Accounting', 'Visma', 'Budgeting', 'Customer Relations', 'Organization Development', 'Board Collaboration'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -462,7 +482,7 @@ export const cvData: CvDataMap = {
 					'Responsible for cloud architecture and CI/CD processes.',
 					'Actively involved in product development and user experience.'
 				],
-				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Cloud Architecture', 'Product Development', 'UX'],
+				skillTags: ['Django', 'Svelte', 'Supabase', 'Cloudflare', 'GitHub', 'Docker', 'CI/CD', 'Cloud Architecture', 'Product Development', 'UX'],
 				profiles: ['developer', 'ai-specialist']
 			},
 			{
@@ -479,7 +499,7 @@ export const cvData: CvDataMap = {
 					'Planned major purchases for technical upgrades.',
 					'Led a group of volunteers in the technical team.'
 				],
-				skillTags: ['Radio Engineering', 'System Administration', 'Network Administration', 'Technical Operations', 'Procurement Planning', 'Recruitment'],
+				skillTags: ['DigaSystem', 'Django', 'WordPress', 'Radio Engineering', 'System Administration', 'Network Administration', 'Technical Operations', 'Procurement Planning', 'Recruitment'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
@@ -511,7 +531,7 @@ export const cvData: CvDataMap = {
 				'Host of Bergen Open Source 2025.',
 				'Organized and executed Bergen Open Source 2025.'
 			],
-			skillTags: ['Organization Building', 'Event Management', 'Conference Management', 'Recruitment', 'Project Management'],
+			skillTags: ['AstroJS', 'Codeberg', 'Git', 'Organization Building', 'Event Management', 'Conference Management', 'Recruitment', 'Project Management'],
 			profiles: ['administrator', 'organization-builder', 'community-builder']
 		},
 		{
@@ -523,7 +543,7 @@ export const cvData: CvDataMap = {
 				'Developed the organization\'s website.',
 				'Participated in regular board meetings on long-term strategy.'
 			],
-			skillTags: ['Web Development', 'Board Work', 'Strategy'],
+			skillTags: ['Web Development', 'Hugo', 'Board Work', 'Strategy'],
 			profiles: ['developer', 'ai-specialist']
 		},
 		{
@@ -536,7 +556,7 @@ export const cvData: CvDataMap = {
 				'Took initiative and developed a draft of an internal staff database.',
 				'Actively recruited several volunteers.'
 			],
-			skillTags: ['Database Development', 'Recruitment', 'Product Development', 'Git'],
+			skillTags: ['Supabase', 'AstroJS', 'Database Development', 'Recruitment', 'Product Development', 'Git'],
 			profiles: ['developer', 'systemadministrator']
 		},
 		{
@@ -548,7 +568,7 @@ export const cvData: CvDataMap = {
 				'Taught curriculum in AI Safety Governance.',
 				'Guided a group through 8 weeks of seminars.'
 			],
-			skillTags: ['AI Safety Governance', 'Teaching', 'Course Facilitation', 'AI Ethics'],
+			skillTags: ['AI Safety', 'AI Safety Governance', 'Teaching', 'Course Facilitation', 'AI Ethics'],
 			profiles: ['organization-builder', 'ai-specialist', 'researcher']
 		},
 		{
@@ -568,9 +588,9 @@ export const cvData: CvDataMap = {
 			startDate: '2023-02',
 			endDate: '2023-04',
 			description: [
-				'Participated in a course on AI Safety Governance.'
+				'Completed the AI Safety Policy course.'
 			],
-			skillTags: ['AI Safety Governance', 'AI Safety'],
+			skillTags: ['AI Safety Policy', 'AI Safety'],
 			profiles: ['ai-specialist', 'researcher']
 		},
 		{
@@ -584,7 +604,7 @@ export const cvData: CvDataMap = {
 				'Documented various processes and services in an open wiki.',
 				'Local coordinator and host for Bergen Open Source 2023.'
 			],
-			skillTags: ['Event Management', 'Organization Building', 'Documentation', 'Conference Management'],
+			skillTags: ['Linux', 'ProxMox', 'Virtualization', 'System Administration', 'Git', 'Event Management', 'Organization Building', 'Documentation', 'Conference Management'],
 			profiles: ['organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
@@ -620,7 +640,7 @@ export const cvData: CvDataMap = {
 				'Introduced the board roles Press Manager and Social Coordinator.',
 				'Documented relevant processes and services in an open wiki.'
 			],
-			skillTags: ['Customer Relations', 'Recruitment', 'Event Management', 'Organization Building', 'Django', 'Documentation'],
+			skillTags: ['Zola', 'Ganeti', 'System Administration', 'Linux', 'FreeBSD', 'Apache', 'Nginx', 'ProxMox', 'Shell Scripting', 'Firewall', 'Networking', 'Git', 'Wireguard', 'Docker', 'Customer Relations', 'Recruitment', 'Event Management', 'Organization Building', 'Documentation'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator', 'community-builder']
 		},
 		{
@@ -647,7 +667,7 @@ export const cvData: CvDataMap = {
 				'Migrated the student radio\'s services to VMs in ProxMox.',
 				'Established contact with the student media organizations.'
 			],
-			skillTags: ['Administration', 'ProxMox', 'Virtualization', 'Migration', 'System Administration'],
+			skillTags: ['Zola', 'Ganeti', 'System Administration', 'Linux', 'FreeBSD', 'Apache', 'Nginx', 'ProxMox', 'Shell Scripting', 'Firewall', 'Networking', 'Git', 'Wireguard', 'Docker', 'Administration', 'Virtualization', 'Migration'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
@@ -751,32 +771,52 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Frameworks & Libraries',
-				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'AstroJS', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress', 'Web Development'],
 				profiles: ['developer']
 			},
 			{
 				category: 'Databases & Cloud',
-				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure'],
+				skills: ['PostgreSQL', 'Supabase', 'Cloudflare', 'Azure', 'Database Development', 'Cloud Architecture'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'Tools & Systems',
-				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'CI/CD'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'FreeBSD', 'Apache', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'Ganeti', 'Wireguard', 'Codeberg', 'DigaSystem', 'Visma', 'CI/CD'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'AI & Data Science',
-				skills: ['Machine Learning', 'NLP', 'Robotics', 'Search Algorithms', 'AI Ethics', 'AI Safety Governance'],
+				skills: ['Machine Learning', 'NLP', 'Robotics', 'Search Algorithms', 'AI Ethics', 'AI Safety', 'AI Safety Governance', 'AI Safety Policy'],
 				profiles: ['developer', 'ai-specialist', 'researcher']
 			},
 			{
-				category: 'Leadership & Business',
-				skills: ['Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Organization Building', 'Growth Strategy', 'Customer Relations', 'Event Management', 'Conference Management'],
+				category: 'Organization & Leadership',
+				skills: ['Project Management', 'Recruitment', 'Organization Building', 'Organization Development', 'Board Work', 'Board Collaboration', 'Administration', 'Event Management', 'Conference Management', 'Course Facilitation', 'Teaching', 'Production Management'],
 				profiles: ['administrator', 'organization-builder', 'community-builder']
 			},
 			{
-				category: 'Technical Operations',
-				skills: ['System Administration', 'Technical Support', 'Technical Training', 'Radio Engineering', 'Virtualization', 'Operations & Uptime'],
+				category: 'Business & Strategy',
+				skills: ['Accounting', 'Budgeting', 'Brand Building', 'Growth Strategy', 'Customer Relations', 'Marketing', 'Strategy', 'Documentation', 'Procurement Planning', 'Product Development', 'UX'],
+				profiles: ['administrator', 'organization-builder']
+			},
+			{
+				category: 'Infrastructure & Networking',
+				skills: ['System Administration', 'Virtualization', 'Network Administration', 'Networking', 'Firewall', 'Migration', 'Operations & Uptime'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Security & Operations',
+				skills: ['IT Security', 'Encrypted Communication', 'Operational Duty', 'Document Management'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Radio Engineering',
+				skills: ['Radio Engineering', 'Radio Communication', 'Technical Operations', 'Technical Planning'],
+				profiles: ['systemadministrator']
+			},
+			{
+				category: 'Support & Training',
+				skills: ['Technical Support', 'Technical Training'],
 				profiles: ['systemadministrator']
 			},
 			{
