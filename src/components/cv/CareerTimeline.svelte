@@ -548,7 +548,6 @@
         top: 0;
         bottom: 0;
         box-sizing: border-box;
-        min-width: 2.75rem;
         border-radius: var(--radius-sm);
         background-color: color-mix(in oklch, var(--bar-color) 72%, var(--color-chrome));
         border: 1px solid color-mix(in oklch, var(--bar-color) 88%, white);
@@ -766,7 +765,6 @@
 
         .mobile-bar {
             min-width: 0;
-            min-height: 2.75rem;
             border-left-width: 1px;
             border-top-width: 3px;
             border-top-color: var(--bar-color);

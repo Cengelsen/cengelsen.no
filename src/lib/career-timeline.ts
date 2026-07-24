@@ -497,6 +497,24 @@ export function monthPositionPadded(
 	return insetPercent + raw * scale;
 }
 
+const MIN_BAR_SPAN_PERCENT = 2.5;
+
+/** When min bar size applies, grow toward newer time so the older boundary stays fixed. */
+function clampBarSpan(
+	newerEdge: number,
+	olderEdge: number,
+	minSpan: number = MIN_BAR_SPAN_PERCENT
+): { newerEdge: number; olderEdge: number; span: number } {
+	const naturalSpan = olderEdge - newerEdge;
+	if (naturalSpan >= minSpan) {
+		return { newerEdge, olderEdge, span: naturalSpan };
+	}
+	return {
+		newerEdge: newerEdge - (minSpan - naturalSpan),
+		olderEdge,
+		span: minSpan
+	};
+}
 export function clippedBarPositionVertical(
 	startMonth: MonthIndex,
 	endMonth: MonthIndex,
@@ -513,9 +531,10 @@ export function clippedBarPositionVertical(
 	const visibleEndExclusive = visibleEndInclusive + 1;
 
 	const position = padded ? monthPositionWithPresentBuffer : monthPosition;
-	const top = position(visibleEndExclusive, axisMinMonth, axisMaxMonth);
-	const bottom = position(visibleStart, axisMinMonth, axisMaxMonth);
-	return { top, height: Math.max(bottom - top, 2.5) };
+	const newerEdge = position(visibleEndExclusive, axisMinMonth, axisMaxMonth);
+	const olderEdge = position(visibleStart, axisMinMonth, axisMaxMonth);
+	const { newerEdge: top, span: height } = clampBarSpan(newerEdge, olderEdge);
+	return { top, height };
 }
 
 export function mobileLaneOffset(
@@ -559,9 +578,10 @@ export function clippedBarPosition(
 	// CV end dates are the last full month engaged; +1 is the exclusive boundary for bar extent.
 	const visibleEndExclusive = visibleEndInclusive + 1;
 
-	const left = monthPositionWithPresentBuffer(visibleEndExclusive, axisMinMonth, axisMaxMonth);
-	const right = monthPositionWithPresentBuffer(visibleStart, axisMinMonth, axisMaxMonth);
-	return { left, width: Math.max(right - left, 2.5) };
+	const newerEdge = monthPositionWithPresentBuffer(visibleEndExclusive, axisMinMonth, axisMaxMonth);
+	const olderEdge = monthPositionWithPresentBuffer(visibleStart, axisMinMonth, axisMaxMonth);
+	const { newerEdge: left, span: width } = clampBarSpan(newerEdge, olderEdge);
+	return { left, width };
 }
 
 export function plotHeightRem(lanes: CareerTimelineLaneLayout[]): number {
