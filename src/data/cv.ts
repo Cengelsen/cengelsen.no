@@ -15,10 +15,11 @@ export const cvData: CvDataMap = {
 				startDate: '2025-08',
 				description: [
 					'Ansvarlig for markedsføring, økonomi, regnskap og kundeforhold.',
-					'Driver aktivt merkevarebygging og rekruttering av frivillige.',
-					'Planlegger og gjennomfører sosiale aktiviteter for et stort frivilligmiljø.'
+					'Samarbeider med styret for å gjennomføre daglig drift og langsiktig planlegging.',
+					'Tar initiativ til organisasjonsendringer for effektivisering.',
+					'Leder IT-gruppen.'
 				],
-				skillTags: ['Regnskap', 'Budsjett', 'Vekststrategi', 'Merkevarebygging', 'Rekruttering', 'Prosjektledelse', 'Organisasjonsutvikling'],
+				skillTags: ['Markedsføring', 'Regnskap', 'Budsjett', 'Kundeforhold', 'Organisasjonsutvikling', 'Styresamarbeid'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -28,10 +29,12 @@ export const cvData: CvDataMap = {
 				startDate: '2023-07',
 				endDate: '2024-09',
 				description: [
-					'Utviklet frontend og backend i Django for en B2B-nettplattform.',
-					'Bidro til produktstrategi og brukeropplevelse for en ny tjeneste innen ubemannede fartøy og miljødata.'
+					'Utviklet frontend og Backend i Django for egen B2B-nettplattform.',
+					'Utviklet samme nettplattform på nytt i Svelte og Supabase.',
+					'Ansvarlig for sky-arkitekturen og CI/CD-prosesser.',
+					'Var aktivt involvert i produktutvikling og brukeropplevelse.'
 				],
-				skillTags: ['Svelte', 'Django', 'Supabase', 'Cloudflare', 'Git'],
+				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Sky-arkitektur', 'Produktutvikling', 'UX'],
 				profiles: ['developer']
 			},
 			{
@@ -41,10 +44,14 @@ export const cvData: CvDataMap = {
 				startDate: '2018-08',
 				endDate: '2022-12',
 				description: [
-					'Ledet teknisk drift og koordinerte frivillige.',
-					'Sikret stabil plattform for sendinger, arrangementer og ekstern kommunikasjon.'
+					'Overordnet radioteknisk ansvar for hele studentradioen.',
+					'Vedlikeholdt og utviklet DigaSystem-økosystemet for 10+ arbeidsstasjoner.',
+					'Håndterte konfigurering av fysiske maskiner på samme nettverk.',
+					'Ansvarlig for driften av DHD-miksere, Presonus 32SL miksere og tilhørende programvare.',
+					'Planlagte større innkjøp for tekniske oppgraderinger.',
+					'Ledet en gruppe frivillige i teknisk gruppe.'
 				],
-				skillTags: ['IT-ledelse', 'Rekruttering'],
+				skillTags: ['Radioteknikk', 'Systemadministrasjon', 'Nettverksadministrasjon', 'Teknisk drift', 'Innkjøpsplanlegging', 'Rekruttering'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
@@ -53,9 +60,13 @@ export const cvData: CvDataMap = {
 				startDate: '2017-01',
 				endDate: '2018-06',
 				description: [
-					'Taktisk kommunikasjon og samband i krevende omgivelser.',
-					'Veiledet medarbeidere i kommunikasjonsprosedyrer.'
-				]
+					'Patruljert med både indre og ytre kystvakt langs hele norske kysten.',
+					'Ansvarlig for håndtering av krypterte meldingstjenester.',
+					'Sikkerhetsklarert til "Strengt hemmelig".',
+					'Forvaltet interne graderte dokumenter og meldinger.',
+					'Gjennomførte skift både på dekk, bysse og bro på rotasjon.'
+				],
+				skillTags: ['Radiokommunikasjon', 'Kryptert kommunikasjon', 'IT-sikkerhet', 'Operativ drift', 'Dokumenthåndtering']
 			}
 		],
 	volunteer: [
@@ -65,9 +76,12 @@ export const cvData: CvDataMap = {
 			role: 'Leder',
 			startDate: '2025-02',
 			description: [
-				'Leder for Bergen Open Source-fellesskapet og konferansen.'
+				'Medstifter av organisasjonen.',
+				'Anskaffet økonomiansvarlig og PR-ansvarlig.',
+				'Konferansier på Bergen Open Source 2025.',
+				'Organiserte og gjennomførte Bergen Open Source 2025.'
 			],
-			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Organisasjonsbygging', 'Git'],
+			skillTags: ['Organisasjonsbygging', 'Arrangementsledelse', 'Konferanseledelse', 'Rekruttering', 'Prosjektledelse'],
 			profiles: ['administrator', 'organization-builder']
 		},
 		{
@@ -76,9 +90,10 @@ export const cvData: CvDataMap = {
 			startDate: '2025-02',
 			endDate: '2026-01',
 			description: [
-				'Teknologiansvarlig for AI Safety Bergen.'
+				'Utviklet hjemmesiden til organisasjonen.',
+				'Deltok i regelmessige styremøter om langsiktig strategi.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['Webutvikling', 'Styrearbeid', 'Strategi'],
 			profiles: ['developer']
 		},
 		{
@@ -88,9 +103,10 @@ export const cvData: CvDataMap = {
 			startDate: '2025-02',
 			endDate: '2025-09',
 			description: [
-				'Bidro til IT-drift og teknisk støtte for Hulen.'
+				'Tok initiativ og utviklet et utkast til en intern personaldatabase.',
+				'Rekrutterte aktivt flere frivillige.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['Databaseutvikling', 'Rekruttering', 'Produktutvikling', 'Git'],
 			profiles: ['developer', 'systemadministrator']
 		},
 		{
@@ -101,7 +117,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Aktivt medlem i AI Safety Bergen.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['AI Safety', 'Styrearbeid'],
 			profiles: ['organization-builder']
 		},
 		{
@@ -110,9 +126,10 @@ export const cvData: CvDataMap = {
 			startDate: '2024-01',
 			endDate: '2024-06',
 			description: [
-				'Tilrettela kurs om AI-sikkerhet og AI-alignment.'
+				'Underviste pensum i AI Safety Governance.',
+				'Loset en gruppe gjennom 8 uker med seminarer.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['AI Safety Governance', 'Undervisning', 'Kursledelse', 'KI-etikk'],
 			profiles: ['organization-builder']
 		},
 		{
@@ -122,9 +139,11 @@ export const cvData: CvDataMap = {
 			startDate: '2023-08',
 			endDate: '2024-03',
 			description: [
-				'Organiserte sosiale arrangementer for medlemmene.'
+				'Tok initiativ og organiserte til det sosiale for alle medlemmer.',
+				'Dokumenterte diverse prosesser og tjenester i åpen wiki.',
+				'Lokalansvarlig og konferansier for Bergen Open Source 2023.'
 			],
-			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
+			skillTags: ['Arrangementsledelse', 'Organisasjonsbygging', 'Dokumentasjon', 'Konferanseledelse'],
 			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
@@ -134,9 +153,14 @@ export const cvData: CvDataMap = {
 			startDate: '2022-02',
 			endDate: '2026-01',
 			description: [
-				'Ledet IT-avdelingen og hadde ansvar for teknisk infrastruktur.'
+				'Ledet en gruppe frivillige IT-studenter.',
+				'Overordnet ansvar for oppetid på kritiske skreddersydde digitale tjenester.',
+				'Administrerte tjenester, databaser og fillagring i Azure.',
+				'Videreutviklet hjemmeside i NextJS, personaldatabase i Angular, og API i .Net.',
+				'Samarbeidet aktivt med styret for å opprette IT-gruppen som autonom gruppe internt.',
+				'Hovedansvarlig for rekruttering til gruppen.'
 			],
-			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Azure', 'Git'],
+			skillTags: ['Azure', 'Next.js', 'Angular', '.NET', 'Rekruttering', 'Organisasjonsbygging', 'Drift og oppetid'],
 			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
@@ -146,9 +170,16 @@ export const cvData: CvDataMap = {
 			startDate: '2021-12',
 			endDate: '2022-12',
 			description: [
-				'Ledet studentorganisasjonen som drifter IT-tjenester for studentforeninger i Bergen.'
+				'Forsterket eksisterende kundeforhold og hentet inn nye kunder.',
+				'Overordnet ansvar for rekruttering.',
+				'Ansvarlig for feiring av 20-års jubileumet til organisasjonen.',
+				'Tok initiativ til å starte en teknologi-podcast.',
+				'Skaffet avtale med Innovasjonshub om faste lokaler.',
+				'Tok initiativ til Django-workshop med Funbit og første årlige CTF-en.',
+				'Innførte styrevervene Presseansvarlig og Sosialansvarlig.',
+				'Dokumenterte relevante diverse prosesser og tjenester i åpen wiki.'
 			],
-			skillTags: ['Non-profit-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Git', 'Linux', 'Systemadministrasjon'],
+			skillTags: ['Kundeforhold', 'Rekruttering', 'Arrangementsledelse', 'Organisasjonsbygging', 'Django', 'Dokumentasjon'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
@@ -157,8 +188,10 @@ export const cvData: CvDataMap = {
 			startDate: '2021-09',
 			endDate: '2022-02',
 			description: [
-				'Ansvarlig for produksjon og logistikk under festivalen.'
+				'Ansvarlig for teknisk gjennomføring av festivalen.',
+				'Planlagte teknisk gjennomførelse.'
 			],
+			skillTags: ['Produksjonsledelse', 'Teknisk planlegging', 'Arrangementsledelse'],
 			profiles: ['administrator']
 		},
 		{
@@ -168,20 +201,45 @@ export const cvData: CvDataMap = {
 			startDate: '2021-01',
 			endDate: '2021-12',
 			description: [
-				'Assisterte leder med daglig drift og organisering av aktiviteter.'
+				'Bisto leder med fornyelse av organisasjonen.',
+				'Håndterte alt administrativt, som innkalling og referat.',
+				'Migrerte studentradioen sine tjenester over til VM i ProxMox.',
+				'Etablerte kontakt med studentmediene.'
 			],
-			skillTags: ['Git', 'Linux', 'Systemadministrasjon'],
+			skillTags: ['Administrasjon', 'ProxMox', 'Virtualisering', 'Migrering', 'Systemadministrasjon'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Medlem',
+			startDate: '2020-09',
+			endDate: '2021-01',
+			description: [
+				'Først tatt opp som ordinært medlem i friByte.'
+			],
+			profiles: ['organization-builder']
+		},
+		{
+			company: 'Studentersamfunnet i Bergen',
+			role: 'Sosialansvarlig for PR-etaten',
+			startDate: '2019-08',
+			endDate: '2020-06',
+			description: [
+				'Sosialansvarlig i PR-etaten til Studentersamfunnet i Bergen.'
+			],
+			skillTags: ['Arrangementsledelse'],
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
 			role: 'IT-ansvarlig',
 			startDate: '2018-08',
-			endDate: '2020-06',
+			endDate: '2019-06',
 			description: [
-				'Ansvarlig for IT-drift og teknisk infrastruktur for Studentersamfunnet.'
+				'Ansvarlig for å lage en ny nettside i Wordpress.'
 			],
-			skillTags: ['IT-ledelse'],
+			skillTags: ['WordPress', 'Webutvikling'],
 			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
@@ -252,7 +310,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Rammeverk & biblioteker',
-				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress'],
 				profiles: ['developer']
 			},
 			{
@@ -262,27 +320,27 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Verktøy & systemer',
-				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell-skripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'CI/CD'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'KI & datavitenskap',
-				skills: ['Maskinlæring', 'NLP', 'Robotikk', 'Søkealgoritmer', 'KI-etikk'],
+				skills: ['Maskinlæring', 'NLP', 'Robotikk', 'Søkealgoritmer', 'KI-etikk', 'AI Safety Governance'],
 				profiles: ['developer']
 			},
 			{
 				category: 'Ledelse & forretning',
-				skills: ['Non-profit-ledelse', 'IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Organisasjonsbygging', 'Vekststrategi'],
+				skills: ['Prosjektledelse', 'Rekruttering', 'Regnskap', 'Budsjett', 'Merkevarebygging', 'Organisasjonsbygging', 'Vekststrategi', 'Kundeforhold', 'Arrangementsledelse', 'Konferanseledelse'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				category: 'Teknisk drift',
-				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring'],
+				skills: ['Systemadministrasjon', 'Teknisk brukerstøtte', 'Teknisk opplæring', 'Radioteknikk', 'Virtualisering', 'Drift og oppetid'],
 				profiles: ['systemadministrator']
 			},
 			{
 				category: 'Generelt',
-				skills: ['Teamarbeid', 'Akademisk skriving']
+				skills: ['Lagarbeid', 'Akademisk skriving']
 			}
 		],
 		languages: [
@@ -368,10 +426,11 @@ export const cvData: CvDataMap = {
 				startDate: '2025-08',
 				description: [
 					'Responsible for marketing, finances, accounting and customer relations.',
-					'Actively driving brand building and recruitment of volunteers.',
-					'Planning and executing social activities for a large volunteer community.'
+					'Collaborates with the board to run daily operations and long-term planning.',
+					'Takes initiative on organizational changes to improve efficiency.',
+					'Leads the IT group.'
 				],
-				skillTags: ['Accounting', 'Budgeting', 'Growth Strategy', 'Brand Building', 'Recruitment', 'Project Management', 'Organization Development'],
+				skillTags: ['Marketing', 'Accounting', 'Budgeting', 'Customer Relations', 'Organization Development', 'Board Collaboration'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
@@ -381,10 +440,12 @@ export const cvData: CvDataMap = {
 				startDate: '2023-07',
 				endDate: '2024-09',
 				description: [
-					'Developed frontend and backend in Django for a B2B web platform.',
-					'Contributed to product strategy and user experience for a new service in unmanned vessels and environmental data.'
+					'Developed frontend and backend in Django for an in-house B2B web platform.',
+					'Rebuilt the same web platform in Svelte and Supabase.',
+					'Responsible for cloud architecture and CI/CD processes.',
+					'Actively involved in product development and user experience.'
 				],
-				skillTags: ['Svelte', 'Django', 'Supabase', 'Cloudflare', 'Git'],
+				skillTags: ['Django', 'Svelte', 'Supabase', 'CI/CD', 'Cloud Architecture', 'Product Development', 'UX'],
 				profiles: ['developer']
 			},
 			{
@@ -394,10 +455,14 @@ export const cvData: CvDataMap = {
 				startDate: '2018-08',
 				endDate: '2022-12',
 				description: [
-					'Led technical operations and coordinated volunteers.',
-					'Ensured a stable platform for broadcasts, events and external communication.'
+					'Overall radio technical responsibility for the entire student radio station.',
+					'Maintained and developed the DigaSystem ecosystem for 10+ workstations.',
+					'Handled configuration of physical machines on the same network.',
+					'Responsible for operating DHD mixers, Presonus 32SL mixers and associated software.',
+					'Planned major purchases for technical upgrades.',
+					'Led a group of volunteers in the technical team.'
 				],
-				skillTags: ['IT Management', 'Recruitment'],
+				skillTags: ['Radio Engineering', 'System Administration', 'Network Administration', 'Technical Operations', 'Procurement Planning', 'Recruitment'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
@@ -406,9 +471,13 @@ export const cvData: CvDataMap = {
 				startDate: '2017-01',
 				endDate: '2018-06',
 				description: [
-					'Tactical communication and signals in demanding environments.',
-					'Mentored colleagues in communication procedures.'
-				]
+					'Patrolled with both inner and outer coast guard along the entire Norwegian coast.',
+					'Responsible for handling encrypted messaging services.',
+					'Security cleared to "Strictly Secret".',
+					'Managed internal classified documents and messages.',
+					'Completed shifts on deck, in the galley and on the bridge on rotation.'
+				],
+				skillTags: ['Radio Communication', 'Encrypted Communication', 'IT Security', 'Operational Duty', 'Document Management']
 			}
 		],
 	volunteer: [
@@ -418,9 +487,12 @@ export const cvData: CvDataMap = {
 			role: 'Leader',
 			startDate: '2025-02',
 			description: [
-				'Leader of the Bergen Open Source community and conference.'
+				'Co-founded the organization.',
+				'Recruited a finance manager and a PR manager.',
+				'Host of Bergen Open Source 2025.',
+				'Organized and executed Bergen Open Source 2025.'
 			],
-			skillTags: ['Non-Profit Management', 'Project Management', 'Organization Building', 'Git'],
+			skillTags: ['Organization Building', 'Event Management', 'Conference Management', 'Recruitment', 'Project Management'],
 			profiles: ['administrator', 'organization-builder']
 		},
 		{
@@ -429,9 +501,10 @@ export const cvData: CvDataMap = {
 			startDate: '2025-02',
 			endDate: '2026-01',
 			description: [
-				'Technology lead for AI Safety Bergen.'
+				'Developed the organization\'s website.',
+				'Participated in regular board meetings on long-term strategy.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['Web Development', 'Board Work', 'Strategy'],
 			profiles: ['developer']
 		},
 		{
@@ -441,9 +514,10 @@ export const cvData: CvDataMap = {
 			startDate: '2025-02',
 			endDate: '2025-09',
 			description: [
-				'Contributed to IT operations and technical support for Hulen.'
+				'Took initiative and developed a draft of an internal staff database.',
+				'Actively recruited several volunteers.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['Database Development', 'Recruitment', 'Product Development', 'Git'],
 			profiles: ['developer', 'systemadministrator']
 		},
 		{
@@ -454,7 +528,7 @@ export const cvData: CvDataMap = {
 			description: [
 				'Active member of AI Safety Bergen.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['AI Safety', 'Board Work'],
 			profiles: ['organization-builder']
 		},
 		{
@@ -463,9 +537,10 @@ export const cvData: CvDataMap = {
 			startDate: '2024-01',
 			endDate: '2024-06',
 			description: [
-				'Facilitated courses on AI safety and AI alignment.'
+				'Taught curriculum in AI Safety Governance.',
+				'Guided a group through 8 weeks of seminars.'
 			],
-			skillTags: ['Git'],
+			skillTags: ['AI Safety Governance', 'Teaching', 'Course Facilitation', 'AI Ethics'],
 			profiles: ['organization-builder']
 		},
 		{
@@ -475,9 +550,11 @@ export const cvData: CvDataMap = {
 			startDate: '2023-08',
 			endDate: '2024-03',
 			description: [
-				'Organized social events for members.'
+				'Took initiative and organized social activities for all members.',
+				'Documented various processes and services in an open wiki.',
+				'Local coordinator and host for Bergen Open Source 2023.'
 			],
-			skillTags: ['Git', 'Linux', 'System Administration'],
+			skillTags: ['Event Management', 'Organization Building', 'Documentation', 'Conference Management'],
 			profiles: ['organization-builder', 'systemadministrator']
 		},
 		{
@@ -487,9 +564,14 @@ export const cvData: CvDataMap = {
 			startDate: '2022-02',
 			endDate: '2026-01',
 			description: [
-				'Led the IT department and was responsible for technical infrastructure.'
+				'Led a group of volunteer IT students.',
+				'Overall responsibility for uptime of critical custom digital services.',
+				'Administered services, databases and file storage in Azure.',
+				'Further developed the website in NextJS, staff database in Angular, and API in .Net.',
+				'Actively collaborated with the board to establish the IT group as an autonomous internal unit.',
+				'Primary responsibility for recruiting to the group.'
 			],
-			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Organization Building', 'Azure', 'Git'],
+			skillTags: ['Azure', 'Next.js', 'Angular', '.NET', 'Recruitment', 'Organization Building', 'Operations & Uptime'],
 			profiles: ['developer', 'administrator', 'systemadministrator']
 		},
 		{
@@ -499,9 +581,16 @@ export const cvData: CvDataMap = {
 			startDate: '2021-12',
 			endDate: '2022-12',
 			description: [
-				'Led the student organization that operates IT services for student associations in Bergen.'
+				'Strengthened existing customer relationships and brought in new clients.',
+				'Overall responsibility for recruitment.',
+				'Responsible for celebrating the organization\'s 20th anniversary.',
+				'Took initiative to start a technology podcast.',
+				'Secured an agreement with Innovasjonshub for permanent office space.',
+				'Took initiative for a Django workshop with Funbit and the first annual CTF.',
+				'Introduced the board roles Press Manager and Social Coordinator.',
+				'Documented relevant processes and services in an open wiki.'
 			],
-			skillTags: ['Non-Profit Management', 'Project Management', 'Recruitment', 'Organization Building', 'Git', 'Linux', 'System Administration'],
+			skillTags: ['Customer Relations', 'Recruitment', 'Event Management', 'Organization Building', 'Django', 'Documentation'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
 		},
 		{
@@ -510,8 +599,10 @@ export const cvData: CvDataMap = {
 			startDate: '2021-09',
 			endDate: '2022-02',
 			description: [
-				'Responsible for production and logistics during the festival.'
+				'Responsible for the technical execution of the festival.',
+				'Planned the technical execution.'
 			],
+			skillTags: ['Production Management', 'Technical Planning', 'Event Management'],
 			profiles: ['administrator']
 		},
 		{
@@ -521,20 +612,45 @@ export const cvData: CvDataMap = {
 			startDate: '2021-01',
 			endDate: '2021-12',
 			description: [
-				'Assisted the president with daily operations and activity planning.'
+				'Supported the president in renewing the organization.',
+				'Handled all administrative tasks, such as meeting invitations and minutes.',
+				'Migrated the student radio\'s services to VMs in ProxMox.',
+				'Established contact with the student media organizations.'
 			],
-			skillTags: ['Git', 'Linux', 'System Administration'],
+			skillTags: ['Administration', 'ProxMox', 'Virtualization', 'Migration', 'System Administration'],
 			profiles: ['administrator', 'organization-builder', 'systemadministrator']
+		},
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Member',
+			startDate: '2020-09',
+			endDate: '2021-01',
+			description: [
+				'First admitted as an ordinary member of friByte.'
+			],
+			profiles: ['organization-builder']
+		},
+		{
+			company: 'Studentersamfunnet i Bergen',
+			role: 'Social Coordinator for the PR Department',
+			startDate: '2019-08',
+			endDate: '2020-06',
+			description: [
+				'Social coordinator in the PR department of Studentersamfunnet i Bergen.'
+			],
+			skillTags: ['Event Management'],
+			profiles: ['organization-builder']
 		},
 		{
 			company: 'Studentersamfunnet i Bergen',
 			role: 'IT Manager',
 			startDate: '2018-08',
-			endDate: '2020-06',
+			endDate: '2019-06',
 			description: [
-				'Responsible for IT operations and technical infrastructure for Studentersamfunnet.'
+				'Responsible for building a new website in WordPress.'
 			],
-			skillTags: ['IT Management'],
+			skillTags: ['WordPress', 'Web Development'],
 			profiles: ['developer', 'administrator', 'systemadministrator']
 		}
 	],
@@ -605,7 +721,7 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Frameworks & Libraries',
-				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2'],
+				skills: ['Svelte', 'Django', 'Flask', 'Hugo', 'Zola', 'React', 'ROS2', 'Next.js', 'Angular', '.NET', 'WordPress'],
 				profiles: ['developer']
 			},
 			{
@@ -615,27 +731,27 @@ export const cvData: CvDataMap = {
 			},
 			{
 				category: 'Tools & Systems',
-				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks'],
+				skills: ['Git', 'GitHub', 'Docker', 'Nginx', 'Linux', 'Shell Scripting', 'LaTeX', 'Markdown', 'Webhooks', 'ProxMox', 'CI/CD'],
 				profiles: ['developer', 'systemadministrator']
 			},
 			{
 				category: 'AI & Data Science',
-				skills: ['Machine Learning', 'NLP', 'Robotics', 'Search Algorithms', 'AI Ethics'],
+				skills: ['Machine Learning', 'NLP', 'Robotics', 'Search Algorithms', 'AI Ethics', 'AI Safety Governance'],
 				profiles: ['developer']
 			},
 			{
 				category: 'Leadership & Business',
-				skills: ['Non-Profit Management', 'IT Management', 'Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Organization Building', 'Growth Strategy'],
+				skills: ['Project Management', 'Recruitment', 'Accounting', 'Budgeting', 'Brand Building', 'Organization Building', 'Growth Strategy', 'Customer Relations', 'Event Management', 'Conference Management'],
 				profiles: ['administrator', 'organization-builder']
 			},
 			{
 				category: 'Technical Operations',
-				skills: ['System Administration', 'Technical Support', 'Technical Training'],
+				skills: ['System Administration', 'Technical Support', 'Technical Training', 'Radio Engineering', 'Virtualization', 'Operations & Uptime'],
 				profiles: ['systemadministrator']
 			},
 			{
 				category: 'General',
-				skills: ['Teamwork', 'Academic Writing']
+				skills: ['Collaborative work', 'Academic Writing']
 			}
 		],
 		languages: [
