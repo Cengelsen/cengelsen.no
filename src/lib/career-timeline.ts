@@ -78,18 +78,20 @@ export interface CareerTimelineCategoryLayout {
 }
 
 const LANE_MIN_HEIGHT_REM = 11 / 6;
-const LANE_GAP_REM = 0.25;
-const CATEGORY_GAP_REM = 0.5;
-/** padding-top + border-top on non-first category rows (must match CareerTimeline.svelte). */
-const CATEGORY_CHROME_REM = 0.15 + 1 / 16;
+export const LANE_GAP_REM = 0.25;
+const CATEGORY_GAP_REM = LANE_GAP_REM;
+/** Extra height on non-first category rows (must match CareerTimeline.svelte). */
+const CATEGORY_CHROME_REM = 0;
 const TIME_SCALE_REM = 0.45;
 const PLOT_PADDING_REM = 0.5;
 export const MOBILE_LANE_WIDTH_REM = 5.5;
 export const MOBILE_CATEGORY_MIN_WIDTH_REM = 6;
 export const MOBILE_TIME_SCALE_REM = 0.55;
-export const MOBILE_CATEGORY_GAP_REM = 0.35;
+export const MOBILE_CATEGORY_GAP_REM = LANE_GAP_REM;
 export const MOBILE_Y_AXIS_WIDTH_REM = 2.75;
 export const MOBILE_AXIS_INSET_PERCENT = 2;
+/** Present-side buffer (left on desktop, top on mobile) between category stripe and bars. */
+export const PRESENT_BUFFER_PERCENT = 0.625;
 
 export const TIMELINE_EARLIEST_YEAR = 1997;
 export const TIMELINE_WINDOW_YEARS = 5;
@@ -495,6 +497,33 @@ export function monthPositionPadded(
 	return insetPercent + raw * scale;
 }
 
+const MIN_BAR_SPAN_PERCENT = 2.5;
+
+/** When min bar size applies, grow toward newer time unless that would cross the present buffer. */
+function clampBarSpan(
+	newerEdge: number,
+	olderEdge: number,
+	minSpan: number = MIN_BAR_SPAN_PERCENT,
+	bufferEdge: number = PRESENT_BUFFER_PERCENT
+): { newerEdge: number; olderEdge: number; span: number } {
+	const clampedNewer = Math.max(bufferEdge, newerEdge);
+	const naturalSpan = olderEdge - clampedNewer;
+
+	if (naturalSpan >= minSpan) {
+		return { newerEdge: clampedNewer, olderEdge, span: naturalSpan };
+	}
+
+	const deficit = minSpan - naturalSpan;
+	const expandNewer = clampedNewer - deficit;
+
+	if (expandNewer >= bufferEdge) {
+		return { newerEdge: expandNewer, olderEdge, span: minSpan };
+	}
+
+	// At the buffer edge: grow toward older time instead of into the stripe zone.
+	const expandOlder = clampedNewer + minSpan;
+	return { newerEdge: clampedNewer, olderEdge: expandOlder, span: expandOlder - clampedNewer };
+}
 export function clippedBarPositionVertical(
 	startMonth: MonthIndex,
 	endMonth: MonthIndex,
@@ -504,13 +533,17 @@ export function clippedBarPositionVertical(
 	padded = false
 ): { top: number; height: number } | null {
 	const visibleStart = Math.max(startMonth, axisMinMonth);
-	const visibleEnd = Math.min(endMonth, displayMaxMonth);
-	if (visibleStart > visibleEnd) return null;
+	const visibleEndInclusive = Math.min(endMonth, displayMaxMonth);
+	if (visibleStart > visibleEndInclusive) return null;
 
-	const position = padded ? monthPositionPadded : monthPosition;
-	const top = position(visibleEnd, axisMinMonth, axisMaxMonth);
-	const bottom = position(visibleStart, axisMinMonth, axisMaxMonth);
-	return { top, height: Math.max(bottom - top, 2.5) };
+	// CV end dates are the last full month engaged; +1 is the exclusive boundary for bar extent.
+	const visibleEndExclusive = visibleEndInclusive + 1;
+
+	const position = padded ? monthPositionWithPresentBuffer : monthPosition;
+	const newerEdge = position(visibleEndExclusive, axisMinMonth, axisMaxMonth);
+	const olderEdge = position(visibleStart, axisMinMonth, axisMaxMonth);
+	const { newerEdge: top, span: height } = clampBarSpan(newerEdge, olderEdge);
+	return { top, height };
 }
 
 export function mobileLaneOffset(
@@ -548,12 +581,16 @@ export function clippedBarPosition(
 	displayMaxMonth: MonthIndex
 ): { left: number; width: number } | null {
 	const visibleStart = Math.max(startMonth, axisMinMonth);
-	const visibleEnd = Math.min(endMonth, displayMaxMonth);
-	if (visibleStart > visibleEnd) return null;
+	const visibleEndInclusive = Math.min(endMonth, displayMaxMonth);
+	if (visibleStart > visibleEndInclusive) return null;
 
-	const left = monthPosition(visibleEnd, axisMinMonth, axisMaxMonth);
-	const right = monthPosition(visibleStart, axisMinMonth, axisMaxMonth);
-	return { left, width: Math.max(right - left, 2.5) };
+	// CV end dates are the last full month engaged; +1 is the exclusive boundary for bar extent.
+	const visibleEndExclusive = visibleEndInclusive + 1;
+
+	const newerEdge = monthPositionWithPresentBuffer(visibleEndExclusive, axisMinMonth, axisMaxMonth);
+	const olderEdge = monthPositionWithPresentBuffer(visibleStart, axisMinMonth, axisMaxMonth);
+	const { newerEdge: left, span: width } = clampBarSpan(newerEdge, olderEdge);
+	return { left, width };
 }
 
 export function plotHeightRem(lanes: CareerTimelineLaneLayout[]): number {
@@ -566,4 +603,17 @@ export function plotHeightRem(lanes: CareerTimelineLaneLayout[]): number {
 export function monthPosition(month: MonthIndex, minMonth: MonthIndex, maxMonth: MonthIndex): number {
 	const span = Math.max(maxMonth - minMonth, 1);
 	return ((maxMonth - month) / span) * 100;
+}
+
+/** Horizontal axis: present (left) ends at the buffer, older months extend right. */
+export function monthPositionWithPresentBuffer(
+	month: MonthIndex,
+	minMonth: MonthIndex,
+	maxMonth: MonthIndex,
+	bufferPercent: number = PRESENT_BUFFER_PERCENT
+): number {
+	const span = Math.max(maxMonth - minMonth, 1);
+	const raw = ((maxMonth - month) / span) * 100;
+	const scale = (100 - bufferPercent) / 100;
+	return Math.max(bufferPercent, bufferPercent + raw * scale);
 }

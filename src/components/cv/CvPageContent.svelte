@@ -78,6 +78,8 @@
             ? 'experience'
             : firstCareerSection;
 
+    $: showCareerViewToggle = activeProfile === null;
+
     function isCareerSection(sectionKey: CvSectionKey): boolean {
         return (careerSectionKeys as readonly CvSectionKey[]).includes(sectionKey);
     }
@@ -99,7 +101,7 @@
     </div>
 
     {#each contentSections as sectionKey (sectionKey)}
-        {#if sectionKey === careerToggleAnchor && hasCareerEntries}
+        {#if sectionKey === careerToggleAnchor && hasCareerEntries && showCareerViewToggle}
             <div class="career-view-controls">
                 <div class="view-toggle" role="group" aria-label={t.cv.careerViewToggle}>
                     <button
@@ -124,7 +126,7 @@
             </div>
         {/if}
 
-        {#if careerView === 'timeline' && isCareerSection(sectionKey)}
+        {#if showCareerViewToggle && careerView === 'timeline' && isCareerSection(sectionKey)}
             {#if sectionKey === careerToggleAnchor}
                 <CvSection title={t.cv.careerTimeline} section="career-timeline">
                         <CareerTimeline
