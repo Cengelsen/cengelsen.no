@@ -60,6 +60,28 @@ export const cvData: CvDataMap = {
 		],
 	volunteer: [
 		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Kommunikasjonsansvarlig',
+			startDate: '2026-08',
+			description: [
+				'Ansvarlig for organisasjonens kommunikasjon og synlighet.'
+			],
+			skillTags: ['Merkevarebygging', 'Organisasjonsbygging'],
+			profiles: ['administrator', 'organization-builder']
+		},
+		{
+			company: 'Det Akademiske Kvarter',
+			companyUrl: 'https://kvarteret.no',
+			role: 'IT-nestleder',
+			startDate: '2026-08',
+			description: [
+				'Assisterer IT-leder med drift av IT-avdelingen og teknisk infrastruktur.'
+			],
+			skillTags: ['IT-ledelse', 'Prosjektledelse', 'Rekruttering', 'Organisasjonsbygging', 'Azure', 'Git'],
+			profiles: ['developer', 'administrator', 'systemadministrator']
+		},
+		{
 			company: 'Bergen Open Source',
 			companyUrl: 'https://boskonf.no',
 			role: 'Leder',
@@ -412,6 +434,28 @@ export const cvData: CvDataMap = {
 			}
 		],
 	volunteer: [
+		{
+			company: 'friByte',
+			companyUrl: 'https://fribyte.no',
+			role: 'Communications Manager',
+			startDate: '2026-08',
+			description: [
+				'Responsible for the organization\'s communication and visibility.'
+			],
+			skillTags: ['Brand Building', 'Organization Building'],
+			profiles: ['administrator', 'organization-builder']
+		},
+		{
+			company: 'Det Akademiske Kvarter',
+			companyUrl: 'https://kvarteret.no',
+			role: 'Deputy IT Manager',
+			startDate: '2026-08',
+			description: [
+				'Assists the IT manager with IT department operations and technical infrastructure.'
+			],
+			skillTags: ['IT Management', 'Project Management', 'Recruitment', 'Organization Building', 'Azure', 'Git'],
+			profiles: ['developer', 'administrator', 'systemadministrator']
+		},
 		{
 			company: 'Bergen Open Source',
 			companyUrl: 'https://boskonf.no',
