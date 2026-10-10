@@ -1,7 +1,7 @@
 ---
 title: Et Innblikk I Bevissthetsfilosofi
-pubDate: 2022-04-27T10:00:00+02:00
-description: Dette er en tekst jeg skrev i 2018 om ulike posisjoner i bevissthetsfilosofi.
+pubDate: 2018-11-27T10:00:00+02:00
+description: I denne teksten skal jeg gjøre rede for definisjonene av dualisme og materialisme og hva begrepene innebærer. Deretter skal jeg gå videre inn på Descartes, hans dualisme og interaksjonsproblemet som oppstår ved hans filosofi. Jeg skal også introdusere flere forskjellige synspunkter som har oppstått som et svar på materialistisk sinnsfilosofi. I tillegg skal jeg diskutere forholdet mellom det å være bevisst innen monistiske synspunkter, og det å være bevisst innen dualistiske synspunkter.
 id: 1
 ---
 

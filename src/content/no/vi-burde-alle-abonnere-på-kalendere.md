@@ -1,13 +1,11 @@
 ---
 title: Vi Burde Alle Abonnere På Kalendere
 pubDate: 2024-02-26T10:00:00+01:00
-description: Vi burde normalisere å abonnere på kalenderstrømmer, slik at vi aldri går glipp av hendelser igjen. Pluss, det er mindre tungvint.
+description: Kanskje ikke så kontroversiell eller nyskapende mening, men vi burde normalisere å abonnere på kalenderstrømmer. I det siste har jeg blitt litt fascinert av å kunne importere hendelser fra andres kalendere inn i min egen. Dette kom fra ønsket om å finne diverse arrangementer som jeg kunne delta på utenfor min vanlige rutine. Jeg søkte derfor igjennom alle mulige arrangører jeg kunne finne i byen min for å se hvilke arrangementer de tilbydde ut halvåret. Dette tok overraskende lang tid og kan garantert gjøres lettere. 
 id: 7
 ---
 
-Kanskje ikke så kontroversiell eller nyskapende mening, men vi burde normalisere å abonnere på kalenderstrømmer. I det siste har jeg blitt litt fascinert av å kunne importere hendelser fra andres kalendere inn i min egen. Dette kom fra ønsket om å finne diverse arrangementer som jeg kunne delta på utenfor min vanlige rutine. 
-
-Jeg søkte derfor igjennom alle mulige arrangører jeg kunne finne i byen min for å se hvilke arrangementer de tilbydde ut halvåret. Dette tok overraskende lang tid og kan garantert gjøres lettere. 
+Kanskje ikke så kontroversiell eller nyskapende mening, men vi burde normalisere å abonnere på kalenderstrømmer. I det siste har jeg blitt litt fascinert av å kunne importere hendelser fra andres kalendere inn i min egen. Dette kom fra ønsket om å finne diverse arrangementer som jeg kunne delta på utenfor min vanlige rutine. Jeg søkte derfor igjennom alle mulige arrangører jeg kunne finne i byen min for å se hvilke arrangementer de tilbydde ut halvåret. Dette tok overraskende lang tid og kan garantert gjøres lettere. 
 
 ### Definisjoner
 

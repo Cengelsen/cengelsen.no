@@ -1,6 +1,6 @@
 ---
 title: A Short Insight Into the Philosophy of Mind
-pubDate: 2022-04-27T10:00:00+02:00
+pubDate: 2018-11-27T10:00:00+02:00
 description: This is a text I wrote in 2018 about different positions in philosophy of consciousness.
 id: 1
 ---

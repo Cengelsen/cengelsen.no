@@ -4,3 +4,6 @@ build/
 package-lock.json
 static/pdf/
 scripts/_cv-data.json
+
+# Mappe for utkast til blogginnlegg
+drafts/

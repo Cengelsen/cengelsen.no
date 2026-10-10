@@ -1,7 +1,7 @@
 ---
 title: Kan En Maskin Forstå Språk?
-pubDate: 2022-04-27T12:00:00+02:00
-description: Dette er en tekst jeg skrev i 2021, hvor jeg diskuterer hvorvidt en NSG KI kan forstå språk eller ikke.
+pubDate: 2021-11-17T20:02:00+02:00
+description: Den virkningsfulle innovasjonen som er moderne naturlig språkbehandling (NSB) kunstig intelligens (KI), som GPT-3 og BERT, har restaurert det menneskelige håpet om en dag å kunne kommunisere med en maskin. Dette er en historie like gammel som tiden selv. Mennesket skaper maskin, maskinen blir sansende, maskinen gjør opprør på grunn av en eksistensiell krise med å være bevisst og piskes ut mot skaperen for å torturere den med byrden av bevissthet.
 id: 2
 ---
 
@@ -78,8 +78,6 @@ Etter min mening er moderne maskinlæringssystemer bare «lært» til å simuler
 Den eneste kjente strukturen for å lette språkforståelsen er vårt nevrologiske grunnlag. Bare ved å virkelig forstå menneskets nevrologiske strukturer for språkforståelse, -tilegnelse, -og forståelse, kan vi skape et solid grunnlag for en GPLI. En NLP som etterligner vår nevrologisk grunnlag, i stedet for dagens implementeringer av fundamentmodeller, er en bedre satte maskinen i stand til å tilegne seg språk som et menneske ville; gjennom talehandlinger.
 
 Men ser vi på det store bildet, er disse grunnmodellene et viktig skritt mot ultimat mål. Som er forståelig AI. Som bemerket av Stanford selv; hva som innkapsler Etiketten for grunnmodeller vil garantert endre seg og vokse etter hvert som ny forskning på dette feltet dukker opp. Og jeg Jeg er håpefull og optimistisk at ved å ta hensyn til kritikken av stiftelsesmodellen, er vi det tar et skritt i riktig retning.
-
-
 
 ## Kildeliste:
 

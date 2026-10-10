@@ -1,7 +1,7 @@
 ---
 title: En Vurdering av Oculus Rift Sin Innovative Kraft
-pubDate: 2022-04-27T14:00:00+02:00
-description: Dette er en tekst jeg skrev i 2020 om VV-teknologi, dens historie og hvordan Oculus Rift var en nyskapende suksess.
+pubDate: 2020-05-15T10:00:00+02:00
+description: Hva er ekte? Ikke bare er dette et eksistensielt spørsmål, men en kilde for skapelse, innovasjon og nysgjerrighet. Vi utforsker svarene på dette spørsmålet ved å fordype oss i det virtuelle riket, og verktøyet vårt har siden 60-tallet, vært VV-teknologi. Selv om det nylig har tatt opp en stadig større del av videospillfellesskapet. Det startet med flere mislykkede forsøk på midten av 90-tallet og fortsatte med Palmer Luckeys svært vellykkede _Oculus Rift_. Denne nye VV-hjelmen har pustet nytt liv i VV-fellesskapet, samt VV-forskning og utvikling.
 id: 3
 ---
 

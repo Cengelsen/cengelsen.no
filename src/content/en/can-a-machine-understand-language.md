@@ -1,6 +1,6 @@
 ---
 title: Can a Machine Understand Language?
-pubDate: 2022-04-27T12:00:00+02:00
+pubDate: 2021-11-17T20:02:00+02:00
 description: This is a text i wrote in 2021, discussing whether or not a NLP AI can understand language.
 id: 2
 ---

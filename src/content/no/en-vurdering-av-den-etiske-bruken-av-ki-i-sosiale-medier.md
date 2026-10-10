@@ -1,7 +1,7 @@
 ---
 title: En Vurdering Av Den Etiske Bruken Av KI I Sosiale Medier
 pubDate: 2023-10-16T10:00:00+02:00
-description: Utforskende analyse av sosiale mediers bruk av KI og dens innvirkning på psykologiske, kognitive og etiske utfordringer.
+description: I det stadig voksende digitale universet, forsøker vi å navigere oss gjennom det komplekse terrenget av sosiale medier. Fra deling av bilder til blogg-innlegg og tankevekkende diskusjoner, har sosiale medieplattformer blitt et dominerende virtuelt torg. Her jobber et mylder av algoritmer og kunstig intelligens (KI)systemer bak kulissene utrettelig for å forme vår opplevelse på nett. Med tanke på dette, burde bruken av KI av sosiale medier bli forbudt?
 id: 4
 ---
 
