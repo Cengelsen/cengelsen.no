@@ -437,20 +437,56 @@ export const cvData: CvDataMap = {
 		],
 		projects: [
 			{
-				name: 'Personlig nettside',
-				description: 'Min personlige nettside og blogg, bygget med SvelteKit.',
-				techStack: ['SvelteKit', 'TypeScript', 'CSS'],
-				githubUrl: 'https://github.com/Cengelsen',
-				liveUrl: 'https://cengelsen.no',
-				skillTags: ['Hugo'],
-				profiles: ['researcher']
+				name: 'Stroop-spill',
+				description: 'Stroop-eksperimentet i form av et spill.',
+				techStack: ['JavaScript'],
+				githubUrl: 'https://github.com/Cengelsen/stroop',
+				liveUrl: 'https://stroop.cengelsen.no'
 			},
 			{
-				name: 'Bergen Open Source',
-				description: 'Nettside for Bergen Open Source-konferansen.',
-				techStack: ['Webteknologi'],
-				liveUrl: 'https://boskonf.no',
-				profiles: ['community-builder']
+				name: 'Personlig nettside',
+				description: 'Min personlige nettside og blogg, bygget med SvelteKit.',
+				techStack: ['SvelteKit', 'TypeScript'],
+				githubUrl: 'https://github.com/Cengelsen/cengelsen.no',
+				liveUrl: 'https://cengelsen.no'
+			},
+			{
+				name: 'Næringsfordeling',
+				description: 'Visuell oversikt over alle næringer i Norge.',
+				techStack: ['Svelte', 'TypeScript', 'Vite'],
+				githubUrl: 'https://github.com/Cengelsen/naeringsfordeling',
+				liveUrl: 'https://naeringsfordeling.cengelsen.no'
+			},
+			{
+				name: 'Open Food Facts DB splitter',
+				description: 'Skript og repo som oppretter og lagrer .db-filer for produkter per land.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/off-db-splitter'
+			},
+			{
+				name: 'Sentiment-plotter',
+				description: 'Skript som henter diskusjon fra TC39s møtereferater og plotter sentimentet i en graf.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/sentiment-plotter',
+				skillTags: ['NLP']
+			},
+			{
+				name: 'Gitrell',
+				description: 'Enkelt skript som synkroniserer alle lokale git-repositorier med tilhørende remote.',
+				techStack: ['Shell'],
+				githubUrl: 'https://github.com/Cengelsen/gitrell'
+			},
+			{
+				name: 'Arkivari',
+				description: 'Skript som arkiverer alle sider på et domenenavn til Internet Archive.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/arkivari'
+			},
+			{
+				name: 'Postreceiver',
+				description: 'Liten Flask-app som lytter på POST-forespørsler og kjører shell-kommandoer lokalt.',
+				techStack: ['Python', 'Flask'],
+				githubUrl: 'https://github.com/Cengelsen/postreceiver'
 			}
 		],
 		contact: [
@@ -907,20 +943,56 @@ export const cvData: CvDataMap = {
 		],
 		projects: [
 			{
-				name: 'Personal Website',
-				description: 'My personal website and blog, built with SvelteKit.',
-				techStack: ['SvelteKit', 'TypeScript', 'CSS'],
-				githubUrl: 'https://github.com/Cengelsen',
-				liveUrl: 'https://cengelsen.no',
-				skillTags: ['Hugo'],
-				profiles: ['researcher']
+				name: 'Stroop Game',
+				description: 'The Stroop experiment in the form of a game.',
+				techStack: ['JavaScript'],
+				githubUrl: 'https://github.com/Cengelsen/stroop',
+				liveUrl: 'https://stroop.cengelsen.no'
 			},
 			{
-				name: 'Bergen Open Source',
-				description: 'Website for the Bergen Open Source conference.',
-				techStack: ['Web Technologies'],
-				liveUrl: 'https://boskonf.no',
-				profiles: ['community-builder']
+				name: 'Personal Website',
+				description: 'My personal website and blog, built with SvelteKit.',
+				techStack: ['SvelteKit', 'TypeScript'],
+				githubUrl: 'https://github.com/Cengelsen/cengelsen.no',
+				liveUrl: 'https://cengelsen.no'
+			},
+			{
+				name: 'Næringsfordeling',
+				description: 'Visual overview of all industries in Norway.',
+				techStack: ['Svelte', 'TypeScript', 'Vite'],
+				githubUrl: 'https://github.com/Cengelsen/naeringsfordeling',
+				liveUrl: 'https://naeringsfordeling.cengelsen.no'
+			},
+			{
+				name: 'Open Food Facts DB Splitter',
+				description: 'Script and repository that creates and stores .db files for products per country.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/off-db-splitter'
+			},
+			{
+				name: 'Sentiment Plotter',
+				description: 'Script that extracts discussion from the TC39 meeting notes and plots the sentiment of the discussion in a graph.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/sentiment-plotter',
+				skillTags: ['NLP']
+			},
+			{
+				name: 'Gitrell',
+				description: 'Simple script that synchronizes all your local git repositories with their respective remotes.',
+				techStack: ['Shell'],
+				githubUrl: 'https://github.com/Cengelsen/gitrell'
+			},
+			{
+				name: 'Arkivari',
+				description: 'Script that programmatically archives all pages of a domain to the Internet Archive.',
+				techStack: ['Python'],
+				githubUrl: 'https://github.com/Cengelsen/arkivari'
+			},
+			{
+				name: 'Postreceiver',
+				description: 'A small Flask application that listens for POST requests and executes shell commands locally.',
+				techStack: ['Python', 'Flask'],
+				githubUrl: 'https://github.com/Cengelsen/postreceiver'
 			}
 		],
 		contact: [
