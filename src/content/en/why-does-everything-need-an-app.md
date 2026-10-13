@@ -1,6 +1,7 @@
 ---
 title: Why Does Everything Need an App?
 pubDate: 2026-10-10T14:07:00+02:00
+editDate: 2026-14-10T00:43:00+02:00
 description: I genuinely don't understand this modern fascination with tying every service to an app, when it works perfectly fine without one. Over the last maybe 10 years, I've encountered various necessities where my access is determined by whether I have the required technology.
 id: 6
 ---
@@ -27,7 +28,7 @@ So I filled out a form right away, but never got a reply. So I showed up at the 
 
 This made me ask the question you might be asking yourself now: "What if my smartphone runs out of battery?". And to that I was told that they would have dedicated "emergency charging stations" outside the building, which of course solves this problem. On top of that, if I lose my phone there's no way for me to either get into my room, or call the service center and ask for help. What do I do then?
 
-Beyond this there are other cases I observe, like Norwegian banks phasing out the physical 2-step verification token provider, to have BankID exclusively through an app. Or that the only valid way, at least at UiB, to verify your student status, is through an app (Sikt). Or perhaps the Generation Party's initiative, where they have developed an app, which they intend to be the way everyone can vote on issues in society. Not to mention age verification for social media that the government is talking about introducing in Norway. That'll probably need yet another app to verify that you're old enough, provided by the EU.
+Beyond this there are other cases I observe, like Norwegian banks phasing out the physical 2-step verification token provider, to have BankID exclusively through an app. Or that the only valid way, at least at UiB, to verify your student status, is through an app (Sikt). Or perhaps the Generation Party's initiative, where they have developed an app, which they intend to be the way everyone can vote on issues in society. Not to mention age verification for social media that the government is talking about introducing in Norway. That'll probably need yet another app to verify that you're old enough, provided by the EU. And as if that weren't enough, you need an app to charge your electric car; without it you can't activate charging.
 
 I don't understand why this is allowed to be legal. These actors in society force every single citizen to use a specific type of technology in order to have access to basic, necessary services, or services I have a legal right to access.
 
@@ -37,4 +38,4 @@ The inverse of this is analogue alternatives, which need neither power, sophisti
 
 The difference between these two approaches is that the individual has autonomy over access to services and goods. Through electricity-free, physical verification, the individual is "self-sufficient" in producing proof of their own identity and access. As opposed to through an app, where the individual depends on having a smartphone with the right hardware, internet and power at all times. As well as a centralized service that stores all necessary information about you.
 
-But I guess the lesson has been learned. I need an app to have a place to live. I need an app to verify that I'm a student. I need an app to access my money. I need an app to participate on social platforms. I need an app to exercise my right to vote. Looking forward to the future.
+But I guess the lesson has been learned. I need an app to have a place to live. I need an app to verify that I'm a student. I need an app to drive an electric car. I need an app to access my money. I need an app to participate on social platforms. I need an app to exercise my right to vote. Looking forward to the future.

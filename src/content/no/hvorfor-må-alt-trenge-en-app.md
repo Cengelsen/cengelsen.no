@@ -1,6 +1,7 @@
 ---
 title: Hvorfor må alt trenge en app?
 pubDate: 2026-10-10T14:07:00+02:00
+editDate: 2026-14-10T00:43:00+02:00
 description: Jeg forstår virkelig ikke denne moderne fascinasjonen rundt å knytte alle tjenester opp i en app, når den fungerer helt fint uten. Opp gjennom de siste kanskje 10 årene har jeg opplevd diverse nødvendige ting, hvor tilgangen min skal bestemmes av om jeg har den nødvendige teknologien. 
 id: 6
 ---
@@ -27,7 +28,7 @@ Så da fylte jeg ut et skjema med en gang, men fikk aldri svar. Så da møtte je
 
 Dette fikk meg til å spørre det du kanskje spør deg selv nå; "Hva om jeg går tom for strøm på smart-telefonen?". Og til det fikk jeg i svar at de skulle ha egne "nød-ladestasjoner" utenfor bygget, som selvfølgelig løser dette problemet. I tillegg, om jeg mister telefonen er det jo ingen måte for meg å hverken komme meg inn i hybelen, eller ringe sørvis-senteret og spørre om hjelp. Hva gjør jeg da?
 
-Utover dette er det andre tilfeller jeg observerer, som f.eks. at norske banker skal fase ut fysisk kodebrikke, for å ha bankID utelukkende gjennom app. Eller at den eneste gyldige måten, i hvert fall for UiB, å verifisere studentstatusen sin, er gjennom en app. Eller kanskje initiativet til Generasjonspartiet, som har utviklet en app som de ønsker skal være muligheten for alle å kunne stemme på saker i samfunnet. For å ikke nevne aldersverifisering for sosiale medier som myndighetene snakker om å innføre. Her trengs det nok også enda en app for å verifisere at du er gammel nok.  
+Utover dette er det andre tilfeller jeg observerer, som f.eks. at norske banker skal fase ut fysisk kodebrikke, for å ha bankID utelukkende gjennom app. Eller at den eneste gyldige måten, i hvert fall for UiB, å verifisere studentstatusen sin, er gjennom en app. Eller kanskje initiativet til Generasjonspartiet, som har utviklet en app som de ønsker skal være muligheten for alle å kunne stemme på saker i samfunnet. For å ikke nevne aldersverifisering for sosiale medier som myndighetene snakker om å innføre. Her trengs det nok også enda en app for å verifisere at du er gammel nok. Og ikke nok med det, så kreves det en app for å lade opp el-bilen sin; uten det får en ikke aktivert ladingen. 
 
 Jeg forstår ikke hvorfor dette tillates å være lovlig. Disse aktørene i samfunnet tvinger hver enkelt borger til å bruke en spesifikk type teknologi for å kunne ha tilgang på grunnleggende, nødvendige tjenester, eller tjenester som jeg har lovmessig rett på tilgang til. 
 
@@ -37,4 +38,4 @@ Det inverse av dette, er analoge alternativer, som hverken trenger strøm, sofis
 
 Forskjellen mellom disse to tilnærmingene er at individet har autonomi over tilgang på tjenester og goder. Gjennom strømløs, fysisk verifikasjon er individet "selvforsynt" i å produsere bevis på sin egen identitet og tilgang. I motsetning til gjennom en app, hvor individet er avhengig av både å ha en smart-telefon med riktig maskinvare, internett og strøm til enhver tid. Samt en sentralisert tjeneste som lagrer all nødvendig informasjon om deg.  
 
-Men leksen er lært antar jeg. Jeg må ha en app for å ha et sted å bo. Jeg må ha en app for å verifisere at jeg er student. Jeg må ha en app for å ha tilgang på pengene mine. Jeg må ha en app for å delta på sosiale plattformer. Jeg må ha en app for å kunne bruke stemmeretten min. Gleder meg til fremtiden.
+Men leksen er lært antar jeg. Jeg må ha en app for å ha et sted å bo. Jeg må ha en app for å verifisere at jeg er student. Jeg må ha en app for å kjøre el-bil. Jeg må ha en app for å ha tilgang på pengene mine. Jeg må ha en app for å delta på sosiale plattformer. Jeg må ha en app for å kunne bruke stemmeretten min. Gleder meg til fremtiden.
