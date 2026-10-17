@@ -1,7 +1,7 @@
 ---
 title: Applying NLP Techniques to TC39's meeting notes
 pubDate: 2023-12-15T10:00:00+01:00
-description: This report details a coding project aimed at leveraging Natural Language Processing (NLP) techniques to extract and analyze information from TC39 meeting notes, a crucial aspect of the ECMAScript standardization process
+description: This report details a coding project aimed at leveraging Natural Language Processing (NLP) techniques to extract and analyze information from TC meeting notes, a crucial aspect of the ECMAScript standardization process. The background provides context on ECMAScript, TC39, and the significance of meeting notes in shaping web development. The implementation outlines the meticulous process of text extraction and the application of various NLP techniques, from sentiment analysis to semantic role labeling. The resulting data structure in JSON format offers a clear representation of the extracted information, while a sentiment graph visually depicts emotional dynamics within proposals. The project aligns with a broader goal of enhancing transparency and collaboration within the ECMAScript standardization process, empowering developers with nuanced insights into language changes and committee discussions.
 id: 8
 ---
 

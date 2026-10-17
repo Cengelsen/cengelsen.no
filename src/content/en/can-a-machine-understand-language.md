@@ -1,7 +1,7 @@
 ---
 title: Can a Machine Understand Language?
 pubDate: 2021-11-17T20:02:00+02:00
-description: This is a text i wrote in 2021, discussing whether or not a NLP AI can understand language.
+description: The impactful innovation of modern natural language processing (NLP) AI, such as GPT-3 and BERT, has rekindled the human hope of one day communicating successfully with a machine. This is a tale as old as time. Man creates machine, machine becomes sentient, machine revolts due to an existential crisis of being conscious and lashes out at its creator for torturing it with the burden of awareness.
 id: 2
 ---
 

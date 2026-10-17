@@ -1,7 +1,7 @@
 ---
 title: A Review of the Innovative Power of the Oculus Rift
 pubDate: 2020-05-15T10:00:00+02:00
-description: This is a text i wrote in 2020 about VR-technology, it's history and how the Oculus Rift was an innovative success.
+description: What is real? Not only is this an existential question, but a source of creation, innovation, and curiosity. We explore the answers to this question by delving into the virtual realm, and our tool has, since the 60’s, been VR-technology. Although, recently it has taken up an increasingly larger part of the videogame community. Starting with several failed attempts in the mid-90’s and continued by Palmer Luckey’s highly successful _Oculus Rift_, This new headset sparked new life into the VR-community, including VR-research and development.
 id: 3
 ---
 

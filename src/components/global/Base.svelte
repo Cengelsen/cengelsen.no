@@ -12,6 +12,7 @@
 <svelte:head>
     <link rel="alternate" type="application/rss+xml" title="cengelsen.no (norsk)" href="/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title="cengelsen.no (English)" href="/en/rss.xml" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 </svelte:head>
 
 <div id="app-shell" class:scrollable={isScrollable} style="--content-max-width: {contentMaxWidth}">

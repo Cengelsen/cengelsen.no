@@ -1,7 +1,7 @@
 ---
 title: Examination Of The Ethical Use Of AI In Social Media
 pubDate: 2023-10-16T10:00:00+02:00
-description: Exploratory analysis of social media's use of AI and its impact on psychological, cognitive and ethical challenges.
+description: In the ever-expanding digital universe, we find ourselves navigating the complex terrain of social media. From image-sharing, to blog posting and thought-provoking discussions, social media platforms have become a dominant virtual town square. However, behind the scenes, a plethora of algorithms and artificial intelligence (AI) systems are working tirelessly to shape our online experience on these platforms. With this in mind, should the use of AI by social media be banned?
 id: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: A Short Insight Into the Philosophy of Mind
 pubDate: 2018-11-27T10:00:00+02:00
-description: This is a text I wrote in 2018 about different positions in philosophy of consciousness.
+description: In this text I will explain the definitions of dualism and materialism and what the terms imply. I will then move on to Descartes, his dualism and the interaction problem arising from his philosophy. I will also introduce several different points of view that have arisen in response to materialist philosophy of mind. In addition, I will discuss the relationship between being conscious within monistic viewpoints, and being conscious within dualistic viewpoints.
 id: 1
 ---
 
